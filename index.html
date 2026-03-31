@@ -203,20 +203,30 @@
       display: flex;
       align-items: center;
       position: relative;
-      background-image: url('assets/img/hero-lobby.webp');
-      background-size: cover;
-      background-position: center;
+      overflow: hidden;
+    }
+
+    .hero-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      z-index: 0;
     }
 
     .hero-overlay {
       position: absolute;
       inset: 0;
       background: rgba(12,22,36,0.80);
+      z-index: 1;
     }
 
     .hero-inner {
       position: relative;
-      z-index: 1;
+      z-index: 2;
       max-width: 720px;
       padding: 130px 24px 80px 48px;
     }
@@ -907,6 +917,9 @@
        HERO
   ═══════════════════════════════════════════════ -->
   <section class="hero" id="inicio">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="assets/img/video-hero-robot.mp4" type="video/mp4">
+    </video>
     <div class="hero-overlay"></div>
     <div class="hero-inner">
       <span class="badge badge-blue">Agencia de Automatización IA · Katy, Texas</span>
@@ -1288,7 +1301,9 @@
 
       <div class="porque-layout">
         <div class="porque-image-wrap">
-          <img src="assets/img/brand-card.webp" alt="KATIA.ai — identidad de marca" class="porque-img" loading="lazy">
+          <video autoplay muted loop playsinline class="porque-img">
+            <source src="assets/img/video-hero-lobby.mp4" type="video/mp4">
+          </video>
         </div>
         <div class="porque-cards">
           <div class="porque-card">
