@@ -16,32 +16,46 @@
     }
 
     :root {
-      --bg-primary: #101820;
-      --bg-secondary: rgba(255,255,255,0.015);
-      --text-primary: rgba(220,225,232,0.85);
-      --text-secondary: rgba(200,210,220,0.35);
-      --text-hint: rgba(200,210,220,0.22);
-      --accent-blue: rgba(126,174,197,0.7);
-      --accent-blue-solid: #7EAEC5;
-      --accent-blue-bg: rgba(126,174,197,0.06);
-      --accent-gold: rgba(180,168,140,0.55);
-      --accent-gold-bg: rgba(180,168,140,0.05);
-      --card-bg: rgba(255,255,255,0.015);
-      --border-subtle: rgba(255,255,255,0.04);
-      --cta-bg: rgba(126,174,197,0.12);
-      --cta-text: rgba(126,174,197,0.75);
+      /* Fondos */
+      --bg-primary: #0C1624;
+      --bg-secondary: #111D30;
+      --bg-card: rgba(255,255,255,0.04);
+
+      /* Azul principal */
+      --blue: #5B9BC4;
+      --blue-light: #7AB4D6;
+      --blue-dim: rgba(91,155,196,0.15);
+      --blue-glow: rgba(91,155,196,0.25);
+
+      /* Gold cálido */
+      --gold: #C4A55A;
+      --gold-light: #D4B96E;
+      --gold-dim: rgba(196,165,90,0.12);
+
+      /* Texto */
+      --text-bright: #E2E8F0;
+      --text-main: #C8D1DC;
+      --text-muted: #8899AA;
+      --text-dim: #5A6A7A;
+
+      /* Bordes */
+      --border: rgba(255,255,255,0.08);
+      --border-hover: rgba(255,255,255,0.15);
+
+      /* CTAs */
+      --cta-bg: #5B9BC4;
+      --cta-text: #0C1624;
+      --cta-hover: #7AB4D6;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       background-color: var(--bg-primary);
-      color: var(--text-primary);
+      color: var(--text-main);
       font-family: 'DM Sans', system-ui, sans-serif;
       font-size: 16px;
-      line-height: 1.6;
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -49,30 +63,21 @@
       font-family: 'Syne', system-ui, sans-serif;
       font-weight: 500;
       line-height: 1.2;
+      color: var(--text-bright);
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-      transition: opacity 0.3s ease;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
+    a { text-decoration: none; color: inherit; transition: opacity 0.3s ease; }
+    img { display: block; max-width: 100%; }
 
     /* ─── NAVBAR ─── */
     .navbar {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(16,24,32,0.9);
+      background: rgba(12,22,36,0.92);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      border-bottom: 0.5px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border);
       transition: background 0.3s ease;
     }
 
@@ -96,18 +101,13 @@
 
     .nav-logo-text {
       font-family: 'Syne', system-ui, sans-serif;
-      font-weight: 500;
+      font-weight: 600;
       font-size: 1.05rem;
       letter-spacing: 0.04em;
     }
 
-    .nav-logo-text .katia {
-      color: rgba(200,210,220,0.8);
-    }
-
-    .nav-logo-text .ai {
-      color: #7EAEC5;
-    }
+    .nav-logo-text .katia { color: var(--text-bright); }
+    .nav-logo-text .ai { color: var(--blue); }
 
     .nav-links {
       display: flex;
@@ -118,34 +118,28 @@
 
     .nav-links a {
       font-size: 0.875rem;
-      color: var(--text-secondary);
+      color: var(--text-muted);
       transition: color 0.3s ease;
     }
 
-    .nav-links a:hover {
-      color: var(--text-primary);
-    }
+    .nav-links a:hover { color: var(--text-bright); }
 
-    .btn-wa {
+    .btn-nav-wa {
       display: inline-flex;
       align-items: center;
       gap: 7px;
       padding: 8px 18px;
-      background: var(--cta-bg);
-      color: var(--cta-text);
-      border: 1px solid rgba(126,174,197,0.15);
+      background: var(--blue-dim);
+      color: var(--blue-light);
+      border: 1px solid rgba(91,155,196,0.3);
       border-radius: 20px;
       font-size: 0.875rem;
-      font-family: 'DM Sans', sans-serif;
       font-weight: 500;
-      transition: background 0.3s ease, border-color 0.3s ease;
       white-space: nowrap;
+      transition: background 0.3s ease;
     }
 
-    .btn-wa:hover {
-      background: rgba(126,174,197,0.18);
-      border-color: rgba(126,174,197,0.25);
-    }
+    .btn-nav-wa:hover { background: var(--blue-glow); }
 
     .hamburger {
       display: none;
@@ -161,8 +155,46 @@
       display: block;
       width: 22px;
       height: 1.5px;
-      background: var(--text-secondary);
+      background: var(--text-muted);
       transition: 0.3s ease;
+    }
+
+    /* ─── BUTTONS ─── */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 26px;
+      background: var(--cta-bg);
+      color: var(--cta-text);
+      border: none;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      font-family: 'DM Sans', sans-serif;
+      transition: background 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover { background: var(--cta-hover); }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 26px;
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: border-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--border-hover);
+      color: var(--text-main);
     }
 
     /* ─── HERO ─── */
@@ -174,139 +206,86 @@
       background-image: url('assets/img/hero-lobby.webp');
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
     }
 
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(16,24,32,0.78);
+      background: rgba(12,22,36,0.80);
     }
 
     .hero-inner {
       position: relative;
       z-index: 1;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 120px 24px 80px;
-      max-width: 700px;
-      padding-left: 48px;
+      max-width: 720px;
+      padding: 130px 24px 80px 48px;
     }
 
     .badge {
       display: inline-block;
       padding: 5px 14px;
       border-radius: 20px;
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-weight: 500;
       letter-spacing: 0.03em;
       margin-bottom: 24px;
     }
 
     .badge-blue {
-      background: var(--accent-blue-bg);
-      color: rgba(126,174,197,0.6);
-      border: 1px solid rgba(126,174,197,0.1);
+      background: var(--blue-dim);
+      color: var(--blue-light);
+      border: 1px solid rgba(91,155,196,0.25);
     }
 
     .badge-gold {
-      background: var(--accent-gold-bg);
-      color: var(--accent-gold);
-      border: 1px solid rgba(180,168,140,0.1);
+      background: var(--gold-dim);
+      color: var(--gold);
+      border: 1px solid rgba(196,165,90,0.2);
     }
 
     .hero h1 {
-      font-size: clamp(1.9rem, 4vw, 2.9rem);
-      color: var(--text-primary);
-      margin-bottom: 8px;
-    }
-
-    .hero h1 .accent {
-      color: var(--accent-blue);
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      color: var(--text-bright);
+      margin-bottom: 20px;
     }
 
     .hero-subtitle {
-      font-size: 1rem;
-      color: var(--text-secondary);
-      max-width: 540px;
-      margin-top: 16px;
-      margin-bottom: 32px;
-      line-height: 1.7;
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 580px;
+      margin-bottom: 36px;
+      line-height: 1.75;
     }
 
     .hero-ctas {
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
-      margin-bottom: 48px;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 24px;
-      background: var(--cta-bg);
-      color: var(--cta-text);
-      border: 1px solid rgba(126,174,197,0.2);
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: background 0.3s ease;
-    }
-
-    .btn-primary:hover {
-      background: rgba(126,174,197,0.2);
-    }
-
-    .btn-outline {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 24px;
-      background: transparent;
-      color: var(--text-secondary);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: border-color 0.3s ease, color 0.3s ease;
-    }
-
-    .btn-outline:hover {
-      border-color: rgba(255,255,255,0.15);
-      color: var(--text-primary);
+      margin-bottom: 56px;
     }
 
     .hero-stats {
       display: flex;
-      gap: 40px;
+      gap: 48px;
       flex-wrap: wrap;
     }
 
-    .stat-item {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
+    .stat-item { display: flex; flex-direction: column; gap: 3px; }
 
     .stat-value {
       font-family: 'Syne', sans-serif;
-      font-size: 1.4rem;
-      color: var(--accent-blue);
+      font-size: 1.5rem;
+      color: var(--blue);
       font-weight: 500;
     }
 
     .stat-label {
-      font-size: 0.78rem;
-      color: var(--text-hint);
-      letter-spacing: 0.02em;
+      font-size: 0.82rem;
+      color: var(--text-dim);
     }
 
-    /* ─── SECTION COMMON ─── */
-    section {
-      padding: 90px 24px;
-    }
+    /* ─── SECCIONES COMUNES ─── */
+    section { padding: 90px 24px; }
 
     .section-inner {
       max-width: 1100px;
@@ -314,112 +293,109 @@
     }
 
     .section-label {
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--text-hint);
+      color: var(--gold);
       margin-bottom: 12px;
+      display: block;
     }
 
     .section-h2 {
       font-size: clamp(1.5rem, 3vw, 2.1rem);
-      color: var(--text-primary);
+      color: var(--text-bright);
       margin-bottom: 14px;
     }
 
     .section-sub {
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      max-width: 520px;
-      line-height: 1.7;
+      font-size: 0.97rem;
+      color: var(--text-muted);
+      max-width: 580px;
+      line-height: 1.75;
       margin-bottom: 48px;
     }
 
-    /* ─── CEO / ABOUT ─── */
-    .about-section {
-      background: rgba(255,255,255,0.012);
-    }
+    /* ─── CEO + NOSOTROS ─── */
+    .nosotros-section { background: var(--bg-secondary); }
 
-    .about-layout {
+    .nosotros-layout {
       display: flex;
-      gap: 48px;
+      gap: 52px;
       align-items: flex-start;
     }
 
-    .about-left {
-      flex-shrink: 0;
-      width: 200px;
-    }
+    .nosotros-left { flex-shrink: 0; width: 200px; }
 
     .ceo-photo {
       width: 200px;
-      height: 260px;
+      height: 270px;
       border-radius: 12px;
       object-fit: cover;
+      border: 1px solid var(--border);
     }
 
-    .about-right {
-      flex: 1;
-    }
+    .nosotros-right { flex: 1; }
 
     .ceo-name {
       font-size: 1.3rem;
-      color: var(--text-primary);
-      margin-bottom: 8px;
-      margin-top: 10px;
+      color: var(--text-bright);
+      margin: 12px 0 8px;
     }
 
     .ceo-bio {
-      font-size: 0.92rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      margin-bottom: 24px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 28px;
     }
 
     .about-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-subtle);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
       border-radius: 12px;
       padding: 24px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
+    }
+
+    .about-card-title {
+      font-size: 0.95rem;
+      color: var(--blue-light);
+      font-weight: 500;
+      margin-bottom: 12px;
+      font-family: 'DM Sans', sans-serif;
     }
 
     .about-card p {
-      font-size: 0.92rem;
-      color: var(--text-secondary);
+      font-size: 0.93rem;
+      color: var(--text-muted);
       line-height: 1.75;
       margin-bottom: 18px;
     }
 
-    .tags {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+    .tags { display: flex; gap: 10px; flex-wrap: wrap; }
 
     .tag-pill {
       display: inline-block;
-      padding: 4px 14px;
-      background: var(--accent-gold-bg);
-      color: var(--accent-gold);
-      border: 1px solid rgba(180,168,140,0.1);
+      padding: 5px 14px;
+      background: var(--gold-dim);
+      color: var(--gold);
+      border: 1px solid rgba(196,165,90,0.2);
       border-radius: 20px;
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-weight: 500;
     }
 
     .about-team-img {
       width: 100%;
-      max-height: 200px;
-      border-radius: 12px;
+      max-height: 180px;
+      border-radius: 10px;
       object-fit: cover;
-      opacity: 0.6;
+      opacity: 0.65;
+      border: 1px solid var(--border);
     }
 
     /* ─── PROBLEMA ─── */
-    .problema-section {
-      background: var(--bg-primary);
-    }
+    .problema-section { background: var(--bg-primary); }
 
     .grid-2x2 {
       display: grid;
@@ -428,66 +404,65 @@
     }
 
     .problem-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-subtle);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 24px;
+      padding: 26px;
+      transition: border-color 0.3s ease;
     }
 
-    .problem-icon {
-      margin-bottom: 14px;
-      opacity: 0.4;
-    }
+    .problem-card:hover { border-color: var(--border-hover); }
+
+    .problem-icon { margin-bottom: 16px; }
 
     .problem-card h3 {
       font-size: 1rem;
-      color: var(--text-primary);
-      margin-bottom: 6px;
+      color: var(--text-bright);
+      margin-bottom: 8px;
       font-family: 'DM Sans', sans-serif;
       font-weight: 500;
     }
 
     .problem-card p {
-      font-size: 0.85rem;
-      color: var(--text-hint);
-      line-height: 1.6;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.7;
     }
 
     .problema-close {
       text-align: center;
-      margin-top: 40px;
-      font-size: 0.95rem;
-      color: rgba(126,174,197,0.5);
+      margin-top: 44px;
+      font-size: 1rem;
+      color: var(--blue);
       letter-spacing: 0.04em;
+      font-family: 'Syne', sans-serif;
     }
 
     /* ─── SERVICIOS ─── */
-    .servicios-section {
-      background: rgba(255,255,255,0.012);
-    }
+    .servicios-section { background: var(--bg-secondary); }
 
     .grid-2x3 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 2px;
+      gap: 16px;
     }
 
     .svc-card {
-      background: var(--card-bg);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 3px solid transparent;
+      border-radius: 0 8px 8px 0;
       padding: 24px;
-      border-left: 2px solid transparent;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, border-color 0.3s ease;
     }
 
-    .svc-card:hover {
-      background: rgba(255,255,255,0.025);
-    }
+    .svc-card:hover { background: rgba(255,255,255,0.06); }
 
     .svc-header {
       display: flex;
       align-items: center;
       gap: 12px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .svc-img {
@@ -496,26 +471,44 @@
       border-radius: 8px;
       object-fit: cover;
       flex-shrink: 0;
+      border: 1px solid var(--border);
     }
 
     .svc-num {
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       font-weight: 500;
       letter-spacing: 0.06em;
+      font-family: 'Syne', sans-serif;
     }
 
     .svc-card h3 {
-      font-size: 0.95rem;
-      color: var(--text-primary);
+      font-size: 0.98rem;
+      color: var(--text-bright);
       margin-bottom: 8px;
       font-family: 'DM Sans', sans-serif;
       font-weight: 500;
     }
 
     .svc-card p {
-      font-size: 0.83rem;
-      color: var(--text-hint);
+      font-size: 0.87rem;
+      color: var(--text-muted);
       line-height: 1.65;
+      margin-bottom: 14px;
+    }
+
+    .svc-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .svc-feat {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 3px 8px;
     }
 
     .servicios-cta {
@@ -536,13 +529,10 @@
       background-image: url('assets/img/team-whiteboard.webp');
       background-size: cover;
       background-position: center;
-      opacity: 0.08;
+      opacity: 0.05;
     }
 
-    .proceso-inner {
-      position: relative;
-      z-index: 1;
-    }
+    .proceso-inner { position: relative; z-index: 1; }
 
     .steps-row {
       display: flex;
@@ -556,8 +546,8 @@
       top: 16px;
       left: calc(12.5% + 16px);
       right: calc(12.5% + 16px);
-      height: 0.5px;
-      background: rgba(126,174,197,0.08);
+      height: 1px;
+      background: rgba(91,155,196,0.12);
     }
 
     .step {
@@ -566,50 +556,50 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding: 0 12px;
+      padding: 0 14px;
     }
 
     .step-circle {
-      width: 32px;
-      height: 32px;
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
-      border: 1px solid rgba(126,174,197,0.25);
-      color: rgba(126,174,197,0.55);
+      border: 1px solid rgba(91,155,196,0.35);
+      color: var(--blue);
       background: var(--bg-primary);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.78rem;
+      font-size: 0.82rem;
       font-weight: 500;
       font-family: 'Syne', sans-serif;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
       position: relative;
       z-index: 1;
     }
 
     .step h3 {
-      font-size: 0.92rem;
-      color: var(--text-primary);
-      margin-bottom: 4px;
+      font-size: 0.97rem;
+      color: var(--text-bright);
+      margin-bottom: 6px;
       font-family: 'DM Sans', sans-serif;
       font-weight: 500;
     }
 
     .step p {
-      font-size: 0.8rem;
-      color: var(--text-hint);
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      line-height: 1.6;
     }
 
     /* ─── CASO DE ÉXITO ─── */
-    .caso-section {
-      background: rgba(255,255,255,0.012);
-    }
+    .caso-section { background: var(--bg-secondary); }
 
     .caso-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 48px;
+      gap: 52px;
       align-items: center;
+      margin-top: 28px;
     }
 
     .caso-img {
@@ -617,51 +607,52 @@
       aspect-ratio: 4/3;
       border-radius: 12px;
       object-fit: cover;
-      opacity: 0.7;
+      border: 1px solid var(--border);
+      opacity: 0.8;
+    }
+
+    .caso-h3 {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+    }
+
+    .caso-desc {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 28px;
     }
 
     .caso-stats {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
-      margin-top: 32px;
     }
 
-    .caso-stat {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
+    .caso-stat { display: flex; flex-direction: column; gap: 3px; }
 
     .caso-stat-value {
       font-family: 'Syne', sans-serif;
-      font-size: 1.5rem;
-      color: rgba(126,174,197,0.6);
+      font-size: 1.4rem;
+      color: var(--blue);
       font-weight: 500;
     }
 
     .caso-stat-label {
-      font-size: 0.75rem;
-      color: var(--text-hint);
-      letter-spacing: 0.03em;
-    }
-
-    .caso-desc {
-      font-size: 0.92rem;
-      color: var(--text-secondary);
-      line-height: 1.75;
-      margin-top: 14px;
+      font-size: 0.77rem;
+      color: var(--text-dim);
     }
 
     /* ─── POR QUÉ NOSOTROS ─── */
-    .porque-section {
-      background: var(--bg-primary);
-    }
+    .porque-section { background: var(--bg-primary); }
 
     .porque-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 48px;
+      gap: 52px;
       align-items: start;
     }
 
@@ -673,10 +664,11 @@
 
     .porque-img {
       width: 100%;
-      max-width: 320px;
+      max-width: 340px;
       border-radius: 12px;
       object-fit: cover;
-      opacity: 0.5;
+      border: 1px solid var(--border);
+      opacity: 0.65;
     }
 
     .porque-cards {
@@ -686,32 +678,34 @@
     }
 
     .porque-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-subtle);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
       border-radius: 12px;
       padding: 22px 18px;
-      text-align: center;
+      transition: border-color 0.3s ease;
     }
+
+    .porque-card:hover { border-color: var(--border-hover); }
 
     .porque-card h3 {
       font-size: 1rem;
-      color: var(--accent-gold);
-      margin-bottom: 6px;
+      color: var(--gold);
+      margin-bottom: 8px;
       font-family: 'DM Sans', sans-serif;
       font-weight: 500;
     }
 
     .porque-card p {
-      font-size: 0.82rem;
-      color: var(--text-hint);
-      line-height: 1.6;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.65;
     }
 
     /* ─── CTA FINAL ─── */
     .cta-section {
       position: relative;
       overflow: hidden;
-      background: rgba(255,255,255,0.012);
+      background: var(--bg-secondary);
     }
 
     .cta-bg {
@@ -720,27 +714,27 @@
       background-image: url('assets/img/team-coffee.webp');
       background-size: cover;
       background-position: center;
-      opacity: 0.12;
+      opacity: 0.08;
     }
 
     .cta-inner {
       position: relative;
       z-index: 1;
       text-align: center;
-      max-width: 600px;
+      max-width: 640px;
       margin: 0 auto;
     }
 
     .cta-inner h2 {
       font-size: clamp(1.5rem, 3vw, 2.1rem);
-      color: var(--text-primary);
-      margin-bottom: 10px;
+      color: var(--text-bright);
+      margin-bottom: 14px;
     }
 
     .cta-inner .section-sub {
       max-width: 100%;
-      text-align: center;
-      margin-bottom: 32px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .cta-buttons {
@@ -752,15 +746,14 @@
     }
 
     .cta-note {
-      font-size: 0.78rem;
-      color: var(--text-hint);
-      letter-spacing: 0.03em;
+      font-size: 0.82rem;
+      color: var(--text-dim);
     }
 
     /* ─── FOOTER ─── */
     footer {
       padding: 40px 24px;
-      border-top: 0.5px solid var(--border-subtle);
+      border-top: 1px solid var(--border);
       background: var(--bg-primary);
     }
 
@@ -771,14 +764,10 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 24px;
+      gap: 28px;
     }
 
-    .footer-left {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
+    .footer-left { display: flex; flex-direction: column; gap: 5px; }
 
     .footer-logo {
       display: flex;
@@ -787,14 +776,14 @@
     }
 
     .footer-tagline {
-      font-size: 0.78rem;
-      color: var(--text-hint);
+      font-size: 0.8rem;
+      color: var(--text-dim);
       margin-top: 4px;
     }
 
-    .footer-copyright {
-      font-size: 0.75rem;
-      color: var(--text-hint);
+    .footer-copy {
+      font-size: 0.77rem;
+      color: var(--text-dim);
     }
 
     .footer-links {
@@ -805,172 +794,87 @@
     }
 
     .footer-links a {
-      font-size: 0.82rem;
-      color: var(--text-hint);
+      font-size: 0.85rem;
+      color: var(--text-dim);
       transition: color 0.3s ease;
     }
 
-    .footer-links a:hover {
-      color: var(--text-secondary);
-    }
+    .footer-links a:hover { color: var(--text-muted); }
 
-    /* ─── MOBILE RESPONSIVE ─── */
+    /* ─── MOBILE ─── */
     @media (max-width: 768px) {
       .nav-links {
         display: none;
         position: absolute;
         top: 64px;
-        left: 0;
-        right: 0;
+        left: 0; right: 0;
         flex-direction: column;
         align-items: flex-start;
         gap: 0;
-        background: rgba(16,24,32,0.97);
+        background: rgba(12,22,36,0.98);
         padding: 12px 0;
-        border-bottom: 0.5px solid var(--border-subtle);
+        border-bottom: 1px solid var(--border);
       }
 
-      .nav-links.active {
-        display: flex;
-      }
+      .nav-links.active { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 12px 24px; }
+      .nav-cta-mobile { padding: 12px 24px; }
+      .hamburger { display: flex; }
+      .desktop-cta { display: none !important; }
 
-      .nav-links li {
-        width: 100%;
-      }
+      .hero-inner { padding: 110px 20px 60px; max-width: 100%; }
+      .hero-stats { gap: 28px; }
 
-      .nav-links a {
-        display: block;
-        padding: 12px 24px;
-      }
+      section { padding: 64px 20px; }
 
-      .nav-cta-mobile {
-        padding: 12px 24px;
-      }
+      .nosotros-layout { flex-direction: column; }
+      .nosotros-left { width: 100%; }
+      .ceo-photo { width: 100%; height: 240px; }
 
-      .hamburger {
-        display: flex;
-      }
+      .grid-2x2 { grid-template-columns: 1fr; }
+      .grid-2x3 { grid-template-columns: 1fr; }
 
-      .hero-inner {
-        padding: 110px 24px 60px;
-        max-width: 100%;
-      }
+      .steps-row { flex-direction: column; gap: 28px; }
+      .steps-line { display: none; }
+      .step { flex-direction: row; text-align: left; gap: 16px; padding: 0; }
+      .step-circle { margin-bottom: 0; flex-shrink: 0; }
 
-      .hero-stats {
-        gap: 24px;
-      }
+      .caso-layout { grid-template-columns: 1fr; }
+      .caso-stats { grid-template-columns: repeat(2, 1fr); }
 
-      section {
-        padding: 64px 20px;
-      }
+      .porque-layout { grid-template-columns: 1fr; }
+      .porque-image-wrap { display: none; }
+      .porque-cards { grid-template-columns: 1fr 1fr; }
 
-      .about-layout {
-        flex-direction: column;
-      }
-
-      .about-left {
-        width: 100%;
-      }
-
-      .ceo-photo {
-        width: 100%;
-        height: 240px;
-      }
-
-      .grid-2x2 {
-        grid-template-columns: 1fr;
-      }
-
-      .grid-2x3 {
-        grid-template-columns: 1fr;
-      }
-
-      .steps-row {
-        flex-direction: column;
-        gap: 28px;
-      }
-
-      .steps-line {
-        display: none;
-      }
-
-      .step {
-        flex-direction: row;
-        text-align: left;
-        gap: 16px;
-        padding: 0;
-      }
-
-      .step-circle {
-        margin-bottom: 0;
-        flex-shrink: 0;
-      }
-
-      .caso-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .caso-stats {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .porque-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .porque-image-wrap {
-        display: none;
-      }
-
-      .porque-cards {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .footer-links {
-        gap: 16px;
-      }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
     }
 
     @media (max-width: 480px) {
-      .porque-cards {
-        grid-template-columns: 1fr;
-      }
-
-      .caso-stats {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .hero-ctas {
-        flex-direction: column;
-      }
-
+      .porque-cards { grid-template-columns: 1fr; }
+      .hero-ctas { flex-direction: column; }
       .hero-ctas .btn-primary,
-      .hero-ctas .btn-outline {
-        width: 100%;
-        justify-content: center;
-      }
+      .hero-ctas .btn-outline { width: 100%; justify-content: center; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+      .cta-buttons .btn-primary,
+      .cta-buttons .btn-outline { width: 100%; justify-content: center; }
     }
   </style>
 </head>
 <body>
 
   <!-- ═══════════════════════════════════════════════
-       SECCIÓN 1: NAVBAR
+       NAVBAR
   ═══════════════════════════════════════════════ -->
   <nav class="navbar">
     <div class="nav-inner">
       <a href="#" class="nav-logo" aria-label="KATIA.ai inicio">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <circle cx="6" cy="12" r="2.2" fill="#7EAEC5"/>
-          <circle cx="18" cy="6" r="2.2" fill="#7EAEC5"/>
-          <circle cx="18" cy="18" r="2.2" fill="#7EAEC5"/>
-          <line x1="8" y1="11.2" x2="16" y2="7" stroke="#7EAEC5" stroke-width="1"/>
-          <line x1="8" y1="12.8" x2="16" y2="17" stroke="#7EAEC5" stroke-width="1"/>
+          <circle cx="6" cy="12" r="2.2" fill="#5B9BC4"/>
+          <circle cx="18" cy="6" r="2.2" fill="#5B9BC4"/>
+          <circle cx="18" cy="18" r="2.2" fill="#5B9BC4"/>
+          <line x1="8" y1="11.2" x2="16" y2="7" stroke="#5B9BC4" stroke-width="1.2"/>
+          <line x1="8" y1="12.8" x2="16" y2="17" stroke="#5B9BC4" stroke-width="1.2"/>
         </svg>
         <span class="nav-logo-text"><span class="katia">KATIA</span><span class="ai">.ai</span></span>
       </a>
@@ -981,95 +885,82 @@
         <li><a href="#proceso">Proceso</a></li>
         <li><a href="#caso">Caso de Éxito</a></li>
         <li class="nav-cta-mobile">
-          <a href="https://wa.me/19546997514?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratuito%20para%20mi%20negocio" class="btn-wa" target="_blank" rel="noopener">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 0 5.4 0 12c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.6A12 12 0 0 0 12 24c6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.5z" fill="rgba(126,174,197,0.6)"/>
-              <path d="M12 22c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-3.7.9.9-3.7-.2-.4A9.9 9.9 0 0 1 2 12C2 6.5 6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z" fill="rgba(126,174,197,0.15)"/>
-              <path d="M17.5 14.6c-.3-.1-1.7-.9-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.2-.5 0-.2-.7-1.7-1-2.3-.3-.6-.6-.5-.7-.5h-.6c-.2 0-.5.1-.8.4C8.4 7.6 7.5 8.5 7.5 10.4c0 1.9 1.4 3.7 1.6 4 .2.2 2.7 4.1 6.5 5.7 2.3.9 3.2.9 4.3.8.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.7.2-1.8-.1-.1-.3-.2-.6-.3z" fill="rgba(126,174,197,0.7)"/>
-            </svg>
+          <a href="https://wa.me/19546997514?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratuito%20para%20mi%20negocio"
+             class="btn-nav-wa" target="_blank" rel="noopener">
             WhatsApp
           </a>
         </li>
       </ul>
 
-      <a href="https://wa.me/19546997514?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratuito%20para%20mi%20negocio" class="btn-wa desktop-cta" target="_blank" rel="noopener" style="display:flex; align-items:center; gap:7px;">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 0 5.4 0 12c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.6A12 12 0 0 0 12 24c6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.5z" fill="rgba(126,174,197,0.6)"/>
-          <path d="M17.5 14.6c-.3-.1-1.7-.9-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.2-.5 0-.2-.7-1.7-1-2.3-.3-.6-.6-.5-.7-.5h-.6c-.2 0-.5.1-.8.4C8.4 7.6 7.5 8.5 7.5 10.4c0 1.9 1.4 3.7 1.6 4 .2.2 2.7 4.1 6.5 5.7 2.3.9 3.2.9 4.3.8.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.7.2-1.8-.1-.1-.3-.2-.6-.3z" fill="rgba(126,174,197,0.7)"/>
-        </svg>
+      <a href="https://wa.me/19546997514?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratuito%20para%20mi%20negocio"
+         class="btn-nav-wa desktop-cta" target="_blank" rel="noopener">
         WhatsApp
       </a>
 
       <button class="hamburger" onclick="toggleMenu()" aria-label="Abrir menú" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
   <!-- ═══════════════════════════════════════════════
-       SECCIÓN 2: HERO
+       HERO
   ═══════════════════════════════════════════════ -->
   <section class="hero" id="inicio">
     <div class="hero-overlay"></div>
     <div class="hero-inner">
-      <span class="badge badge-blue">Agencia de automatización IA · Katy, Texas</span>
+      <span class="badge badge-blue">Agencia de Automatización IA · Katy, Texas</span>
 
       <h1>
-        Menos tareas repetitivas.<br>Más tiempo para crecer.<br>
-        <span class="accent">Resultados en 72 horas.</span>
+        Menos tareas repetitivas.<br>
+        Más tiempo para crecer.<br>
+        Resultados en 72 horas.
       </h1>
 
       <p class="hero-subtitle">
-        Automatizamos los procesos operativos, administrativos y contables de tu PYME con IA.
-        Sin contratos largos. Sin complicaciones.
+        Automatizamos los procesos operativos, administrativos y contables de tu PYME
+        con Inteligencia Artificial. Sin contratos largos. Sin complicaciones técnicas.
       </p>
 
       <div class="hero-ctas">
-        <a href="https://wa.me/19546997514?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratuito%20para%20mi%20negocio" class="btn-primary" target="_blank" rel="noopener">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 0 5.4 0 12c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.6A12 12 0 0 0 12 24c6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.5z" fill="rgba(126,174,197,0.7)"/>
-            <path d="M17.5 14.6c-.3-.1-1.7-.9-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.2-.5 0-.2-.7-1.7-1-2.3-.3-.6-.6-.5-.7-.5h-.6c-.2 0-.5.1-.8.4C8.4 7.6 7.5 8.5 7.5 10.4c0 1.9 1.4 3.7 1.6 4 .2.2 2.7 4.1 6.5 5.7 2.3.9 3.2.9 4.3.8.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.7.2-1.8-.1-.1-.3-.2-.6-.3z" fill="rgba(126,174,197,0.9)"/>
-          </svg>
-          Diagnóstico gratis por WhatsApp
+        <a href="https://wa.me/19546997514?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratuito%20para%20mi%20negocio"
+           class="btn-primary" target="_blank" rel="noopener">
+          💬 Diagnóstico Gratis por WhatsApp
         </a>
         <a href="mailto:iromero0972@gmail.com" class="btn-outline">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <rect x="2" y="4" width="20" height="16" rx="2" stroke="rgba(200,210,220,0.35)" stroke-width="1.5"/>
-            <path d="M2 8l10 6 10-6" stroke="rgba(200,210,220,0.35)" stroke-width="1.5"/>
-          </svg>
-          Enviar email
+          ✉️ Enviar Email
         </a>
       </div>
 
       <div class="hero-stats">
         <div class="stat-item">
           <span class="stat-value">90%</span>
-          <span class="stat-label">Menos tareas</span>
+          <span class="stat-label">Reducción de tareas manuales</span>
         </div>
         <div class="stat-item">
           <span class="stat-value">72h</span>
-          <span class="stat-label">Primer workflow</span>
+          <span class="stat-label">Primer workflow activo</span>
         </div>
         <div class="stat-item">
           <span class="stat-value">100%</span>
-          <span class="stat-label">PYMEs Texas</span>
+          <span class="stat-label">Enfocado en PYMEs de Texas</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       SECCIÓN 3: CEO + SOBRE NOSOTROS
+       CEO + SOBRE NOSOTROS
   ═══════════════════════════════════════════════ -->
-  <section class="about-section" id="nosotros">
+  <section class="nosotros-section" id="nosotros">
     <div class="section-inner">
-      <div class="about-layout">
-        <div class="about-left">
-          <img src="assets/img/ceo-portrait.webp" alt="Ignacio Romero, CPA — Fundador de KATIA.ai" class="ceo-photo" loading="lazy">
+      <div class="nosotros-layout">
+        <div class="nosotros-left">
+          <img src="assets/img/ceo-portrait.webp"
+               alt="Ignacio Romero, CPA — Fundador y CEO de KATIA.ai"
+               class="ceo-photo" loading="lazy">
         </div>
-        <div class="about-right">
+        <div class="nosotros-right">
           <span class="badge badge-gold">Fundador y CEO</span>
           <h2 class="ceo-name">Ignacio Romero, CPA</h2>
           <p class="ceo-bio">
@@ -1079,6 +970,7 @@
           </p>
 
           <div class="about-card">
+            <p class="about-card-title">Sobre KATIA.ai</p>
             <p>
               Somos una agencia de automatización con IA en Katy, Texas, creada para servir
               a la comunidad latina de Houston. Hablamos tu idioma, entendemos tu negocio,
@@ -1092,161 +984,212 @@
             </div>
           </div>
 
-          <img src="assets/img/about-team.webp" alt="Equipo KATIA.ai en sesión de trabajo" class="about-team-img" loading="lazy">
+          <img src="assets/img/about-team.webp"
+               alt="Equipo KATIA.ai en sesión de trabajo"
+               class="about-team-img" loading="lazy">
         </div>
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       SECCIÓN 4: EL PROBLEMA
+       EL PROBLEMA
   ═══════════════════════════════════════════════ -->
   <section class="problema-section">
     <div class="section-inner">
-      <p class="section-label">El problema</p>
+      <span class="section-label">El Problema</span>
       <h2 class="section-h2">¿Te suena familiar?</h2>
       <p class="section-sub">
-        Cada día, miles de PYMEs en Houston pierden tiempo y dinero en tareas que una
-        automatización bien diseñada resolvería en minutos.
+        Los dueños de PYMEs pierden entre 15–25 horas semanales en tareas que la IA puede
+        hacer mejor, más rápido y sin errores.
       </p>
 
       <div class="grid-2x2">
         <div class="problem-card">
           <div class="problem-icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-              <rect x="8" y="4" width="16" height="24" rx="3" stroke="#7EAEC5" stroke-width="1.5"/>
-              <circle cx="16" cy="20" r="3" stroke="#7EAEC5" stroke-width="1.5"/>
-              <line x1="12" y1="9" x2="20" y2="9" stroke="#7EAEC5" stroke-width="1.5"/>
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <rect x="8" y="4" width="16" height="24" rx="3" stroke="#5B9BC4" stroke-width="1.5"/>
+              <circle cx="16" cy="20" r="3" stroke="#5B9BC4" stroke-width="1.5"/>
+              <line x1="12" y1="9" x2="20" y2="9" stroke="#5B9BC4" stroke-width="1.5"/>
             </svg>
           </div>
-          <h3>Pedidos perdidos</h3>
-          <p>Entre mensajes y WhatsApps</p>
+          <h3>Pedidos perdidos entre mensajes</h3>
+          <p>Anotas órdenes a mano, las pierdes entre WhatsApps y olvidas dar seguimiento a clientes importantes.</p>
         </div>
 
         <div class="problem-card">
           <div class="problem-icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-              <circle cx="16" cy="16" r="10" stroke="#7EAEC5" stroke-width="1.5"/>
-              <line x1="16" y1="10" x2="16" y2="22" stroke="#7EAEC5" stroke-width="1.5"/>
-              <line x1="10" y1="16" x2="22" y2="16" stroke="#7EAEC5" stroke-width="1.5"/>
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <circle cx="16" cy="16" r="10" stroke="#5B9BC4" stroke-width="1.5"/>
+              <line x1="16" y1="10" x2="16" y2="22" stroke="#5B9BC4" stroke-width="1.5"/>
+              <line x1="10" y1="16" x2="22" y2="16" stroke="#5B9BC4" stroke-width="1.5"/>
             </svg>
           </div>
-          <h3>Respuestas repetitivas</h3>
-          <p>Las mismas preguntas cada día</p>
+          <h3>Respuestas repetitivas infinitas</h3>
+          <p>Contestas las mismas preguntas de horarios, precios y disponibilidad una y otra vez, todos los días.</p>
         </div>
 
         <div class="problem-card">
           <div class="problem-icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-              <rect x="6" y="18" width="5" height="8" rx="1" stroke="#7EAEC5" stroke-width="1.5"/>
-              <rect x="13.5" y="12" width="5" height="14" rx="1" stroke="#7EAEC5" stroke-width="1.5"/>
-              <rect x="21" y="7" width="5" height="19" rx="1" stroke="#7EAEC5" stroke-width="1.5"/>
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <rect x="6" y="18" width="5" height="8" rx="1" stroke="#5B9BC4" stroke-width="1.5"/>
+              <rect x="13.5" y="12" width="5" height="14" rx="1" stroke="#5B9BC4" stroke-width="1.5"/>
+              <rect x="21" y="7" width="5" height="19" rx="1" stroke="#5B9BC4" stroke-width="1.5"/>
             </svg>
           </div>
-          <h3>Reportes atrasados</h3>
-          <p>Sin saber cuánto vendiste</p>
+          <h3>Reportes que nunca están listos</h3>
+          <p>Terminas el mes sin saber exactamente cuánto vendiste, cuánto debes, o cuál producto te da más margen.</p>
         </div>
 
         <div class="problem-card">
           <div class="problem-icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-              <circle cx="16" cy="16" r="10" stroke="#7EAEC5" stroke-width="1.5"/>
-              <path d="M16 16 Q20 10 24 14" stroke="#7EAEC5" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-              <circle cx="10" cy="14" r="2" stroke="#7EAEC5" stroke-width="1.2"/>
-              <circle cx="22" cy="20" r="2" stroke="#7EAEC5" stroke-width="1.2"/>
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <circle cx="16" cy="16" r="10" stroke="#5B9BC4" stroke-width="1.5"/>
+              <path d="M16 16 Q20 10 24 14" stroke="#5B9BC4" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <circle cx="10" cy="14" r="2" stroke="#5B9BC4" stroke-width="1.2"/>
+              <circle cx="22" cy="20" r="2" stroke="#5B9BC4" stroke-width="1.2"/>
             </svg>
           </div>
-          <h3>Redes abandonadas</h3>
-          <p>Sin tiempo para publicar</p>
+          <h3>Redes sociales abandonadas</h3>
+          <p>Sabes que debes publicar, pero nunca tienes tiempo ni energía para crear contenido consistente.</p>
         </div>
       </div>
 
-      <p class="problema-close">KATIA.ai lo resuelve</p>
+      <p class="problema-close">KATIA.ai lo resuelve con IA</p>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       SECCIÓN 5: SERVICIOS
+       SERVICIOS
   ═══════════════════════════════════════════════ -->
   <section class="servicios-section" id="servicios">
     <div class="section-inner">
-      <p class="section-label">Nuestros servicios</p>
+      <span class="section-label">Nuestros Servicios</span>
       <h2 class="section-h2">Lo que automatizamos para tu negocio</h2>
+      <p class="section-sub">
+        No vendemos software genérico. Diseñamos, construimos y mantenemos flujos
+        de automatización personalizados para tu negocio.
+      </p>
 
       <div class="grid-2x3">
-        <div class="svc-card" style="border-left-color: rgba(126,174,197,0.35);">
+        <!-- 01 -->
+        <div class="svc-card" style="border-left-color: #5B9BC4;">
           <div class="svc-header">
-            <img src="assets/img/svc-workflow.webp" alt="Pedidos y operaciones" class="svc-img" loading="lazy">
-            <span class="svc-num" style="color: rgba(126,174,197,0.55);">01</span>
+            <img src="assets/img/svc-workflow.webp" alt="Automatización de Pedidos" class="svc-img" loading="lazy">
+            <span class="svc-num" style="color: #5B9BC4;">01</span>
           </div>
-          <h3>Pedidos y operaciones</h3>
-          <p>Formulario 24/7, confirmaciones automáticas, dashboard de administración y alertas en tiempo real.</p>
+          <h3>Automatización de Pedidos</h3>
+          <p>Captura órdenes 24/7 desde cualquier canal, envía confirmaciones automáticas y notifica a tu equipo en tiempo real.</p>
+          <div class="svc-features">
+            <span class="svc-feat">Formulario web multicanal</span>
+            <span class="svc-feat">Confirmación automática</span>
+            <span class="svc-feat">Dashboard admin</span>
+            <span class="svc-feat">Alertas en tiempo real</span>
+          </div>
         </div>
 
-        <div class="svc-card" style="border-left-color: rgba(126,174,197,0.25);">
+        <!-- 02 -->
+        <div class="svc-card" style="border-left-color: #7AB4D6;">
           <div class="svc-header">
-            <img src="assets/img/svc-code.webp" alt="Asistentes virtuales IA" class="svc-img" loading="lazy">
-            <span class="svc-num" style="color: rgba(126,174,197,0.45);">02</span>
+            <img src="assets/img/svc-code.webp" alt="Asistentes Virtuales IA" class="svc-img" loading="lazy">
+            <span class="svc-num" style="color: #7AB4D6;">02</span>
           </div>
-          <h3>Asistentes virtuales IA</h3>
-          <p>Chatbot inteligente, FAQs automatizadas, lead scoring y agenda de citas 24/7 sin intervención humana.</p>
+          <h3>Asistentes Virtuales IA</h3>
+          <p>Un chatbot entrenado con la información de tu negocio responde preguntas, califica prospectos y agenda citas 24/7.</p>
+          <div class="svc-features">
+            <span class="svc-feat">Responde FAQs</span>
+            <span class="svc-feat">Califica leads</span>
+            <span class="svc-feat">Agenda citas</span>
+            <span class="svc-feat">Escalada a humano</span>
+          </div>
         </div>
 
-        <div class="svc-card" style="border-left-color: rgba(180,168,140,0.3);">
+        <!-- 03 -->
+        <div class="svc-card" style="border-left-color: #C4A55A;">
           <div class="svc-header">
-            <img src="assets/img/svc-neural.webp" alt="Contabilidad y finanzas" class="svc-img" loading="lazy">
-            <span class="svc-num" style="color: rgba(180,168,140,0.5);">03</span>
+            <img src="assets/img/svc-neural.webp" alt="Automatización Contable" class="svc-img" loading="lazy">
+            <span class="svc-num" style="color: #C4A55A;">03</span>
           </div>
-          <h3>Contabilidad y finanzas</h3>
-          <p>Reportes automáticos, alertas de márgenes, integración QuickBooks y dashboard financiero en tiempo real.</p>
+          <h3>Automatización Contable</h3>
+          <p>Con más de 30 años como CPA entendemos tus números. Automatizamos reportes financieros y alertas de desempeño.</p>
+          <div class="svc-features">
+            <span class="svc-feat">Reporte semanal automático</span>
+            <span class="svc-feat">Alertas de márgenes</span>
+            <span class="svc-feat">QuickBooks / Google Sheets</span>
+            <span class="svc-feat">Dashboard financiero</span>
+          </div>
         </div>
 
-        <div class="svc-card" style="border-left-color: rgba(150,175,150,0.3);">
+        <!-- 04 -->
+        <div class="svc-card" style="border-left-color: #6AAF8B;">
           <div class="svc-header">
-            <img src="assets/img/svc-robotics.webp" alt="Social media con IA" class="svc-img" loading="lazy">
-            <span class="svc-num" style="color: rgba(150,175,150,0.5);">04</span>
+            <img src="assets/img/svc-robotics.webp" alt="Social Media con IA" class="svc-img" loading="lazy">
+            <span class="svc-num" style="color: #6AAF8B;">04</span>
           </div>
-          <h3>Social media con IA</h3>
-          <p>3–5 posts semanales con imágenes generadas por IA, captions optimizados y programación automática.</p>
+          <h3>Social Media con IA</h3>
+          <p>Generamos contenido de Instagram y Facebook personalizado para tu negocio usando IA, listo para publicar cada semana.</p>
+          <div class="svc-features">
+            <span class="svc-feat">3–5 posts semanales</span>
+            <span class="svc-feat">Adaptado a tu marca</span>
+            <span class="svc-feat">Imágenes + captions + hashtags</span>
+            <span class="svc-feat">Programación automática</span>
+          </div>
         </div>
 
-        <div class="svc-card" style="border-left-color: rgba(165,150,180,0.3);">
+        <!-- 05 -->
+        <div class="svc-card" style="border-left-color: #9B8EC4;">
           <div class="svc-header">
-            <img src="assets/img/svc-device.webp" alt="Email automation" class="svc-img" loading="lazy">
-            <span class="svc-num" style="color: rgba(165,150,180,0.5);">05</span>
+            <img src="assets/img/svc-device.webp" alt="Email Automation" class="svc-img" loading="lazy">
+            <span class="svc-num" style="color: #9B8EC4;">05</span>
           </div>
-          <h3>Email automation</h3>
-          <p>Secuencias de seguimiento, recordatorios automáticos y campañas de email segmentadas por comportamiento.</p>
+          <h3>Email Automation</h3>
+          <p>Secuencias de seguimiento, confirmaciones y recordatorios automáticos que mantienen a tus clientes informados.</p>
+          <div class="svc-features">
+            <span class="svc-feat">Secuencias de bienvenida</span>
+            <span class="svc-feat">Seguimiento automático</span>
+            <span class="svc-feat">Recordatorios</span>
+            <span class="svc-feat">Campañas segmentadas</span>
+          </div>
         </div>
 
-        <div class="svc-card" style="border-left-color: rgba(180,155,140,0.3);">
+        <!-- 06 -->
+        <div class="svc-card" style="border-left-color: #C49B7A;">
           <div class="svc-header">
-            <img src="assets/img/svc-dashboard.webp" alt="Integraciones a medida" class="svc-img" loading="lazy">
-            <span class="svc-num" style="color: rgba(180,155,140,0.5);">06</span>
+            <img src="assets/img/svc-dashboard.webp" alt="Integraciones a Medida" class="svc-img" loading="lazy">
+            <span class="svc-num" style="color: #C49B7A;">06</span>
           </div>
-          <h3>Integraciones a medida</h3>
-          <p>Google Sheets, QuickBooks, CRM, Stripe, calendarios y cualquier herramienta que ya uses en tu negocio.</p>
+          <h3>Integraciones a Medida</h3>
+          <p>Conectamos todas tus herramientas para que la información fluya sin intervención manual.</p>
+          <div class="svc-features">
+            <span class="svc-feat">Google Sheets</span>
+            <span class="svc-feat">QuickBooks</span>
+            <span class="svc-feat">CRM</span>
+            <span class="svc-feat">Stripe</span>
+            <span class="svc-feat">Calendarios</span>
+          </div>
         </div>
       </div>
 
       <div class="servicios-cta">
-        <a href="https://wa.me/19546997514?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratuito%20para%20mi%20negocio" class="btn-primary" target="_blank" rel="noopener">
-          Agenda tu diagnóstico gratis
+        <a href="https://wa.me/19546997514?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratuito%20para%20mi%20negocio"
+           class="btn-primary" target="_blank" rel="noopener">
+          💬 Agenda tu Diagnóstico Gratis
         </a>
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       SECCIÓN 6: PROCESO
+       PROCESO
   ═══════════════════════════════════════════════ -->
   <section class="proceso-section" id="proceso">
     <div class="proceso-bg" aria-hidden="true"></div>
     <div class="section-inner proceso-inner">
-      <p class="section-label">Cómo trabajamos</p>
+      <span class="section-label">Cómo Trabajamos</span>
       <h2 class="section-h2">De idea a automatización en 4 pasos</h2>
-      <p class="section-sub" style="margin-bottom: 56px;">
-        Un proceso claro, sin improvisación. Sabes exactamente qué pasa en cada etapa.
+      <p class="section-sub" style="margin-bottom: 60px;">
+        Metodología probada, sin improvisación. Cada proyecto sigue 4 pilares obligatorios
+        antes de ir a producción.
       </p>
 
       <div class="steps-row">
@@ -1256,7 +1199,7 @@
           <div class="step-circle">1</div>
           <div>
             <h3>Diagnóstico</h3>
-            <p>Mapeo de procesos</p>
+            <p>Mapeamos tus procesos actuales e identificamos qué automatizar primero para el mayor impacto.</p>
           </div>
         </div>
 
@@ -1264,23 +1207,23 @@
           <div class="step-circle">2</div>
           <div>
             <h3>Diseño</h3>
-            <p>Flujo + rollback</p>
+            <p>Diseñamos el flujo completo antes de construir. Sin sorpresas. Plan de rollback incluido.</p>
           </div>
         </div>
 
         <div class="step">
           <div class="step-circle">3</div>
           <div>
-            <h3>Build + test</h3>
-            <p>Demo antes de lanzar</p>
+            <h3>Build &amp; Testing</h3>
+            <p>Construimos en ambiente de pruebas, testeamos casos extremos y hacemos demo contigo.</p>
           </div>
         </div>
 
         <div class="step">
           <div class="step-circle">4</div>
           <div>
-            <h3>Go-live</h3>
-            <p>Soporte continuo</p>
+            <h3>Lanzamiento + Soporte</h3>
+            <p>Go-live supervisado, capacitación a tu equipo y soporte continuo mensual.</p>
           </div>
         </div>
       </div>
@@ -1288,17 +1231,16 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       SECCIÓN 7: CASO DE ÉXITO
+       CASO DE ÉXITO
   ═══════════════════════════════════════════════ -->
   <section class="caso-section" id="caso">
     <div class="section-inner">
-      <span class="badge badge-gold">Caso de éxito · Katy, TX</span>
-      <div class="caso-layout" style="margin-top: 24px;">
+      <span class="badge badge-gold">Caso de Éxito Real · Katy, TX</span>
+
+      <div class="caso-layout">
         <div>
-          <h2 class="section-h2">Andy's Bakery</h2>
-          <p style="font-size: 1rem; color: var(--text-secondary); margin-bottom: 14px;">
-            De pedidos en papel a 100% automatizado
-          </p>
+          <h2 class="section-h2" style="margin-bottom: 8px;">Andy's Bakery</h2>
+          <p class="caso-h3">De pedidos en papel a operación 100% automatizada</p>
           <p class="caso-desc">
             Transformamos una pastelería artesanal en un negocio digital-first: pedidos online
             con confirmaciones automáticas, dashboard de administración con PIN de acceso,
@@ -1307,62 +1249,63 @@
           <div class="caso-stats">
             <div class="caso-stat">
               <span class="caso-stat-value">100%</span>
-              <span class="caso-stat-label">Digital</span>
+              <span class="caso-stat-label">Pedidos capturados digitalmente</span>
             </div>
             <div class="caso-stat">
               <span class="caso-stat-value">0</span>
-              <span class="caso-stat-label">Perdidas</span>
+              <span class="caso-stat-label">Órdenes perdidas</span>
             </div>
             <div class="caso-stat">
               <span class="caso-stat-value">3</span>
-              <span class="caso-stat-label">Workflows</span>
+              <span class="caso-stat-label">Workflows activos</span>
             </div>
             <div class="caso-stat">
               <span class="caso-stat-value">72h</span>
-              <span class="caso-stat-label">Go-live</span>
+              <span class="caso-stat-label">De concepto a go-live</span>
             </div>
           </div>
         </div>
         <div>
-          <img src="assets/img/team-videocall.webp" alt="Trabajo en equipo caso Andy's Bakery" class="caso-img" loading="lazy">
+          <img src="assets/img/team-videocall.webp"
+               alt="Trabajo en equipo — caso Andy's Bakery"
+               class="caso-img" loading="lazy">
         </div>
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       SECCIÓN 8: POR QUÉ NOSOTROS
+       POR QUÉ NOSOTROS
   ═══════════════════════════════════════════════ -->
   <section class="porque-section">
     <div class="section-inner">
-      <p class="section-label">Por qué KATIA.ai</p>
+      <span class="section-label">Por Qué KATIA.ai</span>
       <h2 class="section-h2">Trabajamos diferente</h2>
       <p class="section-sub">
-        No somos una agencia genérica. Entendemos los números, los procesos y la cultura
-        de la comunidad latina en Texas.
+        No somos freelancers genéricos. Somos una agencia especializada con metodología
+        probada y más de 30 años de experiencia.
       </p>
 
       <div class="porque-layout">
         <div class="porque-image-wrap">
-          <img src="assets/img/brand-card.webp" alt="KATIA.ai branding" class="porque-img" loading="lazy">
+          <img src="assets/img/brand-card.webp" alt="KATIA.ai — identidad de marca" class="porque-img" loading="lazy">
         </div>
-
         <div class="porque-cards">
           <div class="porque-card">
-            <h3>30+ años CPA</h3>
-            <p>Números, procesos, riesgos</p>
+            <h3>30+ Años como CPA</h3>
+            <p>Entendemos tus números, tus procesos y tus riesgos — no solo el código.</p>
           </div>
           <div class="porque-card">
-            <h3>4 pilares</h3>
-            <p>Cero improvisación</p>
+            <h3>Metodología de 4 Pilares</h3>
+            <p>Cero improvisación. Investigación, diseño, testing y retroalimentación obligatoria.</p>
           </div>
           <div class="porque-card">
             <h3>Local en Texas</h3>
-            <p>Tu idioma, tu cultura</p>
+            <p>Basados en Katy, TX. Trabajamos con negocios que hablan tu idioma — literal y de negocios.</p>
           </div>
           <div class="porque-card">
-            <h3>Resultados 72h</h3>
-            <p>Sin meses de espera</p>
+            <h3>Resultados en 72 Horas</h3>
+            <p>Tu primer workflow activo en 3 días. Sin meses de implementación.</p>
           </div>
         </div>
       </div>
@@ -1370,67 +1313,63 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       SECCIÓN 9: CTA FINAL
+       CTA FINAL
   ═══════════════════════════════════════════════ -->
   <section class="cta-section">
     <div class="cta-bg" aria-hidden="true"></div>
     <div class="section-inner">
       <div class="cta-inner">
-        <h2>¿Cuántas horas pierdes esta semana?</h2>
-        <p class="section-sub">Diagnóstico gratuito 30 min · Sin costo · Sin compromiso</p>
+        <h2>¿Cuántas horas estás perdiendo esta semana?</h2>
+        <p class="section-sub">
+          Agenda una llamada de diagnóstico gratuita de 30 minutos. Identificamos qué
+          automatizar primero y te damos un plan de acción — sin costo ni compromiso.
+        </p>
         <div class="cta-buttons">
-          <a href="https://wa.me/19546997514?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratuito%20para%20mi%20negocio" class="btn-primary" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 0 5.4 0 12c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.6A12 12 0 0 0 12 24c6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.5z" fill="rgba(126,174,197,0.7)"/>
-              <path d="M17.5 14.6c-.3-.1-1.7-.9-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.2-.5 0-.2-.7-1.7-1-2.3-.3-.6-.6-.5-.7-.5h-.6c-.2 0-.5.1-.8.4C8.4 7.6 7.5 8.5 7.5 10.4c0 1.9 1.4 3.7 1.6 4 .2.2 2.7 4.1 6.5 5.7 2.3.9 3.2.9 4.3.8.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.7.2-1.8-.1-.1-.3-.2-.6-.3z" fill="rgba(126,174,197,0.9)"/>
-            </svg>
-            WhatsApp
+          <a href="https://wa.me/19546997514?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratuito%20para%20mi%20negocio"
+             class="btn-primary" target="_blank" rel="noopener">
+            💬 Escribir por WhatsApp
           </a>
           <a href="mailto:iromero0972@gmail.com" class="btn-outline">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <rect x="2" y="4" width="20" height="16" rx="2" stroke="rgba(200,210,220,0.35)" stroke-width="1.5"/>
-              <path d="M2 8l10 6 10-6" stroke="rgba(200,210,220,0.35)" stroke-width="1.5"/>
-            </svg>
-            Email
+            ✉️ iromero0972@gmail.com
           </a>
         </div>
-        <p class="cta-note">Katy, Texas · Respuesta en menos de 24h</p>
+        <p class="cta-note">📍 Katy, Texas · Respuesta en menos de 24 horas</p>
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       SECCIÓN 10: FOOTER
+       FOOTER
   ═══════════════════════════════════════════════ -->
   <footer>
     <div class="footer-inner">
       <div class="footer-left">
         <a href="#" class="footer-logo" aria-label="KATIA.ai inicio">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <circle cx="6" cy="12" r="2.2" fill="#7EAEC5"/>
-            <circle cx="18" cy="6" r="2.2" fill="#7EAEC5"/>
-            <circle cx="18" cy="18" r="2.2" fill="#7EAEC5"/>
-            <line x1="8" y1="11.2" x2="16" y2="7" stroke="#7EAEC5" stroke-width="1"/>
-            <line x1="8" y1="12.8" x2="16" y2="17" stroke="#7EAEC5" stroke-width="1"/>
+            <circle cx="6" cy="12" r="2.2" fill="#5B9BC4"/>
+            <circle cx="18" cy="6" r="2.2" fill="#5B9BC4"/>
+            <circle cx="18" cy="18" r="2.2" fill="#5B9BC4"/>
+            <line x1="8" y1="11.2" x2="16" y2="7" stroke="#5B9BC4" stroke-width="1.2"/>
+            <line x1="8" y1="12.8" x2="16" y2="17" stroke="#5B9BC4" stroke-width="1.2"/>
           </svg>
           <span class="nav-logo-text"><span class="katia">KATIA</span><span class="ai">.ai</span></span>
         </a>
-        <p class="footer-tagline">AI Automation Agency · Katy, Texas</p>
-        <p class="footer-copyright">© 2026 KATIA.ai LLC · Todos los derechos reservados</p>
+        <p class="footer-tagline">Agencia de Automatización IA · Katy, Texas</p>
+        <p class="footer-copy">© 2026 KATIA.ai LLC · Todos los derechos reservados</p>
       </div>
 
-      <nav class="footer-links" aria-label="Footer navigation">
+      <nav class="footer-links" aria-label="Footer">
         <a href="#servicios">Servicios</a>
         <a href="#proceso">Proceso</a>
         <a href="#caso">Caso de Éxito</a>
         <a href="mailto:iromero0972@gmail.com">Email</a>
-        <a href="https://wa.me/19546997514?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratuito%20para%20mi%20negocio" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://wa.me/19546997514?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratuito%20para%20mi%20negocio"
+           target="_blank" rel="noopener">WhatsApp</a>
       </nav>
     </div>
   </footer>
 
   <script>
-    // 1. Mobile menu toggle
     function toggleMenu() {
       var nav = document.getElementById('navLinks');
       var btn = document.querySelector('.hamburger');
@@ -1438,7 +1377,6 @@
       btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     }
 
-    // Close menu when clicking a link
     document.querySelectorAll('#navLinks a').forEach(function(link) {
       link.addEventListener('click', function() {
         document.getElementById('navLinks').classList.remove('active');
@@ -1446,14 +1384,11 @@
       });
     });
 
-    // 2. Navbar background on scroll
     window.addEventListener('scroll', function() {
       var nav = document.querySelector('.navbar');
-      if (window.scrollY > 50) {
-        nav.style.background = 'rgba(16,24,32,0.95)';
-      } else {
-        nav.style.background = 'rgba(16,24,32,0.9)';
-      }
+      nav.style.background = window.scrollY > 50
+        ? 'rgba(12,22,36,0.98)'
+        : 'rgba(12,22,36,0.92)';
     });
   </script>
 </body>
