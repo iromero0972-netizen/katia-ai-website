@@ -193,6 +193,9 @@
       justify-content: center;
       overflow: hidden;
       background-color: var(--bg-dark);
+      background-image: url('assets/img/hero-lobby.webp');
+      background-size: cover;
+      background-position: center;
     }
 
     .hero-video {
@@ -458,11 +461,26 @@
       margin-bottom: 0;
     }
 
+    .svc-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .svc-thumb {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
     .svc-num {
       display: block;
       font-size: 0.85rem;
       font-weight: 600;
-      margin-bottom: 12px;
+      margin-bottom: 0;
     }
 
     .svc-card h3 {
@@ -479,6 +497,23 @@
     /* ─── PROCESO ─── */
     .proceso-section {
       background: var(--bg-section);
+      position: relative;
+    }
+
+    .proceso-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/img/team-whiteboard.webp');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.06;
+      z-index: 0;
+    }
+
+    .proceso-section .section-inner {
+      position: relative;
+      z-index: 1;
     }
 
     .proceso-steps {
@@ -758,6 +793,7 @@
   ═══════════════════════════════════════════════ -->
   <section class="hero" id="inicio">
     <video autoplay muted loop playsinline class="hero-video">
+      <source src="assets/img/video-katia-team.mp4" type="video/mp4">
       <source src="assets/img/video-hero-robot.mp4" type="video/mp4">
     </video>
     <div class="hero-overlay"></div>
@@ -858,37 +894,55 @@
 
       <div class="svc-grid">
         <div class="svc-card svc-card-01">
-          <span class="svc-num">01</span>
+          <div class="svc-header">
+            <img src="assets/img/svc-workflow.webp" alt="" class="svc-thumb" loading="lazy">
+            <span class="svc-num">01</span>
+          </div>
           <h3>Automatización de Pedidos</h3>
           <p>Formulario web 24/7, confirmaciones automáticas, dashboard admin y alertas en tiempo real.</p>
         </div>
 
         <div class="svc-card svc-card-02">
-          <span class="svc-num">02</span>
+          <div class="svc-header">
+            <img src="assets/img/svc-code.webp" alt="" class="svc-thumb" loading="lazy">
+            <span class="svc-num">02</span>
+          </div>
           <h3>Asistentes Virtuales IA</h3>
           <p>Chatbot entrenado en tu negocio. Responde FAQs, califica leads y agenda citas 24/7.</p>
         </div>
 
         <div class="svc-card svc-card-03">
-          <span class="svc-num">03</span>
+          <div class="svc-header">
+            <img src="assets/img/svc-neural.webp" alt="" class="svc-thumb" loading="lazy">
+            <span class="svc-num">03</span>
+          </div>
           <h3>Contabilidad y Finanzas</h3>
           <p>Reportes semanales automáticos, alertas de márgenes, exportación a QuickBooks y dashboard financiero.</p>
         </div>
 
         <div class="svc-card svc-card-04">
-          <span class="svc-num">04</span>
+          <div class="svc-header">
+            <img src="assets/img/svc-robotics.webp" alt="" class="svc-thumb" loading="lazy">
+            <span class="svc-num">04</span>
+          </div>
           <h3>Social Media con IA</h3>
           <p>3-5 posts semanales con imágenes, captions y hashtags. Programación automática.</p>
         </div>
 
         <div class="svc-card svc-card-05">
-          <span class="svc-num">05</span>
+          <div class="svc-header">
+            <img src="assets/img/svc-device.webp" alt="" class="svc-thumb" loading="lazy">
+            <span class="svc-num">05</span>
+          </div>
           <h3>Email Automation</h3>
           <p>Secuencias de seguimiento, confirmaciones, recordatorios y campañas automáticas.</p>
         </div>
 
         <div class="svc-card svc-card-06">
-          <span class="svc-num">06</span>
+          <div class="svc-header">
+            <img src="assets/img/svc-dashboard.webp" alt="" class="svc-thumb" loading="lazy">
+            <span class="svc-num">06</span>
+          </div>
           <h3>Integraciones a Medida</h3>
           <p>Conectamos Google Sheets, QuickBooks, CRM, Stripe y calendarios sin intervención manual.</p>
         </div>
