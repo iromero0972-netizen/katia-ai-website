@@ -640,6 +640,8 @@ footer {
   .case-wrap { grid-template-columns: 1fr; gap: 2.5rem; padding: 2.5rem; }
   .why-grid { grid-template-columns: repeat(2,1fr); }
   .hero-metrics { gap: 2rem; }
+  #services div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  #services div[style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr !important; }
 }
 
 @media (max-width: 560px) {
@@ -756,78 +758,118 @@ footer {
 </section>
 
 <!-- ── SERVICES ── -->
-<section id="services" class="z1">
-  <div class="container">
-    <div class="services-header reveal">
-      <span class="section-tag">What We Build</span>
-      <div class="gold-line" style="margin: 0 auto 1rem;"></div>
-      <h2 class="section-h2">Automation that generates real results</h2>
-      <p class="section-desc">We don't sell generic software. We design, build, and maintain custom automation flows for your specific business.</p>
-    </div>
-    <div class="services-grid">
+<!-- SERVICIOS ESTRELLA -->
+<section class="bg-alt" id="services" style="padding:100px 0">
+<div style="max-width:1200px;margin:0 auto;padding:0 24px">
 
-      <div class="svc-card reveal reveal-d1">
-        <span class="svc-num">01</span>
-        <div class="svc-icon">
-          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/><line x1="7" y1="6" x2="7" y2="18"/></svg>
-        </div>
-        <h3>Order & Operations Automation</h3>
-        <p>Capture orders 24/7 from any channel, send automatic confirmations, and notify your team in real time — without touching paper.</p>
-        <ul class="svc-list">
-          <li>Web form + multichannel integration</li>
-          <li>Automatic customer confirmation</li>
-          <li>Real-time admin dashboard</li>
-          <li>New and pending order alerts</li>
-        </ul>
-      </div>
+<div style="text-align:center;max-width:700px;margin:0 auto 56px" class="reveal">
+<p style="font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#C9A84C;margin-bottom:12px">Nuestros Servicios</p>
+<h2 style="font-family:'Syne',sans-serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;color:#F0F4F8;line-height:1.1">Hacemos crecer tu negocio desde el primer día</h2>
+<p style="color:#B8C5D3;margin-top:14px">Tu presencia digital y tu contenido en redes son lo primero que ven tus clientes. Nosotros los construimos con IA — y después automatizamos todo lo demás.</p>
+</div>
 
-      <div class="svc-card reveal reveal-d2">
-        <span class="svc-num">02</span>
-        <div class="svc-icon">
-          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-        </div>
-        <h3>AI Virtual Assistants</h3>
-        <p>A chatbot trained on your business information answers questions, qualifies prospects, and books appointments — 24 hours, 7 days a week.</p>
-        <ul class="svc-list">
-          <li>Automatic FAQ responses</li>
-          <li>Lead qualification before passing to you</li>
-          <li>Calendar appointment booking</li>
-          <li>Smart escalation to human when needed</li>
-        </ul>
-      </div>
+<!-- 2 SERVICIOS GANCHO -->
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:56px">
 
-      <div class="svc-card reveal reveal-d1">
-        <span class="svc-num">03</span>
-        <div class="svc-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-        </div>
-        <h3>Accounting & Finance Automation</h3>
-        <p>With 30+ years as a CPA, we understand your numbers. We automate data capture, financial reports, and key performance alerts.</p>
-        <ul class="svc-list">
-          <li>Automatic weekly sales reports</li>
-          <li>Margin, cost, and cash flow alerts</li>
-          <li>QuickBooks / Google Sheets export</li>
-          <li>Real-time financial dashboard</li>
-        </ul>
-      </div>
+<div class="reveal" style="background:rgba(232,164,46,0.04);border:1px solid rgba(255,255,255,0.07);border-left:4px solid #E8A42E;padding:36px 32px;border-radius:0 12px 12px 0;transition:.35s ease" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+<span style="display:inline-block;padding:4px 12px;border-radius:25px;font-size:.75rem;font-weight:600;background:rgba(232,164,46,0.12);color:#E8A42E;margin-bottom:12px">SERVICIO ESTRELLA</span>
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+<img src="assets/img/laptop-workflow.jpg" alt="Diseño web" style="width:52px;height:52px;border-radius:10px;object-fit:cover" loading="lazy">
+<span style="font-size:.82rem;font-weight:600;color:#E8A42E">01</span>
+</div>
+<h3 style="font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:600;color:#F0F4F8;margin-bottom:10px">Diseño y Construcción de Páginas Web a la Medida</h3>
+<p style="font-size:.95rem;color:#B8C5D3;line-height:1.7">Creamos la página web de tu negocio desde cero — moderna, rápida y optimizada para convertir visitantes en clientes. Diseño personalizado que refleja tu marca, con formularios de contacto, integración con WhatsApp y SEO para que te encuentren en Google. No usamos plantillas genéricas: cada sitio es único.</p>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+<span style="display:inline-block;padding:6px 14px;border-radius:25px;font-size:.8rem;background:rgba(255,255,255,0.045);color:#B8C5D3">Diseño personalizado</span>
+<span style="display:inline-block;padding:6px 14px;border-radius:25px;font-size:.8rem;background:rgba(255,255,255,0.045);color:#B8C5D3">Mobile responsive</span>
+<span style="display:inline-block;padding:6px 14px;border-radius:25px;font-size:.8rem;background:rgba(255,255,255,0.045);color:#B8C5D3">SEO optimizado</span>
+<span style="display:inline-block;padding:6px 14px;border-radius:25px;font-size:.8rem;background:rgba(255,255,255,0.045);color:#B8C5D3">WhatsApp integrado</span>
+</div>
+</div>
 
-      <div class="svc-card reveal reveal-d2">
-        <span class="svc-num">04</span>
-        <div class="svc-icon">
-          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-        </div>
-        <h3>AI Social Media</h3>
-        <p>We generate personalized Instagram and Facebook content for your business using AI — ready to publish, every week, without you lifting a finger.</p>
-        <ul class="svc-list">
-          <li>3–5 posts generated automatically per week</li>
-          <li>Adapted to your brand, voice, and audience</li>
-          <li>Images + captions + hashtags included</li>
-          <li>Automatic post scheduling</li>
-        </ul>
-      </div>
+<div class="reveal" style="background:rgba(91,175,122,0.04);border:1px solid rgba(255,255,255,0.07);border-left:4px solid #5BAF7A;padding:36px 32px;border-radius:0 12px 12px 0;transition:.35s ease" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+<span style="display:inline-block;padding:4px 12px;border-radius:25px;font-size:.75rem;font-weight:600;background:rgba(91,175,122,0.12);color:#5BAF7A;margin-bottom:12px">SERVICIO ESTRELLA</span>
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+<img src="assets/img/office-big.jpg" alt="Contenido redes sociales" style="width:52px;height:52px;border-radius:10px;object-fit:cover" loading="lazy">
+<span style="font-size:.82rem;font-weight:600;color:#5BAF7A">02</span>
+</div>
+<h3 style="font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:600;color:#F0F4F8;margin-bottom:10px">Generación Automática de Contenido en Redes Sociales</h3>
+<p style="font-size:.95rem;color:#B8C5D3;line-height:1.7">La IA genera contenido personalizado para tu Instagram y Facebook cada semana — imágenes, captions, hashtags y programación automática. Tú apruebas, nosotros publicamos. Tu marca siempre activa, siempre visible, sin que inviertas ni una hora de tu tiempo.</p>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+<span style="display:inline-block;padding:6px 14px;border-radius:25px;font-size:.8rem;background:rgba(255,255,255,0.045);color:#B8C5D3">3-5 posts semanales</span>
+<span style="display:inline-block;padding:6px 14px;border-radius:25px;font-size:.8rem;background:rgba(255,255,255,0.045);color:#B8C5D3">Imágenes + captions</span>
+<span style="display:inline-block;padding:6px 14px;border-radius:25px;font-size:.8rem;background:rgba(255,255,255,0.045);color:#B8C5D3">Programación auto</span>
+<span style="display:inline-block;padding:6px 14px;border-radius:25px;font-size:.8rem;background:rgba(255,255,255,0.045);color:#B8C5D3">Tu marca, tu voz</span>
+</div>
+</div>
 
-    </div>
-  </div>
+</div>
+
+<!-- TRANSICIÓN AL CORE -->
+<div style="text-align:center;margin-bottom:40px" class="reveal">
+<p style="font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#C9A84C;margin-bottom:8px">Y cuando estés listo, automatizamos el corazón de tu negocio</p>
+<h3 style="font-family:'Syne',sans-serif;color:#F0F4F8;font-size:1.5rem;font-weight:600">Automatización de Procesos Operativos, Contables y Administrativos</h3>
+</div>
+
+<!-- 6 SERVICIOS CORE -->
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+
+<div class="svc-card reveal" style="background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.07);border-left:4px solid #4A9ED6;padding:28px;border-radius:0 12px 12px 0;transition:.35s ease;position:relative;cursor:default" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='rgba(74,158,214,0.3)'" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='rgba(255,255,255,0.07)'">
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+<img src="assets/img/booth-expo.jpg" alt="Pedidos" style="width:52px;height:52px;border-radius:10px;object-fit:cover" loading="lazy">
+<span style="font-size:.82rem;font-weight:600;color:#4A9ED6">03</span>
+</div>
+<h3 style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:600;color:#F0F4F8;margin-bottom:8px">Automatización de Pedidos</h3>
+<p style="font-size:.95rem;color:#B8C5D3">Formulario web 24/7, confirmaciones automáticas, dashboard admin y alertas en tiempo real.</p>
+</div>
+
+<div class="svc-card reveal" style="background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.07);border-left:4px solid #6BB5E4;padding:28px;border-radius:0 12px 12px 0;transition:.35s ease;position:relative;cursor:default" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+<img src="assets/img/neural-art.jpg" alt="Chatbot" style="width:52px;height:52px;border-radius:10px;object-fit:cover" loading="lazy">
+<span style="font-size:.82rem;font-weight:600;color:#6BB5E4">04</span>
+</div>
+<h3 style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:600;color:#F0F4F8;margin-bottom:8px">Asistentes Virtuales IA</h3>
+<p style="font-size:.95rem;color:#B8C5D3">Chatbot entrenado en tu negocio. Responde FAQs, califica leads y agenda citas 24/7.</p>
+</div>
+
+<div class="svc-card reveal" style="background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.07);border-left:4px solid #C9A84C;padding:28px;border-radius:0 12px 12px 0;transition:.35s ease;position:relative;cursor:default" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+<img src="assets/img/logo-paper.jpg" alt="Finanzas" style="width:52px;height:52px;border-radius:10px;object-fit:cover" loading="lazy">
+<span style="font-size:.82rem;font-weight:600;color:#C9A84C">05</span>
+</div>
+<h3 style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:600;color:#F0F4F8;margin-bottom:8px">Contabilidad y Finanzas</h3>
+<p style="font-size:.95rem;color:#B8C5D3">Reportes semanales automáticos, alertas de márgenes, exportación a QuickBooks y dashboard financiero.</p>
+</div>
+
+<div class="svc-card reveal" style="background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.07);border-left:4px solid #9B85C4;padding:28px;border-radius:0 12px 12px 0;transition:.35s ease;position:relative;cursor:default" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+<img src="assets/img/server-rack.jpg" alt="Email" style="width:52px;height:52px;border-radius:10px;object-fit:cover" loading="lazy">
+<span style="font-size:.82rem;font-weight:600;color:#9B85C4">06</span>
+</div>
+<h3 style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:600;color:#F0F4F8;margin-bottom:8px">Email Automation</h3>
+<p style="font-size:.95rem;color:#B8C5D3">Secuencias de seguimiento, confirmaciones, recordatorios y campañas automáticas.</p>
+</div>
+
+<div class="svc-card reveal" style="background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.07);border-left:4px solid #C49570;padding:28px;border-radius:0 12px 12px 0;transition:.35s ease;position:relative;cursor:default" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+<img src="assets/img/billboard-city.jpg" alt="Integraciones" style="width:52px;height:52px;border-radius:10px;object-fit:cover" loading="lazy">
+<span style="font-size:.82rem;font-weight:600;color:#C49570">07</span>
+</div>
+<h3 style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:600;color:#F0F4F8;margin-bottom:8px">Integraciones a Medida</h3>
+<p style="font-size:.95rem;color:#B8C5D3">Conectamos Google Sheets, QuickBooks, CRM, Stripe y calendarios sin intervención manual.</p>
+</div>
+
+<div class="svc-card reveal" style="background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.07);border-left:4px solid #D46A6A;padding:28px;border-radius:0 12px 12px 0;transition:.35s ease;position:relative;cursor:default" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+<img src="assets/img/brand-slogan.jpg" alt="Admin" style="width:52px;height:52px;border-radius:10px;object-fit:cover" loading="lazy">
+<span style="font-size:.82rem;font-weight:600;color:#D46A6A">08</span>
+</div>
+<h3 style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:600;color:#F0F4F8;margin-bottom:8px">Automatización Administrativa</h3>
+<p style="font-size:.95rem;color:#B8C5D3">Flujos de aprobación, gestión de documentos, onboarding de clientes y procesos internos sin papel.</p>
+</div>
+
+</div>
+</div>
 </section>
 
 <!-- ── PROCESS ── -->
