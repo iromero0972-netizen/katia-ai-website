@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KATIA.ai — AI Automation Agency | Katy, Texas</title>
+<meta name="description" content="AI automation for small and mid-size businesses in Texas. Less manual work. More growth. Built by CPAs with 30+ years experience. First workflow live in 72 hours.">
+<meta property="og:title" content="KATIA.ai — AI Automation for Texas SMBs">
+<meta property="og:description" content="We automate your operations, accounting, and sales with AI. Built by a CPA. Based in Katy, TX.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:   #0D1B3E;
+  --navy2:  #1B2B5E;
+  --navy3:  #243570;
+  --gold:   #C9A84C;
+  --gold2:  #DFB95F;
+  --cloud:  #E8EAF0;
+  --steel:  #6B7A9E;
+  --muted:  #3D4E7A;
+  --white:  #FFFFFF;
+  --serif:  'Playfair Display', Georgia, serif;
+  --sans:   'DM Sans', system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--navy);
+  color: var(--cloud);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+/* ── PARTICLES ── */
+#canvas-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── HELPERS ── */
+.z1 { position: relative; z-index: 1; }
+.container { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.section-h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 3.5vw, 3rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.18;
+  margin-bottom: 1rem;
+}
+
+.section-desc {
+  font-size: 1rem;
+  color: var(--steel);
+  max-width: 540px;
+  line-height: 1.7;
+}
+
+.gold-line {
+  width: 48px; height: 2px;
+  background: var(--gold);
+  margin-bottom: 2rem;
+  opacity: 0.6;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 3.5rem;
+  background: rgba(13,27,62,0.88);
+  backdrop-filter: blur(16px);
+  border-bottom: 0.5px solid rgba(201,168,76,0.12);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+}
+
+.nav-brand svg { width: 34px; height: 34px; flex-shrink: 0; }
+
+.nav-name {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--cloud);
+  letter-spacing: 0.01em;
+}
+.nav-name span { color: var(--gold); font-weight: 400; }
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+  list-style: none;
+}
+
+nav ul a {
+  color: var(--steel);
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+nav ul a:hover { color: var(--gold); }
+
+.nav-btn {
+  border: 1px solid rgba(201,168,76,0.5) !important;
+  color: var(--gold) !important;
+  padding: 0.5rem 1.3rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s !important;
+}
+.nav-btn:hover {
+  background: var(--gold) !important;
+  color: var(--navy) !important;
+}
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 7rem 0 4rem;
+  text-align: center;
+  position: relative;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(201,168,76,0.08);
+  border: 0.5px solid rgba(201,168,76,0.3);
+  padding: 0.4rem 1.1rem;
+  border-radius: 2px;
+  margin-bottom: 2rem;
+  animation: fadeUp 0.7s ease both;
+}
+.hero-badge::before {
+  content: '';
+  width: 5px; height: 5px;
+  background: var(--gold);
+  border-radius: 50%;
+  animation: blink 2.2s infinite;
+}
+
+.hero-h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.1;
+  max-width: 820px;
+  margin: 0 auto 1.6rem;
+  animation: fadeUp 0.7s 0.12s ease both;
+}
+.hero-h1 em { font-style: normal; color: var(--gold); }
+
+.hero-sub {
+  font-size: 1.1rem;
+  color: var(--steel);
+  max-width: 580px;
+  margin: 0 auto 3rem;
+  animation: fadeUp 0.7s 0.24s ease both;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeUp 0.7s 0.36s ease both;
+  margin-bottom: 5rem;
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--navy);
+  border: none;
+  padding: 0.9rem 2.2rem;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  display: inline-block;
+}
+.btn-gold:hover { background: var(--gold2); transform: translateY(-2px); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--cloud);
+  border: 1px solid rgba(232,234,240,0.2);
+  padding: 0.9rem 2.2rem;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 300;
+  cursor: pointer;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+  display: inline-block;
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+.hero-metrics {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 3rem;
+  border-top: 0.5px solid rgba(201,168,76,0.12);
+  animation: fadeUp 0.7s 0.48s ease both;
+}
+
+.metric-num {
+  font-family: var(--serif);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--gold);
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+.metric-lbl {
+  font-size: 0.75rem;
+  color: var(--steel);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ── PROBLEM ── */
+#problem { padding: 8rem 0; background: rgba(13,27,62,0.55); }
+
+.problem-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 1px;
+  background: rgba(107,122,158,0.12);
+  border: 0.5px solid rgba(107,122,158,0.12);
+}
+
+.prob-card {
+  background: var(--navy);
+  padding: 2rem 2.2rem;
+  transition: background 0.2s;
+}
+.prob-card:hover { background: rgba(27,43,94,0.5); }
+
+.prob-icon {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.prob-card h4 {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--cloud);
+  margin-bottom: 0.5rem;
+}
+.prob-card p { font-size: 0.85rem; color: var(--steel); line-height: 1.65; }
+
+/* ── SERVICES ── */
+#services { padding: 8rem 0; }
+
+.services-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 4.5rem;
+}
+.services-header .section-desc { margin: 0 auto; }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 1.5rem;
+}
+
+.svc-card {
+  background: rgba(27,43,94,0.25);
+  border: 0.5px solid rgba(107,122,158,0.18);
+  border-radius: 3px;
+  padding: 2.4rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, border-color 0.25s;
+}
+.svc-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1.5px;
+  background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+.svc-card:hover { transform: translateY(-4px); border-color: rgba(201,168,76,0.25); }
+.svc-card:hover::after { transform: scaleX(1); }
+
+.svc-num {
+  font-family: var(--serif);
+  font-size: 3rem;
+  font-weight: 700;
+  color: rgba(201,168,76,0.1);
+  position: absolute;
+  top: 1.2rem; right: 1.6rem;
+  line-height: 1;
+  user-select: none;
+}
+
+.svc-icon {
+  width: 46px; height: 46px;
+  background: rgba(201,168,76,0.08);
+  border: 0.5px solid rgba(201,168,76,0.2);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.4rem;
+}
+.svc-icon svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+.svc-card h3 {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+.svc-card > p { font-size: 0.87rem; color: var(--steel); line-height: 1.7; margin-bottom: 1.4rem; }
+
+.svc-list { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
+.svc-list li {
+  font-size: 0.82rem;
+  color: var(--cloud);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  line-height: 1.45;
+}
+.svc-list li::before {
+  content: '';
+  width: 4px; height: 4px;
+  background: var(--gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+/* ── PROCESS ── */
+#process { padding: 8rem 0; background: rgba(13,27,62,0.55); }
+
+.process-header {
+  text-align: center;
+  max-width: 580px;
+  margin: 0 auto 4.5rem;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 0;
+  position: relative;
+}
+
+.process-steps::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: 12.5%;
+  right: 12.5%;
+  height: 0.5px;
+  background: linear-gradient(90deg, var(--gold), rgba(201,168,76,0.1));
+  z-index: 0;
+}
+
+.step {
+  text-align: center;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.step-num {
+  width: 56px; height: 56px;
+  background: var(--navy2);
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin: 0 auto 1.5rem;
+}
+
+.step h4 {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--cloud);
+  margin-bottom: 0.6rem;
+}
+.step p { font-size: 0.82rem; color: var(--steel); line-height: 1.6; }
+
+/* ── CASE STUDY ── */
+#case { padding: 8rem 0; }
+
+.case-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 5rem;
+  align-items: center;
+  background: rgba(27,43,94,0.28);
+  border: 0.5px solid rgba(201,168,76,0.18);
+  border-radius: 4px;
+  padding: 3.5rem 4rem;
+  margin-top: 3rem;
+}
+
+.case-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(201,168,76,0.08);
+  border: 0.5px solid rgba(201,168,76,0.25);
+  padding: 0.3rem 0.9rem;
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+}
+
+.case-wrap h3 {
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+.case-wrap p { font-size: 0.87rem; color: var(--steel); line-height: 1.72; margin-bottom: 0.9rem; }
+
+.case-stats {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.stat-box {
+  background: rgba(13,27,62,0.7);
+  border: 0.5px solid rgba(201,168,76,0.15);
+  padding: 1.2rem 1rem;
+  text-align: center;
+  border-radius: 2px;
+}
+.stat-box strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+.stat-box span { font-size: 0.75rem; color: var(--steel); line-height: 1.4; display: block; }
+
+/* ── WHY ── */
+#why { padding: 8rem 0; background: rgba(13,27,62,0.55); }
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+
+.why-card {
+  background: rgba(27,43,94,0.25);
+  border: 0.5px solid rgba(107,122,158,0.18);
+  border-radius: 3px;
+  padding: 2rem 1.8rem;
+  transition: border-color 0.25s, transform 0.2s;
+}
+.why-card:hover { border-color: rgba(201,168,76,0.3); transform: translateY(-3px); }
+
+.why-icon {
+  width: 44px; height: 44px;
+  background: rgba(201,168,76,0.08);
+  border: 0.5px solid rgba(201,168,76,0.2);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+.why-icon svg { width: 20px; height: 20px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; }
+
+.why-card h4 {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--cloud);
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+.why-card p { font-size: 0.82rem; color: var(--steel); line-height: 1.65; }
+
+/* ── CTA ── */
+#cta { padding: 9rem 0; text-align: center; }
+
+.cta-box {
+  max-width: 680px;
+  margin: 0 auto;
+}
+.cta-box .section-h2 { margin-bottom: 1.2rem; }
+.cta-box .section-desc { margin: 0 auto 2.8rem; max-width: 500px; }
+
+.cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+
+.cta-note { font-size: 0.8rem; color: var(--muted); }
+.cta-note a { color: var(--gold); text-decoration: none; }
+
+/* ── FOOTER ── */
+footer {
+  background: rgba(8,16,36,0.95);
+  border-top: 0.5px solid rgba(201,168,76,0.1);
+  padding: 3.5rem 0;
+}
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+.footer-brand svg { width: 28px; height: 28px; }
+.footer-brand-name {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--cloud);
+}
+.footer-brand-name span { color: var(--gold); font-weight: 400; }
+
+.footer-copy { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
+
+.footer-links { display: flex; gap: 2rem; list-style: none; }
+.footer-links a { font-size: 0.8rem; color: var(--steel); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold); }
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.on { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  nav ul { display: none; }
+  .problem-intro { grid-template-columns: 1fr; gap: 2rem; }
+  .problem-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: repeat(2,1fr); gap: 2rem; }
+  .process-steps::before { display: none; }
+  .case-wrap { grid-template-columns: 1fr; gap: 2.5rem; padding: 2.5rem; }
+  .why-grid { grid-template-columns: repeat(2,1fr); }
+  .hero-metrics { gap: 2rem; }
+  #services div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  #services div[style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr !important; }
+}
+
+@media (max-width: 560px) {
+  .why-grid { grid-template-columns: 1fr; }
+  .case-stats { grid-template-columns: repeat(2,1fr); }
+  .process-steps { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<canvas id="canvas-bg"></canvas>
+
+<!-- ── NAV ── -->
+<nav class="z1">
+  <a href="#" class="nav-brand">
+    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="18" y1="20" x2="33" y2="9"  stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+      <line x1="18" y1="20" x2="33" y2="20" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+      <line x1="18" y1="20" x2="33" y2="31" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="18" cy="20" r="5"   fill="#C9A84C"/>
+      <circle cx="34" cy="9"  r="3.5" fill="none" stroke="#C9A84C" stroke-width="1.8"/>
+      <circle cx="34" cy="20" r="3.5" fill="#E8EAF0"/>
+      <circle cx="34" cy="31" r="3.5" fill="none" stroke="#C9A84C" stroke-width="1.8"/>
+      <line x1="7"  y1="20" x2="13"  y2="20" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="6" cy="20" r="3"    fill="none" stroke="#C9A84C" stroke-width="1.8"/>
+    </svg>
+    <span class="nav-name">KATIA<span>.ai</span></span>
+  </a>
+  <ul>
+    <li><a href="#services">Servicios</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#case">Case Study</a></li>
+    <li><a href="#cta" class="nav-btn">Diagnóstico Gratis</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero" class="z1">
+  <div class="container">
+    <div class="hero-badge">AI Automation Agency · Katy, Texas</div>
+    <h1 class="hero-h1">
+      Less manual work.<br>
+      <em>More time to grow.</em><br>
+      First workflow in 72h.
+    </h1>
+    <p class="hero-sub">
+      We automate the operational, administrative, and accounting processes of your SMB with Artificial Intelligence. No long contracts. No technical headaches.
+    </p>
+    <div class="hero-btns">
+      <a href="https://wa.me/19546997514?text=Hi%2C%20I%20want%20a%20free%20diagnostic%20for%20my%20business" class="btn-gold" target="_blank">💬 Free WhatsApp Diagnostic</a>
+      <a href="#services" class="btn-ghost">Qué Automatizamos</a>
+    </div>
+    <div class="hero-metrics">
+      <div>
+        <span class="metric-num">90%</span>
+        <span class="metric-lbl">Reduction in manual tasks</span>
+      </div>
+      <div>
+        <span class="metric-num">72h</span>
+        <span class="metric-lbl">First workflow live</span>
+      </div>
+      <div>
+        <span class="metric-num">30+</span>
+        <span class="metric-lbl">Years CPA experience</span>
+      </div>
+      <div>
+        <span class="metric-num">100%</span>
+        <span class="metric-lbl">Focused on Texas SMBs</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROBLEM ── -->
+<section id="problem" class="z1">
+  <div class="container">
+    <div class="problem-intro reveal">
+      <div>
+        <span class="section-tag">The Problem</span>
+        <div class="gold-line"></div>
+        <h2 class="section-h2">Does this sound familiar?</h2>
+        <p class="section-desc">SMB owners lose between 15–25 hours every week on tasks that AI can do better, faster, and without errors.</p>
+      </div>
+      <div>
+        <p style="font-size:0.9rem; color:var(--steel); line-height:1.8;">
+          Every hour your team spends entering data, answering the same questions, or chasing overdue invoices is an hour not spent on the work that actually grows your business. We've seen it for 30 years as CPAs — and now we fix it with AI.
+        </p>
+      </div>
+    </div>
+    <div class="problem-grid reveal">
+      <div class="prob-card">
+        <span class="prob-icon">📱</span>
+        <h4>Orders lost between messages</h4>
+        <p>You write orders by hand, lose them between WhatsApps, and forget to follow up with important customers.</p>
+      </div>
+      <div class="prob-card">
+        <span class="prob-icon">🔁</span>
+        <h4>Infinite repetitive responses</h4>
+        <p>You answer the same questions about hours, prices, and availability over and over, every single day.</p>
+      </div>
+      <div class="prob-card">
+        <span class="prob-icon">📊</span>
+        <h4>Reports that never get done</h4>
+        <p>You end the month without knowing exactly how much you sold, how much you owe, or which product gives you the best margin.</p>
+      </div>
+      <div class="prob-card">
+        <span class="prob-icon">📲</span>
+        <h4>Social media abandoned</h4>
+        <p>You know you need to post, but you never have the time or energy to create consistent content.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES ── -->
+<!-- SERVICIOS ESTRELLA -->
+<section class="bg-alt" id="services" style="padding:100px 0">
+<div style="max-width:1200px;margin:0 auto;padding:0 24px">
+
+<div style="text-align:center;max-width:700px;margin:0 auto 56px" class="reveal">
+<p style="font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#C9A84C;margin-bottom:12px">Nuestros Servicios</p>
+<h2 style="font-family:'Syne',sans-serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;color:#F0F4F8;line-height:1.1">Hacemos crecer tu negocio desde el primer día</h2>
+<p style="color:#B8C5D3;margin-top:14px">Tu presencia digital y tu contenido en redes son lo primero que ven tus clientes. Nosotros los construimos con IA — y después automatizamos todo lo demás.</p>
+</div>
+
+<!-- 2 SERVICIOS GANCHO -->
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:56px">
+
+<div class="reveal" style="background:rgba(232,164,46,0.04);border:1px solid rgba(255,255,255,0.07);border-left:4px solid #E8A42E;padding:36px 32px;border-radius:0 12px 12px 0;transition:.35s ease" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+<span style="display:inline-block;padding:4px 12px;border-radius:25px;font-size:.75rem;font-weight:600;background:rgba(232,164,46,0.12);color:#E8A42E;margin-bottom:12px">SERVICIO ESTRELLA</span>
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+<img src="assets/img/laptop-workflow.jpg" alt="Diseño web" style="width:52px;height:52px;border-radius:10px;object-fit:cover" loading="lazy">
+<span style="font-size:.82rem;font-weight:600;color:#E8A42E">01</span>
+</div>
+<h3 style="font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:600;color:#F0F4F8;margin-bottom:10px">Diseño y Construcción de Páginas Web a la Medida</h3>
+<p style="font-size:.95rem;color:#B8C5D3;line-height:1.7">Creamos la página web de tu negocio desde cero — moderna, rápida y optimizada para convertir visitantes en clientes. Diseño personalizado que refleja tu marca, con formularios de contacto, integración con WhatsApp y SEO para que te encuentren en Google. No usamos plantillas genéricas: cada sitio es único.</p>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+<span style="display:inline-block;padding:6px 14px;border-radius:25px;font-size:.8rem;background:rgba(255,255,255,0.045);color:#B8C5D3">Diseño personalizado</span>
+<span style="display:inline-block;padding:6px 14px;border-radius:25px;font-size:.8rem;background:rgba(255,255,255,0.045);color:#B8C5D3">Mobile responsive</span>
+<span style="display:inline-block;padding:6px 14px;border-radius:25px;font-size:.8rem;background:rgba(255,255,255,0.045);color:#B8C5D3">SEO optimizado</span>
+<span style="display:inline-block;padding:6px 14px;border-radius:25px;font-size:.8rem;background:rgba(255,255,255,0.045);color:#B8C5D3">WhatsApp integrado</span>
+</div>
+</div>
+
+<div class="reveal" style="background:rgba(91,175,122,0.04);border:1px solid rgba(255,255,255,0.07);border-left:4px solid #5BAF7A;padding:36px 32px;border-radius:0 12px 12px 0;transition:.35s ease" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+<span style="display:inline-block;padding:4px 12px;border-radius:25px;font-size:.75rem;font-weight:600;background:rgba(91,175,122,0.12);color:#5BAF7A;margin-bottom:12px">SERVICIO ESTRELLA</span>
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+<img src="assets/img/office-big.jpg" alt="Contenido redes sociales" style="width:52px;height:52px;border-radius:10px;object-fit:cover" loading="lazy">
+<span style="font-size:.82rem;font-weight:600;color:#5BAF7A">02</span>
+</div>
+<h3 style="font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:600;color:#F0F4F8;margin-bottom:10px">Generación Automática de Contenido en Redes Sociales</h3>
+<p style="font-size:.95rem;color:#B8C5D3;line-height:1.7">La IA genera contenido personalizado para tu Instagram y Facebook cada semana — imágenes, captions, hashtags y programación automática. Tú apruebas, nosotros publicamos. Tu marca siempre activa, siempre visible, sin que inviertas ni una hora de tu tiempo.</p>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+<span style="display:inline-block;padding:6px 14px;border-radius:25px;font-size:.8rem;background:rgba(255,255,255,0.045);color:#B8C5D3">3-5 posts semanales</span>
+<span style="display:inline-block;padding:6px 14px;border-radius:25px;font-size:.8rem;background:rgba(255,255,255,0.045);color:#B8C5D3">Imágenes + captions</span>
+<span style="display:inline-block;padding:6px 14px;border-radius:25px;font-size:.8rem;background:rgba(255,255,255,0.045);color:#B8C5D3">Programación auto</span>
+<span style="display:inline-block;padding:6px 14px;border-radius:25px;font-size:.8rem;background:rgba(255,255,255,0.045);color:#B8C5D3">Tu marca, tu voz</span>
+</div>
+</div>
+
+</div>
+
+<!-- TRANSICIÓN AL CORE -->
+<div style="text-align:center;margin-bottom:40px" class="reveal">
+<p style="font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#C9A84C;margin-bottom:8px">Y cuando estés listo, automatizamos el corazón de tu negocio</p>
+<h3 style="font-family:'Syne',sans-serif;color:#F0F4F8;font-size:1.5rem;font-weight:600">Automatización de Procesos Operativos, Contables y Administrativos</h3>
+</div>
+
+<!-- 6 SERVICIOS CORE -->
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+
+<div class="svc-card reveal" style="background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.07);border-left:4px solid #4A9ED6;padding:28px;border-radius:0 12px 12px 0;transition:.35s ease;position:relative;cursor:default" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='rgba(74,158,214,0.3)'" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='rgba(255,255,255,0.07)'">
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+<img src="assets/img/booth-expo.jpg" alt="Pedidos" style="width:52px;height:52px;border-radius:10px;object-fit:cover" loading="lazy">
+<span style="font-size:.82rem;font-weight:600;color:#4A9ED6">03</span>
+</div>
+<h3 style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:600;color:#F0F4F8;margin-bottom:8px">Automatización de Pedidos</h3>
+<p style="font-size:.95rem;color:#B8C5D3">Formulario web 24/7, confirmaciones automáticas, dashboard admin y alertas en tiempo real.</p>
+</div>
+
+<div class="svc-card reveal" style="background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.07);border-left:4px solid #6BB5E4;padding:28px;border-radius:0 12px 12px 0;transition:.35s ease;position:relative;cursor:default" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+<img src="assets/img/neural-art.jpg" alt="Chatbot" style="width:52px;height:52px;border-radius:10px;object-fit:cover" loading="lazy">
+<span style="font-size:.82rem;font-weight:600;color:#6BB5E4">04</span>
+</div>
+<h3 style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:600;color:#F0F4F8;margin-bottom:8px">Asistentes Virtuales IA</h3>
+<p style="font-size:.95rem;color:#B8C5D3">Chatbot entrenado en tu negocio. Responde FAQs, califica leads y agenda citas 24/7.</p>
+</div>
+
+<div class="svc-card reveal" style="background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.07);border-left:4px solid #C9A84C;padding:28px;border-radius:0 12px 12px 0;transition:.35s ease;position:relative;cursor:default" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+<img src="assets/img/logo-paper.jpg" alt="Finanzas" style="width:52px;height:52px;border-radius:10px;object-fit:cover" loading="lazy">
+<span style="font-size:.82rem;font-weight:600;color:#C9A84C">05</span>
+</div>
+<h3 style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:600;color:#F0F4F8;margin-bottom:8px">Contabilidad y Finanzas</h3>
+<p style="font-size:.95rem;color:#B8C5D3">Reportes semanales automáticos, alertas de márgenes, exportación a QuickBooks y dashboard financiero.</p>
+</div>
+
+<div class="svc-card reveal" style="background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.07);border-left:4px solid #9B85C4;padding:28px;border-radius:0 12px 12px 0;transition:.35s ease;position:relative;cursor:default" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+<img src="assets/img/server-rack.jpg" alt="Email" style="width:52px;height:52px;border-radius:10px;object-fit:cover" loading="lazy">
+<span style="font-size:.82rem;font-weight:600;color:#9B85C4">06</span>
+</div>
+<h3 style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:600;color:#F0F4F8;margin-bottom:8px">Email Automation</h3>
+<p style="font-size:.95rem;color:#B8C5D3">Secuencias de seguimiento, confirmaciones, recordatorios y campañas automáticas.</p>
+</div>
+
+<div class="svc-card reveal" style="background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.07);border-left:4px solid #C49570;padding:28px;border-radius:0 12px 12px 0;transition:.35s ease;position:relative;cursor:default" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+<img src="assets/img/billboard-city.jpg" alt="Integraciones" style="width:52px;height:52px;border-radius:10px;object-fit:cover" loading="lazy">
+<span style="font-size:.82rem;font-weight:600;color:#C49570">07</span>
+</div>
+<h3 style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:600;color:#F0F4F8;margin-bottom:8px">Integraciones a Medida</h3>
+<p style="font-size:.95rem;color:#B8C5D3">Conectamos Google Sheets, QuickBooks, CRM, Stripe y calendarios sin intervención manual.</p>
+</div>
+
+<div class="svc-card reveal" style="background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.07);border-left:4px solid #D46A6A;padding:28px;border-radius:0 12px 12px 0;transition:.35s ease;position:relative;cursor:default" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+<img src="assets/img/brand-slogan.jpg" alt="Admin" style="width:52px;height:52px;border-radius:10px;object-fit:cover" loading="lazy">
+<span style="font-size:.82rem;font-weight:600;color:#D46A6A">08</span>
+</div>
+<h3 style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:600;color:#F0F4F8;margin-bottom:8px">Automatización Administrativa</h3>
+<p style="font-size:.95rem;color:#B8C5D3">Flujos de aprobación, gestión de documentos, onboarding de clientes y procesos internos sin papel.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ── PROCESS ── -->
+<section id="process" class="z1">
+  <div class="container">
+    <div class="process-header reveal">
+      <span class="section-tag">Cómo Trabajamos</span>
+      <div class="gold-line" style="margin: 0 auto 1rem;"></div>
+      <h2 class="section-h2">From idea to automation in 4 steps</h2>
+      <p class="section-desc" style="margin:0 auto;">Proven methodology. Zero improvisation. Every project follows 4 mandatory pillars before going to production.</p>
+    </div>
+    <div class="process-steps reveal">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Diagnosis</h4>
+        <p>We map your current processes and identify what to automate first for maximum impact in the least time.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Design</h4>
+        <p>We design the complete flow before building. No surprises. Rollback plan included in every project.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>Build & Testing</h4>
+        <p>We build in a test environment, test edge cases, and demo with you before launch.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>Launch + Support</h4>
+        <p>Supervised go-live, team training, and continuous support with monthly improvements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CASE STUDY ── -->
+<section id="case" class="z1">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-tag">Real Success · Katy, TX</span>
+      <div class="gold-line"></div>
+      <h2 class="section-h2">From paper orders to 100% automated</h2>
+    </div>
+    <div class="case-wrap reveal">
+      <div>
+        <span class="case-tag">Case Study — Pilot Client</span>
+        <h3>Andy's Bakery — Artisan Cake Jar Business</h3>
+        <p>A small artisan bakery was managing custom orders manually — losing orders between WhatsApps, forgetting to follow up, and spending hours every day on admin work.</p>
+        <p>We built a complete AI automation system in 30 days: online orders with automatic confirmations, a PIN-secured admin dashboard, fulfillment decision flows, and AI-generated Instagram content every week.</p>
+        <p>The result: order processing went from 45 minutes per order to under 3 minutes. Zero missed orders since launch.</p>
+        <a href="#cta" class="btn-ghost" style="display:inline-block; margin-top:1rem; font-size:0.85rem; padding:0.7rem 1.6rem;">Get Similar Results →</a>
+      </div>
+      <div class="case-stats">
+        <div class="stat-box">
+          <strong>100%</strong>
+          <span>Orders captured digitally</span>
+        </div>
+        <div class="stat-box">
+          <strong>0</strong>
+          <span>Orders lost since launch</span>
+        </div>
+        <div class="stat-box">
+          <strong>3</strong>
+          <span>Active workflows in production</span>
+        </div>
+        <div class="stat-box">
+          <strong>72h</strong>
+          <span>From concept to go-live</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY ── -->
+<section id="why" class="z1">
+  <div class="container">
+    <div class="reveal" style="text-align:center; max-width:560px; margin:0 auto 1rem;">
+      <span class="section-tag">Why KATIA.ai</span>
+      <div class="gold-line" style="margin:0 auto 1rem;"></div>
+      <h2 class="section-h2">We work differently</h2>
+      <p class="section-desc" style="margin:0 auto;">Not generic freelancers. A specialized agency with a proven methodology and 30+ years of real business experience.</p>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h4>30+ Years as a CPA</h4>
+        <p>We understand your numbers, your processes, and your risks — not just the code. We speak the language of business.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        </div>
+        <h4>4-Pillar Methodology</h4>
+        <p>Zero improvisation. Every automation goes through mandatory research, design, testing, and feedback cycles.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h4>Local in Texas</h4>
+        <p>Based in Katy, TX. We work with regional businesses that speak your language — literally and in business terms.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h4>Results in 72 Hours</h4>
+        <p>Your first workflow live in 3 days. No months of "implementation" or budget surprises at the end.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section id="cta" class="z1">
+  <div class="container">
+    <div class="cta-box reveal">
+      <span class="section-tag">Next Step</span>
+      <div class="gold-line" style="margin:0 auto 1rem;"></div>
+      <h2 class="section-h2">How many hours are you losing this week?</h2>
+      <p class="section-desc">Book a free 30-minute diagnostic call. We identify what to automate first and give you an action plan — no cost, no commitment.</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/19546997514?text=Hi%2C%20I%20want%20a%20free%20diagnostic%20for%20my%20business" class="btn-gold" target="_blank">💬 WhatsApp — Free Diagnostic</a>
+        <a href="mailto:iromero0972@gmail.com" class="btn-ghost">✉️ iromero0972@gmail.com</a>
+      </div>
+      <p class="cta-note">📍 Katy, Texas · Response within 24 hours</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="z1">
+  <div class="container">
+    <div class="footer-row">
+      <div>
+        <a href="#" class="footer-brand">
+          <svg viewBox="0 0 40 40" fill="none">
+            <line x1="18" y1="20" x2="33" y2="9"  stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+            <line x1="18" y1="20" x2="33" y2="20" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+            <line x1="18" y1="20" x2="33" y2="31" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="18" cy="20" r="5" fill="#C9A84C"/>
+            <circle cx="34" cy="9"  r="3.5" fill="none" stroke="#C9A84C" stroke-width="1.8"/>
+            <circle cx="34" cy="20" r="3.5" fill="#E8EAF0"/>
+            <circle cx="34" cy="31" r="3.5" fill="none" stroke="#C9A84C" stroke-width="1.8"/>
+            <line x1="7" y1="20" x2="13" y2="20" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="6" cy="20" r="3" fill="none" stroke="#C9A84C" stroke-width="1.8"/>
+          </svg>
+          <span class="footer-brand-name">KATIA<span>.ai</span></span>
+        </a>
+        <p class="footer-copy">AI Automation Agency · Katy, Texas<br>© 2026 KATIA.ai LLC · All rights reserved · Built by CPAs. Powered by AI.</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#services">Servicios</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#case">Case Study</a></li>
+        <li><a href="mailto:iromero0972@gmail.com">Contacto</a></li>
+        <li><a href="https://wa.me/19546997514" target="_blank">WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- ── PARTICLES + REVEAL ── -->
+<script>
+/* particles */
+const c = document.getElementById('canvas-bg');
+const ctx = c.getContext('2d');
+let W, H, pts = [];
+
+function resize() {
+  W = c.width  = window.innerWidth;
+  H = c.height = window.innerHeight;
+}
+
+function init() {
+  pts = [];
+  const n = Math.min(Math.floor(W * H / 13000), 90);
+  for (let i = 0; i < n; i++) pts.push({
+    x: Math.random()*W, y: Math.random()*H,
+    vx: (Math.random()-.5)*.28, vy: (Math.random()-.5)*.28,
+    r: Math.random()*1.4+.5,
+    gold: Math.random() < .14
+  });
+}
+
+function tick() {
+  ctx.clearRect(0,0,W,H);
+  for (let i=0; i<pts.length; i++) {
+    const a = pts[i];
+    a.x += a.vx; a.y += a.vy;
+    if (a.x<0||a.x>W) a.vx*=-1;
+    if (a.y<0||a.y>H) a.vy*=-1;
+    for (let j=i+1; j<pts.length; j++) {
+      const b=pts[j], dx=a.x-b.x, dy=a.y-b.y, d=Math.sqrt(dx*dx+dy*dy);
+      if (d<130) {
+        ctx.beginPath();
+        ctx.strokeStyle=`rgba(201,168,76,${(1-d/130)*.14})`;
+        ctx.lineWidth=.5;
+        ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y);
+        ctx.stroke();
+      }
+    }
+    ctx.beginPath();
+    ctx.arc(a.x,a.y,a.r,0,Math.PI*2);
+    ctx.fillStyle = a.gold ? 'rgba(201,168,76,.55)' : 'rgba(107,122,158,.35)';
+    ctx.fill();
+  }
+  requestAnimationFrame(tick);
+}
+
+window.addEventListener('resize',()=>{resize();init();});
+resize(); init(); tick();
+
+/* scroll reveal */
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('on'); });
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
+</script>
+</body>
+</html>
