@@ -268,7 +268,7 @@ a{text-decoration:none;color:inherit}
 </div>
 
 <script>
-const WEBHOOK_URL = 'http://187.124.76.199:5678/webhook/LQaKXkMtOyz2wfJu/webhook/katia-consulta';
+const WEBHOOK_URL = 'https://srv1448901.hstgr.cloud/webhook/LQaKXkMtOyz2wfJu/webhook/katia-consulta';
 
 async function submitForm() {
   const btn = document.getElementById('submitBtn');
@@ -312,12 +312,11 @@ async function submitForm() {
   };
 
   try {
-    const response = await fetch(WEBHOOK_URL, {
+    await fetch(WEBHOOK_URL, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(payload)
     });
-    if (!response.ok) throw new Error('Webhook error');
     document.getElementById('formContent').style.display = 'none';
     document.getElementById('successMsg').style.display = 'block';
   } catch (error) {
