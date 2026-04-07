@@ -267,9 +267,8 @@ a{text-decoration:none;color:inherit}
   <p style="margin-top:6px">© 2026 KATIA.ai LLC · Todos los derechos reservados</p>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
-emailjs.init('yKnttf2EZpm1dEzoT');
+const WEBHOOK_URL = 'http://187.124.76.199:5678/webhook/LQaKXkMtOyz2wfJu/webhook/katia-consulta';
 
 async function submitForm() {
   const btn = document.getElementById('submitBtn');
@@ -296,9 +295,7 @@ async function submitForm() {
   document.querySelectorAll('.service-option input:checked').forEach(cb => servicios.push(cb.value));
   const urgenciaEl = document.querySelector('input[name="urgencia"]:checked');
 
-  const templateParams = {
-    from_name: nombre,
-    reply_to: email,
+  const payload = {
     nombre: nombre,
     empresa: document.getElementById('empresa').value.trim(),
     email: email,
@@ -309,25 +306,34 @@ async function submitForm() {
     dolor: document.getElementById('dolor').value.trim() || 'No especificado',
     empleados: document.getElementById('empleados').value || 'No especificado',
     urgencia: urgenciaEl ? urgenciaEl.value : 'este_mes',
-    message: 'Nombre: ' + nombre + '\nEmpresa: ' + (document.getElementById('empresa').value.trim() || 'N/A') +
-      '\nEmail: ' + email + '\nTelefono: ' + (document.getElementById('telefono').value.trim() || 'N/A') +
-      '\nCiudad: ' + (document.getElementById('ciudad').value.trim() || 'N/A') +
-      '\nIndustria: ' + industria + '\nServicios: ' + (servicios.join(', ') || 'N/A') +
-      '\nDolor: ' + (document.getElementById('dolor').value.trim() || 'N/A') +
-      '\nEmpleados: ' + (document.getElementById('empleados').value || 'N/A') +
-      '\nUrgencia: ' + (urgenciaEl ? urgenciaEl.value : 'este_mes') +
-      '\nContacto preferido: ' + document.getElementById('contacto_pref').value
+    contacto_preferido: document.getElementById('contacto_pref').value,
+    source: 'web_form',
+    submitted_at: new Date().toISOString()
   };
 
   try {
-    await emailjs.send('service_krl7229', 'template_8fsn6gm', templateParams);
+    const response = await fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload)
+    });
+    if (!response.ok) throw new Error('Webhook error');
     document.getElementById('formContent').style.display = 'none';
     document.getElementById('successMsg').style.display = 'block';
   } catch (error) {
-    btn.textContent = 'Solicitar Consulta Gratuita';
-    btn.classList.remove('loading');
-    btn.disabled = false;
-    alert('Error al enviar. Por favor intenta de nuevo o escribe a katiaia.ventas@gmail.com');
+    // Fallback: abrir mailto si el webhook falla
+    const mailto = 'mailto:katiaia.ventas@gmail.com?subject=' +
+      encodeURIComponent('Consulta de ' + nombre) +
+      '&body=' + encodeURIComponent(
+        'Nombre: ' + nombre + '\nEmpresa: ' + payload.empresa +
+        '\nEmail: ' + email + '\nTeléfono: ' + payload.telefono +
+        '\nCiudad: ' + payload.ciudad + '\nIndustria: ' + industria +
+        '\nServicios: ' + payload.servicios + '\nDolor: ' + payload.dolor +
+        '\nEmpleados: ' + payload.empleados + '\nUrgencia: ' + payload.urgencia
+      );
+    window.open(mailto, '_blank');
+    document.getElementById('formContent').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
   }
 }
 </script>

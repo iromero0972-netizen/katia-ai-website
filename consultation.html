@@ -257,9 +257,8 @@ a{text-decoration:none;color:inherit}
   <p style="margin-top:6px">© 2026 KATIA.ai LLC · All rights reserved</p>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
-emailjs.init('yKnttf2EZpm1dEzoT');
+const WEBHOOK_URL = 'http://187.124.76.199:5678/webhook/LQaKXkMtOyz2wfJu/webhook/katia-consulta';
 
 async function submitForm() {
   const btn = document.getElementById('submitBtn');
@@ -286,9 +285,7 @@ async function submitForm() {
   document.querySelectorAll('.service-option input:checked').forEach(cb => servicios.push(cb.value));
   const urgenciaEl = document.querySelector('input[name="urgencia"]:checked');
 
-  const templateParams = {
-    from_name: nombre,
-    reply_to: email,
+  const payload = {
     nombre: nombre,
     empresa: document.getElementById('empresa').value.trim(),
     email: email,
@@ -299,25 +296,33 @@ async function submitForm() {
     dolor: document.getElementById('dolor').value.trim() || 'Not specified',
     empleados: document.getElementById('empleados').value || 'Not specified',
     urgencia: urgenciaEl ? urgenciaEl.value : 'this_month',
-    message: 'Name: ' + nombre + '\nBusiness: ' + (document.getElementById('empresa').value.trim() || 'N/A') +
-      '\nEmail: ' + email + '\nPhone: ' + (document.getElementById('telefono').value.trim() || 'N/A') +
-      '\nCity: ' + (document.getElementById('ciudad').value.trim() || 'N/A') +
-      '\nIndustry: ' + industria + '\nServices: ' + (servicios.join(', ') || 'N/A') +
-      '\nPain point: ' + (document.getElementById('dolor').value.trim() || 'N/A') +
-      '\nEmployees: ' + (document.getElementById('empleados').value || 'N/A') +
-      '\nUrgency: ' + (urgenciaEl ? urgenciaEl.value : 'this_month') +
-      '\nPreferred contact: ' + document.getElementById('contacto_pref').value
+    contacto_preferido: document.getElementById('contacto_pref').value,
+    source: 'web_form_en',
+    submitted_at: new Date().toISOString()
   };
 
   try {
-    await emailjs.send('service_krl7229', 'template_8fsn6gm', templateParams);
+    const response = await fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload)
+    });
+    if (!response.ok) throw new Error('Webhook error');
     document.getElementById('formContent').style.display = 'none';
     document.getElementById('successMsg').style.display = 'block';
   } catch (error) {
-    btn.textContent = 'Request Free Consultation';
-    btn.classList.remove('loading');
-    btn.disabled = false;
-    alert('Error sending. Please try again or email katiaia.ventas@gmail.com');
+    const mailto = 'mailto:katiaia.ventas@gmail.com?subject=' +
+      encodeURIComponent('Consultation request from ' + nombre) +
+      '&body=' + encodeURIComponent(
+        'Name: ' + nombre + '\nBusiness: ' + payload.empresa +
+        '\nEmail: ' + email + '\nPhone: ' + payload.telefono +
+        '\nCity: ' + payload.ciudad + '\nIndustry: ' + industria +
+        '\nServices: ' + payload.servicios + '\nPain point: ' + payload.dolor +
+        '\nEmployees: ' + payload.empleados + '\nUrgency: ' + payload.urgencia
+      );
+    window.open(mailto, '_blank');
+    document.getElementById('formContent').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
   }
 }
 </script>
