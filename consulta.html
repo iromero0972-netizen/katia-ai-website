@@ -268,11 +268,7 @@ a{text-decoration:none;color:inherit}
 </div>
 
 <script>
-// WEBHOOK URL - Claude Code reemplazará con la URL real del webhook de N8N
-const WEBHOOK_URL = 'https://specify-corner-ian-modular.trycloudflare.com/webhook/katia-consulta';
-
-async function submitForm() {
-  const btn = document.getElementById('submitBtn');
+function submitForm() {
   const nombre = document.getElementById('nombre').value.trim();
   const email = document.getElementById('email').value.trim();
   const industria = document.getElementById('industria').value;
@@ -288,66 +284,42 @@ async function submitForm() {
     return;
   }
 
-  btn.textContent = 'Enviando...';
-  btn.classList.add('loading');
+  const empresa = document.getElementById('empresa').value.trim();
+  const telefono = document.getElementById('telefono').value.trim();
+  const ciudad = document.getElementById('ciudad').value.trim();
+  const dolor = document.getElementById('dolor').value.trim();
+  const empleados = document.getElementById('empleados').value;
+  const contacto = document.getElementById('contacto_pref').value;
 
   const servicios = [];
-  document.querySelectorAll('.service-option input:checked').forEach(cb => {
-    servicios.push(cb.value);
-  });
+  document.querySelectorAll('.service-option input:checked').forEach(cb => servicios.push(cb.value));
 
-  const urgencia = document.querySelector('input[name="urgencia"]:checked');
+  const urgenciaEl = document.querySelector('input[name="urgencia"]:checked');
+  const urgencia = urgenciaEl ? urgenciaEl.value : 'este_mes';
 
-  const data = {
-    nombre: nombre,
-    empresa: document.getElementById('empresa').value.trim(),
-    email: email,
-    telefono: document.getElementById('telefono').value.trim(),
-    ciudad: document.getElementById('ciudad').value.trim(),
-    industria: industria,
-    servicios: servicios.join(', '),
-    dolor: document.getElementById('dolor').value.trim(),
-    empleados: document.getElementById('empleados').value,
-    urgencia: urgencia ? urgencia.value : 'este_mes',
-    contacto_preferido: document.getElementById('contacto_pref').value,
-    source: 'web_form',
-    submitted_at: new Date().toISOString()
-  };
+  const subject = encodeURIComponent('Nueva solicitud de consulta - ' + nombre);
+  const body = encodeURIComponent(
+    '=== NUEVA SOLICITUD DE CONSULTA ===\n\n' +
+    'Nombre: ' + nombre + '\n' +
+    'Empresa: ' + empresa + '\n' +
+    'Email: ' + email + '\n' +
+    'Teléfono: ' + telefono + '\n' +
+    'Ciudad: ' + ciudad + '\n' +
+    'Industria: ' + industria + '\n\n' +
+    '--- Servicios de interés ---\n' +
+    (servicios.length ? servicios.join(', ') : 'No especificado') + '\n\n' +
+    '--- Situación actual ---\n' +
+    (dolor || 'No especificado') + '\n\n' +
+    'Empleados: ' + (empleados || 'No especificado') + '\n' +
+    'Urgencia: ' + urgencia + '\n' +
+    'Contacto preferido: ' + contacto + '\n\n' +
+    '---\nEnviado desde formulario web KATIA.AI'
+  );
 
-  try {
-    const response = await fetch(WEBHOOK_URL, {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(data)
-    });
+  window.location.href = 'mailto:katiaia.ventas@gmail.com?subject=' + subject + '&body=' + body;
 
-    if (response.ok) {
-      document.getElementById('formContent').style.display = 'none';
-      document.getElementById('successMsg').style.display = 'block';
-    } else {
-      throw new Error('Server error');
-    }
-  } catch (error) {
-    // Si el webhook falla, igual mostramos éxito y enviamos por email como fallback
-    console.error('Webhook error:', error);
-    // Fallback: abrir email con los datos
-    const subject = encodeURIComponent('Nueva solicitud de consulta - ' + nombre);
-    const body = encodeURIComponent(
-      'Nombre: ' + data.nombre + '\n' +
-      'Empresa: ' + data.empresa + '\n' +
-      'Email: ' + data.email + '\n' +
-      'Teléfono: ' + data.telefono + '\n' +
-      'Ciudad: ' + data.ciudad + '\n' +
-      'Industria: ' + data.industria + '\n' +
-      'Servicios: ' + data.servicios + '\n' +
-      'Dolor: ' + data.dolor + '\n' +
-      'Empleados: ' + data.empleados + '\n' +
-      'Urgencia: ' + data.urgencia
-    );
-    window.open('mailto:katiaia.ventas@gmail.com?subject=' + subject + '&body=' + body);
-    document.getElementById('formContent').style.display = 'none';
-    document.getElementById('successMsg').style.display = 'block';
-  }
+  document.getElementById('formContent').style.display = 'none';
+  document.getElementById('successMsg').style.display = 'block';
 }
 </script>
 
