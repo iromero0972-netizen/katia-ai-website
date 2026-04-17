@@ -4,230 +4,302 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KATIA.AI Solutions — Automatización IA para PYMEs en USA</title>
-<meta name="description" content="Automatizamos los procesos operativos, administrativos y contables de tu PYME con Inteligencia Artificial. Equipo experto. Cobertura nacional USA.">
+<meta name="description" content="Automatizamos los procesos operativos, administrativos y contables de tu PYME con Inteligencia Artificial. Cobertura nacional USA.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 :root{
-  --navy:#0B1220;--navy-mid:#0f1929;--navy-light:#1a2540;
-  --gold:#C9A84C;--gold-light:#E8C878;--gold-dim:rgba(201,168,76,.12);
-  --blue:#3B82F6;--blue-bright:#60A5FA;
+  --navy:#0B1220;--navy-mid:#0f1929;--navy-light:#1a2540;--navy-card:#182036;
+  --gold:#C9A84C;--gold-light:#E8C878;--gold-dim:rgba(201,168,76,.12);--gold-border:rgba(201,168,76,.25);
+  --blue:#3B82F6;--blue-bright:#60A5FA;--blue-dim:rgba(59,130,246,.12);
   --white:#F8F9FC;--gray:#94A3B8;--gray-light:#CBD5E1;
   --green:#10B981;--red:#EF4444;
   --ff-d:'Syne',sans-serif;--ff-b:'DM Sans',sans-serif;
+  --radius:14px;--radius-sm:8px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--navy);color:var(--white);font-family:var(--ff-b);font-weight:300;line-height:1.7;overflow-x:hidden}
+body{background:var(--navy);color:var(--white);font-family:var(--ff-b);font-weight:300;line-height:1.75;overflow-x:hidden}
+img{max-width:100%;display:block}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1rem 5%;background:rgba(11,18,32,.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(201,168,76,.15)}
-.nav-logo{display:flex;align-items:center;gap:.7rem;text-decoration:none}
-.nav-logo img{height:34px;width:auto}
-.nav-logo-txt{font-family:var(--ff-d);font-size:1.2rem;font-weight:800;color:var(--white);letter-spacing:-.02em}
+/* ═══ NAV ═══ */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 6%;background:rgba(11,18,32,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--gold-border)}
+.nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none}
+.nav-logo img{height:36px;width:auto}
+.nav-logo-txt{font-family:var(--ff-d);font-size:1.25rem;font-weight:800;color:var(--white);letter-spacing:-.02em}
 .nav-logo-txt span{color:var(--gold)}
-.nav-links{display:flex;gap:1.75rem;list-style:none}
-.nav-links a{color:var(--gray-light);text-decoration:none;font-size:.875rem;transition:color .2s}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--gray-light);text-decoration:none;font-size:.875rem;letter-spacing:.01em;transition:color .2s}
 .nav-links a:hover{color:var(--gold)}
-.nav-cta{background:var(--gold);color:var(--navy);padding:.55rem 1.3rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:.85rem;transition:all .2s;white-space:nowrap}
-.nav-cta:hover{background:var(--gold-light);transform:translateY(-1px)}
+.nav-cta{background:var(--gold);color:var(--navy);padding:.6rem 1.4rem;border-radius:var(--radius-sm);text-decoration:none;font-weight:700;font-size:.85rem;transition:all .2s;white-space:nowrap;display:flex;align-items:center;gap:.4rem}
+.nav-cta:hover{background:var(--gold-light);transform:translateY(-1px);box-shadow:0 4px 16px rgba(201,168,76,.3)}
 
-/* HERO */
+/* ═══ HERO ═══ */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
 .hero-video{position:absolute;inset:0;z-index:0}
-.hero-video video{width:100%;height:100%;object-fit:cover;opacity:.32}
-.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(11,18,32,.93) 0%,rgba(11,18,32,.65) 55%,rgba(11,18,32,.88) 100%)}
-.hero-grid{position:absolute;inset:0;z-index:1;background-image:linear-gradient(rgba(201,168,76,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.04) 1px,transparent 1px);background-size:60px 60px}
-.hero-glow{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,.13) 0%,transparent 70%);top:-180px;right:-180px;z-index:1;pointer-events:none}
-.hero-content{position:relative;z-index:2;padding:9rem 5% 5rem;max-width:920px}
-.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold-dim);border:1px solid rgba(201,168,76,.3);color:var(--gold);padding:.4rem 1rem;border-radius:100px;font-size:.73rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.5rem}
-.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);animation:blink 2s infinite}
-@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(1.6)}}
-.hero h1{font-family:var(--ff-d);font-size:clamp(2.8rem,6.5vw,5.8rem);font-weight:800;line-height:1.04;letter-spacing:-.03em;margin-bottom:1.5rem}
+.hero-video video{width:100%;height:100%;object-fit:cover;opacity:.4}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(120deg,rgba(11,18,32,.95) 0%,rgba(11,18,32,.7) 50%,rgba(11,18,32,.85) 100%)}
+.hero-grid{position:absolute;inset:0;z-index:1;background-image:linear-gradient(rgba(201,168,76,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.035) 1px,transparent 1px);background-size:64px 64px}
+.hero-glow-1{position:absolute;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,.12) 0%,transparent 68%);top:-200px;right:-200px;z-index:1;pointer-events:none}
+.hero-glow-2{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,.07) 0%,transparent 68%);bottom:-100px;left:5%;z-index:1;pointer-events:none}
+.hero-content{position:relative;z-index:2;padding:10rem 6% 6rem;max-width:960px}
+.hero-badge{display:inline-flex;align-items:center;gap:.6rem;background:var(--gold-dim);border:1px solid var(--gold-border);color:var(--gold);padding:.45rem 1.1rem;border-radius:100px;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2rem}
+.hero-badge i{font-size:.7rem}
+.hero-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(1.7)}}
+.hero h1{font-family:var(--ff-d);font-size:clamp(3rem,7vw,6.2rem);font-weight:800;line-height:1.03;letter-spacing:-.035em;margin-bottom:1.75rem}
 .hero h1 .g{color:var(--gold)}
 .hero h1 .b{color:var(--blue-bright)}
-.hero-sub{font-size:clamp(1rem,2vw,1.18rem);color:var(--gray-light);max-width:580px;margin-bottom:2.5rem;font-weight:300}
-.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3.5rem}
-.btn-gold{background:var(--gold);color:var(--navy);padding:.9rem 2rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:1rem;transition:all .2s;display:inline-flex;align-items:center;gap:.5rem}
-.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,.35)}
-.btn-out{background:transparent;color:var(--white);padding:.9rem 2rem;border-radius:8px;text-decoration:none;font-weight:500;font-size:1rem;border:1px solid rgba(255,255,255,.2);transition:all .2s;display:inline-flex;align-items:center;gap:.5rem}
-.btn-out:hover{border-color:var(--gold);color:var(--gold)}
-.hero-stats{display:flex;gap:3rem;flex-wrap:wrap;padding-top:2rem;border-top:1px solid rgba(255,255,255,.08)}
-.hs-num{font-family:var(--ff-d);font-size:2.2rem;font-weight:800;color:var(--gold);line-height:1}
-.hs-lbl{font-size:.78rem;color:var(--gray);margin-top:.2rem}
+.hero-sub{font-size:clamp(1.05rem,2.2vw,1.25rem);color:var(--gray-light);max-width:600px;margin-bottom:3rem;font-weight:300;line-height:1.8}
+.hero-btns{display:flex;gap:1.1rem;flex-wrap:wrap;margin-bottom:4rem}
+.btn-primary{background:var(--gold);color:var(--navy);padding:1rem 2.2rem;border-radius:var(--radius-sm);text-decoration:none;font-weight:700;font-size:1rem;transition:all .25s;display:inline-flex;align-items:center;gap:.6rem;box-shadow:0 4px 20px rgba(201,168,76,.25)}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-3px);box-shadow:0 10px 30px rgba(201,168,76,.38)}
+.btn-secondary{background:transparent;color:var(--white);padding:1rem 2.2rem;border-radius:var(--radius-sm);text-decoration:none;font-weight:500;font-size:1rem;border:1px solid rgba(255,255,255,.18);transition:all .25s;display:inline-flex;align-items:center;gap:.6rem}
+.btn-secondary:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:3.5rem;flex-wrap:wrap;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.08)}
+.hs-num{font-family:var(--ff-d);font-size:2.4rem;font-weight:800;color:var(--gold);line-height:1}
+.hs-lbl{font-size:.8rem;color:var(--gray);margin-top:.3rem;letter-spacing:.02em}
 
-/* DIVIDERS */
-.dv-gold{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
-.dv-blue{height:1px;background:linear-gradient(90deg,transparent,var(--blue),transparent)}
+/* ═══ DIVISORES ═══ */
+.dv-gold{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0}
+.dv-blue{height:1px;background:linear-gradient(90deg,transparent,var(--blue),transparent);margin:0}
 
-/* SECTION COMMONS */
-.s-lbl{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem}
-.s-ttl{font-family:var(--ff-d);font-size:clamp(1.9rem,4vw,2.9rem);font-weight:700;letter-spacing:-.025em;line-height:1.12;margin-bottom:.85rem}
-.s-sub{color:var(--gray-light);font-size:.98rem}
+/* ═══ SECTION HELPERS ═══ */
+.sec{padding:8rem 6%}
+.sec-dark{background:var(--navy-mid)}
+.sec-center{text-align:center}
+.sec-center .s-sub{max-width:560px;margin:0 auto}
+.s-lbl{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.85rem}
+.s-lbl i{font-size:.65rem}
+.s-ttl{font-family:var(--ff-d);font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;letter-spacing:-.025em;line-height:1.1;margin-bottom:1rem}
+.s-sub{color:var(--gray-light);font-size:1rem;line-height:1.8}
+.inner{max-width:1200px;margin:0 auto}
 
-/* 3 PASOS */
-.pasos{padding:6rem 5%;background:var(--navy-mid)}
-.pasos-hdr{text-align:center;margin-bottom:3.5rem}
-.pasos-hdr .s-sub{max-width:520px;margin:0 auto}
-.pasos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.06);border-radius:14px;overflow:hidden;max-width:1000px;margin:0 auto}
-.paso{background:var(--navy-light);padding:2.5rem 1.75rem;text-align:center;transition:background .3s}
+/* ═══ 3 PASOS ═══ */
+.pasos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,.05);border-radius:var(--radius);overflow:hidden;max-width:1050px;margin:4rem auto 0}
+.paso{background:var(--navy-card);padding:3rem 2.25rem;text-align:center;transition:background .3s;position:relative}
 .paso:hover{background:#1e2d4a}
-.paso-n{width:58px;height:58px;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;font-family:var(--ff-d);font-size:1.3rem;font-weight:800;color:var(--gold)}
-.paso h3{font-family:var(--ff-d);font-size:1.1rem;font-weight:700;margin-bottom:.55rem}
-.paso p{color:var(--gray-light);font-size:.88rem}
+.paso-icon{width:72px;height:72px;border-radius:50%;border:2px solid var(--gold-border);background:var(--gold-dim);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;transition:all .3s}
+.paso:hover .paso-icon{border-color:var(--gold);background:rgba(201,168,76,.2)}
+.paso-icon i{font-size:1.5rem;color:var(--gold)}
+.paso-n{position:absolute;top:1.25rem;right:1.5rem;font-family:var(--ff-d);font-size:.75rem;font-weight:800;color:rgba(201,168,76,.3);letter-spacing:.05em}
+.paso h3{font-family:var(--ff-d);font-size:1.15rem;font-weight:700;margin-bottom:.75rem}
+.paso p{color:var(--gray-light);font-size:.92rem;line-height:1.75}
 
-/* NOSOTROS */
-.nosotros{padding:6rem 5%}
-.nos-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
-.val-list{list-style:none;margin-top:1.75rem;display:flex;flex-direction:column;gap:.8rem}
-.val-li{display:flex;gap:1rem;align-items:flex-start;padding:1rem 1.2rem;background:var(--navy-light);border-radius:10px;border:1px solid rgba(255,255,255,.06);transition:border-color .2s}
-.val-li:hover{border-color:rgba(201,168,76,.28)}
-.val-ico{width:38px;height:38px;min-width:38px;border-radius:8px;background:var(--gold-dim);border:1px solid rgba(201,168,76,.18);display:flex;align-items:center;justify-content:center;font-size:1rem}
-.val-t{font-weight:600;font-size:.9rem;margin-bottom:.12rem}
-.val-d{font-size:.8rem;color:var(--gray)}
-.team-card{background:var(--navy-light);border:1px solid rgba(201,168,76,.22);border-radius:16px;overflow:hidden;position:relative}
+/* ═══ NOSOTROS ═══ */
+.nos-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;max-width:1200px;margin:0 auto}
+.val-list{list-style:none;margin-top:2rem;display:flex;flex-direction:column;gap:1rem}
+.val-li{display:flex;gap:1.1rem;align-items:flex-start;padding:1.25rem 1.4rem;background:var(--navy-card);border-radius:var(--radius-sm);border:1px solid rgba(255,255,255,.06);transition:all .25s;cursor:default}
+.val-li:hover{border-color:var(--gold-border);transform:translateX(4px)}
+.val-ico{width:42px;height:42px;min-width:42px;border-radius:10px;background:var(--gold-dim);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center}
+.val-ico i{font-size:1rem;color:var(--gold)}
+.val-t{font-weight:600;font-size:.93rem;margin-bottom:.2rem}
+.val-d{font-size:.82rem;color:var(--gray);line-height:1.65}
+.team-card{background:var(--navy-card);border:1px solid var(--gold-border);border-radius:var(--radius);overflow:hidden;position:relative}
 .team-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--blue));z-index:1}
-.team-img{width:100%;height:260px;object-fit:cover;object-position:top center;display:block}
-.team-body{padding:1.75rem}
-.team-name{font-family:var(--ff-d);font-size:1.15rem;font-weight:700}
-.team-role{font-size:.78rem;color:var(--gold);margin-bottom:.8rem}
-.team-bio{font-size:.86rem;color:var(--gray-light);margin-bottom:1.2rem}
-.team-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:.55rem}
-.kpi{background:var(--navy);border-radius:8px;padding:.7rem .4rem;text-align:center;border:1px solid rgba(255,255,255,.06)}
-.kpi-n{font-family:var(--ff-d);font-size:1.25rem;font-weight:800;color:var(--gold);display:block}
-.kpi-l{font-size:.65rem;color:var(--gray)}
-.cover-badge{display:flex;align-items:center;gap:.5rem;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.25);border-radius:8px;padding:.65rem 1rem;margin-top:.9rem;font-size:.8rem;color:var(--blue-bright)}
+.team-img{width:100%;height:280px;object-fit:cover;object-position:top center;display:block;transition:transform .5s}
+.team-card:hover .team-img{transform:scale(1.03)}
+.team-body{padding:2rem}
+.team-name{font-family:var(--ff-d);font-size:1.2rem;font-weight:700;margin-bottom:.2rem}
+.team-role{font-size:.8rem;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:.4rem}
+.team-role i{font-size:.7rem}
+.team-bio{font-size:.88rem;color:var(--gray-light);margin-bottom:1.5rem;line-height:1.75}
+.team-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem}
+.kpi{background:var(--navy);border-radius:var(--radius-sm);padding:.85rem .5rem;text-align:center;border:1px solid rgba(255,255,255,.06);transition:border-color .2s}
+.kpi:hover{border-color:var(--gold-border)}
+.kpi-n{font-family:var(--ff-d);font-size:1.35rem;font-weight:800;color:var(--gold);display:block}
+.kpi-l{font-size:.65rem;color:var(--gray);margin-top:.15rem;letter-spacing:.02em}
+.cover-badge{display:flex;align-items:center;gap:.6rem;background:var(--blue-dim);border:1px solid rgba(59,130,246,.25);border-radius:var(--radius-sm);padding:.75rem 1.1rem;margin-top:1rem;font-size:.82rem;color:var(--blue-bright)}
+.cover-badge i{font-size:.8rem}
 
-/* AGENTES */
-.agentes{padding:6rem 5%}
-.ag-inner{max-width:1200px;margin:0 auto}
-.ag-hdr{text-align:center;margin-bottom:3.5rem}
-.ag-hdr .s-sub{max-width:560px;margin:0 auto}
-.ag-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:1rem}
-.ag-card{background:var(--navy-light);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:1.5rem 1rem;text-align:center;transition:all .3s}
-.ag-card:hover{border-color:rgba(201,168,76,.3);transform:translateY(-3px)}
-.ag-img{width:54px;height:54px;border-radius:50%;object-fit:cover;margin:0 auto .7rem;display:block;border:2px solid rgba(201,168,76,.28)}
-.ag-name{font-family:var(--ff-d);font-size:.83rem;font-weight:700;color:var(--gold);margin-bottom:.18rem}
-.ag-role{font-size:.73rem;color:var(--gray)}
-.ag-live{display:inline-flex;align-items:center;gap:.3rem;font-size:.64rem;color:var(--green);margin-top:.38rem}
-.ag-live::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--green)}
+/* ═══ VIDEO SECTION ═══ */
+.video-sec{padding:8rem 6%;background:var(--navy-mid)}
+.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;max-width:1200px;margin:3.5rem auto 0}
+.video-card{border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,.08);position:relative;cursor:pointer;transition:all .3s}
+.video-card:hover{border-color:var(--gold-border);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.3)}
+.video-card video{width:100%;display:block;height:240px;object-fit:cover;opacity:.75}
+.video-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,18,32,.9) 0%,transparent 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem}
+.video-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) translateY(-20px);width:56px;height:56px;border-radius:50%;background:rgba(201,168,76,.9);display:flex;align-items:center;justify-content:center;transition:all .3s;opacity:0}
+.video-card:hover .video-play{opacity:1;transform:translate(-50%,-50%) translateY(0)}
+.video-play i{font-size:1.1rem;color:var(--navy);margin-left:3px}
+.video-card-ttl{font-family:var(--ff-d);font-size:1rem;font-weight:700;margin-bottom:.25rem}
+.video-card-sub{font-size:.8rem;color:var(--gray-light)}
 
-/* SERVICIOS */
-.servicios{padding:6rem 5%;background:var(--navy-mid)}
-.svc-inner{max-width:1200px;margin:0 auto}
-.svc-hdr{text-align:center;margin-bottom:3.5rem}
-.svc-hdr .s-sub{max-width:540px;margin:0 auto}
-.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:1.5rem}
-.svc-card{background:var(--navy-light);border:1px solid rgba(255,255,255,.07);border-radius:14px;overflow:hidden;transition:all .3s;display:flex;flex-direction:column}
-.svc-card:hover{border-color:rgba(201,168,76,.3);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.28)}
-.svc-card.hot{border-color:rgba(201,168,76,.38);background:linear-gradient(160deg,var(--navy-light),rgba(201,168,76,.05))}
-.svc-img{width:100%;height:175px;object-fit:cover;opacity:.78;display:block}
-.svc-body{padding:1.75rem;flex:1;display:flex;flex-direction:column}
-.svc-badge{display:inline-block;background:var(--gold);color:var(--navy);font-size:.64rem;font-weight:700;padding:.2rem .6rem;border-radius:100px;letter-spacing:.05em;margin-bottom:.7rem;align-self:flex-start}
-.svc-card h3{font-family:var(--ff-d);font-size:1.08rem;font-weight:700;margin-bottom:.45rem}
-.svc-card p{color:var(--gray-light);font-size:.86rem;margin-bottom:1.2rem;flex:1}
-.svc-price{font-family:var(--ff-d);font-size:1.55rem;font-weight:800;color:var(--gold)}
-.svc-price span{font-size:.8rem;font-weight:400;color:var(--gray)}
-.svc-feats{list-style:none;margin:.8rem 0 1.2rem;display:flex;flex-direction:column;gap:.32rem}
-.svc-feats li{font-size:.82rem;color:var(--gray-light);display:flex;align-items:center;gap:.42rem}
-.svc-feats li::before{content:'✓';color:var(--green);font-weight:700;font-size:.78rem}
-.svc-btn{display:block;text-align:center;padding:.72rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.86rem;transition:all .2s;margin-top:auto}
+/* ═══ AGENTES ═══ */
+.ag-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1.25rem;max-width:1200px;margin:3.5rem auto 0}
+.ag-card{background:var(--navy-card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:2rem 1.25rem;text-align:center;transition:all .3s;cursor:default}
+.ag-card:hover{border-color:var(--gold-border);transform:translateY(-5px);box-shadow:0 16px 32px rgba(0,0,0,.25)}
+.ag-icon{width:60px;height:60px;border-radius:50%;background:var(--gold-dim);border:2px solid var(--gold-border);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;transition:all .3s}
+.ag-card:hover .ag-icon{background:rgba(201,168,76,.2);border-color:var(--gold)}
+.ag-icon i{font-size:1.3rem;color:var(--gold)}
+.ag-name{font-family:var(--ff-d);font-size:.9rem;font-weight:700;color:var(--gold);margin-bottom:.2rem}
+.ag-role{font-size:.75rem;color:var(--gray);margin-bottom:.6rem;line-height:1.5}
+.ag-live{display:inline-flex;align-items:center;gap:.3rem;font-size:.65rem;color:var(--green);font-weight:500}
+.ag-live::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+
+/* ═══ SERVICIOS ═══ */
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.75rem;max-width:1200px;margin:3.5rem auto 0}
+.svc-card{background:var(--navy-card);border:1px solid rgba(255,255,255,.07);border-radius:var(--radius);overflow:hidden;transition:all .3s;display:flex;flex-direction:column}
+.svc-card:hover{border-color:var(--gold-border);transform:translateY(-5px);box-shadow:0 24px 48px rgba(0,0,0,.3)}
+.svc-card.featured{border-color:rgba(201,168,76,.35);background:linear-gradient(160deg,var(--navy-card),rgba(201,168,76,.05))}
+.svc-img{width:100%;height:190px;object-fit:cover;opacity:.75;display:block;transition:opacity .3s}
+.svc-card:hover .svc-img{opacity:.9}
+.svc-body{padding:2rem;flex:1;display:flex;flex-direction:column}
+.svc-tag{display:inline-flex;align-items:center;gap:.4rem;background:var(--gold);color:var(--navy);font-size:.65rem;font-weight:700;padding:.2rem .65rem;border-radius:100px;letter-spacing:.05em;margin-bottom:.85rem;align-self:flex-start}
+.svc-tag i{font-size:.6rem}
+.svc-card h3{font-family:var(--ff-d);font-size:1.1rem;font-weight:700;margin-bottom:.6rem}
+.svc-card p{color:var(--gray-light);font-size:.88rem;margin-bottom:1.5rem;flex:1;line-height:1.75}
+.svc-feats{list-style:none;margin-bottom:1.75rem;display:flex;flex-direction:column;gap:.4rem}
+.svc-feats li{font-size:.83rem;color:var(--gray-light);display:flex;align-items:center;gap:.5rem}
+.svc-feats li i{font-size:.7rem;color:var(--green);min-width:12px}
+.svc-btn{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.8rem;border-radius:var(--radius-sm);text-decoration:none;font-weight:700;font-size:.88rem;transition:all .2s;margin-top:auto}
 .svc-btn.solid{background:var(--gold);color:var(--navy)}
 .svc-btn.solid:hover{background:var(--gold-light)}
-.svc-btn.ol{border:1px solid rgba(201,168,76,.38);color:var(--gold)}
-.svc-btn.ol:hover{background:var(--gold-dim)}
-.founders-note{text-align:center;margin-top:1.75rem;font-size:.84rem;color:var(--gold);padding:.75rem 1.5rem;background:var(--gold-dim);border-radius:8px;border:1px solid rgba(201,168,76,.2);max-width:600px;margin-left:auto;margin-right:auto}
+.svc-btn.outline{border:1px solid var(--gold-border);color:var(--gold)}
+.svc-btn.outline:hover{background:var(--gold-dim)}
+.svc-btn i{font-size:.75rem}
 
-/* INFRA */
-.infra{padding:6rem 5%}
-.infra-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-.infra-vid{border-radius:14px;overflow:hidden;border:1px solid rgba(201,168,76,.2)}
-.infra-vid video{width:100%;display:block;opacity:.82}
-.infra-items{display:flex;flex-direction:column;gap:.8rem;margin-top:1.5rem}
-.infra-item{display:flex;gap:1rem;align-items:center;padding:.9rem 1.1rem;background:var(--navy-light);border-radius:10px;border:1px solid rgba(255,255,255,.06)}
-.infra-icon{font-size:1.25rem}
-.infra-name{font-weight:600;font-size:.88rem}
-.infra-desc{font-size:.76rem;color:var(--gray)}
+/* ═══ INFRA ═══ */
+.infra-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;max-width:1200px;margin:0 auto}
+.infra-vid{border-radius:var(--radius);overflow:hidden;border:1px solid var(--gold-border);box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.infra-vid video{width:100%;display:block;opacity:.85}
+.infra-items{display:flex;flex-direction:column;gap:1rem;margin-top:2rem}
+.infra-item{display:flex;gap:1.1rem;align-items:center;padding:1.1rem 1.3rem;background:var(--navy-card);border-radius:var(--radius-sm);border:1px solid rgba(255,255,255,.06);transition:all .25s}
+.infra-item:hover{border-color:var(--gold-border);transform:translateX(4px)}
+.infra-item-icon{width:40px;height:40px;min-width:40px;border-radius:var(--radius-sm);background:var(--gold-dim);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center}
+.infra-item-icon i{font-size:.95rem;color:var(--gold)}
+.infra-name{font-weight:600;font-size:.9rem;margin-bottom:.15rem}
+.infra-desc{font-size:.78rem;color:var(--gray);line-height:1.55}
 
-/* CASOS */
-.casos{padding:6rem 5%;background:var(--navy-mid)}
-.cas-inner{max-width:940px;margin:0 auto}
-.cas-hdr{text-align:center;margin-bottom:3.5rem}
-.cas-hdr .s-sub{max-width:520px;margin:0 auto}
-.caso-card{background:var(--navy-light);border:1px solid rgba(201,168,76,.22);border-radius:16px;overflow:hidden;position:relative}
+/* ═══ CASOS ═══ */
+.caso-card{background:var(--navy-card);border:1px solid var(--gold-border);border-radius:var(--radius);overflow:hidden;position:relative;max-width:960px;margin:3.5rem auto 0}
 .caso-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--blue-bright));z-index:1}
-.caso-img{width:100%;height:210px;object-fit:cover;opacity:.72;display:block}
-.caso-body{padding:2.5rem}
-.caso-hrow{display:flex;align-items:center;gap:1.2rem;margin-bottom:1.75rem}
-.caso-lbox{width:58px;height:58px;border-radius:12px;background:linear-gradient(135deg,var(--gold),#8B6914);display:flex;align-items:center;justify-content:center;font-size:1.7rem}
-.caso-co{font-family:var(--ff-d);font-size:1.35rem;font-weight:800}
-.caso-type{font-size:.8rem;color:var(--gold)}
-.blk{border-radius:10px;padding:1.15rem 1.4rem;margin-bottom:1.2rem}
+.caso-img{width:100%;height:240px;object-fit:cover;opacity:.7;display:block}
+.caso-body{padding:3rem}
+.caso-hrow{display:flex;align-items:center;gap:1.25rem;margin-bottom:2rem}
+.caso-lbox{width:62px;height:62px;border-radius:var(--radius-sm);background:linear-gradient(135deg,var(--gold),#8B6914);display:flex;align-items:center;justify-content:center}
+.caso-lbox i{font-size:1.6rem;color:var(--navy)}
+.caso-co{font-family:var(--ff-d);font-size:1.4rem;font-weight:800;margin-bottom:.2rem}
+.caso-type{font-size:.8rem;color:var(--gold);display:flex;align-items:center;gap:.4rem}
+.caso-type i{font-size:.7rem}
+.blk{border-radius:var(--radius-sm);padding:1.3rem 1.6rem;margin-bottom:1.3rem}
 .blk-r{background:rgba(239,68,68,.07);border:1px solid rgba(239,68,68,.2)}
 .blk-g{background:rgba(16,185,129,.07);border:1px solid rgba(16,185,129,.2)}
-.blk-ttl{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.45rem}
+.blk-ttl{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.55rem;display:flex;align-items:center;gap:.4rem}
 .blk-r .blk-ttl{color:var(--red)}
 .blk-g .blk-ttl{color:var(--green)}
-.blk p{font-size:.86rem;color:var(--gray-light)}
-.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:.9rem;margin-bottom:1.75rem}
-.mtr{background:var(--navy);border-radius:10px;padding:1rem .65rem;text-align:center;border:1px solid rgba(255,255,255,.06)}
-.mtr-n{font-family:var(--ff-d);font-size:1.7rem;font-weight:800;color:var(--gold);display:block}
-.mtr-l{font-size:.68rem;color:var(--gray)}
-.testimonial{background:var(--navy);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:1.5rem;font-style:italic;color:var(--gray-light);font-size:.9rem}
-.test-author{margin-top:.65rem;font-style:normal;font-weight:600;color:var(--white);font-size:.8rem}
+.blk-ttl i{font-size:.65rem}
+.blk p{font-size:.9rem;color:var(--gray-light);line-height:1.75}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem}
+.mtr{background:var(--navy);border-radius:var(--radius-sm);padding:1.1rem .75rem;text-align:center;border:1px solid rgba(255,255,255,.06);transition:border-color .2s}
+.mtr:hover{border-color:var(--gold-border)}
+.mtr-n{font-family:var(--ff-d);font-size:1.8rem;font-weight:800;color:var(--gold);display:block}
+.mtr-l{font-size:.7rem;color:var(--gray);margin-top:.2rem}
+.testimonial{background:var(--navy);border-left:3px solid var(--gold);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:1.75rem;font-style:italic;color:var(--gray-light);font-size:.92rem;line-height:1.8}
+.test-author{margin-top:.8rem;font-style:normal;font-weight:600;color:var(--white);font-size:.82rem;display:flex;align-items:center;gap:.4rem}
+.test-author i{color:var(--gold);font-size:.75rem}
 
-/* CTA FINAL */
-.cta-final{padding:7rem 5%;text-align:center;position:relative;overflow:hidden}
+/* ═══ CONTACTO ═══ */
+.contacto-sec{padding:8rem 6%;background:var(--navy-mid)}
+.contacto-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.contact-info{padding-top:1rem}
+.contact-info .s-ttl{margin-bottom:1.25rem}
+.contact-info .s-sub{margin-bottom:2.5rem}
+.contact-channels{display:flex;flex-direction:column;gap:1rem}
+.contact-ch{display:flex;align-items:center;gap:1rem;padding:1.1rem 1.3rem;background:var(--navy-card);border-radius:var(--radius-sm);border:1px solid rgba(255,255,255,.06);text-decoration:none;color:var(--white);transition:all .25s}
+.contact-ch:hover{border-color:var(--gold-border);transform:translateX(4px)}
+.contact-ch-icon{width:42px;height:42px;min-width:42px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center}
+.contact-ch-icon i{font-size:1rem}
+.contact-ch-icon.wa{background:rgba(37,211,102,.15);border:1px solid rgba(37,211,102,.3)}
+.contact-ch-icon.wa i{color:#25D366}
+.contact-ch-icon.em{background:var(--blue-dim);border:1px solid rgba(59,130,246,.3)}
+.contact-ch-icon.em i{color:var(--blue-bright)}
+.contact-ch-icon.tg{background:rgba(0,136,204,.15);border:1px solid rgba(0,136,204,.3)}
+.contact-ch-icon.tg i{color:#0088CC}
+.contact-ch-ttl{font-weight:600;font-size:.9rem;margin-bottom:.1rem}
+.contact-ch-sub{font-size:.78rem;color:var(--gray)}
+.contact-form{background:var(--navy-card);border:1px solid var(--gold-border);border-radius:var(--radius);padding:2.5rem;position:relative}
+.contact-form::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--blue));border-radius:var(--radius) var(--radius) 0 0}
+.form-ttl{font-family:var(--ff-d);font-size:1.2rem;font-weight:700;margin-bottom:.4rem}
+.form-sub{font-size:.85rem;color:var(--gray);margin-bottom:1.75rem}
+.form-group{margin-bottom:1.1rem}
+.form-group label{display:block;font-size:.8rem;font-weight:500;color:var(--gray-light);margin-bottom:.4rem;letter-spacing:.02em}
+.form-group input,.form-group select{width:100%;background:var(--navy);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-sm);padding:.8rem 1rem;color:var(--white);font-family:var(--ff-b);font-size:.9rem;transition:border-color .2s;outline:none}
+.form-group input::placeholder{color:var(--gray)}
+.form-group input:focus,.form-group select:focus{border-color:var(--gold)}
+.form-group select{cursor:pointer;-webkit-appearance:none}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-submit{width:100%;background:var(--gold);color:var(--navy);border:none;padding:1rem;border-radius:var(--radius-sm);font-family:var(--ff-d);font-size:1rem;font-weight:700;cursor:pointer;transition:all .25s;display:flex;align-items:center;justify-content:center;gap:.6rem;margin-top:.5rem}
+.form-submit:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,.35)}
+.form-submit i{font-size:.85rem}
+.form-success{display:none;text-align:center;padding:2rem;color:var(--green)}
+.form-success i{font-size:2.5rem;margin-bottom:1rem;display:block}
+.form-success p{font-size:.95rem;color:var(--gray-light)}
+
+/* ═══ CTA FINAL ═══ */
+.cta-final{padding:9rem 6%;text-align:center;position:relative;overflow:hidden}
 .cta-vbg{position:absolute;inset:0;z-index:0}
 .cta-vbg video{width:100%;height:100%;object-fit:cover;opacity:.1}
-.cta-vbg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,168,76,.07) 0%,var(--navy) 68%)}
-.cta-cnt{position:relative;z-index:1}
-.cta-cnt h2{font-family:var(--ff-d);font-size:clamp(2.2rem,5vw,4.2rem);font-weight:800;letter-spacing:-.03em;line-height:1.07;margin-bottom:1rem}
-.cta-cnt p{color:var(--gray-light);font-size:1.03rem;margin-bottom:2.5rem;max-width:500px;margin-left:auto;margin-right:auto}
-.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.btn-call{background:var(--gold);color:var(--navy);padding:1.1rem 2.3rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.03rem;transition:all .2s;display:inline-flex;align-items:center;gap:.55rem;box-shadow:0 4px 20px rgba(201,168,76,.28)}
-.btn-call:hover{background:var(--gold-light);transform:translateY(-3px);box-shadow:0 8px 28px rgba(201,168,76,.38)}
-.btn-wa{background:#25D366;color:#fff;padding:1.1rem 2.3rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.03rem;transition:all .2s;display:inline-flex;align-items:center;gap:.55rem}
+.cta-vbg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,168,76,.08) 0%,var(--navy) 65%)}
+.cta-cnt{position:relative;z-index:1;max-width:700px;margin:0 auto}
+.cta-cnt h2{font-family:var(--ff-d);font-size:clamp(2.4rem,5.5vw,4.5rem);font-weight:800;letter-spacing:-.035em;line-height:1.06;margin-bottom:1.25rem}
+.cta-cnt p{color:var(--gray-light);font-size:1.1rem;margin-bottom:3rem;line-height:1.8}
+.cta-btns{display:flex;gap:1.1rem;justify-content:center;flex-wrap:wrap}
+.btn-call{background:var(--gold);color:var(--navy);padding:1.15rem 2.5rem;border-radius:var(--radius-sm);text-decoration:none;font-weight:700;font-size:1.05rem;transition:all .25s;display:inline-flex;align-items:center;gap:.6rem;box-shadow:0 4px 20px rgba(201,168,76,.28)}
+.btn-call:hover{background:var(--gold-light);transform:translateY(-3px);box-shadow:0 10px 30px rgba(201,168,76,.4)}
+.btn-wa{background:#25D366;color:#fff;padding:1.15rem 2.5rem;border-radius:var(--radius-sm);text-decoration:none;font-weight:700;font-size:1.05rem;transition:all .25s;display:inline-flex;align-items:center;gap:.6rem}
 .btn-wa:hover{background:#20B856;transform:translateY(-3px)}
-.cta-note{margin-top:1.4rem;font-size:.8rem;color:var(--gray)}
+.cta-note{margin-top:1.75rem;font-size:.82rem;color:var(--gray);display:flex;align-items:center;justify-content:center;gap:.5rem}
+.cta-note i{font-size:.75rem;color:var(--gold)}
 
-/* FOOTER */
-footer{background:var(--navy-mid);padding:2.5rem 5%;border-top:1px solid rgba(255,255,255,.06)}
-.ft-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
-.ft-logo{display:flex;align-items:center;gap:.6rem}
-.ft-logo img{height:26px}
-.ft-logo-txt{font-family:var(--ff-d);font-size:1.05rem;font-weight:800}
+/* ═══ FOOTER ═══ */
+footer{background:var(--navy-mid);padding:3rem 6%;border-top:1px solid rgba(255,255,255,.06)}
+.ft-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem}
+.ft-logo{display:flex;align-items:center;gap:.7rem}
+.ft-logo img{height:28px}
+.ft-logo-txt{font-family:var(--ff-d);font-size:1.1rem;font-weight:800}
 .ft-logo-txt span{color:var(--gold)}
-.ft-links{display:flex;gap:1.5rem;list-style:none;flex-wrap:wrap}
-.ft-links a{color:var(--gray);text-decoration:none;font-size:.8rem;transition:color .2s}
+.ft-links{display:flex;gap:1.75rem;list-style:none;flex-wrap:wrap}
+.ft-links a{color:var(--gray);text-decoration:none;font-size:.82rem;transition:color .2s}
 .ft-links a:hover{color:var(--gold)}
-.ft-copy{text-align:center;color:var(--gray);font-size:.73rem;margin-top:1.5rem;max-width:1200px;margin-left:auto;margin-right:auto}
+.ft-social{display:flex;gap:.75rem}
+.ft-social a{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:var(--gray);text-decoration:none;transition:all .2s;font-size:.8rem}
+.ft-social a:hover{background:var(--gold-dim);border-color:var(--gold-border);color:var(--gold)}
+.ft-copy{text-align:center;color:var(--gray);font-size:.75rem;margin-top:2rem;max-width:1200px;margin-left:auto;margin-right:auto;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.05)}
 
-/* CHAT FAB */
-.chat-fab{position:fixed;bottom:2rem;right:2rem;z-index:300;width:54px;height:54px;border-radius:50%;background:var(--gold);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.35rem;box-shadow:0 4px 18px rgba(201,168,76,.38);transition:all .2s}
+/* ═══ CHAT FAB ═══ */
+.chat-fab{position:fixed;bottom:2rem;right:2rem;z-index:300;width:56px;height:56px;border-radius:50%;background:var(--gold);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(201,168,76,.4);transition:all .25s}
 .chat-fab:hover{transform:scale(1.1);background:var(--gold-light)}
+.chat-fab i{font-size:1.2rem;color:var(--navy)}
 
-/* RESPONSIVE */
+/* ═══ RESPONSIVE ═══ */
 @media(max-width:960px){
-  .nos-inner,.infra-inner{grid-template-columns:1fr;gap:3rem}
+  .nos-grid,.infra-grid,.contacto-inner{grid-template-columns:1fr;gap:3.5rem}
   .nav-links{display:none}
   .metrics{grid-template-columns:repeat(2,1fr)}
   .team-kpis{grid-template-columns:repeat(2,1fr)}
+  .video-grid{grid-template-columns:1fr}
 }
-@media(max-width:600px){
+@media(max-width:660px){
   .pasos-grid{grid-template-columns:1fr}
   .ag-grid{grid-template-columns:repeat(2,1fr)}
-  .metrics{grid-template-columns:repeat(2,1fr)}
-  .hero-stats{gap:1.5rem}
+  .hero-stats{gap:2rem}
+  .form-row{grid-template-columns:1fr}
+  .cta-btns{flex-direction:column;align-items:center}
 }
 
-/* ANIMATIONS */
-@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
-.hero-content>*{animation:fadeUp .7s ease both}
-.hero-badge{animation-delay:.1s}.hero h1{animation-delay:.2s}
-.hero-sub{animation-delay:.3s}.hero-btns{animation-delay:.4s}
-.hero-stats{animation-delay:.5s}
+/* ═══ SCROLL REVEAL ═══ */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ═══ HERO ANIMATIONS ═══ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.hero-content>*{animation:fadeUp .75s ease both}
+.hero-badge{animation-delay:.1s}.hero h1{animation-delay:.22s}
+.hero-sub{animation-delay:.34s}.hero-btns{animation-delay:.46s}
+.hero-stats{animation-delay:.58s}
 </style>
 </head>
 <body>
@@ -235,7 +307,7 @@ footer{background:var(--navy-mid);padding:2.5rem 5%;border-top:1px solid rgba(25
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <img src="assets/img/katia-logo-icon.svg" alt="KATIA.AI Logo">
+    <img src="assets/img/katia-logo-icon.svg" alt="KATIA.AI Solutions">
     <span class="nav-logo-txt">KATIA<span>.AI</span> Solutions</span>
   </a>
   <ul class="nav-links">
@@ -243,31 +315,32 @@ footer{background:var(--navy-mid);padding:2.5rem 5%;border-top:1px solid rgba(25
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#nosotros">Nosotros</a></li>
     <li><a href="#casos">Casos de Éxito</a></li>
+    <li><a href="#contacto">Contacto</a></li>
   </ul>
-  <a href="https://wa.me/19546997514?text=Hola,%20quiero%20una%20consulta%20gratuita" class="nav-cta" target="_blank">Consulta Gratuita</a>
+  <a href="#contacto" class="nav-cta"><i class="fa-solid fa-calendar-check"></i> Consulta Gratuita</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-video">
-    <video autoplay muted loop playsinline>
-      <source src="assets/img/video-hero-lobby.mp4" type="video/mp4">
+    <video autoplay muted loop playsinline poster="assets/img/office-gold.jpg">
       <source src="assets/img/video-katia-team.mp4" type="video/mp4">
     </video>
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-grid"></div>
-  <div class="hero-glow"></div>
+  <div class="hero-glow-1"></div>
+  <div class="hero-glow-2"></div>
   <div class="hero-content">
-    <div class="hero-badge">🌎 Sirviendo PYMEs en todo USA</div>
-    <h1>Menos tareas manuales.<br><span class="g">Más tiempo</span> para<br><span class="b">crecer.</span></h1>
-    <p class="hero-sub">Automatizamos los procesos operativos, administrativos y contables de tu PYME con Inteligencia Artificial. Sin contratos largos. Sin complicaciones técnicas.</p>
+    <div class="hero-badge"><i class="fa-solid fa-globe"></i> Sirviendo PYMEs en todo Estados Unidos</div>
+    <h1>Menos tareas<br>manuales. <span class="g">Más tiempo</span><br>para <span class="b">crecer.</span></h1>
+    <p class="hero-sub">Automatizamos los procesos operativos, administrativos y contables de tu empresa con Inteligencia Artificial. Sin contratos largos. Sin complicaciones técnicas.</p>
     <div class="hero-btns">
-      <a href="https://wa.me/19546997514?text=Hola,%20quiero%20una%20consulta%20gratuita" class="btn-gold" target="_blank">📋 Solicitar Consulta Gratuita</a>
-      <a href="#servicios" class="btn-out">Ver Servicios →</a>
+      <a href="#contacto" class="btn-primary"><i class="fa-solid fa-calendar-check"></i> Solicitar Diagnóstico Gratuito</a>
+      <a href="#servicios" class="btn-secondary"><i class="fa-solid fa-arrow-right"></i> Ver Servicios</a>
     </div>
     <div class="hero-stats">
-      <div><div class="hs-num">50+</div><div class="hs-lbl">Workflows activos</div></div>
+      <div><div class="hs-num">50+</div><div class="hs-lbl">Flujos automatizados</div></div>
       <div><div class="hs-num">72h</div><div class="hs-lbl">Primer resultado</div></div>
       <div><div class="hs-num">30+</div><div class="hs-lbl">Años de experiencia</div></div>
       <div><div class="hs-num">24/7</div><div class="hs-lbl">Monitoreo activo</div></div>
@@ -278,27 +351,30 @@ footer{background:var(--navy-mid);padding:2.5rem 5%;border-top:1px solid rgba(25
 <div class="dv-gold"></div>
 
 <!-- 3 PASOS -->
-<section class="pasos" id="proceso">
-  <div class="pasos-hdr">
-    <p class="s-lbl">Metodología Probada</p>
+<section class="sec sec-dark" id="proceso">
+  <div class="inner sec-center reveal">
+    <p class="s-lbl"><i class="fa-solid fa-route"></i> Metodología Probada</p>
     <h2 class="s-ttl">Automatización en 3 pasos</h2>
-    <p class="s-sub">Cero improvisación. De diagnóstico a resultados en menos de 2 semanas.</p>
+    <p class="s-sub">Sin improvisación. Sin riesgos. De diagnóstico a resultados en menos de dos semanas.</p>
   </div>
-  <div class="pasos-grid">
+  <div class="pasos-grid reveal">
     <div class="paso">
-      <div class="paso-n">1</div>
+      <span class="paso-n">01</span>
+      <div class="paso-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
       <h3>Diagnóstico Gratuito</h3>
-      <p>Mapeamos tus procesos en 30 minutos. Identificamos los puntos de dolor y definimos qué automatizar para el mayor impacto inmediato.</p>
+      <p>Analizamos tus procesos en 30 minutos. Identificamos los puntos de dolor y definimos qué automatizar para el mayor impacto desde el primer día.</p>
     </div>
     <div class="paso">
-      <div class="paso-n">2</div>
-      <h3>Build & Testing</h3>
-      <p>Construimos y probamos cada flujo antes de lanzarlo. Tú apruebas la demo. Sin sorpresas en producción. Con rollback garantizado.</p>
+      <span class="paso-n">02</span>
+      <div class="paso-icon"><i class="fa-solid fa-code-branch"></i></div>
+      <h3>Construcción y Pruebas</h3>
+      <p>Construimos y probamos cada flujo antes de lanzarlo. Tú apruebas la demostración. Sin sorpresas en producción. Con plan de rollback garantizado.</p>
     </div>
     <div class="paso">
-      <div class="paso-n">3</div>
-      <h3>Go-Live + Soporte</h3>
-      <p>Lanzamiento supervisado con monitoreo 24/7. Soporte mensual incluido. Tu negocio siempre funcionando sin intervención humana.</p>
+      <span class="paso-n">03</span>
+      <div class="paso-icon"><i class="fa-solid fa-rocket"></i></div>
+      <h3>Lanzamiento y Soporte</h3>
+      <p>Lanzamiento supervisado con monitoreo 24/7. Soporte mensual incluido. Tu negocio funcionando solo, sin intervención humana.</p>
     </div>
   </div>
 </section>
@@ -306,44 +382,46 @@ footer{background:var(--navy-mid);padding:2.5rem 5%;border-top:1px solid rgba(25
 <div class="dv-blue"></div>
 
 <!-- NOSOTROS -->
-<section class="nosotros" id="nosotros">
-  <div class="nos-inner">
-    <div>
-      <p class="s-lbl">Por qué KATIA.AI Solutions</p>
+<section class="sec" id="nosotros">
+  <div class="nos-grid">
+    <div class="reveal">
+      <p class="s-lbl"><i class="fa-solid fa-building"></i> Por qué KATIA.AI Solutions</p>
       <h2 class="s-ttl">Tecnología con experiencia de negocio real</h2>
-      <p class="s-sub">No somos un startup de Silicon Valley. Somos un equipo de profesionales con décadas de experiencia en finanzas, operaciones y tecnología — que entiende exactamente los problemas de tu PYME.</p>
+      <p class="s-sub">No somos un startup de Silicon Valley. Somos un equipo de profesionales con décadas de experiencia en finanzas, operaciones y tecnología — que entiende exactamente los problemas de tu empresa.</p>
       <ul class="val-list">
         <li class="val-li">
-          <div class="val-ico">🧠</div>
-          <div><div class="val-t">Entendemos tu negocio</div><div class="val-d">30+ años en finanzas y operaciones de PYMEs. Sabemos exactamente dónde están los cuellos de botella.</div></div>
+          <div class="val-ico"><i class="fa-solid fa-brain"></i></div>
+          <div><div class="val-t">Entendemos tu negocio</div><div class="val-d">Más de 30 años en finanzas y operaciones de empresas. Sabemos exactamente dónde están los cuellos de botella.</div></div>
         </li>
         <li class="val-li">
-          <div class="val-ico">🌎</div>
-          <div><div class="val-t">Cobertura nacional USA</div><div class="val-d">Servimos PYMEs en todo el país. Las necesidades de tu negocio son las mismas en Texas, Florida o California.</div></div>
+          <div class="val-ico"><i class="fa-solid fa-map-location-dot"></i></div>
+          <div><div class="val-t">Cobertura nacional en EE.UU.</div><div class="val-d">Las necesidades de tu empresa son las mismas en Texas, Florida o California. Servimos a todo el país.</div></div>
         </li>
         <li class="val-li">
-          <div class="val-ico">🤖</div>
-          <div><div class="val-t">7 Agentes IA trabajando por ti</div><div class="val-d">Ventas, Operaciones, Finanzas, Marketing, Auditoría — cada área con su propio agente autónomo activo 24/7.</div></div>
+          <div class="val-ico"><i class="fa-solid fa-robot"></i></div>
+          <div><div class="val-t">7 Agentes de IA trabajando por ti</div><div class="val-d">Ventas, Operaciones, Finanzas, Mercadeo, Auditoría — cada área con su propio agente autónomo activo.</div></div>
         </li>
         <li class="val-li">
-          <div class="val-ico">🔒</div>
-          <div><div class="val-t">Infraestructura empresarial</div><div class="val-d">Servidores dedicados, backups diarios, 99.9% uptime. La tecnología de Fortune 500 para tu PYME.</div></div>
+          <div class="val-ico"><i class="fa-solid fa-shield-halved"></i></div>
+          <div><div class="val-t">Infraestructura empresarial</div><div class="val-d">Servidores dedicados, respaldos diarios, 99.9% disponibilidad. La tecnología de Fortune 500 para tu empresa.</div></div>
         </li>
       </ul>
     </div>
-    <div class="team-card">
-      <img src="assets/img/ceo-portrait.webp" alt="Ignacio Romero CPA — CEO KATIA.AI" class="team-img">
-      <div class="team-body">
-        <div class="team-name">Ignacio Romero, CPA</div>
-        <div class="team-role">Fundador & CEO · Katy, Texas</div>
-        <p class="team-bio">Contador Público con más de 30 años optimizando operaciones de PYMEs. Fundó KATIA.AI Solutions para democratizar el acceso a automatización inteligente — sin importar el tamaño del negocio ni el estado donde operes.</p>
-        <div class="team-kpis">
-          <div class="kpi"><span class="kpi-n">30+</span><span class="kpi-l">Años CPA</span></div>
-          <div class="kpi"><span class="kpi-n">50+</span><span class="kpi-l">Workflows</span></div>
-          <div class="kpi"><span class="kpi-n">7</span><span class="kpi-l">Agentes IA</span></div>
-          <div class="kpi"><span class="kpi-n">24/7</span><span class="kpi-l">Monitoreo</span></div>
+    <div class="reveal">
+      <div class="team-card">
+        <img src="assets/img/ceo-portrait.webp" alt="Ignacio Romero CPA — CEO KATIA.AI Solutions" class="team-img">
+        <div class="team-body">
+          <div class="team-name">Ignacio Romero, CPA</div>
+          <div class="team-role"><i class="fa-solid fa-location-dot"></i> Fundador y CEO · Katy, Texas</div>
+          <p class="team-bio">Contador Público con más de 30 años optimizando operaciones de empresas. Fundó KATIA.AI Solutions para que cada negocio tenga acceso a la misma tecnología de automatización que usan las grandes corporaciones — en español, sin complicaciones técnicas, con resultados desde la primera semana.</p>
+          <div class="team-kpis">
+            <div class="kpi"><span class="kpi-n">30+</span><span class="kpi-l">Años CPA</span></div>
+            <div class="kpi"><span class="kpi-n">50+</span><span class="kpi-l">Flujos activos</span></div>
+            <div class="kpi"><span class="kpi-n">7</span><span class="kpi-l">Agentes IA</span></div>
+            <div class="kpi"><span class="kpi-n">24/7</span><span class="kpi-l">Monitoreo</span></div>
+          </div>
+          <div class="cover-badge"><i class="fa-solid fa-globe"></i> Cobertura nacional — Empresas en todo EE.UU.</div>
         </div>
-        <div class="cover-badge">🌎 Cobertura nacional — PYMEs en todo USA</div>
       </div>
     </div>
   </div>
@@ -351,56 +429,32 @@ footer{background:var(--navy-mid);padding:2.5rem 5%;border-top:1px solid rgba(25
 
 <div class="dv-gold"></div>
 
-<!-- AGENTES IA -->
-<section class="agentes">
-  <div class="ag-inner">
-    <div class="ag-hdr">
-      <p class="s-lbl">Infraestructura IA</p>
-      <h2 class="s-ttl">7 Agentes IA — Tu empresa automatizada</h2>
-      <p class="s-sub">Cada área de tu empresa tiene su propio agente de inteligencia artificial que decide y actúa automáticamente. Todos interconectados, los 24 horas del día.</p>
+<!-- VIDEOS -->
+<section class="video-sec reveal">
+  <div class="inner sec-center">
+    <p class="s-lbl"><i class="fa-solid fa-play-circle"></i> Nuestra Empresa en Acción</p>
+    <h2 class="s-ttl">Mira cómo trabajamos</h2>
+    <p class="s-sub">Tecnología de última generación al servicio de tu empresa. Así se ve KATIA.AI Solutions por dentro.</p>
+  </div>
+  <div class="video-grid inner">
+    <div class="video-card">
+      <video autoplay muted loop playsinline>
+        <source src="assets/img/KATIA_AI_Video_Oficina.mp4" type="video/mp4">
+      </video>
+      <div class="video-card-overlay">
+        <div class="video-play"><i class="fa-solid fa-play"></i></div>
+        <div class="video-card-ttl">Nuestro Equipo en Operación</div>
+        <div class="video-card-sub">KATIA.AI Solutions · Katy, Texas</div>
+      </div>
     </div>
-    <div class="ag-grid">
-      <div class="ag-card">
-        <img src="assets/img/svc-neural.webp" alt="CEO-IA" class="ag-img">
-        <div class="ag-name">CEO-IA</div>
-        <div class="ag-role">Orquestación Central</div>
-        <div class="ag-live">Activo 24/7</div>
-      </div>
-      <div class="ag-card">
-        <img src="assets/img/svc-workflow.webp" alt="VEN-IA" class="ag-img">
-        <div class="ag-name">VEN-IA</div>
-        <div class="ag-role">Ventas & CRM</div>
-        <div class="ag-live">Activo 24/7</div>
-      </div>
-      <div class="ag-card">
-        <img src="assets/img/svc-robotics.webp" alt="OPS-IA" class="ag-img">
-        <div class="ag-name">OPS-IA</div>
-        <div class="ag-role">Operaciones</div>
-        <div class="ag-live">Activo 24/7</div>
-      </div>
-      <div class="ag-card">
-        <img src="assets/img/svc-dashboard.webp" alt="FIN-IA" class="ag-img">
-        <div class="ag-name">FIN-IA</div>
-        <div class="ag-role">Finanzas & Contabilidad</div>
-        <div class="ag-live">Activo 24/7</div>
-      </div>
-      <div class="ag-card">
-        <img src="assets/img/svc-device.webp" alt="MKT-IA" class="ag-img">
-        <div class="ag-name">MKT-IA</div>
-        <div class="ag-role">Marketing & Contenido</div>
-        <div class="ag-live">Activo 24/7</div>
-      </div>
-      <div class="ag-card">
-        <img src="assets/img/svc-code.webp" alt="AUD-IA" class="ag-img">
-        <div class="ag-name">AUD-IA</div>
-        <div class="ag-role">Auditoría & Seguridad</div>
-        <div class="ag-live">Activo 24/7</div>
-      </div>
-      <div class="ag-card">
-        <img src="assets/img/about-team.webp" alt="ADM-IA" class="ag-img">
-        <div class="ag-name">ADM-IA</div>
-        <div class="ag-role">Administración</div>
-        <div class="ag-live">Activo 24/7</div>
+    <div class="video-card">
+      <video autoplay muted loop playsinline>
+        <source src="assets/img/KATIA_AI_Video_Workflows.mp4" type="video/mp4">
+      </video>
+      <div class="video-card-overlay">
+        <div class="video-play"><i class="fa-solid fa-play"></i></div>
+        <div class="video-card-ttl">Flujos de Automatización en Vivo</div>
+        <div class="video-card-sub">50+ workflows activos · N8N Platform</div>
       </div>
     </div>
   </div>
@@ -408,101 +462,197 @@ footer{background:var(--navy-mid);padding:2.5rem 5%;border-top:1px solid rgba(25
 
 <div class="dv-blue"></div>
 
-<!-- SERVICIOS -->
-<section class="servicios" id="servicios">
-  <div class="svc-inner">
-    <div class="svc-hdr">
-      <p class="s-lbl">Nuestros Servicios</p>
-      <h2 class="s-ttl">Soluciones para cada etapa de tu negocio</h2>
-      <p class="s-sub">Precios transparentes. Sin sorpresas. Founders Pricing disponible para los primeros 20 clientes.</p>
+<!-- AGENTES IA -->
+<section class="sec sec-dark reveal">
+  <div class="inner sec-center">
+    <p class="s-lbl"><i class="fa-solid fa-microchip"></i> Infraestructura de Inteligencia Artificial</p>
+    <h2 class="s-ttl">7 Agentes de IA — Tu empresa automatizada</h2>
+    <p class="s-sub">Cada área de tu empresa tiene su propio agente de inteligencia artificial que decide y actúa de forma autónoma, los 7 días de la semana, las 24 horas del día.</p>
+  </div>
+  <div class="ag-grid inner">
+    <div class="ag-card">
+      <div class="ag-icon"><i class="fa-solid fa-compass"></i></div>
+      <div class="ag-name">CEO-IA</div>
+      <div class="ag-role">Orquestación y Control Central</div>
+      <div class="ag-live">Activo 24/7</div>
     </div>
-    <div class="svc-grid">
-      <div class="svc-card hot">
-        <img src="assets/img/laptop-workflow.jpg" alt="Starter" class="svc-img">
-        <div class="svc-body">
-          <span class="svc-badge">⭐ MÁS POPULAR</span>
-          <h3>Starter</h3>
-          <p>Perfecto para comenzar. 1-2 workflows de alto impacto que resuelven tu problema más urgente desde la primera semana.</p>
-          <div class="svc-price">$497<span>/mes · mín. 3 meses</span></div>
-          <ul class="svc-feats">
-            <li>1-2 workflows automatizados</li>
-            <li>Email + notificaciones integradas</li>
-            <li>Soporte en español 8h</li>
-            <li>Dashboard básico incluido</li>
-            <li>Go-live en 72 horas</li>
-          </ul>
-          <a href="https://wa.me/19546997514?text=Quiero%20el%20paquete%20Starter" class="svc-btn solid" target="_blank">Comenzar Ahora →</a>
-        </div>
-      </div>
-      <div class="svc-card">
-        <img src="assets/img/office-big.jpg" alt="Growth" class="svc-img">
-        <div class="svc-body">
-          <h3>Growth</h3>
-          <p>Para PYMEs listas para automatizar múltiples áreas. Ventas, operaciones y marketing totalmente integrados con IA.</p>
-          <div class="svc-price">$1,497<span>/mes · mín. 6 meses</span></div>
-          <ul class="svc-feats">
-            <li>3-5 workflows automatizados</li>
-            <li>CRM + pipeline de ventas IA</li>
-            <li>Agentes IA especializados</li>
-            <li>Soporte 24 horas</li>
-            <li>Reportes automáticos</li>
-          </ul>
-          <a href="https://wa.me/19546997514?text=Quiero%20el%20paquete%20Growth" class="svc-btn ol" target="_blank">Ver Detalles →</a>
-        </div>
-      </div>
-      <div class="svc-card">
-        <img src="assets/img/server-rack.jpg" alt="Enterprise" class="svc-img">
-        <div class="svc-body">
-          <h3>Enterprise</h3>
-          <p>Automatización total de tu empresa. Todos los departamentos conectados con IA propietaria y soporte dedicado 24/7.</p>
-          <div class="svc-price">$2,997<span>/mes · mín. 12 meses</span></div>
-          <ul class="svc-feats">
-            <li>6-10 workflows + 7 agentes IA</li>
-            <li>Infraestructura VPS dedicada</li>
-            <li>Soporte prioritario 2h · 24/7</li>
-            <li>Voz + canales premium</li>
-            <li>Auditoría y compliance incluido</li>
-          </ul>
-          <a href="https://wa.me/19546997514?text=Quiero%20informacion%20Enterprise" class="svc-btn ol" target="_blank">Agendar Demo →</a>
-        </div>
-      </div>
+    <div class="ag-card">
+      <div class="ag-icon"><i class="fa-solid fa-handshake"></i></div>
+      <div class="ag-name">VEN-IA</div>
+      <div class="ag-role">Ventas y Gestión de Clientes</div>
+      <div class="ag-live">Activo 24/7</div>
     </div>
-    <p class="founders-note">🎯 <strong>Founders Pricing:</strong> 15% descuento permanente para los primeros 20 clientes antes del 31 Ago 2026 · Cupos limitados disponibles</p>
+    <div class="ag-card">
+      <div class="ag-icon"><i class="fa-solid fa-gears"></i></div>
+      <div class="ag-name">OPS-IA</div>
+      <div class="ag-role">Operaciones y Proyectos</div>
+      <div class="ag-live">Activo 24/7</div>
+    </div>
+    <div class="ag-card">
+      <div class="ag-icon"><i class="fa-solid fa-chart-line"></i></div>
+      <div class="ag-name">FIN-IA</div>
+      <div class="ag-role">Finanzas y Contabilidad</div>
+      <div class="ag-live">Activo 24/7</div>
+    </div>
+    <div class="ag-card">
+      <div class="ag-icon"><i class="fa-solid fa-bullhorn"></i></div>
+      <div class="ag-name">MKT-IA</div>
+      <div class="ag-role">Mercadeo y Contenido Digital</div>
+      <div class="ag-live">Activo 24/7</div>
+    </div>
+    <div class="ag-card">
+      <div class="ag-icon"><i class="fa-solid fa-shield-halved"></i></div>
+      <div class="ag-name">AUD-IA</div>
+      <div class="ag-role">Auditoría y Seguridad</div>
+      <div class="ag-live">Activo 24/7</div>
+    </div>
+    <div class="ag-card">
+      <div class="ag-icon"><i class="fa-solid fa-clipboard-list"></i></div>
+      <div class="ag-name">ADM-IA</div>
+      <div class="ag-role">Administración y Documentos</div>
+      <div class="ag-live">Activo 24/7</div>
+    </div>
   </div>
 </section>
 
 <div class="dv-gold"></div>
 
+<!-- SERVICIOS -->
+<section class="sec" id="servicios">
+  <div class="inner sec-center reveal">
+    <p class="s-lbl"><i class="fa-solid fa-layer-group"></i> Nuestros Servicios</p>
+    <h2 class="s-ttl">Soluciones para cada etapa de tu negocio</h2>
+    <p class="s-sub">Diseñamos e implementamos la automatización que tu empresa necesita, al ritmo que puedes manejar.</p>
+  </div>
+  <div class="svc-grid">
+    <div class="svc-card featured reveal">
+      <img src="assets/img/laptop-workflow.jpg" alt="Paquete Starter" class="svc-img">
+      <div class="svc-body">
+        <span class="svc-tag"><i class="fa-solid fa-star"></i> Más Popular</span>
+        <h3>Paquete Inicio</h3>
+        <p>Perfecto para comenzar. Uno o dos flujos de alto impacto que resuelven tu problema más urgente desde la primera semana de trabajo.</p>
+        <ul class="svc-feats">
+          <li><i class="fa-solid fa-check"></i> 1 a 2 flujos de trabajo automatizados</li>
+          <li><i class="fa-solid fa-check"></i> Correo electrónico y notificaciones integradas</li>
+          <li><i class="fa-solid fa-check"></i> Soporte en español durante horas hábiles</li>
+          <li><i class="fa-solid fa-check"></i> Tablero de control básico incluido</li>
+          <li><i class="fa-solid fa-check"></i> Lanzamiento en 72 horas</li>
+        </ul>
+        <a href="#contacto" class="svc-btn solid"><i class="fa-solid fa-arrow-right"></i> Solicitar Información</a>
+      </div>
+    </div>
+    <div class="svc-card reveal">
+      <img src="assets/img/office-big.jpg" alt="Paquete Crecimiento" class="svc-img">
+      <div class="svc-body">
+        <h3>Paquete Crecimiento</h3>
+        <p>Para empresas listas para automatizar múltiples áreas. Ventas, operaciones y mercadeo totalmente integrados con inteligencia artificial.</p>
+        <ul class="svc-feats">
+          <li><i class="fa-solid fa-check"></i> 3 a 5 flujos de trabajo automatizados</li>
+          <li><i class="fa-solid fa-check"></i> CRM y embudo de ventas con IA</li>
+          <li><i class="fa-solid fa-check"></i> Agentes de IA especializados</li>
+          <li><i class="fa-solid fa-check"></i> Soporte las 24 horas</li>
+          <li><i class="fa-solid fa-check"></i> Reportes automáticos semanales</li>
+        </ul>
+        <a href="#contacto" class="svc-btn outline"><i class="fa-solid fa-arrow-right"></i> Solicitar Información</a>
+      </div>
+    </div>
+    <div class="svc-card reveal">
+      <img src="assets/img/server-rack.jpg" alt="Paquete Empresarial" class="svc-img">
+      <div class="svc-body">
+        <h3>Paquete Empresarial</h3>
+        <p>Automatización total de tu empresa. Todos los departamentos conectados con inteligencia artificial propia y soporte dedicado las 24 horas.</p>
+        <ul class="svc-feats">
+          <li><i class="fa-solid fa-check"></i> 6 a 10 flujos más 7 agentes de IA</li>
+          <li><i class="fa-solid fa-check"></i> Servidor dedicado exclusivo</li>
+          <li><i class="fa-solid fa-check"></i> Soporte prioritario 2 horas · 24/7</li>
+          <li><i class="fa-solid fa-check"></i> Voz y canales premium</li>
+          <li><i class="fa-solid fa-check"></i> Auditoría y cumplimiento incluido</li>
+        </ul>
+        <a href="#contacto" class="svc-btn outline"><i class="fa-solid fa-arrow-right"></i> Agendar Demostración</a>
+      </div>
+    </div>
+  </div>
+  <p style="text-align:center;margin-top:2.5rem;font-size:.85rem;color:var(--gold);display:flex;align-items:center;justify-content:center;gap:.5rem">
+    <i class="fa-solid fa-tag"></i> <strong>Precio Fundadores:</strong> Descuento permanente del 15% para los primeros 20 clientes antes del 31 de agosto de 2026
+  </p>
+</section>
+
+<div class="dv-blue"></div>
+
 <!-- INFRAESTRUCTURA -->
-<section class="infra">
-  <div class="infra-inner">
+<section class="sec sec-dark reveal">
+  <div class="infra-grid">
     <div class="infra-vid">
       <video autoplay muted loop playsinline>
         <source src="assets/img/video-katia-infra.mp4" type="video/mp4">
-        <source src="assets/img/KATIA_AI_Video_Workflows.mp4" type="video/mp4">
+        <source src="assets/img/video-hero-robot.mp4" type="video/mp4">
       </video>
     </div>
     <div>
-      <p class="s-lbl">Tecnología Empresarial</p>
-      <h2 class="s-ttl">Infraestructura Fortune 500 para tu PYME</h2>
-      <p class="s-sub">No necesitas entender la tecnología — tú ves los resultados: menos errores, más rapidez y un dashboard en tiempo real.</p>
+      <p class="s-lbl"><i class="fa-solid fa-server"></i> Tecnología Empresarial</p>
+      <h2 class="s-ttl">Infraestructura de Fortune 500 para tu empresa</h2>
+      <p class="s-sub">No necesitas entender la tecnología — tú ves los resultados: menos errores, mayor rapidez y un tablero de control en tiempo real.</p>
       <div class="infra-items">
         <div class="infra-item">
-          <span class="infra-icon">⚡</span>
-          <div><div class="infra-name">N8N — Plataforma de Workflows</div><div class="infra-desc">La misma tecnología que usan empresas Fortune 500. 50+ flujos activos y monitoreados.</div></div>
+          <div class="infra-item-icon"><i class="fa-solid fa-bolt"></i></div>
+          <div><div class="infra-name">N8N — Plataforma de Flujos de Trabajo</div><div class="infra-desc">La misma tecnología que usan empresas Fortune 500. Más de 50 flujos activos y monitoreados.</div></div>
         </div>
         <div class="infra-item">
-          <span class="infra-icon">🗄️</span>
-          <div><div class="infra-name">PostgreSQL + Redis</div><div class="infra-desc">Base de datos empresarial con caché en tiempo real. Cero pérdida de datos.</div></div>
+          <div class="infra-item-icon"><i class="fa-solid fa-database"></i></div>
+          <div><div class="infra-name">PostgreSQL y Redis</div><div class="infra-desc">Base de datos empresarial con caché en tiempo real. Cero pérdida de información.</div></div>
         </div>
         <div class="infra-item">
-          <span class="infra-icon">☁️</span>
-          <div><div class="infra-name">Servidores Dedicados + Backup Diario</div><div class="infra-desc">99.9% uptime garantizado. Backups automáticos en la nube cada 24 horas.</div></div>
+          <div class="infra-item-icon"><i class="fa-solid fa-cloud"></i></div>
+          <div><div class="infra-name">Servidores Dedicados y Respaldo Diario</div><div class="infra-desc">99.9% de disponibilidad garantizada. Respaldos automáticos en la nube cada 24 horas.</div></div>
         </div>
         <div class="infra-item">
-          <span class="infra-icon">🤖</span>
-          <div><div class="infra-name">Claude AI — Anthropic</div><div class="infra-desc">Modelos de IA de última generación para cada agente según su rol y volumen de trabajo.</div></div>
+          <div class="infra-item-icon"><i class="fa-solid fa-microchip"></i></div>
+          <div><div class="infra-name">Claude IA — Anthropic</div><div class="infra-desc">Modelos de inteligencia artificial de última generación para cada agente según su función.</div></div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="dv-gold"></div>
+
+<!-- CASOS DE EXITO -->
+<section class="sec" id="casos">
+  <div class="inner sec-center reveal">
+    <p class="s-lbl"><i class="fa-solid fa-trophy"></i> Casos de Éxito</p>
+    <h2 class="s-ttl">Resultados que hablan por sí solos</h2>
+    <p class="s-sub">Resultados reales de negocios reales. No promesas — evidencia verificable de lo que logramos juntos.</p>
+  </div>
+  <div class="caso-card reveal">
+    <img src="assets/img/booth-expo.jpg" alt="Andy's Bakery — Caso de Éxito KATIA.AI" class="caso-img">
+    <div class="caso-body">
+      <div class="caso-hrow">
+        <div class="caso-lbox"><i class="fa-solid fa-cake-candles"></i></div>
+        <div>
+          <div class="caso-co">Andy's Bakery</div>
+          <div class="caso-type"><i class="fa-solid fa-location-dot"></i> Pastelería artesanal · Katy, Texas</div>
+        </div>
+      </div>
+      <div class="blk blk-r">
+        <div class="blk-ttl"><i class="fa-solid fa-circle-xmark"></i> El Problema</div>
+        <p>La dueña perdía pedidos por WhatsApp, tardaba 45 minutos procesando cada orden de forma manual, no tenía visibilidad de su inventario en tiempo real y no podía hacer crecer su negocio porque todo dependía de ella personalmente.</p>
+      </div>
+      <div class="blk blk-g">
+        <div class="blk-ttl"><i class="fa-solid fa-circle-check"></i> La Solución</div>
+        <p>En 72 horas implementamos: formulario de pedidos en línea disponible las 24 horas, confirmaciones automáticas por correo electrónico, tablero de administración con código PIN de seguridad y generación automática de contenido para Instagram con inteligencia artificial. Sin necesidad de conocimientos técnicos de su parte.</p>
+      </div>
+      <div class="metrics">
+        <div class="mtr"><span class="mtr-n">0</span><span class="mtr-l">Pedidos perdidos</span></div>
+        <div class="mtr"><span class="mtr-n">3min</span><span class="mtr-l">Por orden (antes 45)</span></div>
+        <div class="mtr"><span class="mtr-n">3</span><span class="mtr-l">Flujos activos 24/7</span></div>
+        <div class="mtr"><span class="mtr-n">72h</span><span class="mtr-l">Diagnóstico a producción</span></div>
+      </div>
+      <div class="testimonial">
+        "Antes pasaba horas anotando pedidos a mano y siempre había errores. Ahora el sistema lo hace todo solo — recibe el pedido, me avisa, y hasta publica en Instagram. Es como tener un empleado que trabaja 24 horas sin descanso y nunca se equivoca."
+        <div class="test-author"><i class="fa-solid fa-quote-left"></i> Andrea Romero, Dueña · Andy's Bakery · Katy, Texas</div>
+      </div>
+      <div style="text-align:center;margin-top:2.5rem">
+        <a href="#contacto" class="btn-primary" style="display:inline-flex"><i class="fa-solid fa-arrow-right"></i> Quiero resultados similares</a>
       </div>
     </div>
   </div>
@@ -510,45 +660,83 @@ footer{background:var(--navy-mid);padding:2.5rem 5%;border-top:1px solid rgba(25
 
 <div class="dv-blue"></div>
 
-<!-- CASOS DE EXITO -->
-<section class="casos" id="casos">
-  <div class="cas-inner">
-    <div class="cas-hdr">
-      <p class="s-lbl">Casos de Éxito</p>
-      <h2 class="s-ttl">Resultados que hablan por sí solos</h2>
-      <p class="s-sub">Resultados reales de negocios reales. No promesas — evidencia verificable.</p>
+<!-- CONTACTO -->
+<section class="contacto-sec" id="contacto">
+  <div class="contacto-inner">
+    <div class="contact-info reveal">
+      <p class="s-lbl"><i class="fa-solid fa-headset"></i> Hablemos</p>
+      <h2 class="s-ttl">Comienza hoy.<br>Es completamente gratuito.</h2>
+      <p class="s-sub">Diagnóstico gratuito de 30 minutos. Plan de acción sin costo ni compromiso. Respondemos en menos de 2 horas.</p>
+      <div class="contact-channels" style="margin-top:2rem">
+        <a href="https://wa.me/19546997514?text=Hola,%20quiero%20una%20consulta%20gratuita" class="contact-ch" target="_blank">
+          <div class="contact-ch-icon wa"><i class="fa-brands fa-whatsapp"></i></div>
+          <div><div class="contact-ch-ttl">WhatsApp</div><div class="contact-ch-sub">Respuesta inmediata · +1 (954) 699-7514</div></div>
+          <i class="fa-solid fa-chevron-right" style="margin-left:auto;color:var(--gray);font-size:.75rem"></i>
+        </a>
+        <a href="mailto:katiaia.ventas@gmail.com" class="contact-ch">
+          <div class="contact-ch-icon em"><i class="fa-solid fa-envelope"></i></div>
+          <div><div class="contact-ch-ttl">Correo Electrónico</div><div class="contact-ch-sub">katiaia.ventas@gmail.com</div></div>
+          <i class="fa-solid fa-chevron-right" style="margin-left:auto;color:var(--gray);font-size:.75rem"></i>
+        </a>
+        <a href="https://t.me/katia_ai_ventas_bot" class="contact-ch" target="_blank">
+          <div class="contact-ch-icon tg"><i class="fa-brands fa-telegram"></i></div>
+          <div><div class="contact-ch-ttl">Telegram</div><div class="contact-ch-sub">@katia_ai_ventas_bot</div></div>
+          <i class="fa-solid fa-chevron-right" style="margin-left:auto;color:var(--gray);font-size:.75rem"></i>
+        </a>
+      </div>
+      <p style="margin-top:2rem;font-size:.82rem;color:var(--gray);display:flex;align-items:center;gap:.5rem">
+        <i class="fa-solid fa-location-dot" style="color:var(--gold)"></i> Katy, Texas · Servicio en todo EE.UU. · Atención en español
+      </p>
     </div>
-    <div class="caso-card">
-      <img src="assets/img/booth-expo.jpg" alt="Andy's Bakery — Caso de Exito KATIA.AI" class="caso-img">
-      <div class="caso-body">
-        <div class="caso-hrow">
-          <div class="caso-lbox">🎂</div>
-          <div>
-            <div class="caso-co">Andy's Bakery</div>
-            <div class="caso-type">Pastelería artesanal · Katy, Texas</div>
+    <div class="contact-form reveal">
+      <div class="form-ttl">Solicitar Diagnóstico Gratuito</div>
+      <div class="form-sub">Completa el formulario y te contactamos en menos de 2 horas</div>
+      <div id="formContent">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" id="nombre" placeholder="Tu nombre">
+          </div>
+          <div class="form-group">
+            <label>Apellido</label>
+            <input type="text" id="apellido" placeholder="Tu apellido">
           </div>
         </div>
-        <div class="blk blk-r">
-          <div class="blk-ttl">❌ El Problema</div>
-          <p>La dueña perdía pedidos por WhatsApp, tardaba 45 minutos procesando cada orden manualmente, no tenía visibilidad de su inventario en tiempo real y no podía escalar su negocio porque todo dependía de ella personalmente.</p>
+        <div class="form-group">
+          <label>Correo Electrónico</label>
+          <input type="email" id="email" placeholder="tucorreo@empresa.com">
         </div>
-        <div class="blk blk-g">
-          <div class="blk-ttl">✅ La Solución</div>
-          <p>En 72 horas desplegamos: formulario de pedidos online 24/7, confirmaciones automáticas por email, dashboard de administración con PIN de seguridad, y generación automática de contenido para Instagram con IA. Cero código requerido de su parte.</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Teléfono</label>
+            <input type="tel" id="telefono" placeholder="+1 (000) 000-0000">
+          </div>
+          <div class="form-group">
+            <label>Nombre de tu Empresa</label>
+            <input type="text" id="empresa" placeholder="Mi Empresa LLC">
+          </div>
         </div>
-        <div class="metrics">
-          <div class="mtr"><span class="mtr-n">0</span><span class="mtr-l">Pedidos perdidos</span></div>
-          <div class="mtr"><span class="mtr-n">3min</span><span class="mtr-l">Por orden (antes 45min)</span></div>
-          <div class="mtr"><span class="mtr-n">3</span><span class="mtr-l">Workflows 24/7</span></div>
-          <div class="mtr"><span class="mtr-n">72h</span><span class="mtr-l">Diagnóstico a go-live</span></div>
+        <div class="form-group">
+          <label>¿Qué área quieres automatizar primero?</label>
+          <select id="area">
+            <option value="">Selecciona una opción</option>
+            <option value="ventas">Ventas y captación de clientes</option>
+            <option value="operaciones">Operaciones y procesos internos</option>
+            <option value="contabilidad">Contabilidad y finanzas</option>
+            <option value="mercadeo">Mercadeo y redes sociales</option>
+            <option value="administracion">Administración y documentos</option>
+            <option value="todo">Todas las áreas</option>
+          </select>
         </div>
-        <div class="testimonial">
-          "Antes pasaba horas anotando pedidos a mano y siempre había errores. Ahora el sistema lo hace todo solo — recibe el pedido, me avisa, y hasta publica en Instagram. Es como tener un empleado que trabaja 24 horas sin descanso."
-          <div class="test-author">— Andrea Romero, Dueña · Andy's Bakery · Katy, Texas</div>
-        </div>
-        <div style="text-align:center;margin-top:2rem">
-          <a href="https://wa.me/19546997514?text=Quiero%20resultados%20similares%20para%20mi%20negocio" class="btn-gold" target="_blank" style="display:inline-flex">¿Quieres resultados similares? →</a>
-        </div>
+        <button class="form-submit" onclick="enviarFormulario()">
+          <i class="fa-solid fa-paper-plane"></i> Solicitar Diagnóstico Gratuito
+        </button>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <i class="fa-solid fa-circle-check" style="color:var(--green)"></i>
+        <h3 style="font-family:var(--ff-d);margin-bottom:.5rem">¡Listo!</h3>
+        <p>Recibimos tu solicitud. Te contactamos en menos de 2 horas para agendar tu diagnóstico gratuito.</p>
+        <p style="margin-top:1rem;font-size:.8rem;color:var(--gray)">También puedes escribirnos por WhatsApp si prefieres respuesta inmediata.</p>
       </div>
     </div>
   </div>
@@ -558,17 +746,18 @@ footer{background:var(--navy-mid);padding:2.5rem 5%;border-top:1px solid rgba(25
 <section class="cta-final">
   <div class="cta-vbg">
     <video autoplay muted loop playsinline>
+      <source src="assets/img/video-hero-robot.mp4" type="video/mp4">
       <source src="assets/img/KATIA_AI_Video_Oficina.mp4" type="video/mp4">
     </video>
   </div>
-  <div class="cta-cnt">
-    <h2>Tu negocio puede<br><span style="color:var(--gold)">trabajar solo.</span></h2>
-    <p>Diagnóstico gratuito de 30 minutos. Plan de acción sin costo ni compromiso. Comenzamos esta semana.</p>
+  <div class="cta-cnt reveal">
+    <h2>Tu empresa puede<br><span style="color:var(--gold)">trabajar sola.</span></h2>
+    <p>Diagnóstico gratuito de 30 minutos. Plan de acción sin costo ni compromiso. Comenzamos esta misma semana.</p>
     <div class="cta-btns">
-      <a href="tel:+19546997514" class="btn-call">📞 Llama Ya — Es Gratis</a>
-      <a href="https://wa.me/19546997514?text=Hola,%20quiero%20mi%20consulta%20gratuita" class="btn-wa" target="_blank">💬 WhatsApp Ahora</a>
+      <a href="tel:+19546997514" class="btn-call"><i class="fa-solid fa-phone"></i> Llama Ahora — Es Gratis</a>
+      <a href="https://wa.me/19546997514?text=Hola,%20quiero%20mi%20consulta%20gratuita" class="btn-wa" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Ahora</a>
     </div>
-    <p class="cta-note">📍 Katy, Texas · Servicio en todo USA · Respuesta en menos de 2 horas</p>
+    <p class="cta-note"><i class="fa-solid fa-location-dot"></i> Katy, Texas · Servicio en todo EE.UU. · Respuesta en menos de 2 horas</p>
   </div>
 </section>
 
@@ -576,23 +765,75 @@ footer{background:var(--navy-mid);padding:2.5rem 5%;border-top:1px solid rgba(25
 <footer>
   <div class="ft-inner">
     <div class="ft-logo">
-      <img src="assets/img/katia-logo-icon.svg" alt="KATIA.AI">
+      <img src="assets/img/katia-logo-icon.svg" alt="KATIA.AI Solutions">
       <span class="ft-logo-txt">KATIA<span>.AI</span> Solutions</span>
     </div>
     <ul class="ft-links">
-      <li><a href="#proceso">Proceso</a></li>
+      <li><a href="#proceso">Cómo Trabajamos</a></li>
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#casos">Casos de Éxito</a></li>
-      <li><a href="consulta.html">Consulta</a></li>
-      <li><a href="mailto:katiaia.ventas@gmail.com">Email</a></li>
-      <li><a href="https://wa.me/19546997514">WhatsApp</a></li>
-      <li><a href="https://www.instagram.com/katia.ai_" target="_blank">Instagram</a></li>
+      <li><a href="#contacto">Contacto</a></li>
     </ul>
+    <div class="ft-social">
+      <a href="https://www.instagram.com/katia.ai_" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://wa.me/19546997514" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="https://t.me/katia_ai_ventas_bot" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+      <a href="mailto:katiaia.ventas@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+    </div>
   </div>
   <p class="ft-copy">© 2026 KATIA.AI Solutions LLC · Todos los derechos reservados · Katy, Texas</p>
 </footer>
 
-<button class="chat-fab" onclick="window.location.href='consulta.html'" title="Chatea con KATIA">🤖</button>
+<button class="chat-fab" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">
+  <i class="fa-solid fa-comment-dots"></i>
+</button>
 
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); }});
+}, {threshold: 0.12});
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Form submit
+async function enviarFormulario() {
+  const nombre = document.getElementById('nombre').value.trim();
+  const apellido = document.getElementById('apellido').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const telefono = document.getElementById('telefono').value.trim();
+  const empresa = document.getElementById('empresa').value.trim();
+  const area = document.getElementById('area').value;
+
+  if(!nombre || !email || !empresa) {
+    alert('Por favor completa los campos obligatorios: Nombre, Correo y Empresa.');
+    return;
+  }
+
+  const btn = document.querySelector('.form-submit');
+  btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
+  btn.disabled = true;
+
+  try {
+    await fetch('https://srv1448901.hstgr.cloud/webhook/katia2-lead-capture', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        nombre: nombre + ' ' + apellido,
+        email: email,
+        telefono: telefono || 'No proporcionado',
+        empresa: empresa,
+        fuente: 'website',
+        area_interes: area
+      })
+    });
+    document.getElementById('formContent').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  } catch(err) {
+    btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Solicitar Diagnóstico Gratuito';
+    btn.disabled = false;
+    alert('Hubo un problema. Por favor contáctanos directamente por WhatsApp.');
+  }
+}
+</script>
 </body>
 </html>
