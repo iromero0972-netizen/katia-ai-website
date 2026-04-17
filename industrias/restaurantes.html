@@ -4,31 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Restaurantes & Food Service — KATIA.AI</title>
-<meta name="description" content="Automatización empresarial para restaurantes. 7 workflows específicos: pedidos WhatsApp, reservas, inventario, voz. Caso de estudio Andy's Bakery.">
-
+<meta name="description" content="Automatización empresarial para restaurantes. 7 workflows específicos. Caso de estudio Andy's Bakery.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-
 <style>
-:root {
-  --bg-primary: #fafaf7; --bg-secondary: #f4f3ee; --bg-card: #ffffff;
-  --bg-dark: #0a0e1a; --ink: #0a0e1a; --ink-secondary: #2a3040;
-  --ink-muted: #6b7280; --ink-subtle: #9ca3af; --ink-on-dark: #f4f3ee;
-  --navy: #1e3a5f; --navy-deep: #152a45; --gold: #b8924a; --gold-subtle: #d4b77a;
-  --border: #e5e2d8; --border-strong: #d4d1c5; --success: #2d6a4f;
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-sans: 'IBM Plex Sans', -apple-system, sans-serif;
-  --font-mono: 'IBM Plex Mono', monospace;
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-}
+:root { --bg-primary: #fafaf7; --bg-secondary: #f4f3ee; --bg-card: #ffffff; --bg-dark: #0a0e1a; --ink: #0a0e1a; --ink-secondary: #2a3040; --ink-muted: #6b7280; --ink-subtle: #9ca3af; --ink-on-dark: #f4f3ee; --navy: #1e3a5f; --navy-deep: #152a45; --gold: #b8924a; --gold-bright: #e5c483; --gold-subtle: #d4b77a; --border: #e5e2d8; --border-strong: #d4d1c5; --success: #2d6a4f; --font-display: 'Fraunces', Georgia, serif; --font-sans: 'IBM Plex Sans', -apple-system, sans-serif; --font-mono: 'IBM Plex Mono', monospace; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { background: var(--bg-primary); color: var(--ink); font-family: var(--font-sans); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
 @media (max-width: 768px) { .container { padding: 0 24px; } }
-
-/* NAV */
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 18px 40px; background: rgba(250, 250, 247, 0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
 .nav-inner { max-width: 1240px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
 .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
@@ -38,23 +24,17 @@ body { background: var(--bg-primary); color: var(--ink); font-family: var(--font
 .logo-text .ai { font-style: italic; color: var(--navy); font-weight: 400; }
 .nav-back { font-family: var(--font-mono); font-size: 12px; color: var(--ink-muted); text-decoration: none; display: flex; align-items: center; gap: 8px; padding: 8px 14px; border: 1px solid var(--border); border-radius: 6px; transition: all 0.2s; }
 .nav-back:hover { border-color: var(--navy); color: var(--navy); }
-
-/* HERO */
 .page-hero { padding: 160px 0 80px; border-bottom: 1px solid var(--border); }
 .eyebrow { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-mono); font-size: 11px; color: var(--navy); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 24px; font-weight: 600; }
 .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--navy); }
 .page-hero h1 { font-family: var(--font-display); font-size: clamp(40px, 5.5vw, 72px); line-height: 1; letter-spacing: -0.03em; font-weight: 500; margin-bottom: 28px; }
 .page-hero h1 em { font-style: italic; color: var(--navy); }
 .page-hero-intro { font-size: 19px; line-height: 1.55; color: var(--ink-secondary); max-width: 720px; }
-
-/* STATS */
 .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; padding: 60px 0; border-bottom: 1px solid var(--border); }
 @media (max-width: 768px) { .stats-row { grid-template-columns: repeat(2, 1fr); } }
 .stat-box { padding: 20px; border-left: 2px solid var(--gold); }
 .stat-big { font-family: var(--font-display); font-size: 42px; line-height: 1; font-weight: 500; letter-spacing: -0.03em; color: var(--ink); margin-bottom: 8px; }
 .stat-desc { font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted); letter-spacing: 0.05em; text-transform: uppercase; }
-
-/* PROBLEMAS */
 .problemas { padding: 100px 0; background: var(--bg-secondary); }
 .h2 { font-family: var(--font-display); font-size: clamp(32px, 4vw, 48px); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500; margin-bottom: 24px; max-width: 720px; }
 .h2 em { font-style: italic; color: var(--navy); }
@@ -65,8 +45,6 @@ body { background: var(--bg-primary); color: var(--ink); font-family: var(--font
 .problem-num { font-family: var(--font-display); font-size: 28px; font-style: italic; color: var(--navy); line-height: 1; min-width: 40px; }
 .problem-content h3 { font-family: var(--font-display); font-size: 20px; font-weight: 500; margin-bottom: 8px; letter-spacing: -0.01em; }
 .problem-content p { font-size: 14px; color: var(--ink-secondary); line-height: 1.55; }
-
-/* WORKFLOWS */
 .workflows-section { padding: 100px 0; }
 .workflow-list { display: flex; flex-direction: column; gap: 16px; }
 .workflow-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 32px; display: grid; grid-template-columns: auto 1fr auto; gap: 32px; align-items: center; transition: all 0.3s; }
@@ -83,8 +61,6 @@ body { background: var(--bg-primary); color: var(--ink); font-family: var(--font
 .wf-package-tag.starter { color: var(--success); border-color: rgba(45, 106, 79, 0.3); }
 .wf-package-tag.growth { color: var(--navy); border-color: rgba(30, 58, 95, 0.3); }
 .wf-package-tag.enterprise { background: var(--navy); color: var(--bg-primary); border-color: var(--navy); }
-
-/* PAQUETE RECOMENDADO */
 .package-section { padding: 100px 0; background: var(--bg-dark); color: var(--ink-on-dark); }
 .package-section .h2 { color: var(--ink-on-dark); }
 .package-section .h2 em { color: var(--gold-subtle); }
@@ -93,18 +69,15 @@ body { background: var(--bg-primary); color: var(--ink); font-family: var(--font
 .package-section .eyebrow::before { background: var(--gold-subtle); }
 .package-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(184, 146, 74, 0.3); border-radius: 16px; padding: 48px; max-width: 720px; position: relative; }
 .package-badge { position: absolute; top: 24px; right: 24px; padding: 6px 14px; background: var(--gold); color: var(--bg-dark); border-radius: 100px; font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.08em; }
-.package-name { font-family: var(--font-display); font-size: 40px; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 8px; color: var(--ink-on-dark); }
+.package-name { font-family: var(--font-display); font-size: 40px; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 20px; color: var(--ink-on-dark); }
 .package-name em { font-style: italic; color: var(--gold-subtle); }
-.package-price { display: flex; align-items: baseline; gap: 12px; margin-bottom: 32px; }
-.package-price .amount { font-family: var(--font-display); font-size: 56px; font-weight: 500; color: var(--ink-on-dark); letter-spacing: -0.03em; }
-.package-price .period { font-family: var(--font-mono); font-size: 14px; color: var(--ink-subtle); }
+.package-investment { display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; background: rgba(184, 146, 74, 0.1); border: 1px solid rgba(184, 146, 74, 0.3); border-radius: 8px; margin-bottom: 32px; font-family: var(--font-display); font-size: 24px; font-style: italic; font-weight: 500; color: var(--gold-bright); letter-spacing: -0.01em; }
+.package-investment::before { content: '◆'; color: var(--gold); font-style: normal; }
 .package-features { list-style: none; margin-bottom: 32px; }
 .package-features li { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.08); color: var(--ink-subtle); font-size: 15px; }
 .package-features li::before { content: '→'; color: var(--gold-subtle); font-weight: 600; }
 .package-cta { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; background: var(--gold); color: var(--bg-dark); border-radius: 6px; text-decoration: none; font-size: 15px; font-weight: 600; transition: all 0.2s; }
 .package-cta:hover { background: var(--gold-subtle); transform: translateY(-1px); }
-
-/* CASE STUDY */
 .case-section { padding: 100px 0; border-bottom: 1px solid var(--border); }
 .case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 @media (max-width: 900px) { .case-grid { grid-template-columns: 1fr; } }
@@ -117,15 +90,12 @@ body { background: var(--bg-primary); color: var(--ink); font-family: var(--font
 .case-metric .label { font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted); letter-spacing: 0.05em; }
 .case-quote { font-family: var(--font-display); font-style: italic; font-size: 20px; line-height: 1.4; color: var(--ink-secondary); padding-left: 24px; border-left: 3px solid var(--navy); margin-bottom: 24px; }
 .case-author { font-family: var(--font-mono); font-size: 12px; color: var(--ink-muted); letter-spacing: 0.05em; }
-
-/* CTA FINAL */
 .cta-final { padding: 100px 0 140px; text-align: center; background: var(--bg-secondary); }
 .cta-final h2 { font-family: var(--font-display); font-size: clamp(32px, 4vw, 48px); line-height: 1.1; letter-spacing: -0.02em; font-weight: 500; margin-bottom: 20px; max-width: 720px; margin-left: auto; margin-right: auto; }
 .cta-final h2 em { font-style: italic; color: var(--navy); }
 .cta-final p { font-size: 17px; color: var(--ink-secondary); max-width: 560px; margin: 0 auto 40px; }
 .btn-primary { display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; background: var(--navy); color: var(--bg-primary); border-radius: 6px; text-decoration: none; font-size: 15px; font-weight: 500; transition: all 0.25s; }
-.btn-primary:hover { background: var(--navy-deep); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(30, 58, 95, 0.25); }
-
+.btn-primary:hover { background: var(--navy-deep); transform: translateY(-1px); }
 footer { padding: 40px 0; background: var(--bg-dark); color: var(--ink-subtle); font-family: var(--font-mono); font-size: 11px; text-align: center; letter-spacing: 0.02em; }
 </style>
 </head>
@@ -133,18 +103,11 @@ footer { padding: 40px 0; background: var(--bg-dark); color: var(--ink-subtle); 
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="../index.html" class="logo">
-      <div class="logo-mark">K</div>
-      <span class="logo-text">katia<span class="ai">.ai</span></span>
-    </a>
-    <a href="../index.html#industrias" class="nav-back">
-      <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 7H1M7 1L1 7l6 6"/></svg>
-      Volver a industrias
-    </a>
+    <a href="../index.html" class="logo"><div class="logo-mark">K</div><span class="logo-text">katia<span class="ai">.ai</span></span></a>
+    <a href="../index.html#industrias" class="nav-back"><svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 7H1M7 1L1 7l6 6"/></svg> Volver a industrias</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="page-hero">
   <div class="container">
     <div class="eyebrow">Vertical · 01 · Restaurantes & Food Service</div>
@@ -153,185 +116,57 @@ footer { padding: 40px 0; background: var(--bg-dark); color: var(--ink-subtle); 
   </div>
 </section>
 
-<!-- STATS -->
 <section>
   <div class="container">
     <div class="stats-row">
-      <div class="stat-box">
-        <div class="stat-big">80%</div>
-        <div class="stat-desc">Menos tiempo gestión pedidos</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-big">&lt; 30s</div>
-        <div class="stat-desc">Respuesta a cada cliente</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-big">24/7</div>
-        <div class="stat-desc">Operación sin descanso</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-big">0</div>
-        <div class="stat-desc">Pedidos perdidos</div>
-      </div>
+      <div class="stat-box"><div class="stat-big">80%</div><div class="stat-desc">Menos tiempo gestión pedidos</div></div>
+      <div class="stat-box"><div class="stat-big">&lt; 30s</div><div class="stat-desc">Respuesta a cada cliente</div></div>
+      <div class="stat-box"><div class="stat-big">24/7</div><div class="stat-desc">Operación sin descanso</div></div>
+      <div class="stat-box"><div class="stat-big">0</div><div class="stat-desc">Pedidos perdidos</div></div>
     </div>
   </div>
 </section>
 
-<!-- PROBLEMAS -->
 <section class="problemas">
   <div class="container">
     <div class="eyebrow">El problema que resolvemos</div>
     <h2 class="h2">Su equipo dedica horas a tareas que <em>deberían ejecutarse solas.</em></h2>
     <p class="intro">Estos son los dolores operativos típicos que hemos identificado en restaurantes de Houston, Katy y todo Texas. Si alguno le resulta familiar, tiene un problema que podemos resolver.</p>
     <div class="problems-grid">
-      <div class="problem-card">
-        <div class="problem-num">01</div>
-        <div class="problem-content">
-          <h3>Pedidos perdidos en mensajería</h3>
-          <p>WhatsApp saturado. Mensajes sin leer. Clientes esperando. Se pierden 15-25 pedidos al mes por desatención simple.</p>
-        </div>
-      </div>
-      <div class="problem-card">
-        <div class="problem-num">02</div>
-        <div class="problem-content">
-          <h3>Errores de transcripción de órdenes</h3>
-          <p>Empleados tomando pedidos a mano. Cocina interpretando lo que pudo. Devoluciones, clientes molestos, comida desperdiciada.</p>
-        </div>
-      </div>
-      <div class="problem-card">
-        <div class="problem-num">03</div>
-        <div class="problem-content">
-          <h3>Dueño atado al teléfono 12 horas</h3>
-          <p>Coordina reservas, atiende proveedores, supervisa cocina. No puede expandir ni dedicarse a la calidad porque opera en modo bombero.</p>
-        </div>
-      </div>
-      <div class="problem-card">
-        <div class="problem-num">04</div>
-        <div class="problem-content">
-          <h3>Inventario fuera de control</h3>
-          <p>Stock sin tracking real. Se acaba el ingrediente clave el sábado a las 8pm. Compra de último minuto con sobrecosto del 20%.</p>
-        </div>
-      </div>
+      <div class="problem-card"><div class="problem-num">01</div><div class="problem-content"><h3>Pedidos perdidos en mensajería</h3><p>WhatsApp saturado. Mensajes sin leer. Clientes esperando. Se pierden 15-25 pedidos al mes por desatención simple.</p></div></div>
+      <div class="problem-card"><div class="problem-num">02</div><div class="problem-content"><h3>Errores de transcripción de órdenes</h3><p>Empleados tomando pedidos a mano. Cocina interpretando lo que pudo. Devoluciones, clientes molestos, comida desperdiciada.</p></div></div>
+      <div class="problem-card"><div class="problem-num">03</div><div class="problem-content"><h3>Dueño atado al teléfono 12 horas</h3><p>Coordina reservas, atiende proveedores, supervisa cocina. No puede expandir ni dedicarse a la calidad porque opera en modo bombero.</p></div></div>
+      <div class="problem-card"><div class="problem-num">04</div><div class="problem-content"><h3>Inventario fuera de control</h3><p>Stock sin tracking real. Se acaba el ingrediente clave el sábado a las 8pm. Compra de último minuto con sobrecosto del 20%.</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- WORKFLOWS -->
 <section class="workflows-section">
   <div class="container">
     <div class="eyebrow">Workflows Recomendados</div>
     <h2 class="h2">Siete automatizaciones diseñadas para <em>su operación.</em></h2>
     <p class="intro">Cada uno es un workflow modular que implementamos en semanas, no meses. Usted elige cuáles necesita — nosotros los construimos sobre infraestructura dedicada.</p>
-    
     <div class="workflow-list">
-      <div class="workflow-item">
-        <div class="wf-number">01</div>
-        <div class="wf-main">
-          <h3>Sistema de Pedidos Automático Multi-Canal</h3>
-          <p>Captura pedidos desde WhatsApp, formulario web, Instagram DM y redes sociales. Los organiza, confirma al cliente en &lt;30 segundos y los envía a cocina formateados.</p>
-          <div class="wf-meta">
-            <span class="wf-channel">WhatsApp + Web + IG</span>
-            <span class="wf-impact">Cero pedidos perdidos</span>
-          </div>
-        </div>
-        <span class="wf-package-tag starter">Starter</span>
-      </div>
-      
-      <div class="workflow-item">
-        <div class="wf-number">02</div>
-        <div class="wf-main">
-          <h3>Confirmación Inteligente de Órdenes</h3>
-          <p>Responde automáticamente con resumen del pedido, tiempo estimado de entrega y link de pago. Detecta correcciones del cliente y ajusta sin intervención humana.</p>
-          <div class="wf-meta">
-            <span class="wf-channel">WhatsApp</span>
-            <span class="wf-impact">95% satisfacción cliente</span>
-          </div>
-        </div>
-        <span class="wf-package-tag starter">Starter</span>
-      </div>
-      
-      <div class="workflow-item">
-        <div class="wf-number">03</div>
-        <div class="wf-main">
-          <h3>Gestión de Reservas con Google Calendar</h3>
-          <p>Cliente solicita reserva, sistema verifica disponibilidad en tiempo real, confirma, envía recordatorios 24h y 2h antes, y gestiona cancelaciones sin humano.</p>
-          <div class="wf-meta">
-            <span class="wf-channel">Email + WhatsApp + Calendar</span>
-            <span class="wf-impact">-40% no-shows</span>
-          </div>
-        </div>
-        <span class="wf-package-tag growth">Growth</span>
-      </div>
-      
-      <div class="workflow-item">
-        <div class="wf-number">04</div>
-        <div class="wf-main">
-          <h3>Control de Inventario con Alertas</h3>
-          <p>Tracking de ingredientes en tiempo real. Cuando un insumo baja del umbral crítico, alerta por Telegram al dueño y genera orden de compra al proveedor habitual.</p>
-          <div class="wf-meta">
-            <span class="wf-channel">Telegram + Email</span>
-            <span class="wf-impact">Cero out-of-stock</span>
-          </div>
-        </div>
-        <span class="wf-package-tag growth">Growth</span>
-      </div>
-      
-      <div class="workflow-item">
-        <div class="wf-number">05</div>
-        <div class="wf-main">
-          <h3>Agente de Voz para Pedidos Telefónicos</h3>
-          <p>Una IA atiende las llamadas, toma el pedido conversando naturalmente, confirma dirección, procesa pago y envía la orden a cocina. Suena como persona real.</p>
-          <div class="wf-meta">
-            <span class="wf-channel">Voz (Vapi + Twilio)</span>
-            <span class="wf-impact">Atiende 100% llamadas</span>
-          </div>
-        </div>
-        <span class="wf-package-tag enterprise">Enterprise</span>
-      </div>
-      
-      <div class="workflow-item">
-        <div class="wf-number">06</div>
-        <div class="wf-main">
-          <h3>Recordatorios y Loyalty Program</h3>
-          <p>Envía cumpleaños, ofertas personalizadas basadas en historial, recordatorios de clientes inactivos. Segmentación automática y métricas de retención.</p>
-          <div class="wf-meta">
-            <span class="wf-channel">Email + WhatsApp</span>
-            <span class="wf-impact">+25% retención</span>
-          </div>
-        </div>
-        <span class="wf-package-tag growth">Growth</span>
-      </div>
-      
-      <div class="workflow-item">
-        <div class="wf-number">07</div>
-        <div class="wf-main">
-          <h3>Reporte Ejecutivo Diario al Dueño</h3>
-          <p>A las 8am recibe por Telegram: ventas del día anterior, pedidos procesados, ticket promedio, clientes nuevos vs recurrentes, alertas operativas.</p>
-          <div class="wf-meta">
-            <span class="wf-channel">Telegram</span>
-            <span class="wf-impact">Decisiones basadas en datos</span>
-          </div>
-        </div>
-        <span class="wf-package-tag enterprise">Enterprise</span>
-      </div>
+      <div class="workflow-item"><div class="wf-number">01</div><div class="wf-main"><h3>Sistema de Pedidos Automático Multi-Canal</h3><p>Captura pedidos desde WhatsApp, formulario web, Instagram DM y redes sociales. Los organiza, confirma al cliente en &lt;30 segundos y los envía a cocina formateados.</p><div class="wf-meta"><span class="wf-channel">WhatsApp + Web + IG</span><span class="wf-impact">Cero pedidos perdidos</span></div></div><span class="wf-package-tag starter">Starter</span></div>
+      <div class="workflow-item"><div class="wf-number">02</div><div class="wf-main"><h3>Confirmación Inteligente de Órdenes</h3><p>Responde automáticamente con resumen del pedido, tiempo estimado de entrega y link de pago. Detecta correcciones del cliente y ajusta sin intervención humana.</p><div class="wf-meta"><span class="wf-channel">WhatsApp</span><span class="wf-impact">95% satisfacción cliente</span></div></div><span class="wf-package-tag starter">Starter</span></div>
+      <div class="workflow-item"><div class="wf-number">03</div><div class="wf-main"><h3>Gestión de Reservas con Google Calendar</h3><p>Cliente solicita reserva, sistema verifica disponibilidad en tiempo real, confirma, envía recordatorios 24h y 2h antes, y gestiona cancelaciones sin humano.</p><div class="wf-meta"><span class="wf-channel">Email + WhatsApp + Calendar</span><span class="wf-impact">-40% no-shows</span></div></div><span class="wf-package-tag growth">Growth</span></div>
+      <div class="workflow-item"><div class="wf-number">04</div><div class="wf-main"><h3>Control de Inventario con Alertas</h3><p>Tracking de ingredientes en tiempo real. Cuando un insumo baja del umbral crítico, alerta por Telegram al dueño y genera orden de compra al proveedor habitual.</p><div class="wf-meta"><span class="wf-channel">Telegram + Email</span><span class="wf-impact">Cero out-of-stock</span></div></div><span class="wf-package-tag growth">Growth</span></div>
+      <div class="workflow-item"><div class="wf-number">05</div><div class="wf-main"><h3>Agente de Voz para Pedidos Telefónicos</h3><p>Una IA atiende las llamadas, toma el pedido conversando naturalmente, confirma dirección, procesa pago y envía la orden a cocina. Suena como persona real.</p><div class="wf-meta"><span class="wf-channel">Voz (Vapi + Twilio)</span><span class="wf-impact">Atiende 100% llamadas</span></div></div><span class="wf-package-tag enterprise">Enterprise</span></div>
+      <div class="workflow-item"><div class="wf-number">06</div><div class="wf-main"><h3>Recordatorios y Loyalty Program</h3><p>Envía cumpleaños, ofertas personalizadas basadas en historial, recordatorios de clientes inactivos. Segmentación automática y métricas de retención.</p><div class="wf-meta"><span class="wf-channel">Email + WhatsApp</span><span class="wf-impact">+25% retención</span></div></div><span class="wf-package-tag growth">Growth</span></div>
+      <div class="workflow-item"><div class="wf-number">07</div><div class="wf-main"><h3>Reporte Ejecutivo Diario al Dueño</h3><p>A las 8am recibe por Telegram: ventas del día anterior, pedidos procesados, ticket promedio, clientes nuevos vs recurrentes, alertas operativas.</p><div class="wf-meta"><span class="wf-channel">Telegram</span><span class="wf-impact">Decisiones basadas en datos</span></div></div><span class="wf-package-tag enterprise">Enterprise</span></div>
     </div>
   </div>
 </section>
 
-<!-- PAQUETE RECOMENDADO -->
 <section class="package-section">
   <div class="container">
     <div class="eyebrow">Recomendación para su sector</div>
     <h2 class="h2">Paquete <em>Growth</em> es el ideal para restaurantes establecidos.</h2>
-    <p class="intro">Combina los workflows de mayor impacto con operación 24/7 en WhatsApp + Email. La mayoría de nuestros clientes restaurantes arrancan aquí y escalan a Enterprise cuando agregan el agente de voz.</p>
-    
+    <p class="intro">Combina los workflows de mayor impacto con operación 24/7 en WhatsApp + Email. Nuestros clientes restauranteros típicamente inician aquí y escalan a Enterprise cuando incorporan el agente de voz.</p>
     <div class="package-card">
       <span class="package-badge">RECOMENDADO</span>
       <div class="package-name"><em>Growth</em></div>
-      <div class="package-price">
-        <span class="amount">$1,497</span>
-        <span class="period">USD / mes</span>
-      </div>
+      <div class="package-investment">Consultar inversión</div>
       <ul class="package-features">
         <li>3 a 5 workflows integrados a la medida de su operación</li>
         <li>2 canales activos: WhatsApp + Email</li>
@@ -342,14 +177,13 @@ footer { padding: 40px 0; background: var(--bg-dark); color: var(--ink-subtle); 
         <li>Change Requests hasta 10h/mes incluidos</li>
       </ul>
       <a href="../index.html#contacto" class="package-cta">
-        <span>Solicitar consulta para restaurantes</span>
+        <span>Solicitar cotización personalizada</span>
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 7h12M7 1l6 6-6 6"/></svg>
       </a>
     </div>
   </div>
 </section>
 
-<!-- CASE STUDY -->
 <section class="case-section">
   <div class="container">
     <div class="case-grid">
@@ -359,22 +193,10 @@ footer { padding: 40px 0; background: var(--bg-dark); color: var(--ink-subtle); 
         <h2><em>Andy's Bakery</em> · Katy, Texas</h2>
         <p style="color: var(--ink-secondary); font-size: 16px; line-height: 1.55; margin-bottom: 20px;">Panadería artesanal con crecimiento orgánico. Antes de KATIA.AI, perdían 20 pedidos al mes por atención tardía en WhatsApp. Hoy operan 24/7 con respuesta inmediata.</p>
         <div class="case-metric-grid">
-          <div class="case-metric">
-            <div class="big">80%</div>
-            <div class="label">Reducción tiempo gestión</div>
-          </div>
-          <div class="case-metric">
-            <div class="big">&lt; 30s</div>
-            <div class="label">Respuesta por cliente</div>
-          </div>
-          <div class="case-metric">
-            <div class="big">20</div>
-            <div class="label">Pedidos mensuales recuperados</div>
-          </div>
-          <div class="case-metric">
-            <div class="big">3 sem</div>
-            <div class="label">Tiempo de implementación</div>
-          </div>
+          <div class="case-metric"><div class="big">80%</div><div class="label">Reducción tiempo gestión</div></div>
+          <div class="case-metric"><div class="big">&lt; 30s</div><div class="label">Respuesta por cliente</div></div>
+          <div class="case-metric"><div class="big">20</div><div class="label">Pedidos mensuales recuperados</div></div>
+          <div class="case-metric"><div class="big">3 sem</div><div class="label">Tiempo de implementación</div></div>
         </div>
         <div class="case-quote">La operación se ejecuta sola mientras nosotros nos concentramos en el producto.</div>
         <div class="case-author">— Andrea Baker · Fundadora</div>
@@ -383,7 +205,6 @@ footer { padding: 40px 0; background: var(--bg-dark); color: var(--ink-subtle); 
   </div>
 </section>
 
-<!-- CTA FINAL -->
 <section class="cta-final">
   <div class="container">
     <h2>¿Listo para automatizar <em>su restaurante?</em></h2>
