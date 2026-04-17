@@ -253,7 +253,7 @@ a{text-decoration:none;color:inherit}
     <div class="success-msg" id="successMsg">
       <svg width="64" height="64" viewBox="0 0 24 24" fill="none" style="margin:0 auto 20px"><circle cx="12" cy="12" r="11" stroke="#4A9ED6" stroke-width="2"/><path d="M7 12.5l3 3 7-7" stroke="#4A9ED6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <h2>¡Solicitud recibida!</h2>
-      <p>Gracias por tu interés. Nuestro equipo revisará tu solicitud y te contactará en menos de 24 horas con un plan personalizado para tu negocio.</p>
+      <p>Gracias, te contactamos en menos de 2 horas con un plan personalizado para tu negocio.</p>
       <p style="color:var(--gold);font-weight:600;margin-top:20px">Mientras tanto, síguenos en Instagram para tips de automatización:</p>
       <a href="https://www.instagram.com/katia.ai_" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:var(--blue);color:var(--bg);border-radius:25px;font-weight:600;margin-top:12px">📸 Seguir @katia.ai_</a>
       <br><br>
@@ -307,7 +307,7 @@ async function submitForm() {
     empleados: document.getElementById('empleados').value || 'No especificado',
     urgencia: urgenciaEl ? urgenciaEl.value : 'este_mes',
     contacto_preferido: document.getElementById('contacto_pref').value,
-    source: 'web_form',
+    fuente: 'website',
     submitted_at: new Date().toISOString()
   };
 
