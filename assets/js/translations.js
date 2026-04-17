@@ -1,0 +1,421 @@
+// ═══════════════════════════════════════════════════════════════
+// KATIA.AI — Translation System v1.0
+// Sistema de traducciones ES (default) / EN
+// ═══════════════════════════════════════════════════════════════
+
+const translations = {
+  es: {
+    // Navigation
+    'nav.solutions': 'Soluciones',
+    'nav.methodology': 'Metodología',
+    'nav.industries': 'Industrias',
+    'nav.cta': 'Solicitar consulta',
+    
+    // Hero
+    'hero.badge.label': 'FOUNDERS',
+    'hero.badge.text': 'Programa limitado a 20 empresas',
+    'hero.title.part1': 'Automatización empresarial',
+    'hero.title.part2': 'con',
+    'hero.title.italic': 'inteligencia artificial.',
+    'hero.subtitle': 'Diseñamos e implementamos sistemas de agentes IA que operan áreas completas de su negocio. Arquitectura empresarial, infraestructura dedicada y gobernanza financiera auditable.',
+    'hero.cta.primary': 'Solicitar consulta',
+    'hero.cta.secondary': 'Ver metodología',
+    'hero.stat1.label': 'Operación continua',
+    'hero.stat2.label': 'Disponibilidad SLA',
+    'hero.stat3.label': 'Framework de control',
+    
+    // Dashboard
+    'dash.title': 'Panel de Operaciones · katia.ai',
+    'dash.status': 'Operacional',
+    'dash.agent1.name': 'Agente de Ventas',
+    'dash.agent1.desc': 'calificación · propuesta · cierre',
+    'dash.agent1.metric': 'leads',
+    'dash.agent2.name': 'Agente de Delivery',
+    'dash.agent2.desc': 'onboarding · go-live · control Q',
+    'dash.agent2.metric': 'SLA',
+    'dash.agent3.name': 'Agente de Operaciones',
+    'dash.agent3.desc': 'monitoreo · auto-resolución',
+    'dash.agent3.metric': 'incidentes',
+    'dash.agent4.name': 'Agente de Finanzas',
+    'dash.agent4.desc': 'facturación · conciliación QBO',
+    'dash.agent4.metric': 'MRR',
+    'dash.agent5.name': 'Agente de Control',
+    'dash.agent5.desc': 'auditoría · gobernanza · reportes',
+    'dash.agent5.metric': 'compliance',
+    'dash.float1.label': 'Disponibilidad',
+    'dash.float2.label': 'Tiempo de respuesta',
+    
+    // Trust bar
+    'trust.label': 'Diseñado para cinco verticales empresariales',
+    'trust.industry1': 'Restaurantes',
+    'trust.industry2': 'Clínicas',
+    'trust.industry3': 'Retail',
+    'trust.industry4': 'Servicios Profesionales',
+    'trust.industry5': 'Construcción',
+    
+    // Agents Section
+    'agents.eyebrow': 'Arquitectura de Agentes',
+    'agents.title.part1': 'Siete agentes especializados.',
+    'agents.title.part2': 'Una',
+    'agents.title.italic': 'fuerza operativa unificada.',
+    'agents.intro': 'Cada área crítica del negocio opera bajo un agente IA dedicado, con límites de autoridad claramente definidos. Los agentes se comunican entre sí, mantienen trazabilidad completa y escalan al CEO humano únicamente decisiones estratégicas.',
+    
+    'agent01.label': 'ORQUESTADOR · CLAUDE OPUS',
+    'agent01.name': 'CEO-IA',
+    'agent01.italic': 'Orquestador',
+    'agent01.desc': 'Director de operaciones artificial. Coordina los seis agentes subordinados, aplica la Matriz de Autoridad R0–R3, detecta anomalías sistémicas y presenta el reporte ejecutivo diario al CEO humano a las 08:00 CST.',
+    
+    'agent02.label': 'COMERCIAL',
+    'agent02.name': 'Ventas',
+    'agent02.desc': 'Califica prospectos bajo metodologías SPIN y Challenger. Presenta propuestas y ejecuta cierre de paquetes estándar sin intervención humana.',
+    
+    'agent03.label': 'IMPLEMENTACIÓN',
+    'agent03.name': 'Delivery',
+    'agent03.desc': 'Onboarding estructurado, seguimiento de proyecto y control de calidad. Ejecuta Gate D de verificación pre-go-live.',
+    
+    'agent04.label': 'INFRAESTRUCTURA · AUTO-RESOLUCIÓN',
+    'agent04.name': 'Operaciones',
+    'agent04.italic': '24/7',
+    'agent04.desc': 'Monitoreo proactivo de infraestructura, detección temprana de incidentes y auto-resolución. Escalamiento automatizado únicamente para eventos críticos. SLA 99.97%.',
+    
+    'agent05.label': 'CONTROL Y FINANZAS',
+    'agent05.name': 'Control &',
+    'agent05.italic': 'Finanzas',
+    'agent05.desc': 'Facturación automatizada, conciliación con QuickBooks Online, reportería financiera y controles de auditoría. Diseñado por un Contador Público con 30 años de experiencia en administración corporativa.',
+    
+    'agent06.label': 'CONTENIDO',
+    'agent06.name': 'Marketing',
+    'agent06.desc': 'Calendario editorial automatizado, publicación en canales digitales y gestión de interacciones de marca.',
+    
+    'agent07.label': 'BACKOFFICE',
+    'agent07.name': 'Administración',
+    'agent07.desc': 'Gestión documental, agenda ejecutiva y procesamiento de tareas administrativas repetitivas.',
+    
+    // Methodology
+    'method.eyebrow': 'Metodología',
+    'method.title.part1': 'Un proceso',
+    'method.title.italic': 'disciplinado.',
+    'method.title.part2': 'De la consulta al go-live.',
+    'method.intro': 'Nuestra metodología combina disciplina consultiva con ingeniería moderna. Cuatro fases estructuradas, entregables claros y hitos auditables en cada paso.',
+    'method.step1.label': 'Fase Uno · 45 min',
+    'method.step1.title': 'Consulta de Descubrimiento',
+    'method.step1.desc': 'Sesión de diagnóstico operativo. Identificamos procesos críticos, cuellos de botella y oportunidades con retorno medible.',
+    'method.step2.label': 'Fase Dos · 72 hrs',
+    'method.step2.title': 'Propuesta Ejecutiva',
+    'method.step2.desc': 'Documento formal con alcance, arquitectura técnica, cronograma de implementación y estructura de inversión transparente.',
+    'method.step3.label': 'Fase Tres · 3–6 sem',
+    'method.step3.title': 'Construcción & Pruebas',
+    'method.step3.desc': 'Implementación en infraestructura dedicada. Revisiones de hitos con el cliente y documentación técnica completa.',
+    'method.step4.label': 'Fase Cuatro · 14 días',
+    'method.step4.title': 'Go-Live & Hypercare',
+    'method.step4.desc': 'Superación de Gate D de QA, activación controlada y periodo de atención intensiva con soporte directo de arquitectos.',
+    
+    // Industries
+    'industries.eyebrow': 'Verticales',
+    'industries.title.part1': 'Diseñado para empresas con',
+    'industries.title.italic': 'procesos maduros.',
+    'industries.intro': 'Cinco verticales con playbooks de implementación probados. Si su empresa opera en alguno de estos sectores, podemos llevar sus automatizaciones a producción en semanas, no meses.',
+    'industries.cta': 'Ver caso de estudio',
+    'industry1.name': 'Restaurantes & Food Service',
+    'industry1.desc': 'Pedidos · Reservas · Inventario',
+    'industry2.name': 'Clínicas & Salud',
+    'industry2.desc': 'Citas · Expedientes · Recordatorios',
+    'industry3.name': 'Retail & E-commerce',
+    'industry3.desc': 'Ventas · Fulfillment · CRM',
+    'industry4.name': 'Servicios Profesionales',
+    'industry4.desc': 'Propuestas · Facturación · Reportes',
+    'industry5.name': 'Construcción & Home Services',
+    'industry5.desc': 'Cotizaciones · Agenda · Cobranza',
+    
+    // Testimonial
+    'quote.text.part1': 'Pasamos de perder veinte pedidos al mes por desatención en mensajería a',
+    'quote.text.italic': 'responder cada cliente en menos de treinta segundos, veinticuatro horas al día.',
+    'quote.text.part2': 'La operación se ejecuta sola mientras nosotros nos concentramos en el producto.',
+    'quote.author': 'Andrea Baker',
+    'quote.title': 'Fundadora · Andy\'s Bakery · Katy, TX',
+    
+    // Contact
+    'contact.title.part1': 'Solicite una',
+    'contact.title.italic': 'consulta ejecutiva.',
+    'contact.intro': 'Una sesión de 45 minutos, sin costo y sin compromiso. Al finalizar, usted contará con dos o tres recomendaciones concretas de automatización y una evaluación realista de su factibilidad.',
+    'contact.meta1': 'Sede operativa en Katy, Texas · Estados Unidos',
+    'contact.meta2': 'katiaia.ventas@gmail.com',
+    'contact.meta3': 'Tiempo de respuesta: inferior a 2 horas hábiles',
+    'contact.meta4': 'Atención en español e inglés',
+    'form.name': 'Nombre completo',
+    'form.company': 'Empresa',
+    'form.email': 'Correo corporativo',
+    'form.phone': 'Teléfono',
+    'form.industry': 'Sector de su empresa',
+    'form.industry.placeholder': 'Seleccione una opción',
+    'form.message': 'Describa su necesidad operativa',
+    'form.message.placeholder': 'Procesos que desea automatizar, desafíos operativos actuales, volumen aproximado...',
+    'form.submit': 'Solicitar consulta',
+    'form.submit.sending': 'Enviando...',
+    'form.submit.success': '✓ Solicitud recibida',
+    'form.submit.error': 'Error. Intente de nuevo',
+    
+    // Footer
+    'footer.about': 'Agencia especializada en automatización empresarial con inteligencia artificial. Sede operativa en Katy, Texas. Servimos a empresas medianas en los Estados Unidos.',
+    'footer.solutions': 'Soluciones',
+    'footer.company': 'Empresa',
+    'footer.contact': 'Contacto',
+    'footer.link.agents': 'Agentes IA',
+    'footer.link.methodology': 'Metodología',
+    'footer.link.verticals': 'Verticales',
+    'footer.link.consult': 'Consulta ejecutiva',
+    'footer.link.about': 'Sobre nosotros',
+    'footer.link.cases': 'Casos de éxito',
+    'footer.link.founders': 'Programa Founders',
+    'footer.link.governance': 'Gobernanza',
+    'footer.link.email': 'Email comercial',
+    'footer.link.linkedin': 'LinkedIn',
+    'footer.link.instagram': 'Instagram',
+    'footer.rights': '© 2026 KATIA.AI · Todos los derechos reservados',
+    'footer.location': 'Katy, Texas · Estados Unidos',
+    
+    // Chat
+    'chat.title': 'Hola, soy KATIA',
+    'chat.subtitle': '¿En qué puedo ayudarle?',
+    'chat.placeholder': 'Escriba su mensaje...',
+    'chat.send': 'Enviar',
+  },
+  
+  en: {
+    // Navigation
+    'nav.solutions': 'Solutions',
+    'nav.methodology': 'Methodology',
+    'nav.industries': 'Industries',
+    'nav.cta': 'Request consultation',
+    
+    // Hero
+    'hero.badge.label': 'FOUNDERS',
+    'hero.badge.text': 'Limited program — 20 companies',
+    'hero.title.part1': 'Enterprise automation',
+    'hero.title.part2': 'with',
+    'hero.title.italic': 'artificial intelligence.',
+    'hero.subtitle': 'We design and deploy AI agent systems that operate entire areas of your business. Enterprise architecture, dedicated infrastructure, and auditable financial governance.',
+    'hero.cta.primary': 'Request consultation',
+    'hero.cta.secondary': 'See methodology',
+    'hero.stat1.label': 'Continuous operation',
+    'hero.stat2.label': 'SLA availability',
+    'hero.stat3.label': 'Control framework',
+    
+    // Dashboard
+    'dash.title': 'Operations Panel · katia.ai',
+    'dash.status': 'Operational',
+    'dash.agent1.name': 'Sales Agent',
+    'dash.agent1.desc': 'qualification · proposal · closing',
+    'dash.agent1.metric': 'leads',
+    'dash.agent2.name': 'Delivery Agent',
+    'dash.agent2.desc': 'onboarding · go-live · QA control',
+    'dash.agent2.metric': 'SLA',
+    'dash.agent3.name': 'Operations Agent',
+    'dash.agent3.desc': 'monitoring · auto-resolution',
+    'dash.agent3.metric': 'incidents',
+    'dash.agent4.name': 'Finance Agent',
+    'dash.agent4.desc': 'billing · QBO reconciliation',
+    'dash.agent4.metric': 'MRR',
+    'dash.agent5.name': 'Control Agent',
+    'dash.agent5.desc': 'audit · governance · reports',
+    'dash.agent5.metric': 'compliance',
+    'dash.float1.label': 'Availability',
+    'dash.float2.label': 'Response time',
+    
+    // Trust bar
+    'trust.label': 'Designed for five enterprise verticals',
+    'trust.industry1': 'Restaurants',
+    'trust.industry2': 'Clinics',
+    'trust.industry3': 'Retail',
+    'trust.industry4': 'Professional Services',
+    'trust.industry5': 'Construction',
+    
+    // Agents
+    'agents.eyebrow': 'Agent Architecture',
+    'agents.title.part1': 'Seven specialized agents.',
+    'agents.title.part2': 'One',
+    'agents.title.italic': 'unified operational force.',
+    'agents.intro': 'Every critical business area operates under a dedicated AI agent, with clearly defined authority limits. Agents communicate with each other, maintain full traceability, and escalate only strategic decisions to the human CEO.',
+    
+    'agent01.label': 'ORCHESTRATOR · CLAUDE OPUS',
+    'agent01.name': 'CEO-AI',
+    'agent01.italic': 'Orchestrator',
+    'agent01.desc': 'Artificial operations director. Coordinates the six subordinate agents, applies the R0–R3 Authority Matrix, detects systemic anomalies, and delivers the daily executive report to the human CEO at 08:00 CST.',
+    
+    'agent02.label': 'COMMERCIAL',
+    'agent02.name': 'Sales',
+    'agent02.desc': 'Qualifies prospects using SPIN and Challenger methodologies. Presents proposals and executes closing of standard packages without human intervention.',
+    
+    'agent03.label': 'IMPLEMENTATION',
+    'agent03.name': 'Delivery',
+    'agent03.desc': 'Structured onboarding, project tracking, and quality control. Executes Gate D pre-go-live verification.',
+    
+    'agent04.label': 'INFRASTRUCTURE · SELF-HEALING',
+    'agent04.name': 'Operations',
+    'agent04.italic': '24/7',
+    'agent04.desc': 'Proactive infrastructure monitoring, early incident detection, and self-healing. Automated escalation only for critical events. SLA 99.97%.',
+    
+    'agent05.label': 'CONTROL & FINANCE',
+    'agent05.name': 'Control &',
+    'agent05.italic': 'Finance',
+    'agent05.desc': 'Automated billing, QuickBooks Online reconciliation, financial reporting, and audit controls. Designed by a CPA with 30 years of experience in corporate administration.',
+    
+    'agent06.label': 'CONTENT',
+    'agent06.name': 'Marketing',
+    'agent06.desc': 'Automated editorial calendar, publishing across digital channels, and brand interaction management.',
+    
+    'agent07.label': 'BACKOFFICE',
+    'agent07.name': 'Administration',
+    'agent07.desc': 'Document management, executive scheduling, and processing of repetitive administrative tasks.',
+    
+    // Methodology
+    'method.eyebrow': 'Methodology',
+    'method.title.part1': 'A',
+    'method.title.italic': 'disciplined',
+    'method.title.part2': 'process. From consultation to go-live.',
+    'method.intro': 'Our methodology combines consultative discipline with modern engineering. Four structured phases, clear deliverables, and auditable milestones at every step.',
+    'method.step1.label': 'Phase One · 45 min',
+    'method.step1.title': 'Discovery Consultation',
+    'method.step1.desc': 'Operational diagnostic session. We identify critical processes, bottlenecks, and opportunities with measurable returns.',
+    'method.step2.label': 'Phase Two · 72 hrs',
+    'method.step2.title': 'Executive Proposal',
+    'method.step2.desc': 'Formal document with scope, technical architecture, implementation timeline, and transparent investment structure.',
+    'method.step3.label': 'Phase Three · 3–6 weeks',
+    'method.step3.title': 'Build & Testing',
+    'method.step3.desc': 'Deployment on dedicated infrastructure. Milestone reviews with the client and complete technical documentation.',
+    'method.step4.label': 'Phase Four · 14 days',
+    'method.step4.title': 'Go-Live & Hypercare',
+    'method.step4.desc': 'Gate D QA clearance, controlled activation, and intensive care period with direct architect support.',
+    
+    // Industries
+    'industries.eyebrow': 'Verticals',
+    'industries.title.part1': 'Designed for companies with',
+    'industries.title.italic': 'mature processes.',
+    'industries.intro': 'Five verticals with proven implementation playbooks. If your company operates in any of these sectors, we can bring your automations to production in weeks, not months.',
+    'industries.cta': 'See case study',
+    'industry1.name': 'Restaurants & Food Service',
+    'industry1.desc': 'Orders · Reservations · Inventory',
+    'industry2.name': 'Clinics & Healthcare',
+    'industry2.desc': 'Appointments · Records · Reminders',
+    'industry3.name': 'Retail & E-commerce',
+    'industry3.desc': 'Sales · Fulfillment · CRM',
+    'industry4.name': 'Professional Services',
+    'industry4.desc': 'Proposals · Billing · Reports',
+    'industry5.name': 'Construction & Home Services',
+    'industry5.desc': 'Quotes · Scheduling · Collections',
+    
+    // Testimonial
+    'quote.text.part1': 'We went from losing twenty orders a month due to messaging delays to',
+    'quote.text.italic': 'responding to every customer in under thirty seconds, twenty-four hours a day.',
+    'quote.text.part2': 'Operations run themselves while we focus on the product.',
+    'quote.author': 'Andrea Baker',
+    'quote.title': 'Founder · Andy\'s Bakery · Katy, TX',
+    
+    // Contact
+    'contact.title.part1': 'Request an',
+    'contact.title.italic': 'executive consultation.',
+    'contact.intro': 'A 45-minute session, no cost and no commitment. At the end, you will have two or three concrete automation recommendations and a realistic feasibility assessment.',
+    'contact.meta1': 'Headquartered in Katy, Texas · United States',
+    'contact.meta2': 'katiaia.ventas@gmail.com',
+    'contact.meta3': 'Response time: under 2 business hours',
+    'contact.meta4': 'Service in Spanish and English',
+    'form.name': 'Full name',
+    'form.company': 'Company',
+    'form.email': 'Corporate email',
+    'form.phone': 'Phone',
+    'form.industry': 'Your company sector',
+    'form.industry.placeholder': 'Select an option',
+    'form.message': 'Describe your operational need',
+    'form.message.placeholder': 'Processes you want to automate, current operational challenges, approximate volume...',
+    'form.submit': 'Request consultation',
+    'form.submit.sending': 'Sending...',
+    'form.submit.success': '✓ Request received',
+    'form.submit.error': 'Error. Please try again',
+    
+    // Footer
+    'footer.about': 'Agency specializing in enterprise automation with artificial intelligence. Headquartered in Katy, Texas. We serve mid-market companies across the United States.',
+    'footer.solutions': 'Solutions',
+    'footer.company': 'Company',
+    'footer.contact': 'Contact',
+    'footer.link.agents': 'AI Agents',
+    'footer.link.methodology': 'Methodology',
+    'footer.link.verticals': 'Verticals',
+    'footer.link.consult': 'Executive consultation',
+    'footer.link.about': 'About us',
+    'footer.link.cases': 'Case studies',
+    'footer.link.founders': 'Founders Program',
+    'footer.link.governance': 'Governance',
+    'footer.link.email': 'Sales email',
+    'footer.link.linkedin': 'LinkedIn',
+    'footer.link.instagram': 'Instagram',
+    'footer.rights': '© 2026 KATIA.AI · All rights reserved',
+    'footer.location': 'Katy, Texas · United States',
+    
+    // Chat
+    'chat.title': 'Hi, I\'m KATIA',
+    'chat.subtitle': 'How can I help you?',
+    'chat.placeholder': 'Type your message...',
+    'chat.send': 'Send',
+  }
+};
+
+// ═══════════════════════════════════════════════════════════════
+// TRANSLATION ENGINE
+// ═══════════════════════════════════════════════════════════════
+
+const KatiaI18n = {
+  currentLang: localStorage.getItem('katia-lang') || 'es',
+  
+  init() {
+    this.applyTranslations(this.currentLang);
+    this.setupToggle();
+  },
+  
+  applyTranslations(lang) {
+    this.currentLang = lang;
+    localStorage.setItem('katia-lang', lang);
+    document.documentElement.lang = lang;
+    
+    // Traducir todos los elementos con data-i18n
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const translation = translations[lang][key];
+      if (translation !== undefined) {
+        el.textContent = translation;
+      }
+    });
+    
+    // Traducir atributos placeholder
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      const translation = translations[lang][key];
+      if (translation !== undefined) {
+        el.placeholder = translation;
+      }
+    });
+    
+    // Actualizar estado de botones
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+  },
+  
+  setupToggle() {
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        this.applyTranslations(btn.dataset.lang);
+      });
+    });
+  },
+  
+  t(key) {
+    return translations[this.currentLang][key] || key;
+  }
+};
+
+// Auto-init on DOM ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => KatiaI18n.init());
+} else {
+  KatiaI18n.init();
+}

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clínicas & Salud — KATIA.AI</title>
+<meta name="description" content="Automatización empresarial para clínicas médicas y dentales. 6 workflows específicos: agenda, pre-screening, seguimiento, cobranza.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root { --bg-primary: #fafaf7; --bg-secondary: #f4f3ee; --bg-card: #ffffff; --bg-dark: #0a0e1a; --ink: #0a0e1a; --ink-secondary: #2a3040; --ink-muted: #6b7280; --ink-subtle: #9ca3af; --ink-on-dark: #f4f3ee; --navy: #1e3a5f; --navy-deep: #152a45; --gold: #b8924a; --gold-subtle: #d4b77a; --border: #e5e2d8; --border-strong: #d4d1c5; --success: #2d6a4f; --font-display: 'Fraunces', Georgia, serif; --font-sans: 'IBM Plex Sans', -apple-system, sans-serif; --font-mono: 'IBM Plex Mono', monospace; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg-primary); color: var(--ink); font-family: var(--font-sans); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+@media (max-width: 768px) { .container { padding: 0 24px; } }
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 18px 40px; background: rgba(250, 250, 247, 0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+.nav-inner { max-width: 1240px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
+.logo-mark { width: 36px; height: 36px; border-radius: 6px; background: var(--navy); display: grid; place-items: center; font-family: var(--font-display); font-weight: 600; font-size: 18px; color: var(--bg-primary); position: relative; }
+.logo-mark::after { content: ''; position: absolute; top: 4px; right: 4px; width: 4px; height: 4px; border-radius: 50%; background: var(--gold); }
+.logo-text { font-family: var(--font-display); font-size: 22px; font-weight: 500; letter-spacing: -0.02em; }
+.logo-text .ai { font-style: italic; color: var(--navy); font-weight: 400; }
+.nav-back { font-family: var(--font-mono); font-size: 12px; color: var(--ink-muted); text-decoration: none; display: flex; align-items: center; gap: 8px; padding: 8px 14px; border: 1px solid var(--border); border-radius: 6px; transition: all 0.2s; }
+.nav-back:hover { border-color: var(--navy); color: var(--navy); }
+.page-hero { padding: 160px 0 80px; border-bottom: 1px solid var(--border); }
+.eyebrow { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-mono); font-size: 11px; color: var(--navy); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 24px; font-weight: 600; }
+.eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--navy); }
+.page-hero h1 { font-family: var(--font-display); font-size: clamp(40px, 5.5vw, 72px); line-height: 1; letter-spacing: -0.03em; font-weight: 500; margin-bottom: 28px; }
+.page-hero h1 em { font-style: italic; color: var(--navy); }
+.page-hero-intro { font-size: 19px; line-height: 1.55; color: var(--ink-secondary); max-width: 720px; }
+.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; padding: 60px 0; border-bottom: 1px solid var(--border); }
+@media (max-width: 768px) { .stats-row { grid-template-columns: repeat(2, 1fr); } }
+.stat-box { padding: 20px; border-left: 2px solid var(--gold); }
+.stat-big { font-family: var(--font-display); font-size: 42px; line-height: 1; font-weight: 500; letter-spacing: -0.03em; color: var(--ink); margin-bottom: 8px; }
+.stat-desc { font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted); letter-spacing: 0.05em; text-transform: uppercase; }
+.problemas { padding: 100px 0; background: var(--bg-secondary); }
+.h2 { font-family: var(--font-display); font-size: clamp(32px, 4vw, 48px); line-height: 1.1; letter-spacing: -0.025em; font-weight: 500; margin-bottom: 24px; max-width: 720px; }
+.h2 em { font-style: italic; color: var(--navy); }
+.intro { font-size: 17px; color: var(--ink-secondary); max-width: 640px; margin-bottom: 56px; line-height: 1.55; }
+.problems-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+@media (max-width: 768px) { .problems-grid { grid-template-columns: 1fr; } }
+.problem-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 28px; display: flex; gap: 20px; }
+.problem-num { font-family: var(--font-display); font-size: 28px; font-style: italic; color: var(--navy); line-height: 1; min-width: 40px; }
+.problem-content h3 { font-family: var(--font-display); font-size: 20px; font-weight: 500; margin-bottom: 8px; letter-spacing: -0.01em; }
+.problem-content p { font-size: 14px; color: var(--ink-secondary); line-height: 1.55; }
+.workflows-section { padding: 100px 0; }
+.workflow-list { display: flex; flex-direction: column; gap: 16px; }
+.workflow-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 32px; display: grid; grid-template-columns: auto 1fr auto; gap: 32px; align-items: center; transition: all 0.3s; }
+@media (max-width: 768px) { .workflow-item { grid-template-columns: 1fr; gap: 16px; } }
+.workflow-item:hover { border-color: var(--navy); box-shadow: 0 12px 32px rgba(10, 14, 26, 0.06); }
+.wf-number { font-family: var(--font-display); font-size: 48px; font-style: italic; color: var(--gold); line-height: 1; letter-spacing: -0.03em; }
+.wf-main h3 { font-family: var(--font-display); font-size: 22px; font-weight: 500; margin-bottom: 8px; letter-spacing: -0.015em; }
+.wf-main p { font-size: 14px; color: var(--ink-secondary); line-height: 1.5; margin-bottom: 12px; }
+.wf-meta { display: flex; flex-wrap: wrap; gap: 16px; font-family: var(--font-mono); font-size: 11px; }
+.wf-channel { display: flex; align-items: center; gap: 6px; color: var(--navy); font-weight: 600; letter-spacing: 0.04em; }
+.wf-channel::before { content: '◆'; color: var(--gold); }
+.wf-impact { color: var(--success); font-weight: 600; }
+.wf-package-tag { align-self: flex-start; padding: 6px 12px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 100px; font-family: var(--font-mono); font-size: 10px; color: var(--ink-muted); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; white-space: nowrap; }
+.wf-package-tag.starter { color: var(--success); border-color: rgba(45, 106, 79, 0.3); }
+.wf-package-tag.growth { color: var(--navy); border-color: rgba(30, 58, 95, 0.3); }
+.wf-package-tag.enterprise { background: var(--navy); color: var(--bg-primary); border-color: var(--navy); }
+.package-section { padding: 100px 0; background: var(--bg-dark); color: var(--ink-on-dark); }
+.package-section .h2 { color: var(--ink-on-dark); }
+.package-section .h2 em { color: var(--gold-subtle); }
+.package-section .intro { color: var(--ink-subtle); }
+.package-section .eyebrow { color: var(--gold-subtle); }
+.package-section .eyebrow::before { background: var(--gold-subtle); }
+.package-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(184, 146, 74, 0.3); border-radius: 16px; padding: 48px; max-width: 720px; position: relative; }
+.package-badge { position: absolute; top: 24px; right: 24px; padding: 6px 14px; background: var(--gold); color: var(--bg-dark); border-radius: 100px; font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.08em; }
+.package-name { font-family: var(--font-display); font-size: 40px; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 8px; color: var(--ink-on-dark); }
+.package-name em { font-style: italic; color: var(--gold-subtle); }
+.package-price { display: flex; align-items: baseline; gap: 12px; margin-bottom: 32px; }
+.package-price .amount { font-family: var(--font-display); font-size: 56px; font-weight: 500; color: var(--ink-on-dark); letter-spacing: -0.03em; }
+.package-price .period { font-family: var(--font-mono); font-size: 14px; color: var(--ink-subtle); }
+.package-features { list-style: none; margin-bottom: 32px; }
+.package-features li { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.08); color: var(--ink-subtle); font-size: 15px; }
+.package-features li::before { content: '→'; color: var(--gold-subtle); font-weight: 600; }
+.package-cta { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; background: var(--gold); color: var(--bg-dark); border-radius: 6px; text-decoration: none; font-size: 15px; font-weight: 600; transition: all 0.2s; }
+.package-cta:hover { background: var(--gold-subtle); transform: translateY(-1px); }
+.placeholder-case { padding: 80px 0; border-bottom: 1px solid var(--border); background: var(--bg-secondary); text-align: center; }
+.placeholder-case h3 { font-family: var(--font-display); font-size: 28px; font-weight: 500; margin-bottom: 16px; color: var(--navy); }
+.placeholder-case p { font-size: 16px; color: var(--ink-secondary); max-width: 560px; margin: 0 auto; }
+.cta-final { padding: 100px 0 140px; text-align: center; background: var(--bg-secondary); }
+.cta-final h2 { font-family: var(--font-display); font-size: clamp(32px, 4vw, 48px); line-height: 1.1; letter-spacing: -0.02em; font-weight: 500; margin-bottom: 20px; max-width: 720px; margin-left: auto; margin-right: auto; }
+.cta-final h2 em { font-style: italic; color: var(--navy); }
+.cta-final p { font-size: 17px; color: var(--ink-secondary); max-width: 560px; margin: 0 auto 40px; }
+.btn-primary { display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; background: var(--navy); color: var(--bg-primary); border-radius: 6px; text-decoration: none; font-size: 15px; font-weight: 500; transition: all 0.25s; }
+.btn-primary:hover { background: var(--navy-deep); transform: translateY(-1px); }
+footer { padding: 40px 0; background: var(--bg-dark); color: var(--ink-subtle); font-family: var(--font-mono); font-size: 11px; text-align: center; letter-spacing: 0.02em; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-mark">K</div>
+      <span class="logo-text">katia<span class="ai">.ai</span></span>
+    </a>
+    <a href="../index.html#industrias" class="nav-back">
+      <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 7H1M7 1L1 7l6 6"/></svg>
+      Volver a industrias
+    </a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow">Vertical · 02 · Clínicas & Salud</div>
+    <h1>Automatización para <em>clínicas</em>, consultorios dentales y centros médicos.</h1>
+    <p class="page-hero-intro">Desde la agenda inteligente hasta la reactivación de pacientes inactivos, construimos el sistema operativo que permite a su práctica enfocarse en atender — no en coordinar.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat-box"><div class="stat-big">-40%</div><div class="stat-desc">Reducción de no-shows</div></div>
+      <div class="stat-box"><div class="stat-big">+30%</div><div class="stat-desc">Pacientes reactivados</div></div>
+      <div class="stat-box"><div class="stat-big">24/7</div><div class="stat-desc">Agenda automática</div></div>
+      <div class="stat-box"><div class="stat-big">HIPAA</div><div class="stat-desc">Compliance ready</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="problemas">
+  <div class="container">
+    <div class="eyebrow">El problema que resolvemos</div>
+    <h2 class="h2">Su recepción está <em>saturada</em>, sus pacientes esperan, sus ingresos se pierden.</h2>
+    <p class="intro">Estos son los dolores operativos típicos que hemos identificado en clínicas médicas, dentales y de especialidades. Si alguno le resulta familiar, tiene un problema que podemos resolver.</p>
+    <div class="problems-grid">
+      <div class="problem-card"><div class="problem-num">01</div><div class="problem-content"><h3>No-shows sin control</h3><p>Pacientes no llegan a su cita. Hora perdida. Ingresos perdidos. 20-30% de la agenda semanal se desperdicia por falta de recordatorios efectivos.</p></div></div>
+      <div class="problem-card"><div class="problem-num">02</div><div class="problem-content"><h3>Recepcionista atrapada en el teléfono</h3><p>8 horas al día tomando citas. No puede atender al paciente que está en persona. Pacientes nuevos cuelgan después de 3 timbrazos sin respuesta.</p></div></div>
+      <div class="problem-card"><div class="problem-num">03</div><div class="problem-content"><h3>Pacientes inactivos sin reactivar</h3><p>Miles de pacientes no regresan después de 6-12 meses. Nadie los llama, nadie los contacta. Oro sentado en la base de datos sin explotar.</p></div></div>
+      <div class="problem-card"><div class="problem-num">04</div><div class="problem-content"><h3>Cobranza lenta y manual</h3><p>Copagos por cobrar, seguros pendientes, pacientes con saldos vencidos. Cada factura requiere seguimiento manual. Flujo de caja tardío.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="workflows-section">
+  <div class="container">
+    <div class="eyebrow">Workflows Recomendados</div>
+    <h2 class="h2">Seis automatizaciones diseñadas para <em>su práctica clínica.</em></h2>
+    <p class="intro">Cada uno es un workflow modular que implementamos en semanas. Construidos sobre infraestructura dedicada con controles de privacidad apropiados para información de salud.</p>
+    
+    <div class="workflow-list">
+      <div class="workflow-item">
+        <div class="wf-number">01</div>
+        <div class="wf-main">
+          <h3>Agenda Inteligente con Recordatorios Multi-Canal</h3>
+          <p>Paciente agenda por web o WhatsApp, sistema verifica disponibilidad, confirma, envía recordatorios 48h, 24h y 2h antes por SMS + WhatsApp + Email. Permite confirmar o reagendar con un clic.</p>
+          <div class="wf-meta"><span class="wf-channel">SMS + WhatsApp + Email</span><span class="wf-impact">-40% no-shows</span></div>
+        </div>
+        <span class="wf-package-tag starter">Starter</span>
+      </div>
+      <div class="workflow-item">
+        <div class="wf-number">02</div>
+        <div class="wf-main">
+          <h3>Pre-Screening Automatizado de Pacientes</h3>
+          <p>Antes de la cita, envía formulario con historial médico relevante, síntomas y preferencias. Los datos llegan al doctor ya procesados y organizados en el expediente.</p>
+          <div class="wf-meta"><span class="wf-channel">Email + Web Form</span><span class="wf-impact">Consulta más eficiente</span></div>
+        </div>
+        <span class="wf-package-tag growth">Growth</span>
+      </div>
+      <div class="workflow-item">
+        <div class="wf-number">03</div>
+        <div class="wf-main">
+          <h3>Seguimiento Post-Consulta</h3>
+          <p>24h después de la cita: encuesta de satisfacción, recordatorio de tratamiento, receta de medicación. A los 7 días: check-in de evolución. Detecta casos que requieren intervención.</p>
+          <div class="wf-meta"><span class="wf-channel">Email + WhatsApp</span><span class="wf-impact">95% satisfacción</span></div>
+        </div>
+        <span class="wf-package-tag growth">Growth</span>
+      </div>
+      <div class="workflow-item">
+        <div class="wf-number">04</div>
+        <div class="wf-main">
+          <h3>Cobranza Automatizada de Copagos y Saldos</h3>
+          <p>Factura al momento de la consulta, link de pago por email/SMS. Follow-up automático a 3, 7 y 15 días. Escalamiento a su gerencia si supera los 30 días de vencimiento.</p>
+          <div class="wf-meta"><span class="wf-channel">Email + SMS + Stripe</span><span class="wf-impact">-60% aging &gt;30 días</span></div>
+        </div>
+        <span class="wf-package-tag enterprise">Enterprise</span>
+      </div>
+      <div class="workflow-item">
+        <div class="wf-number">05</div>
+        <div class="wf-main">
+          <h3>Gestión de Expedientes Digitales</h3>
+          <p>Captura notas de consulta por voz del doctor, las transcribe, categoriza y guarda en el expediente del paciente. Búsqueda rápida por síntomas, diagnósticos o tratamientos.</p>
+          <div class="wf-meta"><span class="wf-channel">Voz + Integración EHR</span><span class="wf-impact">-50% tiempo documentación</span></div>
+        </div>
+        <span class="wf-package-tag enterprise">Enterprise</span>
+      </div>
+      <div class="workflow-item">
+        <div class="wf-number">06</div>
+        <div class="wf-main">
+          <h3>Reactivación de Pacientes Inactivos</h3>
+          <p>Identifica pacientes sin visita hace 6-12 meses. Campaign segmentada por tipo de tratamiento, con oferta personalizada de chequeo. Agenda automática si aceptan.</p>
+          <div class="wf-meta"><span class="wf-channel">Email + SMS</span><span class="wf-impact">+30% reactivación</span></div>
+        </div>
+        <span class="wf-package-tag growth">Growth</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="package-section">
+  <div class="container">
+    <div class="eyebrow">Recomendación para su sector</div>
+    <h2 class="h2">Paquete <em>Growth</em> es ideal para clínicas con 2-5 consultorios activos.</h2>
+    <p class="intro">Combina agenda inteligente, pre-screening, seguimiento y reactivación. Para clínicas con múltiples especialidades o 5+ doctores, recomendamos escalar a Enterprise para incluir cobranza automatizada e integración EHR.</p>
+    <div class="package-card">
+      <span class="package-badge">RECOMENDADO</span>
+      <div class="package-name"><em>Growth</em></div>
+      <div class="package-price"><span class="amount">$1,497</span><span class="period">USD / mes</span></div>
+      <ul class="package-features">
+        <li>4 a 5 workflows específicos para su especialidad</li>
+        <li>2 canales: WhatsApp + Email (SMS disponible como add-on)</li>
+        <li>VPS dedicado con encriptación reforzada</li>
+        <li>SLA &lt; 4 horas hábiles</li>
+        <li>Implementación en 4 semanas</li>
+        <li>Reporte mensual de métricas clínicas</li>
+        <li>Cumplimiento de privacidad sanitaria</li>
+      </ul>
+      <a href="../index.html#contacto" class="package-cta"><span>Solicitar consulta para clínicas</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 7h12M7 1l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="placeholder-case">
+  <div class="container">
+    <div class="eyebrow" style="justify-content: center;">Próximo caso de estudio</div>
+    <h3>Sé la primera clínica de Katy en mostrarse aquí.</h3>
+    <p>Estamos aceptando una clínica piloto del sector salud dentro del Programa Founders. Precio permanente con descuento, implementación personalizada y case study colaborativo.</p>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="container">
+    <h2>¿Listo para automatizar <em>su clínica?</em></h2>
+    <p>45 minutos de consulta sin costo. Evaluamos su operación actual y le recomendamos los 2-3 workflows con mayor retorno inmediato para su especialidad.</p>
+    <a href="../index.html#contacto" class="btn-primary">
+      <span>Solicitar consulta ejecutiva</span>
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 7h12M7 1l6 6-6 6"/></svg>
+    </a>
+  </div>
+</section>
+
+<footer>© 2026 KATIA.AI · Katy, Texas · Estados Unidos</footer>
+
+</body>
+</html>
