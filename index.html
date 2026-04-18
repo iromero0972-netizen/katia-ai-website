@@ -750,7 +750,7 @@ async function sendChatMessage() {
     const data = await response.json();
     const botMsg = document.createElement('div');
     botMsg.className = 'chat-msg bot';
-    botMsg.textContent = data.response || data.message || 'Gracias por su mensaje. Un representante le contactará pronto.';
+    botMsg.textContent = data.reply || data.response || data.message || 'Gracias por su mensaje. Un representante le contactará pronto.';
     chatMessages.appendChild(botMsg);
   } catch (err) {
     typingMsg.remove();
