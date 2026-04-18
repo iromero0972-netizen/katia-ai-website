@@ -687,7 +687,7 @@ document.getElementById('leadForm').addEventListener('submit', async (e) => {
   data.source = 'website_form_v5.4';
   data.lang = KatiaI18n.currentLang;
   try {
-    const response = await fetch('https://srv1448901.hstgr.cloud/webhook/LQaKXkMtOyz2wfJu/webhook/katia-consulta', {
+    const response = await fetch('https://srv1448901.hstgr.cloud/webhook/katia-consulta', {
       method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data)
     });
     if (response.ok) {
