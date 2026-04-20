@@ -133,6 +133,21 @@ a{text-decoration:none;color:inherit}
           <input type="text" id="ciudad" placeholder="Ej: Houston, Katy, Sugar Land">
         </div>
         <div class="field">
+          <label for="puesto">Tu rol en la empresa <span class="req">*</span></label>
+          <select id="puesto" aria-label="Tu rol en la empresa" required>
+            <option value="">Selecciona tu rol</option>
+            <option value="owner">Dueño / Fundador</option>
+            <option value="ceo">CEO / Director General</option>
+            <option value="general_manager">Gerente General</option>
+            <option value="ops_manager">Gerente de Operaciones</option>
+            <option value="admin_manager">Gerente Administrativo</option>
+            <option value="assistant_other">Asistente / Otro</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
           <label>Industria / Tipo de negocio <span class="req">*</span></label>
           <select id="industria">
             <option value="">Selecciona una opción</option>
@@ -276,6 +291,7 @@ async function submitForm() {
   const empresa = document.getElementById('empresa').value.trim();
   const email = document.getElementById('email').value.trim();
   const telefono = document.getElementById('telefono').value.trim();
+  const puesto = document.getElementById('puesto').value;
   const industria = document.getElementById('industria').value;
 
   const faltantes = [];
@@ -283,6 +299,7 @@ async function submitForm() {
   if (!empresa) faltantes.push('Empresa');
   if (!email) faltantes.push('Email');
   if (!telefono) faltantes.push('Teléfono');
+  if (!puesto) faltantes.push('Tu rol en la empresa');
   if (!industria) faltantes.push('Industria');
   if (faltantes.length > 0) {
     alert('Por favor completa los campos obligatorios: ' + faltantes.join(', ') + '.');
@@ -308,6 +325,7 @@ async function submitForm() {
     empresa: document.getElementById('empresa').value.trim(),
     email: email,
     telefono: document.getElementById('telefono').value.trim(),
+    puesto: puesto,
     ciudad: document.getElementById('ciudad').value.trim(),
     industria: industria,
     servicios: servicios.join(', ') || 'No especificado',

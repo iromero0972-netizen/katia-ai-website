@@ -123,6 +123,21 @@ a{text-decoration:none;color:inherit}
           <input type="text" id="ciudad" placeholder="E.g.: Houston, Katy, Sugar Land">
         </div>
         <div class="field">
+          <label for="puesto">Your role at the company <span class="req">*</span></label>
+          <select id="puesto" aria-label="Your role at the company" required>
+            <option value="">Select your role</option>
+            <option value="owner">Owner / Founder</option>
+            <option value="ceo">CEO / Director</option>
+            <option value="general_manager">General Manager</option>
+            <option value="ops_manager">Operations Manager</option>
+            <option value="admin_manager">Administrative Manager</option>
+            <option value="assistant_other">Assistant / Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
           <label>Industry / Business type <span class="req">*</span></label>
           <select id="industria">
             <option value="">Select an option</option>
@@ -266,6 +281,7 @@ async function submitForm() {
   const empresa = document.getElementById('empresa').value.trim();
   const email = document.getElementById('email').value.trim();
   const telefono = document.getElementById('telefono').value.trim();
+  const puesto = document.getElementById('puesto').value;
   const industria = document.getElementById('industria').value;
 
   const missing = [];
@@ -273,6 +289,7 @@ async function submitForm() {
   if (!empresa) missing.push('Business');
   if (!email) missing.push('Email');
   if (!telefono) missing.push('Phone');
+  if (!puesto) missing.push('Your role');
   if (!industria) missing.push('Industry');
   if (missing.length > 0) {
     alert('Please fill in the required fields: ' + missing.join(', ') + '.');
@@ -298,6 +315,7 @@ async function submitForm() {
     empresa: document.getElementById('empresa').value.trim(),
     email: email,
     telefono: document.getElementById('telefono').value.trim(),
+    puesto: puesto,
     ciudad: document.getElementById('ciudad').value.trim(),
     industria: industria,
     servicios: servicios.join(', ') || 'Not specified',
@@ -306,6 +324,7 @@ async function submitForm() {
     urgencia: urgenciaEl ? urgenciaEl.value : 'this_month',
     contacto_preferido: document.getElementById('contacto_pref').value,
     source: 'web_form_en',
+    fuente: 'web_form_en',
     submitted_at: new Date().toISOString()
   };
 
