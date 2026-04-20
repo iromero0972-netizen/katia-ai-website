@@ -722,6 +722,11 @@ chatToggle.addEventListener('click', () => {
 });
 chatClose.addEventListener('click', () => chatWindow.classList.remove('open'));
 
+if (!localStorage.getItem('katia-session')) {
+  localStorage.setItem('katia-session', 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2,9));
+}
+let chatHistory = [];
+
 async function sendChatMessage() {
   const message = chatInput.value.trim();
   if (!message) return;
@@ -741,17 +746,22 @@ async function sendChatMessage() {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         message: message,
-        session_id: localStorage.getItem('katia-session') || `session_${Date.now()}`,
-        lang: KatiaI18n.currentLang, source: 'website_chat_v5.4'
+        history: chatHistory,
+        session_id: localStorage.getItem('katia-session'),
+        lang: KatiaI18n.currentLang,
+        source: 'website_chat_v5.5'
       })
     });
-    if (!localStorage.getItem('katia-session')) localStorage.setItem('katia-session', `session_${Date.now()}`);
     typingMsg.remove();
     const data = await response.json();
+    const botReply = data.reply || data.response || data.message || 'Gracias por su mensaje. Un representante le contactará pronto.';
     const botMsg = document.createElement('div');
     botMsg.className = 'chat-msg bot';
-    botMsg.textContent = data.reply || data.response || data.message || 'Gracias por su mensaje. Un representante le contactará pronto.';
+    botMsg.textContent = botReply;
     chatMessages.appendChild(botMsg);
+    chatHistory.push({role: 'user', content: message});
+    chatHistory.push({role: 'assistant', content: botReply});
+    if (chatHistory.length > 20) chatHistory = chatHistory.slice(-20);
   } catch (err) {
     typingMsg.remove();
     const errorMsg = document.createElement('div');
