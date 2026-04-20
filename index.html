@@ -685,9 +685,11 @@ document.getElementById('leadForm').addEventListener('submit', async (e) => {
   btn.textContent = KatiaI18n.t('form.submit.sending');
   const data = Object.fromEntries(new FormData(e.target));
   data.source = 'website_form_v5.4';
+  data.fuente = 'website_form_v5.4';
   data.lang = KatiaI18n.currentLang;
+  if (data.mensaje) { data.notas = data.mensaje; delete data.mensaje; }
   try {
-    const response = await fetch('https://srv1448901.hstgr.cloud/webhook/katia-consulta', {
+    const response = await fetch('https://srv1448901.hstgr.cloud/webhook/katia2-lead-capture', {
       method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data)
     });
     if (response.ok) {

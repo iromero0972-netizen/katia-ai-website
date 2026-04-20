@@ -102,7 +102,7 @@ a{text-decoration:none;color:inherit}
         </div>
         <div class="field">
           <label>Business name <span class="req">*</span></label>
-          <input type="text" id="empresa" placeholder="E.g.: Smith's Bakery LLC">
+          <input type="text" id="empresa" placeholder="E.g.: Smith's Bakery LLC" required>
         </div>
       </div>
       
@@ -113,7 +113,7 @@ a{text-decoration:none;color:inherit}
         </div>
         <div class="field">
           <label>Phone</label>
-          <input type="tel" id="telefono" placeholder="(832) 555-1234">
+          <input type="tel" id="telefono" placeholder="(832) 555-1234" required>
         </div>
       </div>
 
@@ -263,11 +263,19 @@ const WEBHOOK_URL = 'https://srv1448901.hstgr.cloud/webhook/katia2-lead-capture'
 async function submitForm() {
   const btn = document.getElementById('submitBtn');
   const nombre = document.getElementById('nombre').value.trim();
+  const empresa = document.getElementById('empresa').value.trim();
   const email = document.getElementById('email').value.trim();
+  const telefono = document.getElementById('telefono').value.trim();
   const industria = document.getElementById('industria').value;
 
-  if (!nombre || !email || !industria) {
-    alert('Please fill in the required fields: Name, Email and Industry.');
+  const missing = [];
+  if (!nombre) missing.push('Name');
+  if (!empresa) missing.push('Business');
+  if (!email) missing.push('Email');
+  if (!telefono) missing.push('Phone');
+  if (!industria) missing.push('Industry');
+  if (missing.length > 0) {
+    alert('Please fill in the required fields: ' + missing.join(', ') + '.');
     return;
   }
 
