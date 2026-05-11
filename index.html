@@ -744,14 +744,14 @@ async function sendChatMessage() {
   chatMessages.appendChild(typingMsg);
   chatMessages.scrollTop = chatMessages.scrollHeight;
   try {
-    const response = await fetch('https://srv1448901.hstgr.cloud/webhook/katia-web-chat', {
+    const response = await fetch('https://srv1448901.hstgr.cloud/webhook/b3-chat', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         message: message,
         history: chatHistory,
         session_id: localStorage.getItem('katia-session'),
         lang: KatiaI18n.currentLang,
-        source: 'website_chat_v5.5'
+        source: 'katia_web'
       })
     });
     typingMsg.remove();
