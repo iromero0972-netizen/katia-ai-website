@@ -320,6 +320,8 @@ footer { padding: 72px 0 40px; background: var(--bg-secondary); border-top: 1px 
 .chat-send { padding: 10px 16px; background: var(--navy); color: var(--bg-primary); border: none; border-radius: 8px; cursor: pointer; font-family: var(--font-sans); font-size: 13px; font-weight: 500; transition: all 0.2s; }
 .chat-send:hover { background: var(--navy-deep); }
 .chat-send:disabled { opacity: 0.5; cursor: not-allowed; }
+.contact-meta-link { color: inherit; text-decoration: none; }
+.contact-meta-link:hover { color: var(--gold-bright); }
 </style>
 </head>
 <body>
@@ -361,11 +363,11 @@ footer { padding: 72px 0 40px; background: var(--bg-secondary); border-top: 1px 
         </h1>
         <p class="hero-subtitle" data-i18n="hero.subtitle">Diseñamos e implementamos sistemas de agentes IA que operan áreas completas de su negocio. Arquitectura empresarial, infraestructura dedicada y gobernanza financiera auditable.</p>
         <div class="hero-ctas">
-          <a href="#contacto" class="btn-primary">
-            <span data-i18n="hero.cta.primary">Solicitar consulta</span>
+          <a href="[CALENDLY_URL]" class="btn-primary" target="_blank" rel="noopener">
+            <span data-i18n="hero.cta.primary">Agendar consulta</span>
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 7h12M7 1l6 6-6 6"/></svg>
           </a>
-          <a href="#metodologia" class="btn-secondary"><span data-i18n="hero.cta.secondary">Ver metodología</span></a>
+          <a href="https://wa.me/19546997514?text=Hola%20Ignacio%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20saber%20m%C3%A1s%20sobre%20KATIA" class="btn-secondary" target="_blank" rel="noopener"><span data-i18n="hero.cta.whatsapp">Escribir por WhatsApp</span></a>
         </div>
         <div class="hero-stats">
           <div><div class="stat-val">24<span class="unit">/7</span></div><div class="stat-label" data-i18n="hero.stat1.label">Operación continua</div></div>
@@ -566,6 +568,7 @@ footer { padding: 72px 0 40px; background: var(--bg-secondary); border-top: 1px 
         <p data-i18n="contact.intro">Una sesión de 45 minutos, sin costo y sin compromiso. Al finalizar, usted contará con dos o tres recomendaciones concretas de automatización y una evaluación realista de su factibilidad.</p>
         <div class="contact-meta">
           <div class="contact-meta-row"><div class="contact-meta-icon">◆</div><span data-i18n="contact.meta1">Sede operativa en Katy, Texas · Estados Unidos</span></div>
+          <div class="contact-meta-row"><div class="contact-meta-icon">◆</div><a href="https://wa.me/19546997514?text=Hola%20Ignacio%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20saber%20m%C3%A1s%20sobre%20KATIA" target="_blank" rel="noopener" class="contact-meta-link" data-i18n="contact.meta.whatsapp">WhatsApp · +1 (954) 699-7514</a></div>
           <div class="contact-meta-row"><div class="contact-meta-icon">◆</div><span data-i18n="contact.meta2">katiaia.ventas@gmail.com</span></div>
           <div class="contact-meta-row"><div class="contact-meta-icon">◆</div><span data-i18n="contact.meta3">Tiempo de respuesta: inferior a 2 horas hábiles</span></div>
           <div class="contact-meta-row"><div class="contact-meta-icon">◆</div><span data-i18n="contact.meta4">Atención en español e inglés</span></div>
@@ -577,12 +580,9 @@ footer { padding: 72px 0 40px; background: var(--bg-secondary); border-top: 1px 
           <div class="form-field"><label class="form-label" data-i18n="form.company">Empresa</label><input type="text" name="empresa" class="form-input" placeholder="Nombre comercial" required></div>
         </div>
         <div class="form-row">
-          <div class="form-field"><label class="form-label" data-i18n="form.email">Correo corporativo</label><input type="email" name="email" class="form-input" placeholder="nombre@empresa.com" required></div>
-          <div class="form-field"><label class="form-label" data-i18n="form.phone">Teléfono</label><input type="tel" name="telefono" class="form-input" placeholder="+1 832 000 0000" required></div>
-        </div>
-        <div class="form-field">
-          <label class="form-label" data-i18n="form.industry">Sector de su empresa</label>
-          <select name="industria" class="form-select" required>
+          <div class="form-field"><label class="form-label" data-i18n="form.city">Ciudad</label><input type="text" name="ciudad" class="form-input" placeholder="Houston, Katy, Sugar Land…" maxlength="50" required></div>
+          <div class="form-field"><label class="form-label" data-i18n="form.industry">Sector de su empresa</label>
+          <select name="industria" class="form-select" required aria-label="Sector de su empresa">
             <option value="" data-i18n="form.industry.placeholder">Seleccione una opción</option>
             <option value="restaurante" data-i18n="industry1.name">Restaurantes &amp; Food Service</option>
             <option value="salud" data-i18n="industry2.name">Clínicas &amp; Salud</option>
@@ -590,7 +590,11 @@ footer { padding: 72px 0 40px; background: var(--bg-secondary); border-top: 1px 
             <option value="servicios" data-i18n="industry4.name">Servicios Profesionales</option>
             <option value="construccion" data-i18n="industry5.name">Construcción &amp; Home Services</option>
             <option value="otro">Otro</option>
-          </select>
+          </select></div>
+        </div>
+        <div class="form-row">
+          <div class="form-field"><label class="form-label" data-i18n="form.email">Correo corporativo</label><input type="email" name="email" class="form-input" placeholder="nombre@empresa.com" required></div>
+          <div class="form-field"><label class="form-label" data-i18n="form.phone">Teléfono</label><input type="tel" name="telefono" class="form-input" placeholder="+1 832 000 0000" required></div>
         </div>
         <div class="form-field">
           <label class="form-label" data-i18n="form.message">Describa su necesidad operativa</label>
@@ -612,8 +616,9 @@ footer { padding: 72px 0 40px; background: var(--bg-secondary); border-top: 1px 
         <a href="#" class="logo"><div class="logo-mark">K</div><span class="logo-text">katia<span class="ai">.ai</span></span></a>
         <p class="footer-about" data-i18n="footer.about">Agencia especializada en automatización empresarial con inteligencia artificial. Sede operativa en Katy, Texas. Servimos a empresas medianas en los Estados Unidos.</p>
         <div class="footer-social">
-          <a href="https://instagram.com/katia.ai_" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1" fill="currentColor"/></svg></a>
-          <a href="https://linkedin.com/company/katia-ai" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9v12M10 14a4 4 0 0 1 8 0v7"/></svg></a>
+          <a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1" fill="currentColor"/></svg></a>
+          <a href="https://linkedin.com/company/katia-ai" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9v12M10 14a4 4 0 0 1 8 0v7"/></svg></a>
+          <a href="https://wa.me/19546997514?text=Hola%20Ignacio%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20saber%20m%C3%A1s%20sobre%20KATIA" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
           <a href="mailto:katiaia.ventas@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg></a>
         </div>
       </div>
@@ -639,8 +644,9 @@ footer { padding: 72px 0 40px; background: var(--bg-secondary); border-top: 1px 
         <h4 data-i18n="footer.contact">Contacto</h4>
         <ul>
           <li><a href="mailto:katiaia.ventas@gmail.com" data-i18n="footer.link.email">Email comercial</a></li>
-          <li><a href="https://linkedin.com/company/katia-ai" target="_blank" data-i18n="footer.link.linkedin">LinkedIn</a></li>
-          <li><a href="https://instagram.com/katia.ai_" target="_blank" data-i18n="footer.link.instagram">Instagram</a></li>
+          <li><a href="https://wa.me/19546997514?text=Hola%20Ignacio%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20saber%20m%C3%A1s%20sobre%20KATIA" target="_blank" rel="noopener" data-i18n="footer.link.whatsapp">WhatsApp</a></li>
+          <li><a href="https://linkedin.com/company/katia-ai" target="_blank" rel="noopener" data-i18n="footer.link.linkedin">LinkedIn</a></li>
+          <li><a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" data-i18n="footer.link.instagram">Instagram</a></li>
         </ul>
       </div>
     </div>
@@ -684,8 +690,8 @@ document.getElementById('leadForm').addEventListener('submit', async (e) => {
   const originalText = btn.textContent;
   btn.textContent = KatiaI18n.t('form.submit.sending');
   const data = Object.fromEntries(new FormData(e.target));
-  data.source = 'website_form_v5.4';
-  data.fuente = 'website_form_v5.4';
+  data.source = 'website_form_v5.5';
+  data.fuente = 'website_form_v5.5';
   data.lang = KatiaI18n.currentLang;
   if (data.mensaje) { data.notas = data.mensaje; delete data.mensaje; }
   try {
