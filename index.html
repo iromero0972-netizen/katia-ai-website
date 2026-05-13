@@ -240,7 +240,7 @@ a{color:inherit;text-decoration:none}
 .plan-features li{padding:8px 0;font-size:.88rem;color:var(--text-mute);display:flex;align-items:flex-start;gap:9px;line-height:1.45}
 .plan-features li::before{content:'';width:16px;height:16px;flex-shrink:0;margin-top:2px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E8C76A' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
 .plan-features li.bold{color:#fff;font-weight:500}
-.plan .btn{width:100%;justify-content:center;font-size:.88rem;padding:11px 14px}
+.plan .btn{width:100%;min-width:220px;height:52px;justify-content:center;align-items:center;text-align:center;white-space:nowrap;font-size:.88rem;padding:11px 14px;display:inline-flex}
 .planes-footer{margin-top:48px;text-align:center;color:var(--text-mute);font-size:.97rem}
 .planes-footer strong{color:var(--gold-light);font-weight:600}
 
@@ -1365,7 +1365,7 @@ body { overflow-x: hidden; }
         <div class="plan-price"><span class="currency">$</span><span class="amount">197</span><span class="period">/ mes</span></div>
         <p class="plan-setup">Setup desde <strong>$997</strong> · Orden básico</p>
         <ul class="plan-features"><li class="bold">1 automatización crítica</li><li>Documentos, tareas o alertas</li><li>Ideal para empezar pequeño</li><li>Soporte básico</li><li>Checklist de control</li></ul>
-        <a href="#solicitud" class="btn btn-ghost">Solicitar Starter →</a>
+        <a href="#solicitud" class="btn btn-ghost">Solicitar Starter</a>
       </div>
       <div class="plan featured reveal">
         <span class="plan-badge"><span class="badge-star"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>Recomendado</span>
@@ -1373,14 +1373,14 @@ body { overflow-x: hidden; }
         <div class="plan-price"><span class="currency">$</span><span class="amount">497</span><span class="period">/ mes</span></div>
         <p class="plan-setup">Setup desde <strong>$1,997</strong> · Cobros y reportes</p>
         <ul class="plan-features"><li class="bold">3 automatizaciones</li><li>Cuentas por cobrar y pagar</li><li>Alertas de vencimiento</li><li>Reporte semanal de control</li><li>Ideal para dejar de operar a ciegas</li></ul>
-        <a href="#solicitud" class="btn btn-primary">Solicitar Control Financiero →</a>
+        <a href="#solicitud" class="btn btn-primary">Solicitar Financiero</a>
       </div>
       <div class="plan reveal">
         <div class="plan-name">Control Contable</div>
         <div class="plan-price"><span class="currency">$</span><span class="amount">797</span><span class="period">/ mes</span></div>
         <p class="plan-setup">Setup desde <strong>$3,500</strong> · Orden mensual</p>
         <ul class="plan-features"><li class="bold">5 automatizaciones</li><li>Recibos, facturas y documentos</li><li>Paquete mensual para bookkeeper</li><li>Alertas de documentos faltantes</li><li>Revisión mensual</li></ul>
-        <a href="#solicitud" class="btn btn-ghost">Solicitar Contable →</a>
+        <a href="#solicitud" class="btn btn-ghost">Solicitar Contable</a>
       </div>
       <div class="plan custom reveal">
         <span class="plan-badge custom-badge">Avanzado</span>
@@ -1388,7 +1388,7 @@ body { overflow-x: hidden; }
         <div class="plan-price custom-price"><span class="amount">Desde $1,197/mes</span></div>
         <p class="plan-setup">Setup desde <strong>$5,997</strong> · Semi-custom</p>
         <ul class="plan-features"><li class="bold">7+ flujos o sistema custom</li><li>Tax readiness, W9/1099 y evidencias</li><li>Reportes ejecutivos</li><li>Roadmap de crecimiento con datos</li><li>Diagnóstico requerido</li></ul>
-        <a href="#solicitud" class="btn btn-primary">Solicitar evaluación →</a>
+        <a href="#solicitud" class="btn btn-primary">Solicitar evaluación</a>
       </div>
     </div>
     <p class="planes-footer reveal"><strong>Founders Pricing:</strong> precios de lanzamiento para los primeros clientes, con alcance cerrado y resultados documentados.</p>
@@ -2129,10 +2129,10 @@ window.addEventListener('scroll', () => {
       plansTitle: "Cuatro niveles de <span class=\"italic\">control</span>.",
       plansSub: "Planes diseñados para atacar primero el problema más costoso: cobros, documentos, reportes, taxes o tareas administrativas.",
       planCards: [
-        ["CONTROL STARTER","$197","/ mes","Setup desde <strong>$997</strong> · Orden básico",["1 automatización crítica","Documentos, tareas o alertas","Ideal para empezar pequeño","Soporte básico","Checklist de control"],"Solicitar Starter →"],
-        ["CONTROL FINANCIERO","$497","/ mes","Setup desde <strong>$1,997</strong> · Cobros y reportes",["3 automatizaciones","Cuentas por cobrar y pagar","Alertas de vencimiento","Reporte semanal de control","Ideal para dejar de operar a ciegas"],"Solicitar Control Financiero →"],
-        ["CONTROL CONTABLE","$797","/ mes","Setup desde <strong>$3,500</strong> · Orden mensual",["5 automatizaciones","Recibos, facturas y documentos","Paquete mensual para bookkeeper","Alertas de documentos faltantes","Revisión mensual"],"Solicitar Contable →"],
-        ["CONTROL FISCAL & CRECIMIENTO","Desde $1,197","/ mes","Setup desde <strong>$5,997</strong> · Semi-custom",["7+ flujos o sistema custom","Tax readiness, W9/1099 y evidencias","Reportes ejecutivos","Roadmap de crecimiento con datos","Diagnóstico requerido"],"Solicitar evaluación →"]
+        ["CONTROL STARTER","$197","/ mes","Setup desde <strong>$997</strong> · Orden básico",["1 automatización crítica","Documentos, tareas o alertas","Ideal para empezar pequeño","Soporte básico","Checklist de control"],"Solicitar Starter"],
+        ["CONTROL FINANCIERO","$497","/ mes","Setup desde <strong>$1,997</strong> · Cobros y reportes",["3 automatizaciones","Cuentas por cobrar y pagar","Alertas de vencimiento","Reporte semanal de control","Ideal para dejar de operar a ciegas"],"Solicitar Financiero"],
+        ["CONTROL CONTABLE","$797","/ mes","Setup desde <strong>$3,500</strong> · Orden mensual",["5 automatizaciones","Recibos, facturas y documentos","Paquete mensual para bookkeeper","Alertas de documentos faltantes","Revisión mensual"],"Solicitar Contable"],
+        ["CONTROL FISCAL & CRECIMIENTO","Desde $1,197","/ mes","Setup desde <strong>$5,997</strong> · Semi-custom",["7+ flujos o sistema custom","Tax readiness, W9/1099 y evidencias","Reportes ejecutivos","Roadmap de crecimiento con datos","Diagnóstico requerido"],"Solicitar evaluación"]
       ],
       caseEyebrow: "Caso real",
       caseTitle: "Piloto inicial — <span class=\"italic\">Andy’s Bakery · Katy, Texas</span>.",
@@ -2238,10 +2238,10 @@ window.addEventListener('scroll', () => {
       plansTitle: "Four levels of <span class=\"italic\">control</span>.",
       plansSub: "Plans designed to address the most expensive problem first: collections, documents, reports, taxes or administrative tasks.",
       planCards: [
-        ["CONTROL STARTER","$197","/ month","Setup from <strong>$997</strong> · Basic order",["1 critical automation","Documents, tasks or alerts","Ideal for starting small","Basic support","Control checklist"],"Request Starter →"],
-        ["FINANCIAL CONTROL","$497","/ month","Setup from <strong>$1,997</strong> · Collections and reports",["3 automations","Accounts receivable and payable","Overdue alerts","Weekly control report","Ideal to stop operating blindly"],"Request Financial Control →"],
-        ["ACCOUNTING CONTROL","$797","/ month","Setup from <strong>$3,500</strong> · Monthly order",["5 automations","Receipts, invoices and documents","Monthly package for bookkeeper","Missing-document alerts","Monthly review"],"Request Accounting →"],
-        ["TAX & GROWTH CONTROL","From $1,197","/ month","Setup from <strong>$5,997</strong> · Semi-custom",["7+ workflows or custom system","Tax readiness, W9/1099s and evidence","Executive reports","Data-driven growth roadmap","Diagnosis required"],"Request evaluation →"]
+        ["CONTROL STARTER","$197","/ month","Setup from <strong>$997</strong> · Basic order",["1 critical automation","Documents, tasks or alerts","Ideal for starting small","Basic support","Control checklist"],"Request Starter"],
+        ["FINANCIAL CONTROL","$497","/ month","Setup from <strong>$1,997</strong> · Collections and reports",["3 automations","Accounts receivable and payable","Overdue alerts","Weekly control report","Ideal to stop operating blindly"],"Request Financial"],
+        ["ACCOUNTING CONTROL","$797","/ month","Setup from <strong>$3,500</strong> · Monthly order",["5 automations","Receipts, invoices and documents","Monthly package for bookkeeper","Missing-document alerts","Monthly review"],"Request Accounting"],
+        ["TAX & GROWTH CONTROL","From $1,197","/ month","Setup from <strong>$5,997</strong> · Semi-custom",["7+ workflows or custom system","Tax readiness, W9/1099s and evidence","Executive reports","Data-driven growth roadmap","Diagnosis required"],"Request evaluation"]
       ],
       caseEyebrow: "Real case",
       caseTitle: "Initial pilot — <span class=\"italic\">Andy’s Bakery · Katy, Texas</span>.",
@@ -2797,10 +2797,10 @@ window.addEventListener('scroll', () => {
       plansTitle: 'Cuatro niveles de <span class="italic">control</span>.',
       plansSub: 'La inversión depende del nivel de desorden, integraciones y alcance. Recomendamos iniciar por el flujo que más afecta caja, documentos o visibilidad.',
       planCards: [
-        ['CONTROL STARTER','$197','/ mes','Setup desde <strong>$997</strong> · Orden básico',['1 automatización crítica','Documentos, tareas o alertas','Ideal para empezar pequeño','Soporte básico','Checklist de control'],'Solicitar Starter →'],
-        ['CONTROL FINANCIERO','$497','/ mes','Setup desde <strong>$1,997</strong> · Cobros y reportes',['3 automatizaciones','Cuentas por cobrar y pagar','Alertas de vencimiento','Reporte semanal de control','Ideal para dejar de operar a ciegas'],'Solicitar Control Financiero →'],
-        ['CONTROL CONTABLE','$797','/ mes','Setup desde <strong>$3,500</strong> · Orden mensual',['5 automatizaciones','Recibos, facturas y documentos','Paquete mensual para bookkeeper','Alertas de documentos faltantes','Revisión mensual'],'Solicitar Contable →'],
-        ['CONTROL FISCAL & CRECIMIENTO','Desde $1,197','/ mes','Setup desde <strong>$5,997</strong> · Semi-custom',['7+ flujos o sistema custom','Tax readiness, W9/1099 y evidencias','Reportes ejecutivos','Roadmap de crecimiento con datos','Diagnóstico requerido'],'Solicitar evaluación →']
+        ['CONTROL STARTER','$197','/ mes','Setup desde <strong>$997</strong> · Orden básico',['1 automatización crítica','Documentos, tareas o alertas','Ideal para empezar pequeño','Soporte básico','Checklist de control'],'Solicitar Starter'],
+        ['CONTROL FINANCIERO','$497','/ mes','Setup desde <strong>$1,997</strong> · Cobros y reportes',['3 automatizaciones','Cuentas por cobrar y pagar','Alertas de vencimiento','Reporte semanal de control','Ideal para dejar de operar a ciegas'],'Solicitar Financiero'],
+        ['CONTROL CONTABLE','$797','/ mes','Setup desde <strong>$3,500</strong> · Orden mensual',['5 automatizaciones','Recibos, facturas y documentos','Paquete mensual para bookkeeper','Alertas de documentos faltantes','Revisión mensual'],'Solicitar Contable'],
+        ['CONTROL FISCAL & CRECIMIENTO','Desde $1,197','/ mes','Setup desde <strong>$5,997</strong> · Semi-custom',['7+ flujos o sistema custom','Tax readiness, W9/1099 y evidencias','Reportes ejecutivos','Roadmap de crecimiento con datos','Diagnóstico requerido'],'Solicitar evaluación']
       ],
       caseEyebrow: 'Caso real',
       caseTitle: 'Piloto inicial — <span class="italic">Andy’s Bakery · Katy, Texas</span>.',
@@ -2924,10 +2924,10 @@ window.addEventListener('scroll', () => {
       plansTitle: 'Four levels of <span class="italic">control</span>.',
       plansSub: 'Investment depends on disorder level, integrations and scope. We recommend starting with the workflow that most affects cash, documents or visibility.',
       planCards: [
-        ['CONTROL STARTER','$197','/ month','Setup from <strong>$997</strong> · Basic order',['1 critical automation','Documents, tasks or alerts','Ideal for starting small','Basic support','Control checklist'],'Request Starter →'],
-        ['FINANCIAL CONTROL','$497','/ month','Setup from <strong>$1,997</strong> · Collections and reports',['3 automations','Accounts receivable and payable','Due-date alerts','Weekly control report','Ideal to stop operating blindly'],'Request Financial Control →'],
-        ['ACCOUNTING CONTROL','$797','/ month','Setup from <strong>$3,500</strong> · Monthly order',['5 automations','Receipts, invoices and documents','Monthly package for bookkeeper','Missing-document alerts','Monthly review'],'Request Accounting →'],
-        ['TAX & GROWTH CONTROL','From $1,197','/ month','Setup from <strong>$5,997</strong> · Semi-custom',['7+ workflows or custom system','Tax readiness, W9/1099s and evidence','Executive reports','Data-driven growth roadmap','Diagnosis required'],'Request evaluation →']
+        ['CONTROL STARTER','$197','/ month','Setup from <strong>$997</strong> · Basic order',['1 critical automation','Documents, tasks or alerts','Ideal for starting small','Basic support','Control checklist'],'Request Starter'],
+        ['FINANCIAL CONTROL','$497','/ month','Setup from <strong>$1,997</strong> · Collections and reports',['3 automations','Accounts receivable and payable','Due-date alerts','Weekly control report','Ideal to stop operating blindly'],'Request Financial'],
+        ['ACCOUNTING CONTROL','$797','/ month','Setup from <strong>$3,500</strong> · Monthly order',['5 automations','Receipts, invoices and documents','Monthly package for bookkeeper','Missing-document alerts','Monthly review'],'Request Accounting'],
+        ['TAX & GROWTH CONTROL','From $1,197','/ month','Setup from <strong>$5,997</strong> · Semi-custom',['7+ workflows or custom system','Tax readiness, W9/1099s and evidence','Executive reports','Data-driven growth roadmap','Diagnosis required'],'Request evaluation']
       ],
       caseEyebrow: 'Real case',
       caseTitle: 'Initial pilot — <span class="italic">Andy’s Bakery · Katy, Texas</span>.',
@@ -3224,7 +3224,7 @@ window.addEventListener('scroll', () => {
   "Ideal para empezar pequeño": "Ideal for starting small",
   "Soporte básico": "Basic support",
   "Checklist de control": "Control checklist",
-  "Solicitar Starter →": "Request Starter →",
+  "Solicitar Starter": "Request Starter",
   "Recomendado": "Recommended",
   "Control Financiero": "Financial Control",
   "· Cobros y reportes": "· Collections and reports",
@@ -3233,7 +3233,7 @@ window.addEventListener('scroll', () => {
   "Alertas de vencimiento": "Overdue alerts",
   "Reporte semanal de control": "Weekly control report",
   "Ideal para dejar de operar a ciegas": "Ideal to stop operating blindly",
-  "Solicitar Control Financiero →": "Request Financial Control →",
+  "Solicitar Financiero": "Request Financial",
   "Control Contable": "Accounting Control",
   "· Orden mensual": "· Monthly order",
   "5 automatizaciones": "5 automations",
@@ -3241,7 +3241,7 @@ window.addEventListener('scroll', () => {
   "Paquete mensual para bookkeeper": "Monthly package for bookkeeper",
   "Alertas de documentos faltantes": "Missing-document alerts",
   "Revisión mensual": "Monthly review",
-  "Solicitar Contable →": "Request Accounting →",
+  "Solicitar Contable": "Request Accounting",
   "Avanzado": "Advanced",
   "Control Fiscal & Crecimiento": "Tax & Growth Control",
   "Desde $1,197/mes": "From $1,197/month",
@@ -3250,7 +3250,7 @@ window.addEventListener('scroll', () => {
   "Tax readiness, W9/1099 y evidencias": "Tax readiness, W9/1099s and evidence",
   "Roadmap de crecimiento con datos": "Data-driven growth roadmap",
   "Diagnóstico requerido": "Diagnosis required",
-  "Solicitar evaluación →": "Request evaluation →",
+  "Solicitar evaluación": "Request evaluation",
   "Founders Pricing:": "Founders Pricing:",
   "precios de lanzamiento para los primeros clientes, con alcance cerrado y resultados documentados.": "launch pricing for early clients, with closed scope and documented results.",
   "Cliente piloto · pedidos, depósitos, fechas y seguimiento organizados con IA.": "Pilot client · orders, deposits, dates and follow-up organized with AI.",
