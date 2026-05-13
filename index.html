@@ -1850,7 +1850,7 @@ body { overflow-x: hidden; }
     <div class="chat-msg">
       <div class="msg-avatar">K</div>
       <div class="msg-bubble">
-        Bienvenido a KATIA.AI. Cuénteme dónde tiene más desorden: cobros, documentos, gastos, impuestos, reportes o tareas administrativas. Le recomendaremos el primer flujo a automatizar.
+        Bienvenido a KATIA.AI. Soy su asistente virtual de ventas. Escriba un saludo para comenzar.
       </div>
     </div>
   </div>
@@ -2030,11 +2030,11 @@ function sendMsg() {
     localStorage.setItem('katia_chat_session_id', sid);
   }
 
-  const escalateText = lang === 'en' ? 'Speak with the Sales Team' : 'Hablar con el equipo de Venta';
+  const escalateText = lang === 'en' ? 'Email the Sales Team' : 'Escribir al equipo de Ventas';
   const errorPrefix = lang === 'en'
-    ? 'I could not connect right now. Message us on WhatsApp: '
-    : 'No pude conectar en este momento. Escríbenos a WhatsApp: ';
-  const fallbackWa = 'https://wa.me/19546997514';
+    ? 'I could not connect right now. Please email us at '
+    : 'No pude conectar en este momento. Por favor escríbanos a ';
+  const fallbackEscalation = 'mailto:ventas@katia.solutions';
 
   fetch('https://srv1448901.hstgr.cloud/webhook/b3-chat', {
     method: 'POST',
@@ -2050,7 +2050,7 @@ function sendMsg() {
       '<div class="msg-avatar">K</div>' +
       '<div class="msg-bubble">' + escapeHtml(replyText);
     if (data && data.escalate) {
-      const url = (data.escalation_url || fallbackWa).replace(/"/g, '&quot;');
+      const url = (data.escalation_url || fallbackEscalation).replace(/"/g, '&quot;');
       html += '<div style="margin-top:10px"><a href="' + url + '" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 14px;font-size:.85rem">' + escalateText + '</a></div>';
     }
     html += '</div></div>';
@@ -2064,7 +2064,7 @@ function sendMsg() {
       '<div class="chat-msg">' +
         '<div class="msg-avatar">K</div>' +
         '<div class="msg-bubble">' + errorPrefix +
-          '<a href="' + fallbackWa + '" target="_blank" rel="noopener" style="color:#8B7427;font-weight:600">wa.me/19546997514</a>' +
+          '<a href="' + fallbackEscalation + '" style="color:#8B7427;font-weight:600">ventas@katia.solutions</a>' +
         '</div>' +
       '</div>');
     body.scrollTop = body.scrollHeight;
@@ -2222,7 +2222,7 @@ window.addEventListener('scroll', () => {
       finalSub: "En 15–20 minutos identificamos el primer proceso que conviene automatizar para recuperar control.",
       chatTitle: "Hola, soy KATIA",
       chatSub: "¿En qué puedo ayudarle?",
-      chatMsg: "Bienvenido a KATIA.AI. Soy el asistente virtual de ventas. Cuénteme sobre su empresa y qué procesos desea automatizar.",
+      chatMsg: "Bienvenido a KATIA.AI. Soy su asistente virtual de ventas. Escriba un saludo para comenzar.",
       chatSuggestions: ["Tengo un restaurante","Soy contractor","Quiero ver los planes"],
       chatPlaceholder: "¿En qué puedo ayudar...",
       chatSend: "Enviar"
@@ -2891,7 +2891,7 @@ window.addEventListener('scroll', () => {
       chatTitle: 'Hola, soy KATIA',
       chatSub: '¿Dónde pierde control su negocio?',
       chatStatus: '<strong>En línea</strong> · respuesta inmediata · español/inglés',
-      chatMsg: 'Bienvenido a KATIA.AI. Cuénteme dónde tiene más desorden: cobros, documentos, gastos, impuestos, reportes o tareas administrativas. Le recomendaremos el primer flujo a automatizar.',
+      chatMsg: 'Bienvenido a KATIA.AI. Soy su asistente virtual de ventas. Escriba un saludo para comenzar.',
       chatSuggestions: ['Tengo desorden en cobros','Tengo documentos dispersos','Ver los planes'],
       chatPlaceholder: '¿En qué puedo ayudar?',
       chatSend: 'Enviar',
@@ -3435,7 +3435,7 @@ window.addEventListener('scroll', () => {
   "¿Dónde pierde control su negocio?": "Where is your business losing control?",
   "En línea": "Online",
   "· respuesta inmediata · español/inglés": "· immediate response · Spanish/English",
-  "Bienvenido a KATIA.AI. Cuénteme dónde tiene más desorden: cobros, documentos, gastos, impuestos, reportes o tareas administrativas. Le recomendaremos el primer flujo a automatizar.": "Welcome to KATIA.AI. Tell me where you have the most disorder: collections, documents, expenses, taxes, reports or administrative tasks. We will recommend the first workflow to automate.",
+  "Bienvenido a KATIA.AI. Soy su asistente virtual de ventas. Escriba un saludo para comenzar.": "Welcome to KATIA.AI. I'm your sales virtual assistant. Write a greeting to get started.",
   "Tengo desorden en cobros": "I have disorder in collections",
   "Tengo documentos dispersos": "I have scattered documents",
   "Ver los planes": "See plans",
