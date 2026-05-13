@@ -1996,28 +1996,84 @@ function closeChat() {
 }
 function sendMsg() {
   const input = document.getElementById('chatInput');
-  const msg = input.value.trim();
-  if (!msg) return;
   const body = document.getElementById('chatBody');
-  // Mensaje usuario
-  body.insertAdjacentHTML('beforeend', `
-    <div class="chat-msg" style="flex-direction:row-reverse">
-      <div class="msg-avatar" style="background:var(--navy);color:#fff;border-color:var(--navy)">U</div>
-      <div class="msg-bubble user">${msg.replace(/</g,'&lt;')}</div>
-    </div>
-  `);
+  const sendBtn = document.querySelector('.chat-send');
+  if (!input || !body) return;
+  const message = input.value.trim();
+  if (!message) return;
+
+  const escapeHtml = s => String(s).replace(/[<>&]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;'}[c]));
+  const lang = (document.documentElement.lang || localStorage.getItem('katiaLang') || 'es').slice(0, 2);
+
+  body.insertAdjacentHTML('beforeend',
+    '<div class="chat-msg" style="flex-direction:row-reverse">' +
+      '<div class="msg-avatar" style="background:var(--navy);color:#fff;border-color:var(--navy)">U</div>' +
+      '<div class="msg-bubble user">' + escapeHtml(message) + '</div>' +
+    '</div>');
   input.value = '';
   body.scrollTop = body.scrollHeight;
-  // Respuesta auto (placeholder hasta que conectemos backend)
-  setTimeout(() => {
-    body.insertAdjacentHTML('beforeend', `
-      <div class="chat-msg">
-        <div class="msg-avatar">K</div>
-        <div class="msg-bubble">Gracias por su mensaje. En breve un especialista de KATIA.AI le contactará. ¿Le gustaría solicitar un diagnóstico de control empresarial? <a href="#solicitud" style="color:#8B7427;font-weight:600">Solicitar diagnóstico →</a></div>
-      </div>
-    `);
+
+  input.disabled = true;
+  if (sendBtn) sendBtn.disabled = true;
+  const typingId = 'katia-typing-' + Date.now();
+  const typingLabel = lang === 'en' ? 'typing…' : 'escribiendo…';
+  body.insertAdjacentHTML('beforeend',
+    '<div class="chat-msg" id="' + typingId + '">' +
+      '<div class="msg-avatar">K</div>' +
+      '<div class="msg-bubble"><em style="opacity:.7">' + typingLabel + '</em></div>' +
+    '</div>');
+  body.scrollTop = body.scrollHeight;
+
+  let sid = localStorage.getItem('katia_chat_session_id');
+  if (!sid) {
+    sid = 'sess_' + Date.now() + '_' + Math.random().toString(36).slice(2, 10);
+    localStorage.setItem('katia_chat_session_id', sid);
+  }
+
+  const escalateText = lang === 'en' ? 'Speak with the Sales Team' : 'Hablar con el equipo de Venta';
+  const errorPrefix = lang === 'en'
+    ? 'I could not connect right now. Message us on WhatsApp: '
+    : 'No pude conectar en este momento. Escríbenos a WhatsApp: ';
+  const fallbackWa = 'https://wa.me/19546997514';
+
+  fetch('https://srv1448901.hstgr.cloud/webhook/b3-chat', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Origin': 'https://katia.solutions' },
+    body: JSON.stringify({ message: message, session_id: sid, source: 'website_chat_v5.5', lang: lang })
+  })
+  .then(r => r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status)))
+  .then(data => {
+    const typing = document.getElementById(typingId);
+    if (typing) typing.remove();
+    const replyText = (data && data.response) ? String(data.response) : errorPrefix;
+    let html = '<div class="chat-msg">' +
+      '<div class="msg-avatar">K</div>' +
+      '<div class="msg-bubble">' + escapeHtml(replyText);
+    if (data && data.escalate) {
+      const url = (data.escalation_url || fallbackWa).replace(/"/g, '&quot;');
+      html += '<div style="margin-top:10px"><a href="' + url + '" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 14px;font-size:.85rem">' + escalateText + '</a></div>';
+    }
+    html += '</div></div>';
+    body.insertAdjacentHTML('beforeend', html);
     body.scrollTop = body.scrollHeight;
-  }, 700);
+  })
+  .catch(() => {
+    const typing = document.getElementById(typingId);
+    if (typing) typing.remove();
+    body.insertAdjacentHTML('beforeend',
+      '<div class="chat-msg">' +
+        '<div class="msg-avatar">K</div>' +
+        '<div class="msg-bubble">' + errorPrefix +
+          '<a href="' + fallbackWa + '" target="_blank" rel="noopener" style="color:#8B7427;font-weight:600">wa.me/19546997514</a>' +
+        '</div>' +
+      '</div>');
+    body.scrollTop = body.scrollHeight;
+  })
+  .then(() => {
+    input.disabled = false;
+    if (sendBtn) sendBtn.disabled = false;
+    input.focus();
+  });
 }
 function quickAsk(text) {
   document.getElementById('chatInput').value = text;
@@ -2701,23 +2757,6 @@ window.addEventListener('scroll', () => {
     applyExtraLanguage(lang);
   };
 
-  const originalSendMsg = window.sendMsg;
-  window.sendMsg = function(){
-    const input = document.getElementById('chatInput');
-    const body = document.getElementById('chatBody');
-    if(!input || !body) return;
-    const message = input.value.trim();
-    if(!message) return;
-    body.insertAdjacentHTML('beforeend', `<div class="chat-msg"><div class="msg-bubble user">${message.replace(/[<>&]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;'}[c]))}</div></div>`);
-    input.value = '';
-    const lang = document.documentElement.lang || localStorage.getItem('katiaLang') || 'es';
-    const reply = (EXTRA[lang] || EXTRA.es).chatAutoReply;
-    setTimeout(function(){
-      body.insertAdjacentHTML('beforeend', `<div class="chat-msg"><div class="msg-avatar">K</div><div class="msg-bubble">${reply}</div></div>`);
-      body.scrollTop = body.scrollHeight;
-    }, 700);
-    body.scrollTop = body.scrollHeight;
-  };
 
   document.addEventListener('DOMContentLoaded', function(){
     const lang = localStorage.getItem('katiaLang') || document.documentElement.lang || 'es';
@@ -3060,13 +3099,6 @@ window.addEventListener('scroll', () => {
   const previousSetLanguage=window.setKatiaLanguage;
   window.setKatiaLanguage=function(lang){ if(typeof previousSetLanguage==='function') previousSetLanguage(lang); applyCopy(lang); };
 
-  window.sendMsg=function(){
-    const input=qs('#chatInput'), body=qs('#chatBody'); if(!input||!body)return; const message=input.value.trim(); if(!message)return;
-    const safe=message.replace(/[<>&]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;'}[c]));
-    body.insertAdjacentHTML('beforeend','<div class="chat-msg"><div class="msg-bubble user">'+safe+'</div></div>'); input.value='';
-    const lang=document.documentElement.lang || 'es'; const reply=(COPY_QA[lang]||COPY_QA.es).chatAutoReply;
-    setTimeout(function(){body.insertAdjacentHTML('beforeend','<div class="chat-msg"><div class="msg-avatar">K</div><div class="msg-bubble">'+reply+'</div></div>'); body.scrollTop=body.scrollHeight;},700); body.scrollTop=body.scrollHeight;
-  };
 
   document.addEventListener('DOMContentLoaded',function(){
     const lang=localStorage.getItem('katiaLang') || document.documentElement.lang || 'es'; applyCopy(lang);
