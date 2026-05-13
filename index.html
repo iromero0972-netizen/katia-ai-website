@@ -360,6 +360,8 @@ a{color:inherit;text-decoration:none}
 .chat-header{background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy-mid) 100%);color:#fff;padding:18px 20px;display:flex;align-items:center;gap:14px;position:relative}
 .chat-header::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.6}
 .chat-avatar{width:42px;height:42px;border-radius:12px;background:var(--grad-gold);color:var(--navy);display:grid;place-items:center;font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;flex-shrink:0;box-shadow:0 4px 14px rgba(201,168,76,.4)}
+.chat-avatar img{width:28px;height:28px;object-fit:contain;display:block}
+.msg-avatar img{width:20px;height:20px;object-fit:contain;display:block}
 .chat-header-text{flex:1;min-width:0}
 .chat-header-text h4{font-family:'Syne',sans-serif;font-size:1rem;font-weight:600;margin:0;letter-spacing:-.01em}
 .chat-header-text p{font-size:.78rem;color:rgba(255,255,255,.65);margin:2px 0 0;font-weight:400}
@@ -1833,7 +1835,7 @@ body { overflow-x: hidden; }
 <!-- Panel del chat (oculto por default · se abre al click en launcher) -->
 <div class="katia-chat" id="katiaChat">
   <div class="chat-header">
-    <div class="chat-avatar">K</div>
+    <div class="chat-avatar"><img src="assets/img/katia-logo-icon.svg" alt="KATIA"></div>
     <div class="chat-header-text">
       <h4>Hola, soy KATIA</h4>
       <p>¿Dónde pierde control su negocio?</p>
@@ -1848,7 +1850,7 @@ body { overflow-x: hidden; }
   </div>
   <div class="chat-body" id="chatBody">
     <div class="chat-msg">
-      <div class="msg-avatar">K</div>
+      <div class="msg-avatar"><img src="assets/img/katia-logo-icon.svg" alt="KATIA"></div>
       <div class="msg-bubble">
         Bienvenido a KATIA.AI. Soy su asistente virtual de ventas. Escriba un saludo para comenzar.
       </div>
@@ -2019,7 +2021,7 @@ function sendMsg() {
   const typingLabel = lang === 'en' ? 'typing…' : 'escribiendo…';
   body.insertAdjacentHTML('beforeend',
     '<div class="chat-msg" id="' + typingId + '">' +
-      '<div class="msg-avatar">K</div>' +
+      '<div class="msg-avatar"><img src="assets/img/katia-logo-icon.svg" alt="KATIA"></div>' +
       '<div class="msg-bubble"><em style="opacity:.7">' + typingLabel + '</em></div>' +
     '</div>');
   body.scrollTop = body.scrollHeight;
@@ -2047,7 +2049,7 @@ function sendMsg() {
     if (typing) typing.remove();
     const replyText = (data && data.response) ? String(data.response) : errorPrefix;
     let html = '<div class="chat-msg">' +
-      '<div class="msg-avatar">K</div>' +
+      '<div class="msg-avatar"><img src="assets/img/katia-logo-icon.svg" alt="KATIA"></div>' +
       '<div class="msg-bubble">' + escapeHtml(replyText);
     if (data && data.escalate) {
       const url = (data.escalation_url || fallbackEscalation).replace(/"/g, '&quot;');
@@ -2062,7 +2064,7 @@ function sendMsg() {
     if (typing) typing.remove();
     body.insertAdjacentHTML('beforeend',
       '<div class="chat-msg">' +
-        '<div class="msg-avatar">K</div>' +
+        '<div class="msg-avatar"><img src="assets/img/katia-logo-icon.svg" alt="KATIA"></div>' +
         '<div class="msg-bubble">' + errorPrefix +
           '<a href="' + fallbackEscalation + '" style="color:#8B7427;font-weight:600">ventas@katia.solutions</a>' +
         '</div>' +
@@ -2748,7 +2750,8 @@ window.addEventListener('scroll', () => {
     }
 
     txt(qs('.mobile-sticky-cta'), t.stickyCta);
-    txt(qs('.chat-status span'), t.chatStatus);
+    const chatStatusText = qs('.chat-status span:last-child');
+    if (chatStatusText) chatStatusText.innerHTML = t.chatStatus;
   }
 
   const originalSetKatiaLanguage = window.setKatiaLanguage;
