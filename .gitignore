@@ -1,0 +1,18 @@
+# OS
+.DS_Store
+**/.DS_Store
+
+# Editor
+.claude/
+.vscode/
+.idea/
+
+# Local-only backups (never publish via gh-pages)
+*.backup
+*.backup_*
+index_backup_*.html
+*_pre_*.html
+*.bak
+
+# Stray shell heredoc artifacts
+*<<*EOF*
