@@ -873,13 +873,8 @@ body { overflow-x: hidden; }
   /* Forms */
   .form-row input, .form-row select, .form-row textarea { font-size: 16px; }
 
-  /* Social rail */
-  .social-rail { right: 14px; top: auto; bottom: 90px; transform: none; }
-  .social-rail-item { width: 42px; height: 42px; }
-  .social-rail-item .tip { display: none; }
-
-  /* Chat */
-  .katia-chat { width: calc(100vw - 24px); right: 12px; bottom: 80px; }
+  /* Social rail: hidden on mobile · ver L570 */
+  /* Chat: bottom:88px right:14px set en L394-398 para evitar mobile-sticky-bar */
 }
 
 /* SMALL MOBILE (≤480px) */
