@@ -391,9 +391,14 @@ a{color:inherit;text-decoration:none}
 .chat-send{background:var(--grad-gold);color:var(--navy);border:none;padding:11px 18px;border-radius:10px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:.85rem;cursor:pointer;transition:all .2s ease;letter-spacing:.01em}
 .chat-send:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(201,168,76,.4)}
 
+@media(max-width:768px){
+  /* lift chat above .mobile-sticky-bar (~60-70px alto en bottom:0) */
+  .chat-launcher{bottom:88px;right:14px}
+  .katia-chat{bottom:88px}
+}
 @media(max-width:560px){
-  .chat-launcher{bottom:14px;right:14px;width:54px;height:54px}
-  .katia-chat{bottom:14px;right:14px;width:calc(100vw - 28px)}
+  .chat-launcher{width:54px;height:54px}
+  .katia-chat{right:14px;width:calc(100vw - 28px)}
   .chat-body{max-height:220px}
 }
 
