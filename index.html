@@ -2027,11 +2027,18 @@ function sendMsg() {
     '</div>');
   body.scrollTop = body.scrollHeight;
 
-  let sid = localStorage.getItem('katia_chat_session_id');
-  if (!sid) {
+  // BUG-V2-09 fix (T7.1 · 2026-05-15): session_id scoped per visit, NOT persisted
+  // across visits. sessionStorage clears on tab/window close; 2h freshness guard
+  // regenerates a stale session in a long-lived tab. Stale localStorage key removed
+  // so returning visitors don't carry the old cross-visit id.
+  localStorage.removeItem('katia_chat_session_id');
+  let sid = sessionStorage.getItem('katia_chat_session_id');
+  const sidTs = parseInt(sessionStorage.getItem('katia_chat_session_ts') || '0', 10);
+  if (!sid || !sidTs || (Date.now() - sidTs) > 7200000) {
     sid = 'sess_' + Date.now() + '_' + Math.random().toString(36).slice(2, 10);
-    localStorage.setItem('katia_chat_session_id', sid);
+    sessionStorage.setItem('katia_chat_session_id', sid);
   }
+  sessionStorage.setItem('katia_chat_session_ts', String(Date.now()));
 
   const escalateText = lang === 'en' ? 'Email the Sales Team' : 'Escribir al equipo de Ventas';
   const errorPrefix = lang === 'en'
