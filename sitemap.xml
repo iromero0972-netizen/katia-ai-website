@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://katia.solutions/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://katia.solutions/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://katia.solutions/consultation.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://katia.solutions/"/>
+  </url>
+  <url><loc>https://katia.solutions/consulta.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://katia.solutions/consultation.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://katia.solutions/metodologia.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://katia.solutions/casos.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://katia.solutions/recursos.html</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://katia.solutions/industrias/restaurantes.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://katia.solutions/industrias/clinicas.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://katia.solutions/industrias/retail.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://katia.solutions/industrias/servicios-profesionales.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://katia.solutions/industrias/construccion.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://katia.solutions/privacidad.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://katia.solutions/terminos.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+</urlset>

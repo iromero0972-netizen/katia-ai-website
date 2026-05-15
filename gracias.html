@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¡Gracias! Solicitud recibida — KATIA.AI</title>
+<meta name="description" content="Hemos recibido su solicitud de Diagnóstico de Control Empresarial. Le contactaremos en menos de 2 horas hábiles.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://katia.solutions/gracias.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 20%,#141821,#0a0c10 70%);color:#e7eaf0;font-family:'DM Sans',-apple-system,sans-serif;text-align:center;padding:32px}
+.box{max-width:560px}
+.check{width:84px;height:84px;border-radius:50%;margin:0 auto 28px;display:flex;align-items:center;justify-content:center;background:rgba(63,178,127,.12);border:1px solid rgba(63,178,127,.4)}
+.check svg{width:40px;height:40px;stroke:#3fb27f}
+h1{font-family:'Syne',sans-serif;font-size:34px;font-weight:800;letter-spacing:-.5px;margin-bottom:14px}
+h1 .g{color:#f0d79b;font-style:italic;font-weight:600}
+p{color:#9aa3b2;font-size:16px;line-height:1.65;margin-bottom:10px}
+.actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:34px}
+a.btn{display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:12px;text-decoration:none;font-weight:600;font-size:15px;transition:transform .2s}
+a.btn:hover{transform:translateY(-2px)}
+.primary{background:linear-gradient(135deg,#f0d79b,#d8b46a);color:#0a0c10}
+.ghost{border:1px solid #232a36;color:#e7eaf0}
+.meta{margin-top:30px;font-size:13px;color:#6b7280}
+</style>
+</head>
+<body>
+<div class="box">
+  <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+  <h1>¡Solicitud <span class="g">recibida</span>!</h1>
+  <p>Gracias por solicitar su <strong>Diagnóstico de Control Empresarial</strong>. Un responsable de KATIA.AI le contactará en <strong>menos de 2 horas hábiles</strong>.</p>
+  <p>¿Prefiere adelantar? Escríbanos directo por WhatsApp y lo atendemos ahora.</p>
+  <div class="actions">
+    <a class="btn primary" href="https://wa.me/13468920577?text=Hola%20KATIA.AI%2C%20acabo%20de%20solicitar%20mi%20Diagn%C3%B3stico%20de%20Control%20Empresarial." target="_blank" rel="noopener">Continuar por WhatsApp</a>
+    <a class="btn ghost" href="index.html">Volver al inicio</a>
+  </div>
+  <p class="meta">KATIA.AI · Katy, Texas · ventas@katia.solutions</p>
+</div>
+<script>
+(function(){
+  try{
+    var EP="https://srv1448901.hstgr.cloud/webhook/katia-events";
+    var payload=JSON.stringify({event:"lead_thank_you_view",ts:Date.now(),page:"/gracias.html"});
+    if(navigator.sendBeacon) navigator.sendBeacon(EP,new Blob([payload],{type:'application/json'}));
+    else fetch(EP,{method:'POST',headers:{'Content-Type':'application/json'},body:payload,keepalive:true}).catch(function(){});
+    if(window.gtag) gtag('event','generate_lead',{value:1});
+    if(window.fbq) fbq('track','Lead');
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
