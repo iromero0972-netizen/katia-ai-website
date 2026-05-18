@@ -97,6 +97,41 @@ a{text-decoration:none;color:inherit}
   .urgency-options{flex-direction:column}
 }
 </style>
+<!-- Analítica: configurar IDs reales. Requiere allowlist en CSP de Cloudflare (ver auditoria). -->
+<script>
+window.KATIA_CONFIG = {
+  GA4_ID: "G-LKNZZY2Z9Y", /* KATIA.AI · GA4 instalado 2026-05-18 */
+  META_PIXEL_ID: "",     /* p.ej. "123456789012345" */
+  CALENDLY_URL: "",      /* p.ej. "https://calendly.com/katia-ai/diagnostico" — vacío => usa el formulario */
+  EVENT_ENDPOINT: "https://srv1448901.hstgr.cloud/webhook/katia-events"
+};
+window.dataLayer = window.dataLayer || [];
+function gtag(){ dataLayer.push(arguments); }
+/* Beacon de conversión de origen propio — compatible con la CSP actual (connect-src ya permite el host). */
+window.katiaTrack = function(eventName, data){
+  try {
+    var payload = JSON.stringify(Object.assign({ event: eventName, ts: Date.now(), page: location.pathname, lang: (document.documentElement.lang||'es') }, data||{}));
+    var url = (window.KATIA_CONFIG && window.KATIA_CONFIG.EVENT_ENDPOINT) || '';
+    if (url) {
+      if (navigator.sendBeacon) navigator.sendBeacon(url, new Blob([payload], {type:'application/json'}));
+      else fetch(url, { method:'POST', headers:{'Content-Type':'application/json'}, body:payload, keepalive:true }).catch(function(){});
+    }
+    if (window.KATIA_CONFIG && window.KATIA_CONFIG.GA4_ID) gtag('event', eventName, data||{});
+    if (window.fbq) fbq('trackCustom', eventName, data||{});
+  } catch(e){}
+};
+(function(){
+  var c = window.KATIA_CONFIG || {};
+  if (c.GA4_ID) {
+    var s=document.createElement('script'); s.async=true; s.src='https://www.googletagmanager.com/gtag/js?id='+c.GA4_ID; document.head.appendChild(s);
+    gtag('js', new Date()); gtag('config', c.GA4_ID);
+  }
+  if (c.META_PIXEL_ID) {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', c.META_PIXEL_ID); fbq('track', 'PageView');
+  }
+})();
+</script>
 </head>
 <body>
 
