@@ -1,0 +1,36 @@
+# === Backups & old versions ===
+*.bak-*
+*.html.backup_chatfix
+*.htmlthon3
+*_backup_*.html
+index-v3.html
+index-neuroniq.html
+
+# === Heavy assets NOT referenced by index-katia-hybrid-v3.html ===
+# Old hero videos (replaced by hero-katia-intro-hd.mp4)
+assets/img/hero-katia-intro.mp4
+assets/img/hero-calc-evolution.mp4
+# Unused hero videos
+assets/img/video-hero-lobby.mp4
+assets/img/video-hero-robot.mp4
+assets/img/video-katia-team.mp4
+assets/img/video-katia-infra.mp4
+assets/img/KATIA_AI_Video_Oficina.mp4
+# Unused image versions
+assets/img/v2/
+# Unused stock videos (pexels)
+assets/img/v3/videos/
+# Unused v3 images
+assets/img/v3/founder.jpg
+assets/img/v3/handshake-ai.jpg
+assets/img/v3/hero-ai-portrait.jpg
+assets/img/v3/hero-circuit-glow.jpg
+assets/img/v3/hero-neural-blue.jpg
+assets/img/v3/hero-workspace-dark.jpg
+
+# === Local OS / tooling ===
+.DS_Store
+.claude
+*.log
+
+index-original-katia-solutions.html

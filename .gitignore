@@ -16,3 +16,4 @@ index_backup_*.html
 
 # Stray shell heredoc artifacts
 *<<*EOF*
+.vercel
