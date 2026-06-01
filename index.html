@@ -2728,7 +2728,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
         </div>
         <a href="https://wa.me/13468920577?text=Hola%20KATIA.AI%2C%20quiero%20agendar%20mi%20diagn%C3%B3stico%20IA%20gratuito" target="_blank" rel="noopener" class="btn btn-ghost" style="margin-top:18px" data-cta="cta-whatsapp" data-en="💬 Message us on WhatsApp">💬 Escribir por WhatsApp</a>
       </div>
-      <form class="cf-form reveal d1" id="contactForm" onsubmit="event.preventDefault();this.submit_btn.textContent=(document.documentElement.getAttribute('lang')==='en'?'Sent ✓':'Enviado ✓');this.submit_btn.disabled=true;setTimeout(()=>{window.location='https://wa.me/13468920577?text='+encodeURIComponent('Hola KATIA, acabo de enviar el formulario en katia.solutions')},800)">
+      <form class="cf-form reveal d1" id="contactForm" onsubmit="return katiaSubmitLead(event)">
         <div class="cf-row">
           <input class="cf-input" type="text" name="nombre" placeholder="Nombre completo" data-en-placeholder="Full name" required>
           <input class="cf-input" type="text" name="empresa" placeholder="Empresa" data-en-placeholder="Company" required>
@@ -3831,6 +3831,56 @@ function quickAskKatia(text){
   if(!input)return;
   input.value=text;
   sendKatiaMsg();
+}
+</script>
+<!-- Lead capture · conecta el formulario al agente n8n katia2-lead-capture -->
+<script>
+function katiaSubmitLead(e){
+  e.preventDefault();
+  var form=document.getElementById('contactForm');
+  var btn=form.submit_btn;
+  var en=document.documentElement.getAttribute('lang')==='en';
+  var v=function(n){var el=form.elements[n];return el&&el.value?el.value.trim():'';};
+  var nombre=v('nombre'),empresa=v('empresa'),email=v('email'),telefono=v('telefono'),
+      sector=v('sector'),area=v('dolor'),mensaje=v('mensaje');
+
+  var payload={
+    nombre:nombre, empresa:empresa, email:email, telefono:telefono,
+    puesto:'', ciudad:'', industria:sector,
+    servicios:area||'Not specified',
+    dolor:mensaje||area||'Not specified',
+    empleados:'', urgencia:'this_month',
+    contacto_preferido:telefono?'whatsapp':'email',
+    source:'web_form_v3', fuente:'web_form_v3',
+    lang:en?'en':'es', submitted_at:new Date().toISOString()
+  };
+
+  btn.disabled=true;
+  btn.textContent=en?'Sending…':'Enviando…';
+
+  var waBase='https://wa.me/13468920577?text=';
+  var waOk=waBase+encodeURIComponent((en?'Hi KATIA, I just submitted the form on katia.solutions':'Hola KATIA, acabo de enviar el formulario en katia.solutions')+(nombre?(' — '+nombre):''));
+  // Fallback que conserva el lead aunque el webhook falle
+  var waDetail=waBase+encodeURIComponent(
+    (en?'Hi KATIA, my form did not go through, here are my details:':'Hola KATIA, mi formulario no se envió, estos son mis datos:')+
+    '\nNombre: '+nombre+'\nEmpresa: '+empresa+'\nEmail: '+email+'\nTel: '+telefono+
+    '\nSector: '+sector+'\nÁrea: '+area+(mensaje?('\nMensaje: '+mensaje):''));
+
+  fetch('https://srv1448901.hstgr.cloud/webhook/katia2-lead-capture',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(payload)
+  })
+  .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r; })
+  .then(function(){
+    btn.textContent=en?'Sent ✓':'Enviado ✓';
+    setTimeout(function(){ window.location=waOk; },900);
+  })
+  .catch(function(){
+    btn.textContent=en?'Sent ✓':'Enviado ✓';
+    setTimeout(function(){ window.location=waDetail; },500);
+  });
+  return false;
 }
 </script>
 </body>
