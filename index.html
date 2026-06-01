@@ -2729,6 +2729,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
         <a href="https://wa.me/13468920577?text=Hola%20KATIA.AI%2C%20quiero%20agendar%20mi%20diagn%C3%B3stico%20IA%20gratuito" target="_blank" rel="noopener" class="btn btn-ghost" style="margin-top:18px" data-cta="cta-whatsapp" data-en="💬 Message us on WhatsApp">💬 Escribir por WhatsApp</a>
       </div>
       <form class="cf-form reveal d1" id="contactForm" onsubmit="return katiaSubmitLead(event)">
+        <input type="text" class="cf-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none">
         <div class="cf-row">
           <input class="cf-input" type="text" name="nombre" placeholder="Nombre completo" data-en-placeholder="Full name" required>
           <input class="cf-input" type="text" name="empresa" placeholder="Empresa" data-en-placeholder="Company" required>
@@ -3841,44 +3842,54 @@ function katiaSubmitLead(e){
   var btn=form.submit_btn;
   var en=document.documentElement.getAttribute('lang')==='en';
   var v=function(n){var el=form.elements[n];return el&&el.value?el.value.trim():'';};
-  var nombre=v('nombre'),empresa=v('empresa'),email=v('email'),telefono=v('telefono'),
-      sector=v('sector'),area=v('dolor'),mensaje=v('mensaje');
 
+  // Anti-spam honeypot: si trae valor es un bot — simulamos éxito y descartamos.
+  var hp=form.querySelector('.cf-hp');
+  if(hp && hp.value){ form.reset(); return false; }
+
+  var consentEl=form.querySelector('.cf-check input[type="checkbox"]');
   var payload={
-    nombre:nombre, empresa:empresa, email:email, telefono:telefono,
-    puesto:'', ciudad:'', industria:sector,
-    servicios:area||'Not specified',
-    dolor:mensaje||area||'Not specified',
-    empleados:'', urgencia:'this_month',
-    contacto_preferido:telefono?'whatsapp':'email',
-    source:'web_form_v3', fuente:'web_form_v3',
-    lang:en?'en':'es', submitted_at:new Date().toISOString()
+    nombre:v('nombre'), empresa:v('empresa'), email:v('email'), telefono:v('telefono'),
+    industria:v('sector'),          // select "Sector de su empresa"
+    dolor:v('dolor'),               // select "¿Dónde pierde control hoy?"
+    notas:v('mensaje'),             // textarea libre
+    consent:!!(consentEl && consentEl.checked),
+    source:'website_form_v3', fuente:'website_form_v3'
   };
 
-  btn.disabled=true;
-  btn.textContent=en?'Sending…':'Enviando…';
+  var emailOk=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(payload.email);
+  var telOk=!payload.telefono||/^[+\d][\d\s().-]{6,}$/.test(payload.telefono);
+  if(!payload.nombre||!payload.empresa){ alert(en?'Please enter your name and company.':'Por favor complete su nombre y empresa.'); return false; }
+  if(!emailOk){ alert(en?'Please enter a valid email address.':'Por favor ingrese un correo electrónico válido.'); return false; }
+  if(!telOk){ alert(en?'The phone number does not look valid. Check it or leave it empty.':'El teléfono no parece válido. Revíselo o déjelo vacío.'); return false; }
+  if(!payload.consent){ alert(en?'You must accept the Privacy Policy to continue.':'Debe aceptar la Política de Privacidad para continuar.'); return false; }
 
-  var waBase='https://wa.me/13468920577?text=';
-  var waOk=waBase+encodeURIComponent((en?'Hi KATIA, I just submitted the form on katia.solutions':'Hola KATIA, acabo de enviar el formulario en katia.solutions')+(nombre?(' — '+nombre):''));
-  // Fallback que conserva el lead aunque el webhook falle
-  var waDetail=waBase+encodeURIComponent(
-    (en?'Hi KATIA, my form did not go through, here are my details:':'Hola KATIA, mi formulario no se envió, estos son mis datos:')+
-    '\nNombre: '+nombre+'\nEmpresa: '+empresa+'\nEmail: '+email+'\nTel: '+telefono+
-    '\nSector: '+sector+'\nÁrea: '+area+(mensaje?('\nMensaje: '+mensaje):''));
+  var orig=btn.textContent;
+  btn.textContent=en?'Sending…':'Enviando…';
+  btn.disabled=true;
 
   fetch('https://srv1448901.hstgr.cloud/webhook/katia2-lead-capture',{
     method:'POST',
     headers:{'Content-Type':'application/json'},
     body:JSON.stringify(payload)
   })
-  .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r; })
-  .then(function(){
-    btn.textContent=en?'Sent ✓':'Enviado ✓';
-    setTimeout(function(){ window.location=waOk; },900);
+  .then(function(res){
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    if(window.gtag) gtag('event','lead_form_submit',{industria:payload.industria});
+    form.reset();
+    window.location.href='gracias.html';   // página de agradecimiento (igual que producción)
   })
   .catch(function(){
-    btn.textContent=en?'Sent ✓':'Enviado ✓';
-    setTimeout(function(){ window.location=waDetail; },500);
+    // Fallback: el lead no se pierde — WhatsApp con datos, solo si el usuario acepta.
+    if(window.gtag) gtag('event','lead_form_error_fallback',{});
+    btn.disabled=false; btn.textContent=orig;
+    var msg=encodeURIComponent(
+      (en?'Hi KATIA.AI, I want my Business Control Diagnosis.\n':'Hola KATIA.AI, quiero mi Diagnóstico de Control Empresarial.\n')+
+      'Nombre: '+payload.nombre+'\nEmpresa: '+payload.empresa+'\nEmail: '+payload.email+
+      '\nTel: '+payload.telefono+'\nSector: '+payload.industria);
+    if(confirm(en?'We could not send the form right now. Continue on WhatsApp with your details prefilled?':'No pudimos enviar el formulario en este momento. ¿Desea continuar por WhatsApp con sus datos ya cargados?')){
+      window.location.href='https://wa.me/13468920577?text='+msg;
+    }
   });
   return false;
 }
