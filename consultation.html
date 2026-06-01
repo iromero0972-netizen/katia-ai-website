@@ -1,179 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Request a Consultation — KATIA.ai</title>
-<meta name="description" content="Request a free consultation with KATIA.ai. AI Automation Agency for small businesses in Houston, Texas.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#1f5bff">
+<!-- Google tag (gtag.js) · GA4 · KATIA.AI -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LKNZZY2Z9Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LKNZZY2Z9Y');
+</script>
+<title>Request a Consultation — KATIA.AI</title>
+<meta name="description" content="Request your free AI automation consultation. We'll contact you within 24 hours with a personalized plan for your business.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://katia.solutions/consultation.html">
-<link rel="alternate" hreflang="en" href="https://katia.solutions/consultation.html">
-<link rel="alternate" hreflang="es" href="https://katia.solutions/consulta.html">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="KATIA.AI">
-<meta property="og:url" content="https://katia.solutions/consultation.html">
-<meta property="og:title" content="Request a Consultation — KATIA.AI">
-<meta property="og:description" content="Request your free Business Control Diagnostic. AI with accounting rigor for SMBs in Houston/Katy, Texas.">
-<meta property="og:image" content="https://katia.solutions/assets/img/banner-web.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Request a Consultation — KATIA.AI">
-<meta name="twitter:description" content="Request your free Business Control Diagnostic. AI with accounting rigor for SMBs in Houston/Katy, Texas.">
-<meta name="twitter:image" content="https://katia.solutions/assets/img/banner-web.jpg">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/img/katia-logo-icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@500;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/v3-pages.css">
 <style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#0B1220;--bg2:#0F1A2C;--card:rgba(255,255,255,0.045);--blue:#4A9ED6;--bluel:#6BB5E4;--blueg:rgba(74,158,214,0.22);--gold:#C9A84C;--goldd:rgba(201,168,76,0.14);--tw:#F0F4F8;--tb:#B8C5D3;--tm:#6B7D8F;--bd:rgba(255,255,255,0.07)}
-html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--tb);line-height:1.7;font-size:1.05rem;min-height:100vh}
-h1,h2,h3{font-family:'Syne',sans-serif;color:var(--tw);line-height:1.2}
-a{text-decoration:none;color:inherit}
-.header{text-align:center;padding:40px 24px 20px;border-bottom:1px solid var(--bd)}
-.logo{display:inline-flex;align-items:center;gap:10px;font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:700;color:var(--tw)}
-.logo em{color:var(--blue);font-style:normal}
-.header p{color:var(--tm);font-size:.9rem;margin-top:6px}
-.lang-switch{display:flex;justify-content:center;gap:12px;margin-top:10px}
-.lang-switch a{font-size:.85rem;padding:5px 14px;border-radius:20px;border:1px solid var(--bd);color:var(--tm);transition:.3s}
-.lang-switch a.active{border-color:var(--blue);color:var(--tw);background:rgba(74,158,214,.1)}
-.lang-switch a:hover{border-color:var(--blue);color:var(--tw)}
-.container{max-width:800px;margin:0 auto;padding:40px 24px 60px}
-.intro{text-align:center;margin-bottom:48px}
-.intro h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin-bottom:12px}
-.intro h1 span{color:var(--blue)}
-.intro p{max-width:600px;margin:0 auto;font-size:1.05rem}
-.form-card{background:var(--bg2);border:1px solid var(--bd);border-radius:20px;padding:40px 36px;position:relative;overflow:hidden}
-.form-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue),var(--gold))}
-.section-title{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.1em;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--bd)}
-.section-title:first-of-type{margin-top:0}
-.field{margin-bottom:20px}
-.field label{display:block;font-size:.9rem;font-weight:600;color:var(--tw);margin-bottom:6px}
-.field label .req{color:var(--blue);margin-left:2px}
-.field input,.field select,.field textarea{width:100%;padding:14px 16px;background:rgba(255,255,255,0.05);border:1px solid var(--bd);border-radius:10px;color:var(--tw);font-family:'DM Sans',sans-serif;font-size:1rem;transition:.3s;outline:none}
-.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(74,158,214,.15)}
-.field input::placeholder,.field textarea::placeholder{color:var(--tm)}
-.field select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B7D8F' stroke-width='2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
-.field select option{background:var(--bg2);color:var(--tw)}
-.field textarea{resize:vertical;min-height:100px}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
-.service-option{position:relative}
-.service-option input{position:absolute;opacity:0;width:0;height:0}
-.service-option label{display:flex;align-items:center;gap:10px;padding:14px 16px;background:rgba(255,255,255,0.03);border:1px solid var(--bd);border-radius:10px;cursor:pointer;transition:.3s;font-size:.92rem;color:var(--tb)}
-.service-option input:checked+label{border-color:var(--blue);background:rgba(74,158,214,.08);color:var(--tw)}
-.service-option label:hover{border-color:rgba(74,158,214,.4)}
-.check-icon{width:20px;height:20px;border:2px solid var(--bd);border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:.3s}
-.service-option input:checked+label .check-icon{border-color:var(--blue);background:var(--blue)}
-.service-option input:checked+label .check-icon::after{content:'✓';color:#fff;font-size:12px;font-weight:700}
-.urgency-options{display:flex;gap:12px;flex-wrap:wrap}
-.urgency-option{position:relative}
+/* Consultation form (v3) */
+.form-card{max-width:780px;margin:0 auto;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid var(--line);border-radius:22px;padding:40px;box-shadow:0 30px 80px -30px rgba(31,91,255,.35)}
+@media (max-width:600px){.form-card{padding:26px 20px}}
+.section-title{font-family:'Sora',sans-serif;font-size:14px;font-weight:700;color:var(--blue-300);letter-spacing:.02em;text-transform:uppercase;margin:32px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.section-title:first-child{margin-top:0}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:600px){.row{grid-template-columns:1fr}}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:7px}
+.field .req{color:var(--blue-400)}
+.field input,.field select,.field textarea{width:100%;background:rgba(3,6,15,.6);border:1px solid var(--line);border-radius:11px;padding:13px 15px;color:var(--ink);font-family:'Inter',sans-serif;font-size:15px;transition:border-color .2s,box-shadow .2s}
+.field input::placeholder,.field textarea::placeholder{color:#5e6b8a}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue-400);box-shadow:0 0 0 3px rgba(58,120,255,.18)}
+.field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236aa0ff' stroke-width='2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;padding-right:38px}
+.field textarea{min-height:110px;resize:vertical}
+.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:8px}
+@media (max-width:600px){.services-grid{grid-template-columns:1fr}}
+.service-option input{position:absolute;opacity:0}
+.service-option label{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid var(--line);border-radius:11px;cursor:pointer;font-size:14px;color:var(--ink-mute);transition:all .2s}
+.service-option .check-icon{width:18px;height:18px;border:1.5px solid #44557d;border-radius:5px;flex-shrink:0;transition:all .2s;position:relative}
+.service-option input:checked+label{border-color:rgba(58,120,255,.55);color:var(--ink);background:rgba(58,120,255,.08)}
+.service-option input:checked+label .check-icon{background:var(--blue-500);border-color:var(--blue-500)}
+.service-option input:checked+label .check-icon::after{content:'';position:absolute;left:5px;top:1px;width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.service-option input:focus-visible+label{box-shadow:0 0 0 3px rgba(58,120,255,.25)}
+.urgency-options{display:flex;gap:10px;flex-wrap:wrap}
 .urgency-option input{position:absolute;opacity:0}
-.urgency-option label{padding:10px 20px;border:1px solid var(--bd);border-radius:25px;cursor:pointer;font-size:.9rem;transition:.3s;color:var(--tb)}
-.urgency-option input:checked+label{border-color:var(--blue);background:rgba(74,158,214,.1);color:var(--tw)}
-.urgency-option label:hover{border-color:rgba(74,158,214,.4)}
-.submit-btn{width:100%;padding:18px;background:var(--blue);color:var(--bg);font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:700;border:none;border-radius:12px;cursor:pointer;transition:.3s;margin-top:32px}
-.submit-btn:hover{background:var(--bluel);transform:translateY(-2px);box-shadow:0 8px 30px rgba(74,158,214,.3)}
-.submit-btn:active{transform:translateY(0)}
-.submit-btn.loading{pointer-events:none;opacity:.7}
-.trust-badges{display:flex;justify-content:center;gap:32px;margin-top:24px;padding-top:20px;border-top:1px solid var(--bd)}
-.trust-badge{text-align:center;font-size:.8rem;color:var(--tm)}
-.trust-badge strong{display:block;color:var(--blue);font-size:1.1rem;margin-bottom:2px}
-.success-msg{display:none;text-align:center;padding:60px 24px}
-.success-msg h2{color:var(--blue);margin-bottom:16px}
-.success-msg p{margin-bottom:12px}
-.footer-mini{text-align:center;padding:30px 24px;border-top:1px solid var(--bd);margin-top:40px}
-.footer-mini p{font-size:.82rem;color:var(--tm)}
-.footer-mini a{color:var(--blue)}
-@media(max-width:768px){.row,.services-grid{grid-template-columns:1fr}.form-card{padding:28px 20px}.urgency-options{flex-direction:column}}
+.urgency-option label{display:inline-block;padding:11px 18px;border:1px solid var(--line);border-radius:99px;cursor:pointer;font-size:13.5px;color:var(--ink-mute);transition:all .2s}
+.urgency-option input:checked+label{border-color:var(--blue-400);color:#fff;background:rgba(58,120,255,.14)}
+.submit-btn{width:100%;margin-top:26px;padding:17px;background:linear-gradient(135deg,#3a78ff,#1f5bff);color:#fff;border:0;border-radius:12px;font-family:'Sora',sans-serif;font-weight:700;font-size:15.5px;cursor:pointer;box-shadow:0 14px 30px -10px rgba(31,91,255,.6);transition:transform .2s,box-shadow .2s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 22px 50px -10px rgba(31,91,255,.85)}
+.submit-btn:disabled{opacity:.7;cursor:default;transform:none}
+.trust-badges{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
+@media (max-width:600px){.trust-badges{grid-template-columns:repeat(2,1fr)}}
+.trust-badge{text-align:center;font-size:11.5px;color:var(--ink-mute);line-height:1.4}
+.trust-badge strong{display:block;font-family:'Sora',sans-serif;font-size:17px;color:var(--blue-300);margin-bottom:3px}
+.cf-foot{margin-top:14px;text-align:center;color:var(--ink-mute);font-size:12px;line-height:1.55}
 </style>
-<!-- Analítica: configurar IDs reales. Requiere allowlist en CSP de Cloudflare (ver auditoria). -->
-<script>
-window.KATIA_CONFIG = {
-  GA4_ID: "G-LKNZZY2Z9Y", /* KATIA.AI · GA4 instalado 2026-05-18 */
-  META_PIXEL_ID: "",     /* p.ej. "123456789012345" */
-  CALENDLY_URL: "",      /* p.ej. "https://calendly.com/katia-ai/diagnostico" — vacío => usa el formulario */
-  EVENT_ENDPOINT: "https://srv1448901.hstgr.cloud/webhook/katia-events"
-};
-window.dataLayer = window.dataLayer || [];
-function gtag(){ dataLayer.push(arguments); }
-/* Beacon de conversión de origen propio — compatible con la CSP actual (connect-src ya permite el host). */
-window.katiaTrack = function(eventName, data){
-  try {
-    var payload = JSON.stringify(Object.assign({ event: eventName, ts: Date.now(), page: location.pathname, lang: (document.documentElement.lang||'es') }, data||{}));
-    var url = (window.KATIA_CONFIG && window.KATIA_CONFIG.EVENT_ENDPOINT) || '';
-    if (url) {
-      if (navigator.sendBeacon) navigator.sendBeacon(url, new Blob([payload], {type:'application/json'}));
-      else fetch(url, { method:'POST', headers:{'Content-Type':'application/json'}, body:payload, keepalive:true }).catch(function(){});
-    }
-    if (window.KATIA_CONFIG && window.KATIA_CONFIG.GA4_ID) gtag('event', eventName, data||{});
-    if (window.fbq) fbq('trackCustom', eventName, data||{});
-  } catch(e){}
-};
-(function(){
-  var c = window.KATIA_CONFIG || {};
-  if (c.GA4_ID) {
-    var s=document.createElement('script'); s.async=true; s.src='https://www.googletagmanager.com/gtag/js?id='+c.GA4_ID; document.head.appendChild(s);
-    gtag('js', new Date()); gtag('config', c.GA4_ID);
-  }
-  if (c.META_PIXEL_ID) {
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', c.META_PIXEL_ID); fbq('track', 'PageView');
-  }
-})();
-</script>
 </head>
 <body>
-
-<div class="header">
-  <a href="https://iromero0972-netizen.github.io/katia-ai-website/" class="logo">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="6" cy="12" r="2.5" fill="#4A9ED6"/><circle cx="18" cy="6" r="2.5" fill="#4A9ED6"/><circle cx="18" cy="18" r="2.5" fill="#4A9ED6"/><line x1="8.2" y1="11" x2="15.8" y2="7" stroke="#4A9ED6" stroke-width="1.2"/><line x1="8.2" y1="13" x2="15.8" y2="17" stroke="#4A9ED6" stroke-width="1.2"/></svg>
-    KATIA<em>.ai</em>
-  </a>
-  <p>AI Automation Agency · Katy, Texas</p>
-  <div class="lang-switch">
-    <a href="consulta.html">Español</a>
-    <a href="consultation.html" class="active">English</a>
+<nav class="nav"><div class="nav-inner">
+  <a href="index.html" class="logo" aria-label="KATIA.AI"><img src="assets/img/katia-logo-brand.png" alt="KATIA.AI · AI Automation Agency"></a>
+  <div class="nav-right">
+    <a href="index.html" class="nav-back">← Back to home</a>
+    <a href="index.html#planes" class="nav-cta">See plans</a>
   </div>
-</div>
+</div></nav>
 
-<div class="container">
-  <div class="intro">
-    <h1>Request your <span>free consultation</span></h1>
-    <p>Fill out the form and we'll contact you within 24 hours with a personalized plan to automate your business. No cost. No commitment.</p>
-  </div>
+<section class="page-hero"><div class="container">
+  <div class="eyebrow">Free consultation · 24h response</div>
+  <h1>Request your <em>free consultation</em></h1>
+  <p class="page-hero-intro">Fill out the form and we&rsquo;ll contact you within 24 hours with a personalized plan to automate your business. No cost. No commitment.</p>
+</div></section>
 
+<section style="padding:50px 0 90px"><div class="container">
   <div class="form-card" id="formCard">
     <div id="formContent">
+      <input type="text" class="kt-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none">
       <div class="section-title">Your information</div>
-      
       <div class="row">
-        <div class="field">
-          <label>Full name <span class="req">*</span></label>
-          <input type="text" id="nombre" placeholder="E.g.: John Smith" required>
-        </div>
-        <div class="field">
-          <label>Business name <span class="req">*</span></label>
-          <input type="text" id="empresa" placeholder="E.g.: Smith's Bakery LLC" required>
-        </div>
+        <div class="field"><label>Full name <span class="req">*</span></label><input type="text" id="nombre" placeholder="E.g.: John Smith" required></div>
+        <div class="field"><label>Business name <span class="req">*</span></label><input type="text" id="empresa" placeholder="E.g.: Smith's Bakery LLC" required></div>
       </div>
-      
       <div class="row">
-        <div class="field">
-          <label>Email <span class="req">*</span></label>
-          <input type="email" id="email" placeholder="you@email.com" required>
-        </div>
-        <div class="field">
-          <label>Phone</label>
-          <input type="tel" id="telefono" placeholder="(832) 555-1234" required>
-        </div>
+        <div class="field"><label>Email <span class="req">*</span></label><input type="email" id="email" placeholder="you@email.com" required></div>
+        <div class="field"><label>Phone <span class="req">*</span></label><input type="tel" id="telefono" placeholder="(832) 555-1234" required></div>
       </div>
-
       <div class="row">
-        <div class="field">
-          <label>City</label>
-          <input type="text" id="ciudad" placeholder="E.g.: Houston, Katy, Sugar Land">
-        </div>
-        <div class="field">
-          <label for="puesto">Your role at the company <span class="req">*</span></label>
-          <select id="puesto" aria-label="Your role at the company" required>
+        <div class="field"><label>City</label><input type="text" id="ciudad" placeholder="E.g.: Houston, Katy, Sugar Land"></div>
+        <div class="field"><label for="puesto">Your role at the company <span class="req">*</span></label>
+          <select id="puesto" required>
             <option value="">Select your role</option>
             <option value="owner">Owner / Founder</option>
             <option value="ceo">CEO / Director</option>
@@ -184,11 +102,9 @@ window.katiaTrack = function(eventName, data){
           </select>
         </div>
       </div>
-
       <div class="row">
-        <div class="field">
-          <label>Industry / Business type <span class="req">*</span></label>
-          <select id="industria">
+        <div class="field"><label>Industry / Business type <span class="req">*</span></label>
+          <select id="industria" required>
             <option value="">Select an option</option>
             <option value="restaurant">Restaurant / Food Service</option>
             <option value="bakery">Bakery / Pastry Shop</option>
@@ -208,52 +124,21 @@ window.katiaTrack = function(eventName, data){
       </div>
 
       <div class="section-title">What would you like to automate?</div>
-      <p style="font-size:.9rem;color:var(--tm);margin-bottom:16px">Select all that apply:</p>
-
+      <p style="font-size:.9rem;color:var(--ink-mute);margin-bottom:16px">Select all that apply:</p>
       <div class="services-grid">
-        <div class="service-option">
-          <input type="checkbox" id="s1" value="website">
-          <label for="s1"><span class="check-icon"></span>Professional website</label>
-        </div>
-        <div class="service-option">
-          <input type="checkbox" id="s2" value="social_media">
-          <label for="s2"><span class="check-icon"></span>Social media content</label>
-        </div>
-        <div class="service-option">
-          <input type="checkbox" id="s3" value="orders">
-          <label for="s3"><span class="check-icon"></span>Order automation</label>
-        </div>
-        <div class="service-option">
-          <input type="checkbox" id="s4" value="chatbot">
-          <label for="s4"><span class="check-icon"></span>Virtual assistant / Chatbot</label>
-        </div>
-        <div class="service-option">
-          <input type="checkbox" id="s5" value="accounting">
-          <label for="s5"><span class="check-icon"></span>Accounting & finance</label>
-        </div>
-        <div class="service-option">
-          <input type="checkbox" id="s6" value="email_marketing">
-          <label for="s6"><span class="check-icon"></span>Automated email marketing</label>
-        </div>
-        <div class="service-option">
-          <input type="checkbox" id="s7" value="crm">
-          <label for="s7"><span class="check-icon"></span>CRM / Client management</label>
-        </div>
-        <div class="service-option">
-          <input type="checkbox" id="s8" value="integrations">
-          <label for="s8"><span class="check-icon"></span>Custom integrations</label>
-        </div>
+        <div class="service-option"><input type="checkbox" id="s1" value="website"><label for="s1"><span class="check-icon"></span>Professional website</label></div>
+        <div class="service-option"><input type="checkbox" id="s2" value="social_media"><label for="s2"><span class="check-icon"></span>Social media content</label></div>
+        <div class="service-option"><input type="checkbox" id="s3" value="orders"><label for="s3"><span class="check-icon"></span>Order automation</label></div>
+        <div class="service-option"><input type="checkbox" id="s4" value="chatbot"><label for="s4"><span class="check-icon"></span>Virtual assistant / Chatbot</label></div>
+        <div class="service-option"><input type="checkbox" id="s5" value="accounting"><label for="s5"><span class="check-icon"></span>Accounting &amp; finance</label></div>
+        <div class="service-option"><input type="checkbox" id="s6" value="email_marketing"><label for="s6"><span class="check-icon"></span>Automated email marketing</label></div>
+        <div class="service-option"><input type="checkbox" id="s7" value="crm"><label for="s7"><span class="check-icon"></span>CRM / Client management</label></div>
+        <div class="service-option"><input type="checkbox" id="s8" value="integrations"><label for="s8"><span class="check-icon"></span>Custom integrations</label></div>
       </div>
 
       <div class="section-title">Tell us more</div>
-
-      <div class="field">
-        <label>What is your biggest operational headache today?</label>
-        <textarea id="dolor" placeholder="E.g.: I lose orders because I don't have an organized system, I spend hours doing invoices by hand, I have no time to post on social media..."></textarea>
-      </div>
-
-      <div class="field">
-        <label>How many employees does your business have?</label>
+      <div class="field"><label>What is your biggest operational headache today?</label><textarea id="dolor" placeholder="E.g.: I lose orders because I don't have an organized system, I spend hours doing invoices by hand, I have no time to post on social media..."></textarea></div>
+      <div class="field"><label>How many employees does your business have?</label>
         <select id="empleados">
           <option value="">Select</option>
           <option value="just_me">Just me</option>
@@ -263,27 +148,14 @@ window.katiaTrack = function(eventName, data){
           <option value="50+">More than 50</option>
         </select>
       </div>
-
-      <div class="field">
-        <label>How soon do you need a solution?</label>
+      <div class="field"><label>How soon do you need a solution?</label>
         <div class="urgency-options">
-          <div class="urgency-option">
-            <input type="radio" name="urgencia" id="u1" value="asap">
-            <label for="u1">As soon as possible</label>
-          </div>
-          <div class="urgency-option">
-            <input type="radio" name="urgencia" id="u2" value="this_month" checked>
-            <label for="u2">This month</label>
-          </div>
-          <div class="urgency-option">
-            <input type="radio" name="urgencia" id="u3" value="exploring">
-            <label for="u3">Just exploring</label>
-          </div>
+          <div class="urgency-option"><input type="radio" name="urgencia" id="u1" value="asap"><label for="u1">As soon as possible</label></div>
+          <div class="urgency-option"><input type="radio" name="urgencia" id="u2" value="this_month" checked><label for="u2">This month</label></div>
+          <div class="urgency-option"><input type="radio" name="urgencia" id="u3" value="exploring"><label for="u3">Just exploring</label></div>
         </div>
       </div>
-
-      <div class="field">
-        <label>How would you prefer to be contacted?</label>
+      <div class="field"><label>How would you prefer to be contacted?</label>
         <select id="contacto_pref">
           <option value="email">Email</option>
           <option value="whatsapp">WhatsApp</option>
@@ -292,115 +164,74 @@ window.katiaTrack = function(eventName, data){
         </select>
       </div>
 
-      <button class="submit-btn" id="submitBtn" onclick="submitForm()">
-        Request my free consultation →
-      </button>
+      <button class="submit-btn" id="submitBtn" type="button" onclick="submitForm()">Request my free consultation →</button>
+      <p class="cf-foot">Your data is not shared with third parties. We respond within 24 hours.</p>
 
       <div class="trust-badges">
         <div class="trust-badge"><strong>30 min</strong>Free consultation</div>
         <div class="trust-badge"><strong>24h</strong>Guaranteed response</div>
-        <div class="trust-badge"><strong>Bilingual</strong>English & Spanish</div>
+        <div class="trust-badge"><strong>ES/EN</strong>Bilingual</div>
         <div class="trust-badge"><strong>$0</strong>No commitment</div>
       </div>
     </div>
-
-    <div class="success-msg" id="successMsg">
-      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" style="margin:0 auto 20px"><circle cx="12" cy="12" r="11" stroke="#4A9ED6" stroke-width="2"/><path d="M7 12.5l3 3 7-7" stroke="#4A9ED6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <h2>Request received!</h2>
-      <p>Thank you for your interest. Our team will review your request and contact you within 24 hours with a personalized plan for your business.</p>
-      <p style="color:var(--gold);font-weight:600;margin-top:20px">In the meantime, follow us on Instagram for automation tips:</p>
-      <a href="https://www.instagram.com/katia.ai_" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:var(--blue);color:var(--bg);border-radius:25px;font-weight:600;margin-top:12px">Follow @katia.ai_</a>
-      <br><br>
-      <a href="https://iromero0972-netizen.github.io/katia-ai-website/" style="color:var(--blue);font-size:.9rem">← Back to homepage</a>
-    </div>
   </div>
-</div>
+</div></section>
 
-<div class="footer-mini">
-  <p>KATIA.ai · Katy, Texas · <a href="mailto:katiaia.ventas@gmail.com">katiaia.ventas@gmail.com</a> · <a href="https://t.me/katia_ai_ventas_bot" target="_blank">Telegram</a></p>
-  <p style="margin-top:6px">© 2026 KATIA.ai LLC · All rights reserved</p>
-</div>
+<footer>
+  <div>© 2026 KATIA.AI · Katy, Texas · United States · <a href="mailto:ventas@katia.solutions">ventas@katia.solutions</a></div>
+  <div><a href="privacidad.html">Privacy</a> · <a href="terminos.html">Terms</a> · <a href="index.html">Home</a></div>
+</footer>
 
 <script>
 const WEBHOOK_URL = 'https://srv1448901.hstgr.cloud/webhook/katia2-lead-capture';
+function submitForm(){
+  var btn=document.getElementById('submitBtn');
+  var hp=document.querySelector('.kt-hp');
+  if(hp && hp.value){ return; } // honeypot: bot
+  var g=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
+  var nombre=g('nombre'),empresa=g('empresa'),email=g('email'),telefono=g('telefono'),
+      puesto=document.getElementById('puesto').value,industria=document.getElementById('industria').value;
 
-async function submitForm() {
-  const btn = document.getElementById('submitBtn');
-  const nombre = document.getElementById('nombre').value.trim();
-  const empresa = document.getElementById('empresa').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const telefono = document.getElementById('telefono').value.trim();
-  const puesto = document.getElementById('puesto').value;
-  const industria = document.getElementById('industria').value;
+  var missing=[];
+  if(!nombre)missing.push('Name');
+  if(!empresa)missing.push('Business');
+  if(!email)missing.push('Email');
+  if(!telefono)missing.push('Phone');
+  if(!puesto)missing.push('Your role');
+  if(!industria)missing.push('Industry');
+  if(missing.length){ alert('Please fill in the required fields: '+missing.join(', ')+'.'); return; }
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ alert('Please enter a valid email address.'); return; }
 
-  const missing = [];
-  if (!nombre) missing.push('Name');
-  if (!empresa) missing.push('Business');
-  if (!email) missing.push('Email');
-  if (!telefono) missing.push('Phone');
-  if (!puesto) missing.push('Your role');
-  if (!industria) missing.push('Industry');
-  if (missing.length > 0) {
-    alert('Please fill in the required fields: ' + missing.join(', ') + '.');
-    return;
-  }
+  var servicios=[];
+  document.querySelectorAll('.service-option input:checked').forEach(function(cb){servicios.push(cb.value);});
+  var urg=document.querySelector('input[name="urgencia"]:checked');
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    alert('Please enter a valid email address.');
-    return;
-  }
-
-  btn.textContent = 'Sending...';
-  btn.classList.add('loading');
-  btn.disabled = true;
-
-  const servicios = [];
-  document.querySelectorAll('.service-option input:checked').forEach(cb => servicios.push(cb.value));
-  const urgenciaEl = document.querySelector('input[name="urgencia"]:checked');
-
-  const payload = {
-    nombre: nombre,
-    empresa: document.getElementById('empresa').value.trim(),
-    email: email,
-    telefono: document.getElementById('telefono').value.trim(),
-    puesto: puesto,
-    ciudad: document.getElementById('ciudad').value.trim(),
-    industria: industria,
-    servicios: servicios.join(', ') || 'Not specified',
-    dolor: document.getElementById('dolor').value.trim() || 'Not specified',
-    empleados: document.getElementById('empleados').value || 'Not specified',
-    urgencia: urgenciaEl ? urgenciaEl.value : 'this_month',
-    contacto_preferido: document.getElementById('contacto_pref').value,
-    source: 'web_form_en',
-    fuente: 'web_form_en',
-    submitted_at: new Date().toISOString()
+  var payload={
+    nombre:nombre, empresa:empresa, email:email, telefono:telefono,
+    puesto:puesto, ciudad:g('ciudad'), industria:industria,
+    servicios:servicios.join(', ')||'Not specified',
+    dolor:g('dolor')||'Not specified',
+    empleados:document.getElementById('empleados').value||'Not specified',
+    urgencia:urg?urg.value:'this_month',
+    contacto_preferido:document.getElementById('contacto_pref').value,
+    source:'web_form_en', fuente:'web_form_en'
   };
 
-  try {
-    await fetch(WEBHOOK_URL, {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(payload)
+  btn.textContent='Sending…'; btn.disabled=true;
+  fetch(WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+    .then(function(res){
+      if(!res.ok) throw new Error('HTTP '+res.status);
+      if(window.gtag) gtag('event','lead_form_submit',{industria:payload.industria,source:'consultation_en'});
+      window.location.href='gracias.html';
+    })
+    .catch(function(){
+      btn.disabled=false; btn.textContent='Request my free consultation →';
+      var msg=encodeURIComponent('Hi KATIA.AI, I want my free consultation.\nName: '+nombre+'\nBusiness: '+empresa+'\nEmail: '+email+'\nPhone: '+telefono+'\nIndustry: '+industria);
+      if(confirm('We could not send the form right now. Continue on WhatsApp with your details prefilled?')){
+        window.location.href='https://wa.me/13468920577?text='+msg;
+      }
     });
-    document.getElementById('formContent').style.display = 'none';
-    document.getElementById('successMsg').style.display = 'block';
-  } catch (error) {
-    const mailto = 'mailto:katiaia.ventas@gmail.com?subject=' +
-      encodeURIComponent('Consultation request from ' + nombre) +
-      '&body=' + encodeURIComponent(
-        'Name: ' + nombre + '\nBusiness: ' + payload.empresa +
-        '\nEmail: ' + email + '\nPhone: ' + payload.telefono +
-        '\nCity: ' + payload.ciudad + '\nIndustry: ' + industria +
-        '\nServices: ' + payload.servicios + '\nPain point: ' + payload.dolor +
-        '\nEmployees: ' + payload.empleados + '\nUrgency: ' + payload.urgencia
-      );
-    window.open(mailto, '_blank');
-    document.getElementById('formContent').style.display = 'none';
-    document.getElementById('successMsg').style.display = 'block';
-  }
 }
 </script>
-
 </body>
 </html>
