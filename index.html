@@ -1516,7 +1516,8 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
       <p class="hero-sub" data-en="The same AI tools used by large corporations, now within reach of Hispanic SMBs in Houston.">Las mismas herramientas de IA que usan las grandes corporaciones, ahora al alcance de las PYMEs hispanas en Houston.</p>
       <div class="hero-cta">
         <a href="#planes" class="btn btn-primary" data-cta="hero-planes" data-en="See the plans →">Conocer los planes →</a>
-        <a href="#contacto" class="btn btn-ghost" data-cta="hero-contacto" data-en="Talk with KATIA">Hablar con KATIA</a>
+        <a href="#contacto" class="btn btn-ghost hero-talk-desktop" data-cta="hero-contacto" data-en="Talk with KATIA">Hablar con KATIA</a>
+        <a href="tel:+13462204052" class="btn btn-ghost hero-talk-mobile" data-cta="hero-call" data-en="📞 Talk with KATIA" onclick="try{gtag('event','call_click',{'event_category':'contact','event_label':'leo_hero_button'});}catch(e){}">📞 Hablar con KATIA</a>
       </div>
       <p class="hero-microcopy" data-en="In 30 minutes we identify leaks of time, money and control in your business.">En 30 minutos identificamos fugas de tiempo, dinero y control en tu negocio.</p>
       <div class="hero-disclaimer">
@@ -3902,7 +3903,10 @@ function katiaSubmitLead(e){
 </a>
 <style>
 .leo-call-bar{display:none}
+.hero-talk-mobile{display:none}
 @media (max-width:760px){
+  .hero-talk-desktop{display:none}
+  .hero-talk-mobile{display:inline-flex}
   .leo-call-bar{display:flex;align-items:center;justify-content:center;gap:8px;
     position:fixed;left:12px;right:12px;bottom:14px;z-index:60;
     padding:14px 18px;border-radius:14px;
