@@ -3894,5 +3894,24 @@ function katiaSubmitLead(e){
   return false;
 }
 </script>
+<!-- Sticky móvil: llamar a Leo (agente de voz KATIA.Ai) · soft-launch 2026-06-02 -->
+<a href="tel:+13462204052" class="leo-call-bar" data-cta="leo-call"
+   data-en="📞 Call us — 24/7 in English/Spanish"
+   onclick="try{gtag('event','call_click',{'event_category':'contact','event_label':'leo_phone_agent'});}catch(e){}">
+   📞 Llámenos — atención 24/7 en español/inglés
+</a>
+<style>
+.leo-call-bar{display:none}
+@media (max-width:760px){
+  .leo-call-bar{display:flex;align-items:center;justify-content:center;gap:8px;
+    position:fixed;left:12px;right:12px;bottom:14px;z-index:60;
+    padding:14px 18px;border-radius:14px;
+    background:linear-gradient(90deg,#0b1533,#16306b);
+    color:#fff;font-weight:700;font-size:15px;line-height:1.2;text-decoration:none;
+    box-shadow:0 8px 24px rgba(0,0,0,.35);border:1px solid rgba(212,175,55,.55)}
+  .leo-call-bar:active{transform:translateY(1px)}
+  .float-widgets{bottom:84px}
+}
+</style>
 </body>
 </html>
