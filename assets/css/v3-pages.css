@@ -142,3 +142,6 @@ footer a:hover{text-decoration:underline}
 .xlinks-list{display:flex;flex-wrap:wrap;gap:12px}
 .xlinks-list a{font-family:'Sora',sans-serif;font-size:14px;font-weight:700;text-decoration:none;color:var(--blue-300);padding:12px 20px;border:1px solid var(--line);border-radius:99px;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));transition:border-color .3s,transform .2s}
 .xlinks-list a:hover{border-color:rgba(58,120,255,.45);transform:translateY(-2px)}
+
+/* Accesibilidad: respeta la preferencia de movimiento reducido */
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}

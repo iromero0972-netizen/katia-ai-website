@@ -221,12 +221,16 @@ button,input{font-family:inherit}
 /* Right cluster */
 .nav-right{display:flex;align-items:center;gap:18px;flex-shrink:0}
 .lang-switch{display:inline-flex;align-items:center;gap:6px;font-family:'Sora';font-weight:600;font-size:13px;color:var(--ink-mute);user-select:none}
-.lang-switch a{cursor:pointer;padding:4px 2px;transition:.2s;text-decoration:none;color:inherit}
+.lang-switch a{cursor:pointer;padding:8px 8px;transition:.2s;text-decoration:none;color:inherit}
 .lang-switch a.active{color:#6aa0ff;font-weight:700}
 .lang-switch a:not(.active):hover{color:#fff}
 .lang-switch .sep{opacity:.35;font-weight:400}
 
 .nav-burger{display:none;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);color:var(--ink);cursor:pointer;padding:0}
+/* Fila de idioma dentro del menu hamburguesa (se activa <=480px via media query) */
+.nav-menu .nav-menu-lang{display:none;gap:6px;align-items:center;padding:13px 14px;border-top:1px solid rgba(255,255,255,.08);margin-top:4px;font-family:'Sora';font-weight:600;font-size:13px;color:var(--ink-mute)}
+.nav-menu-lang a{cursor:pointer;padding:6px 10px!important;border-radius:8px}
+.nav-menu-lang a.active{color:#6aa0ff;font-weight:700}
 @media (max-width:980px){
   .brand-tag{display:none}
   .nav-burger{display:inline-flex}
@@ -236,17 +240,23 @@ button,input{font-family:inherit}
   .nav-menu a:hover{background:rgba(58,120,255,.1)}
 }
 @media (max-width:560px){
-  .nav-right{gap:10px}
+  .nav-right{gap:8px}
   .nav-right .btn{padding:9px 12px;font-size:11.5px;letter-spacing:.01em}
   .nav-right .btn svg{display:none}
   .brand img{height:30px}
-  .lang-switch{font-size:11.5px;padding:3px 8px}
+  .lang-switch{font-size:11.5px;padding:0 2px}
+}
+@media (max-width:480px){
+  /* El header ya no desborda: ES·EN pasa al menu hamburguesa */
+  .lang-switch{display:none}
+  .nav-menu .nav-menu-lang{display:flex}
+  .nav-right .btn{padding:9px 11px;font-size:11px}
+  .container.nav{gap:10px}
 }
 @media (max-width:380px){
-  .nav-right .btn{padding:8px 10px;font-size:11px}
+  .nav-right .btn{padding:8px 9px;font-size:10.5px}
   .brand img{height:26px}
 }
-
 .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:12px;font-weight:600;font-size:14px;transition:transform .2s,box-shadow .2s;cursor:pointer;border:0;position:relative;overflow:hidden}
 .btn-primary{background:linear-gradient(180deg,#3a78ff,#1f5bff);color:#fff;box-shadow:0 14px 30px -10px rgba(31,91,255,.6)}
 .btn-primary::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.3) 50%,transparent 70%);transform:translateX(-100%);transition:transform .8s}
@@ -604,7 +614,7 @@ body.intro-active .cine-letterbox{height:9vh}
 @media (max-width:560px){.problem-grid{grid-template-columns:1fr}}
 
 /* ===== Empowering ===== */
-.empower{position:relative;padding:140px 0 160px;text-align:center;overflow:hidden}
+.empower{position:relative;padding:110px 0 120px;text-align:center;overflow:hidden}
 .empower-rhombus{position:absolute;width:160px;height:160px;background:linear-gradient(135deg,#3a78ff,#0a1740);transform:rotate(45deg);border-radius:18px;animation:spin 20s linear infinite}
 @keyframes spin{to{transform:rotate(405deg)}}
 .empower-rhombus.l{left:-70px;top:30%}
@@ -1231,7 +1241,7 @@ body.intro-active .cine-letterbox{height:9vh}
 }
 
 /* ===== FAQ · master-detail interactive single-screen ===== */
-.faq{position:relative;padding:70px 0 80px;background:#070d1f;overflow:hidden}
+.faq{position:relative;padding:100px 0 110px;background:#070d1f;overflow:hidden}
 .faq .section-head{margin-bottom:24px}
 .faq .section-head h2{font-size:clamp(28px,3.4vw,46px)}
 .faq-filters{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;max-width:900px;margin:24px auto 28px}
@@ -1521,6 +1531,14 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
 .ceo-video-caption{margin:14px 0 0;font-size:13px;color:var(--ink-mute);text-align:center;line-height:1.5}
 .ceo-video-caption b{color:#fff}
 
+/* FAQ: respuestas pre-renderizadas para indexabilidad (la UI usa el panel interactivo) */
+.faq-a-seo{display:none}
+
+/* Accesibilidad: skip-link y foco visible por teclado */
+.skip-link{position:absolute;left:-9999px;top:0;z-index:300;background:#1f5bff;color:#fff;padding:12px 18px;border-radius:0 0 10px 0;font-weight:600;font-size:14px}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid #6aa0ff;outline-offset:2px}
+
 /* Accesibilidad: respeta la preferencia de movimiento reducido del sistema */
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
@@ -1541,6 +1559,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
 </style></noscript>
 </head>
 <body class="splash-pending">
+<a class="skip-link" href="#contenido" data-en="Skip to content">Saltar al contenido</a>
 
 <!-- SPLASH GATE · ahora opt-in: oculto por defecto, solo visible con ?intro (demos) -->
 <div class="splash-gate" id="splashGate" style="display:none" role="dialog" aria-label="Iniciar experiencia KATIA.AI" data-en-aria="Start KATIA.AI experience">
@@ -1594,6 +1613,11 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
       <a href="#planes" data-en="Pricing">Planes</a>
       <a href="#planes" data-en="Pilot">Piloto</a>
       <a href="#faq" data-en="FAQ">FAQ</a>
+      <div class="nav-menu-lang" aria-label="Idioma" data-en-aria="Language">
+        <a class="active" data-lang="es" role="button" tabindex="0" aria-label="Español">ES</a>
+        <span class="sep">·</span>
+        <a data-lang="en" role="button" tabindex="0" aria-label="English">EN</a>
+      </div>
     </nav>
     <div class="nav-right">
       <button type="button" class="nav-burger" id="navBurger" aria-label="Abrir menú" data-en-aria="Open menu" aria-expanded="false" aria-controls="navMenu">
@@ -1610,7 +1634,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
 </div>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="contenido">
   <!-- HERO_BG_VIDEO_START · borrar este bloque (entre los comentarios START/END) para revertir al hero original -->
   <video class="hero-bg-video" id="heroBgVideo" loop muted playsinline preload="metadata" disablepictureinpicture aria-hidden="true" poster="assets/img/hero-katia-intro-v2-poster.jpg?v=2">
     <source src="assets/img/hero-katia-intro-v2.mp4?v=3" type="video/mp4">
@@ -1662,10 +1686,10 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
       <p class="hero-microcopy" data-en-html='Want to hear our AI in action? Call <a href="tel:+13462204052">+1 346-220-4052</a> and talk to <b>Leo</b>, our voice agent — 24/7 in English and Spanish.'>¿Quiere oír nuestra IA en acción? Llame al <a href="tel:+13462204052">+1 346-220-4052</a> y hable con <b>Leo</b>, nuestro agente de voz — 24/7 en español e inglés.</p>
       <div class="hero-disclaimer">
         <span class="hd-ic">ⓘ</span>
-        <span data-en="KATIA.AI does not replace your CPA, bookkeeper, tax preparer or legal/tax advisor. We organize processes, data, alerts and reports so you and your advisors work with more control.">KATIA.AI no reemplaza a tu CPA, bookkeeper, tax preparer ni asesor legal/fiscal. Organizamos procesos, datos, alertas y reportes para que tú y tus asesores trabajen con más control.</span>
+        <span data-en="KATIA.AI does not replace your CPA, bookkeeper, tax preparer or legal/tax advisor. We organize processes, data, alerts and reports so you and your advisors work with more control.">KATIA.AI no reemplaza a su CPA, bookkeeper, tax preparer ni asesor legal/fiscal. Organizamos procesos, datos, alertas y reportes para que usted y sus asesores trabajen con más control.</span>
       </div>
       <div class="hero-trust">
-        <span data-en="Designed by professionals with 30+ years in administration and finance">Diseñado por profesionales con 30+ años en administración y finanzas</span><span class="sep"></span>
+        <span data-en="Led by Ignacio Romero · 30+ years in administration and finance">Dirigido por Ignacio Romero, Contador Público · 30+ años en administración y finanzas</span><span class="sep"></span>
         <span data-en="Houston Metro, Texas">Houston Metro, Texas</span>
       </div>
     </div>
@@ -1710,7 +1734,24 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
   m.addEventListener('click',function(e){
     if(e.target.closest('a')){m.classList.remove('open');b.setAttribute('aria-expanded','false')}
   });
+  // Escape cierra el menu y devuelve el foco al boton
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&m.classList.contains('open')){
+      m.classList.remove('open');b.setAttribute('aria-expanded','false');b.focus();
+    }
+  });
 })();
+// GA4: form_start al primer foco en el formulario principal (mide abandono vs envio).
+// DOMContentLoaded: #contactForm esta mas abajo en el documento.
+document.addEventListener('DOMContentLoaded',function(){
+  var f=document.getElementById('contactForm');
+  if(!f)return;
+  var fired=false;
+  f.addEventListener('focusin',function(){
+    if(fired)return;fired=true;
+    try{gtag('event','form_start',{'event_category':'lead','event_label':'contact_form'});}catch(e){}
+  });
+});
 </script>
 
 <!-- Cinematic letterbox bars · visible during intro only -->
@@ -1987,28 +2028,28 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
       <a href="#contacto" class="sol tilt reveal">
         <div class="img">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg></div>
-          <img src="assets/img/v3/sol-analytics.jpg" alt="Dashboard de workflow KATIA en laptop" loading="lazy">
+          <img src="assets/img/v3/sol-analytics.webp" alt="Dashboard de workflow KATIA en laptop" loading="lazy">
         </div>
         <div class="body"><h3 data-en-html='Predictive Analytics <span class="ar">→</span>'>Analítica Predictiva <span class="ar">→</span></h3><p data-en="Anticipate sales trends, customer behavior and financial risks before they happen.">Anticipa tendencias de venta, comportamiento de clientes y riesgos financieros antes de que ocurran.</p></div>
       </a>
       <a href="#contacto" class="sol tilt reveal d1">
         <div class="img">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 10v6m11-11h-6m-10 0H1m17.5-6.5l-4.2 4.2m-4.6 4.6L5.5 18.5m13 0l-4.2-4.2m-4.6-4.6L5.5 5.5"/></svg></div>
-          <img src="assets/img/v3/sol-automation.jpg" alt="Mano robótica de IA — automatización" loading="lazy">
+          <img src="assets/img/v3/sol-automation.webp" alt="Mano robótica de IA — automatización" loading="lazy">
         </div>
         <div class="body"><h3 data-en-html='Automation <span class="ar">→</span>'>Automatización <span class="ar">→</span></h3><p data-en="Optimize repetitive tasks with smart bots and workflows that free up your team.">Optimiza tareas repetitivas con bots y workflows inteligentes que liberan a tu equipo.</p></div>
       </a>
       <a href="#contacto" class="sol tilt reveal d2">
         <div class="img">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8z"/></svg></div>
-          <img src="assets/img/v3/sol-nlp.jpg" alt="Conversación con IA en móvil" loading="lazy">
+          <img src="assets/img/v3/sol-nlp.webp" alt="Conversación con IA en móvil" loading="lazy">
         </div>
         <div class="body"><h3 data-en-html='Natural Language <span class="ar">→</span>'>Lenguaje Natural <span class="ar">→</span></h3><p data-en="Serve customers in Spanish/English with AI assistants connected to WhatsApp, email and web.">Atiende clientes en español/inglés con asistentes IA conectados a WhatsApp, email y web.</p></div>
       </a>
       <a href="#contacto" class="sol tilt reveal d3">
         <div class="img">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
-          <img src="assets/img/v3/sol-realtime.jpg" alt="Pantalla de datos en tiempo real" loading="lazy">
+          <img src="assets/img/v3/sol-realtime.webp" alt="Pantalla de datos en tiempo real" loading="lazy">
         </div>
         <div class="body"><h3 data-en-html='Real-Time Data <span class="ar">→</span>'>Datos en Tiempo Real <span class="ar">→</span></h3><p data-en="Executive dashboards with live KPIs for instant, well-informed decisions.">Dashboards ejecutivos con KPIs vivos para decisiones instantáneas y bien informadas.</p></div>
       </a>
@@ -2041,7 +2082,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
         <!-- Food & Catering -->
         <div class="pane active">
           <div class="pane-img">
-            <img src="assets/img/v3/ind-food.jpg" alt="Restaurante mood lighting" loading="lazy">
+            <img src="assets/img/v3/ind-food.webp" alt="Restaurante mood lighting" loading="lazy">
             <div class="head">
               <h5 data-en="Restaurants &amp; catering">Restaurantes &amp; catering</h5>
               <p class="desc" data-en="Orders, inventory, margins, collections and operational documentation under control.">Pedidos, inventario, márgenes, cobros y documentación operativa bajo control.</p>
@@ -2063,7 +2104,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
         <!-- Beauty & Salones -->
         <div class="pane">
           <div class="pane-img">
-            <img src="assets/img/v3/ind-beauty.jpg" alt="Salón moderno" loading="lazy">
+            <img src="assets/img/v3/ind-beauty.webp" alt="Salón moderno" loading="lazy">
             <div class="head">
               <h5 data-en="Salons &amp; beauty">Salones &amp; beauty</h5>
               <p class="desc" data-en="No-shows, scheduling, repeat customers and automated reminders.">No-shows, agenda, clientes recurrentes y recordatorios automatizados.</p>
@@ -2085,7 +2126,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
         <!-- Contractors & Servicios -->
         <div class="pane">
           <div class="pane-img">
-            <img src="assets/img/v3/ind-contractors.jpg" alt="Construcción golden hour" loading="lazy">
+            <img src="assets/img/v3/ind-contractors.webp" alt="Construcción golden hour" loading="lazy">
             <div class="head">
               <h5 data-en="Contractors &amp; services">Contractors &amp; servicios</h5>
               <p class="desc" data-en="Quotes, follow-up, payments, materials and project documentation.">Cotizaciones, seguimiento, pagos, materiales y documentación del proyecto.</p>
@@ -2107,7 +2148,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
         <!-- E-Commerce / Retail -->
         <div class="pane">
           <div class="pane-img">
-            <img src="assets/img/v3/ind-ecommerce.jpg" alt="Almacén logístico" loading="lazy">
+            <img src="assets/img/v3/ind-ecommerce.webp" alt="Almacén logístico" loading="lazy">
             <div class="head">
               <h5 data-en="Retail &amp; e-commerce">Retail &amp; e-commerce</h5>
               <p class="desc" data-en="Inventory, sales, returns, margins and consolidated reports.">Inventario, ventas, devoluciones, márgenes y reportes consolidados.</p>
@@ -2129,7 +2170,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
         <!-- Servicios Profesionales -->
         <div class="pane">
           <div class="pane-img">
-            <img src="assets/img/v3/ind-professional.jpg" alt="Sala de juntas moderna" loading="lazy">
+            <img src="assets/img/v3/ind-professional.webp" alt="Sala de juntas moderna" loading="lazy">
             <div class="head">
               <h5 data-en="Professional services">Servicios profesionales</h5>
               <p class="desc" data-en="Leads, scheduling, billing, follow-up and documents per client.">Leads, agenda, facturación, seguimiento y documentos por cliente.</p>
@@ -2224,7 +2265,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
     <!-- Mensaje del CEO · clic para reproducir (no autoplay: tiene voz; preload none = 0 bytes hasta el clic) -->
     <div class="ceo-video-wrap reveal d1">
       <div class="ceo-video-card" id="ceoVideoCard">
-        <video id="ceoIntroClip" controls playsinline preload="none" poster="assets/img/ceo-intro-poster.jpg">
+        <video id="ceoIntroClip" playsinline preload="none" poster="assets/img/ceo-intro-poster.jpg">
           <source src="assets/img/ceo-intro.mp4" type="video/mp4">
         </video>
         <button type="button" class="ceo-play" id="ceoPlayBtn" aria-label="Reproducir mensaje del CEO" data-en-aria="Play the CEO message">
@@ -2244,6 +2285,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
       });
       v.addEventListener('play',function(){
         card.classList.add('playing');
+        v.setAttribute('controls',''); // una sola affordance: controles nativos aparecen al reproducir
         // Pausa los videos ambientales para no competir con la voz del CEO
         document.querySelectorAll('video').forEach(function(o){if(o!==v&&!o.paused)o.pause()});
       });
@@ -2401,14 +2443,14 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
         <div class="comp-visual">
           <div class="cv-customer">
             <div class="top">
-              <div class="avatar">AM</div>
-              <div class="info"><b>Andy M.</b><span data-en="Owner · Andy&rsquo;s Bakery · Katy, TX">Owner · Andy's Bakery · Katy, TX</span></div>
+              <div class="avatar">PT</div>
+              <div class="info"><b data-en="Typical profile · illustrative">Perfil tipo · ilustrativo</b><span data-en="Owner · Bakery · Houston Metro, TX">Dueño · Panadería · Houston Metro, TX</span></div>
             </div>
             <div class="check">
-              <div data-en="$148K/mo sales · 3 years operating">Ventas $148K/mes · 3 años operando</div>
-              <div data-en="Wanted to see real weekly profit">Quería ver utilidad real semanal</div>
-              <div data-en="Ready to open 2nd location">Listo para abrir 2da ubicación</div>
-              <div data-en="Accepted KATIA plan in 1 meeting">Aceptó plan KATIA en 1 reunión</div>
+              <div data-en="Recurring monthly sales · 3+ years operating">Ventas mensuales recurrentes · 3+ años operando</div>
+              <div data-en="Wants to see real weekly profit">Quiere ver utilidad real semanal</div>
+              <div data-en="Ready to open a 2nd location">Listo para abrir 2da ubicación</div>
+              <div data-en="Willing to invest 2 hrs/week in control">Dispuesto a invertir 2 h/semana en control</div>
             </div>
           </div>
         </div>
@@ -2456,15 +2498,15 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
     <div class="houston-grid">
       <div class="houston-card reveal">
         <span class="houston-badge">Houston · TX</span>
-        <img src="assets/img/v3/houston-skyline.jpg" alt="Equipo KATIA diverso en Houston · Una ciudad, todos orígenes" loading="lazy">
+        <img src="assets/img/v3/houston-skyline.webp" alt="Equipo KATIA diverso en Houston · Una ciudad, todos orígenes" loading="lazy">
       </div>
       <div class="houston-card reveal d1">
         <span class="houston-badge" data-en="Diverse team">Equipo diverso</span>
-        <img src="assets/img/v3/houston-team.jpg" alt="Líderes KATIA · Diferentes historias, un mismo objetivo · Houston, TX" loading="lazy">
+        <img src="assets/img/v3/houston-team.webp" alt="Líderes KATIA · Diferentes historias, un mismo objetivo · Houston, TX" loading="lazy">
       </div>
       <div class="houston-card reveal d2">
         <span class="houston-badge" data-en="Hispanic SMB leader">Líder PYME hispana</span>
-        <img src="assets/img/v3/houston-owner.jpg" alt="Dueño de PYME hispano en Houston · IA que trabaja tan duro como tú" loading="lazy">
+        <img src="assets/img/v3/houston-owner.webp" alt="Dueño de PYME hispano en Houston · IA que trabaja tan duro como tú" loading="lazy">
       </div>
     </div>
 
@@ -2672,7 +2714,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow" data-en-html='<span class="dot"></span>Founders Program · Launch'><span class="dot"></span>Programa Founders · Lanzamiento</span>
-      <h2 data-en-html='Start with the <span class="g">free diagnosis.</span><br>Then choose your control level.'>Empieza con el <span class="g">diagnóstico gratis.</span><br>Después elige tu nivel de control.</h2>
+      <h2 data-en-html='Start with the <span class="g">free diagnosis.</span><br>Then choose your control level.'>Empiece con el <span class="g">diagnóstico gratis.</span><br>Después elija su nivel de control.</h2>
       <p data-en="Investment depends on the level of disorder, integrations and scope. We recommend starting with the flow that most affects cash, documents or visibility.">La inversión depende del nivel de desorden, integraciones y alcance. Recomendamos iniciar por el flujo que más afecta caja, documentos o visibilidad.</p>
     </div>
 
@@ -2772,7 +2814,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
     <!-- Transparency note -->
     <div class="pricing-note reveal d2">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      <span data-en-html='<b>Transparency:</b> KATIA.AI organizes and automates information. It does not replace your CPA, bookkeeper, tax preparer or legal/tax advisor — we work as a control layer over your existing team. All plans are month-to-month, with no long contracts. Your data is always exportable to Excel, QuickBooks or NetSuite.'><b>Transparencia:</b> KATIA.AI organiza y automatiza información. No reemplaza al CPA, bookkeeper, tax preparer o asesor legal/fiscal — trabajamos como capa de control sobre tu equipo existente. Todos los planes son mes a mes, sin contratos largos. Tus datos siempre son exportables a Excel, QuickBooks o NetSuite.</span>
+      <span data-en-html='<b>Transparency:</b> KATIA.AI organizes and automates information. It does not replace your CPA, bookkeeper, tax preparer or legal/tax advisor — we work as a control layer over your existing team. All plans are month-to-month, with no long contracts. Your data is always exportable to Excel, QuickBooks or NetSuite.'><b>Transparencia:</b> KATIA.AI organiza y automatiza información. No reemplaza al CPA, bookkeeper, tax preparer o asesor legal/fiscal — trabajamos como capa de control sobre su equipo existente. Todos los planes son mes a mes, sin contratos largos. Sus datos siempre son exportables a Excel, QuickBooks o NetSuite.</span>
     </div>
   </div>
 </section>
@@ -2804,6 +2846,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
              data-a='<p>No. KATIA.AI es una <b>capa de control empresarial</b> impulsada por IA — específicamente diseñada para resolver desorden administrativo, contable, financiero y fiscal de PYMEs hispanas. No hacemos campañas, posicionamiento ni redes sociales.</p>'
              data-a-en='<p>No. KATIA.AI is an AI-powered <b>business control layer</b> — specifically designed to solve administrative, accounting, financial and tax disorder for Hispanic SMBs. We don&rsquo;t run campaigns, positioning or social media.</p>'>
           <div class="faq-q"><div class="qh"><span class="cat-tag" data-en="General">General</span><h4 data-en="Is KATIA.AI a marketing agency?">¿KATIA.AI es una agencia de marketing?</h4></div><div class="arr">›</div></div>
+          <div class="faq-a-seo"><p>No. KATIA.AI es una <b>capa de control empresarial</b> impulsada por IA — específicamente diseñada para resolver desorden administrativo, contable, financiero y fiscal de PYMEs hispanas. No hacemos campañas, posicionamiento ni redes sociales.</p></div>
         </div>
 
         <div class="faq-item" data-cat="general" data-cat-label="General" data-cat-label-en="General"
@@ -2812,6 +2855,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
              data-a='<p>PYMEs con <b>$200K–$5M de revenue anual</b> que ya tienen operación viva pero todavía controlan sus números con Excel, WhatsApp y memoria del dueño. Sectores que mejor servimos:</p><ul><li>Restaurantes &amp; catering</li><li>Contractors &amp; servicios del hogar</li><li>Beauty &amp; salones</li><li>Retail físico / E-commerce</li><li>Servicios profesionales y clínicas</li></ul>'
              data-a-en='<p>SMBs with <b>$200K–$5M annual revenue</b> that have a live operation but still control their numbers with Excel, WhatsApp and the owner&rsquo;s memory. Sectors we serve best:</p><ul><li>Restaurants &amp; catering</li><li>Contractors &amp; home services</li><li>Beauty &amp; salons</li><li>Physical retail / E-commerce</li><li>Professional services and clinics</li></ul>'>
           <div class="faq-q"><div class="qh"><span class="cat-tag" data-en="General">General</span><h4 data-en="What types of companies is this for?">¿Para qué tipo de empresas aplica?</h4></div><div class="arr">›</div></div>
+          <div class="faq-a-seo"><p>PYMEs con <b>$200K–$5M de revenue anual</b> que ya tienen operación viva pero todavía controlan sus números con Excel, WhatsApp y memoria del dueño. Sectores que mejor servimos:</p><ul><li>Restaurantes &amp; catering</li><li>Contractors &amp; servicios del hogar</li><li>Beauty &amp; salones</li><li>Retail físico / E-commerce</li><li>Servicios profesionales y clínicas</li></ul></div>
         </div>
 
         <div class="faq-item" data-cat="general" data-cat-label="General" data-cat-label-en="General"
@@ -2820,6 +2864,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
              data-a='<p><b>Español e inglés</b>, 100% bilingüe. Reportes, alertas, soporte, agente IA — todo en el idioma que el dueño prefiera. Sede operativa en Houston, Texas, atendiendo a Houston Metro: Katy, Cypress, Sugar Land, Pearland, Energy Corridor, Heights.</p>'
              data-a-en='<p><b>Spanish and English</b>, 100% bilingual. Reports, alerts, support, AI agent — everything in the language the owner prefers. Operating base in Houston, Texas, serving Houston Metro: Katy, Cypress, Sugar Land, Pearland, Energy Corridor, Heights.</p>'>
           <div class="faq-q"><div class="qh"><span class="cat-tag" data-en="General">General</span><h4 data-en="What languages do you work in?">¿En qué idioma trabajan?</h4></div><div class="arr">›</div></div>
+          <div class="faq-a-seo"><p><b>Español e inglés</b>, 100% bilingüe. Reportes, alertas, soporte, agente IA — todo en el idioma que el dueño prefiera. Sede operativa en Houston, Texas, atendiendo a Houston Metro: Katy, Cypress, Sugar Land, Pearland, Energy Corridor, Heights.</p></div>
         </div>
 
         <div class="faq-item" data-cat="implementacion" data-cat-label="Implementación" data-cat-label-en="Implementation"
@@ -2828,6 +2873,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
              data-a='<p><b>Diagnóstico:</b> 30 minutos.<br><b>Mapa IA + roadmap:</b> 3-5 días.<br><b>Primera automatización en vivo:</b> 4-8 semanas dependiendo del plan.<br>Verás los primeros reportes ejecutivos en las primeras 2 semanas.</p>'
              data-a-en='<p><b>Diagnosis:</b> 30 minutes.<br><b>AI roadmap:</b> 3-5 days.<br><b>First live automation:</b> 4-8 weeks depending on plan.<br>You&rsquo;ll see the first executive reports within the first 2 weeks.</p>'>
           <div class="faq-q"><div class="qh"><span class="cat-tag" data-en="Implementation">Implementación</span><h4 data-en="How long does an implementation take?">¿Cuánto tarda una implementación?</h4></div><div class="arr">›</div></div>
+          <div class="faq-a-seo"><p><b>Diagnóstico:</b> 30 minutos.<br><b>Mapa IA + roadmap:</b> 3-5 días.<br><b>Primera automatización en vivo:</b> 4-8 semanas dependiendo del plan.<br>Verás los primeros reportes ejecutivos en las primeras 2 semanas.</p></div>
         </div>
 
         <div class="faq-item" data-cat="implementacion" data-cat-label="Implementación" data-cat-label-en="Implementation"
@@ -2836,6 +2882,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
              data-a='<p>Cuatro fases claras:</p><ul><li><b>Diagnóstico</b> · sesión gratis de 30 min con el dueño</li><li><b>Mapa IA</b> · plan detallado con prioridades y ROI esperado (3-5 días)</li><li><b>Implementación</b> · workflows + dashboards + agentes IA (4-8 semanas)</li><li><b>Mejora continua</b> · monitoreo mensual + ajustes + reportes ejecutivos</li></ul>'
              data-a-en='<p>Four clear phases:</p><ul><li><b>Diagnosis</b> · free 30-min session with the owner</li><li><b>AI Roadmap</b> · detailed plan with priorities and expected ROI (3-5 days)</li><li><b>Implementation</b> · workflows + dashboards + AI agents (4-8 weeks)</li><li><b>Continuous improvement</b> · monthly monitoring + adjustments + executive reports</li></ul>'>
           <div class="faq-q"><div class="qh"><span class="cat-tag" data-en="Implementation">Implementación</span><h4 data-en="What does the onboarding process look like?">¿Cómo es el proceso de onboarding?</h4></div><div class="arr">›</div></div>
+          <div class="faq-a-seo"><p>Cuatro fases claras:</p><ul><li><b>Diagnóstico</b> · sesión gratis de 30 min con el dueño</li><li><b>Mapa IA</b> · plan detallado con prioridades y ROI esperado (3-5 días)</li><li><b>Implementación</b> · workflows + dashboards + agentes IA (4-8 semanas)</li><li><b>Mejora continua</b> · monitoreo mensual + ajustes + reportes ejecutivos</li></ul></div>
         </div>
 
         <div class="faq-item" data-cat="implementacion" data-cat-label="Implementación" data-cat-label-en="Implementation"
@@ -2844,6 +2891,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
              data-a='<p>Mínimo. El diagnóstico inicial son <b>30 minutos</b>. Durante la implementación necesitamos del dueño aproximadamente <b>1-2 horas por semana</b> en las primeras 4 semanas (validar reglas de negocio, criterios de clasificación, alertas relevantes). Después, baja a 30-60 minutos semanales para revisar reportes ejecutivos.</p>'
              data-a-en='<p>Minimal. The initial diagnosis is <b>30 minutes</b>. During implementation we need approximately <b>1-2 hours per week</b> from the owner in the first 4 weeks (validating business rules, classification criteria, relevant alerts). After that, it drops to 30-60 minutes weekly to review executive reports.</p>'>
           <div class="faq-q"><div class="qh"><span class="cat-tag" data-en="Implementation">Implementación</span><h4 data-en="How much owner time does the implementation need?">¿Cuánto tiempo del dueño necesita la implementación?</h4></div><div class="arr">›</div></div>
+          <div class="faq-a-seo"><p>Mínimo. El diagnóstico inicial son <b>30 minutos</b>. Durante la implementación necesitamos del dueño aproximadamente <b>1-2 horas por semana</b> en las primeras 4 semanas (validar reglas de negocio, criterios de clasificación, alertas relevantes). Después, baja a 30-60 minutos semanales para revisar reportes ejecutivos.</p></div>
         </div>
 
         <div class="faq-item" data-cat="implementacion" data-cat-label="Implementación" data-cat-label-en="Implementation"
@@ -2852,6 +2900,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
              data-a='<p>No. KATIA <b>se conecta a lo que ya usa</b>: QuickBooks, Xero, Square, Shopify, Stripe, su banco, Google Sheets, WhatsApp Business, Google Drive, Outlook. No le pedimos cambiar de software contable — le pedimos dejar de operar a ciegas. La capa KATIA suma encima.</p>'
              data-a-en='<p>No. KATIA <b>connects to what you already use</b>: QuickBooks, Xero, Square, Shopify, Stripe, your bank, Google Sheets, WhatsApp Business, Google Drive, Outlook. We don&rsquo;t ask you to switch accounting software — we ask you to stop operating in the dark. The KATIA layer sits on top.</p>'>
           <div class="faq-q"><div class="qh"><span class="cat-tag" data-en="Implementation">Implementación</span><h4 data-en="What tools do you use? Do I have to change my systems?">¿Qué herramientas usan? ¿Tengo que cambiar mis sistemas?</h4></div><div class="arr">›</div></div>
+          <div class="faq-a-seo"><p>No. KATIA <b>se conecta a lo que ya usa</b>: QuickBooks, Xero, Square, Shopify, Stripe, su banco, Google Sheets, WhatsApp Business, Google Drive, Outlook. No le pedimos cambiar de software contable — le pedimos dejar de operar a ciegas. La capa KATIA suma encima.</p></div>
         </div>
 
         <div class="faq-item" data-cat="tarifas" data-cat-label="Tarifas" data-cat-label-en="Pricing"
@@ -2860,6 +2909,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
              data-a='<p>Excel registra. QuickBooks contabiliza. <b>Ninguno controla.</b> KATIA es la capa que conecta sus datos con alertas accionables: "vas a quedar sin caja en 14 días", "merma de $4,820 detectada", "factura #387 está atrasada 45 días". Eso es lo que paga por sí solo en el primer mes.</p>'
              data-a-en='<p>Excel records. QuickBooks bookkeeps. <b>Neither controls.</b> KATIA is the layer that connects your data with actionable alerts: "you&rsquo;ll run out of cash in 14 days", "$4,820 in waste detected", "invoice #387 is 45 days overdue". That&rsquo;s what pays for itself in the first month.</p>'>
           <div class="faq-q"><div class="qh"><span class="cat-tag" data-en="Pricing">Tarifas</span><h4 data-en="Why pay if I already use Excel or QuickBooks?">¿Por qué pagar si ya uso Excel o QuickBooks?</h4></div><div class="arr">›</div></div>
+          <div class="faq-a-seo"><p>Excel registra. QuickBooks contabiliza. <b>Ninguno controla.</b> KATIA es la capa que conecta sus datos con alertas accionables: "vas a quedar sin caja en 14 días", "merma de $4,820 detectada", "factura #387 está atrasada 45 días". Eso es lo que paga por sí solo en el primer mes.</p></div>
         </div>
 
         <div class="faq-item" data-cat="tarifas" data-cat-label="Tarifas" data-cat-label-en="Pricing"
@@ -2868,6 +2918,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
              data-a='<p>Todos los planes son <b>mes a mes</b>, sin contratos largos ni penalidades. Cancelas cuando quieras con 30 días de aviso. Tus datos son tuyos y los exportamos a Excel/QuickBooks/NetSuite en <b>menos de 48 horas</b> si decides irte. Sin pleitos, sin lock-in.</p>'
              data-a-en='<p>All plans are <b>month-to-month</b>, with no long contracts or penalties. Cancel anytime with 30 days notice. Your data is yours and we export it to Excel/QuickBooks/NetSuite in <b>less than 48 hours</b> if you decide to leave. No disputes, no lock-in.</p>'>
           <div class="faq-q"><div class="qh"><span class="cat-tag" data-en="Pricing">Tarifas</span><h4 data-en="What happens if I need to cancel?">¿Qué pasa si necesito cancelar?</h4></div><div class="arr">›</div></div>
+          <div class="faq-a-seo"><p>Todos los planes son <b>mes a mes</b>, sin contratos largos ni penalidades. Cancelas cuando quieras con 30 días de aviso. Tus datos son tuyos y los exportamos a Excel/QuickBooks/NetSuite en <b>menos de 48 horas</b> si decides irte. Sin pleitos, sin lock-in.</p></div>
         </div>
 
         <div class="faq-item" data-cat="tarifas" data-cat-label="Tarifas" data-cat-label-en="Pricing"
@@ -2876,6 +2927,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
              data-a='<p><b>Sí, eso es exactamente lo que hacemos.</b> KATIA trabaja como capa sobre tu CPA, bookkeeper y tax preparer existentes — no los reemplaza. Le damos a tu contador datos limpios, clasificados y auditables, lo que reduce sus horas y honorarios. Datos limpios y clasificados suelen reducir las horas facturables de tu contador — el objetivo del programa es que KATIA se pague con ese ahorro.</p>'
              data-a-en='<p><b>Yes, that&rsquo;s exactly what we do.</b> KATIA works as a layer over your existing CPA, bookkeeper and tax preparer — it does not replace them. We give your accountant clean, classified and auditable data, which reduces their hours and fees. Clean, classified data usually reduces your accountant&rsquo;s billable hours — the goal of the program is for KATIA to pay for itself with those savings.</p>'>
           <div class="faq-q"><div class="qh"><span class="cat-tag" data-en="Pricing">Tarifas</span><h4 data-en="Can you integrate with my current accountant?">¿Pueden integrarse con mi contador actual?</h4></div><div class="arr">›</div></div>
+          <div class="faq-a-seo"><p><b>Sí, eso es exactamente lo que hacemos.</b> KATIA trabaja como capa sobre tu CPA, bookkeeper y tax preparer existentes — no los reemplaza. Le damos a tu contador datos limpios, clasificados y auditables, lo que reduce sus horas y honorarios. Datos limpios y clasificados suelen reducir las horas facturables de tu contador — el objetivo del programa es que KATIA se pague con ese ahorro.</p></div>
         </div>
 
         <div class="faq-item" data-cat="datos" data-cat-label="Datos" data-cat-label-en="Data"
@@ -2884,6 +2936,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
              data-a='<p><b>Nunca.</b> KATIA organiza, automatiza y alerta — pero todas las decisiones que mueven dinero o tienen impacto legal pasan por el dueño y por su CPA/bookkeeper/tax preparer. Nuestro <b>audit trail</b> registra cada acción para que sea trazable y auditable por IRS si fuera necesario.</p>'
              data-a-en='<p><b>Never.</b> KATIA organizes, automates and alerts — but all decisions that move money or have legal impact go through the owner and their CPA/bookkeeper/tax preparer. Our <b>audit trail</b> records every action so it&rsquo;s traceable and auditable by the IRS if needed.</p>'>
           <div class="faq-q"><div class="qh"><span class="cat-tag" data-en="Data">Datos</span><h4 data-en="Does the AI make financial or tax decisions on its own?">¿La IA toma decisiones financieras o fiscales sola?</h4></div><div class="arr">›</div></div>
+          <div class="faq-a-seo"><p><b>Nunca.</b> KATIA organiza, automatiza y alerta — pero todas las decisiones que mueven dinero o tienen impacto legal pasan por el dueño y por su CPA/bookkeeper/tax preparer. Nuestro <b>audit trail</b> registra cada acción para que sea trazable y auditable por IRS si fuera necesario.</p></div>
         </div>
 
         <div class="faq-item" data-cat="datos" data-cat-label="Datos" data-cat-label-en="Data"
@@ -2892,6 +2945,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
              data-a='<p>Tus datos viven en <b>infraestructura de US (AWS · Texas region)</b> con encriptación AES-256 en reposo y TLS 1.3 en tránsito, y acceso únicamente por roles autorizados con MFA obligatorio. <b>Nunca</b> vendemos ni compartimos tu información con terceros.</p>'
              data-a-en='<p>Your data lives in <b>US infrastructure (AWS · Texas region)</b> with AES-256 encryption at rest and TLS 1.3 in transit, with access restricted to authorized roles under mandatory MFA. We <b>never</b> sell or share your information with third parties.</p>'>
           <div class="faq-q"><div class="qh"><span class="cat-tag" data-en="Data">Datos</span><h4 data-en="What about my data? Is it secure?">¿Qué pasa con mis datos? ¿Son seguros?</h4></div><div class="arr">›</div></div>
+          <div class="faq-a-seo"><p>Tus datos viven en <b>infraestructura de US (AWS · Texas region)</b> con encriptación AES-256 en reposo y TLS 1.3 en tránsito, y acceso únicamente por roles autorizados con MFA obligatorio. <b>Nunca</b> vendemos ni compartimos tu información con terceros.</p></div>
         </div>
       </div>
 
@@ -2934,12 +2988,12 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
       <form class="cf-form reveal d1" id="contactForm" onsubmit="return katiaSubmitLead(event)">
         <input type="text" class="cf-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none">
         <div class="cf-row">
-          <input class="cf-input" type="text" name="nombre" placeholder="Nombre completo" data-en-placeholder="Full name" required>
-          <input class="cf-input" type="text" name="empresa" placeholder="Empresa" data-en-placeholder="Company" required>
+          <input class="cf-input" type="text" name="nombre" autocomplete="name" aria-label="Nombre completo" data-en-aria="Full name" placeholder="Nombre completo" data-en-placeholder="Full name" required>
+          <input class="cf-input" type="text" name="empresa" autocomplete="organization" aria-label="Empresa" data-en-aria="Company" placeholder="Empresa" data-en-placeholder="Company" required>
         </div>
         <div class="cf-row">
-          <input class="cf-input" type="email" name="email" placeholder="Correo corporativo" data-en-placeholder="Business email" required>
-          <input class="cf-input" type="tel" name="telefono" placeholder="Teléfono / WhatsApp" data-en-placeholder="Phone / WhatsApp">
+          <input class="cf-input" type="email" name="email" autocomplete="email" aria-label="Correo corporativo" data-en-aria="Business email" placeholder="Correo corporativo" data-en-placeholder="Business email" required>
+          <input class="cf-input" type="tel" name="telefono" autocomplete="tel" aria-label="Teléfono o WhatsApp" data-en-aria="Phone or WhatsApp" placeholder="Teléfono / WhatsApp" data-en-placeholder="Phone / WhatsApp">
         </div>
         <div class="cf-row">
           <select class="cf-select" name="sector" required>
@@ -2979,12 +3033,12 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
   <div class="container">
     <h5 data-en-html='Follow us · <a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" style="color:#6aa0ff">@katia.ai_</a> on Instagram'>Síguenos · <a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" style="color:#6aa0ff">@katia.ai_</a> en Instagram</h5>
     <div class="insta-grid">
-      <a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" class="insta-tile"><img src="assets/img/v3/ig-1-cube.jpg" alt="Post KATIA · IA arquitectura datos" loading="lazy"></a>
-      <a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" class="insta-tile"><img src="assets/img/v3/ig-2-robot.jpg" alt="Post KATIA · automatización" loading="lazy"></a>
-      <a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" class="insta-tile"><img src="assets/img/v3/ig-3-circuit.jpg" alt="Post KATIA · infraestructura" loading="lazy"></a>
-      <a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" class="insta-tile"><img src="assets/img/v3/ig-4-handshake.jpg" alt="Post KATIA · IA + humano" loading="lazy"></a>
-      <a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" class="insta-tile"><img src="assets/img/v3/ig-5-hand-ai.jpg" alt="Post KATIA · interfaz IA" loading="lazy"></a>
-      <a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" class="insta-tile"><img src="assets/img/v3/ig-6-equations.jpg" alt="Post KATIA · criterio contable" loading="lazy"></a>
+      <a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" class="insta-tile"><img src="assets/img/v3/ig-1-cube.webp" alt="Post KATIA · IA arquitectura datos" loading="lazy"></a>
+      <a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" class="insta-tile"><img src="assets/img/v3/ig-2-robot.webp" alt="Post KATIA · automatización" loading="lazy"></a>
+      <a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" class="insta-tile"><img src="assets/img/v3/ig-3-circuit.webp" alt="Post KATIA · infraestructura" loading="lazy"></a>
+      <a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" class="insta-tile"><img src="assets/img/v3/ig-4-handshake.webp" alt="Post KATIA · IA + humano" loading="lazy"></a>
+      <a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" class="insta-tile"><img src="assets/img/v3/ig-5-hand-ai.webp" alt="Post KATIA · interfaz IA" loading="lazy"></a>
+      <a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" class="insta-tile"><img src="assets/img/v3/ig-6-equations.webp" alt="Post KATIA · criterio contable" loading="lazy"></a>
     </div>
     <div class="insta-handle" data-en="@katia.ai_ · AI tips, real cases and Hispanic SMB growth">@katia.ai_ · Tips de IA, casos reales y crecimiento de PYMEs hispanas</div>
   </div>
@@ -3020,7 +3074,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
         <a href="metodologia.html" data-en="Methodology">Metodología</a>
         <a href="casos.html" data-en="Case studies">Casos de éxito</a>
         <a href="recursos.html" data-en="Resources">Recursos</a>
-        <a href="consulta.html" data-en="Request a consultation">Solicitar consulta</a>
+        <a href="consulta.html" data-href-en="consultation.html" data-en="Request a consultation">Solicitar consulta</a>
       </div>
       <div>
         <h5 data-en="Industries">Industrias</h5>
@@ -3572,6 +3626,12 @@ function applyI18n(lang){
     const v=lang==='en'?el.dataset.enAria:el.dataset.esAria;
     if(v!=null)el.setAttribute('aria-label',v);
   });
+  // href swap (enlaces con version por idioma, p.ej. consulta.html <-> consultation.html)
+  document.querySelectorAll('[data-href-en]').forEach(el=>{
+    if(!el.hasAttribute('data-href-es'))el.setAttribute('data-href-es',el.getAttribute('href'));
+    const v=lang==='en'?el.dataset.hrefEn:el.dataset.hrefEs;
+    if(v!=null)el.setAttribute('href',v);
+  });
   // <title> + meta description
   const t=I18N.meta[lang];
   if(t){
@@ -3587,28 +3647,31 @@ function applyI18n(lang){
   try{localStorage.setItem('katia_lang',lang)}catch(e){}
 }
 
-const langSwitch=document.getElementById('langSwitch');
-if(langSwitch){
-  langSwitch.addEventListener('click',function(e){
+// Idioma: delegado a nivel documento para cubrir el switch del header Y el del menu hamburguesa
+function setLangUI(lang){
+  document.querySelectorAll('.lang-switch a[data-lang],.nav-menu-lang a[data-lang]').forEach(x=>x.classList.toggle('active',x.dataset.lang===lang));
+}
+{
+  document.addEventListener('click',function(e){
     const a=e.target.closest('a[data-lang]');
     if(!a)return;
-    langSwitch.querySelectorAll('a').forEach(x=>x.classList.toggle('active',x===a));
+    setLangUI(a.dataset.lang);
     applyI18n(a.dataset.lang);
   });
   // Accesible por teclado (Enter/Espacio)
-  langSwitch.addEventListener('keydown',function(e){
+  document.addEventListener('keydown',function(e){
     if(e.key!=='Enter'&&e.key!==' ')return;
     const a=e.target.closest('a[data-lang]');
     if(!a)return;
     e.preventDefault();
-    langSwitch.querySelectorAll('a').forEach(x=>x.classList.toggle('active',x===a));
+    setLangUI(a.dataset.lang);
     applyI18n(a.dataset.lang);
   });
   // Restore preference
   let saved='es';
   try{saved=localStorage.getItem('katia_lang')||'es'}catch(e){}
   if(saved==='en'){
-    langSwitch.querySelectorAll('a').forEach(x=>x.classList.toggle('active',x.dataset.lang==='en'));
+    setLangUI('en');
     // Defer to ensure FAQ data-attrs are present
     setTimeout(()=>applyI18n('en'),0);
   }
@@ -3767,7 +3830,7 @@ if(navLinks.length){
 const rev=document.getElementById('rev'),hrs=document.getElementById('hrs'),ind=document.getElementById('ind');
 const lblRev=document.getElementById('lblRev'),lblHrs=document.getElementById('lblHrs'),lblInd=document.getElementById('lblInd');
 const oHrs=document.getElementById('oHrs'),oProfit=document.getElementById('oProfit'),oTotal=document.getElementById('oTotal');
-const indNamesES=['Food & Catering','Beauty & Salones','Contractors','E-Commerce / Retail','Servicios Profesionales'];
+const indNamesES=['Restaurantes & Catering','Belleza & Salones','Construcción & Servicios','Retail & E-Commerce','Servicios Profesionales'];
 const indNamesEN=['Restaurants & Catering','Salons & Beauty','Contractors','Retail & E-Commerce','Professional Services'];
 const indProfit=[0.06,0.05,0.04,0.045,0.055];
 function fillSlider(s){
@@ -3922,7 +3985,7 @@ updateRoi();
 
 <div class="katia-chat" id="katiaChat" role="dialog" aria-label="KATIA chat">
   <div class="chat-header">
-    <div class="chat-avatar"><img src="assets/img/katia-logo-icon.svg" alt="KATIA" decoding="async" width="34" height="34" onerror="this.style.display='none';this.parentNode.textContent='K'"></div>
+    <div class="chat-avatar"><img src="assets/img/katia-logo-icon.svg" alt="" decoding="async" width="34" height="34" onerror="this.style.display='none';this.parentNode.textContent='K'"></div>
     <div class="chat-header-text">
       <h4 data-en="Hi, I&rsquo;m KATIA">Hola, soy KATIA</h4>
       <p data-en="Where is your business losing control?">¿Dónde pierde control su negocio?</p>
@@ -3937,7 +4000,7 @@ updateRoi();
   </div>
   <div id="katiaChatBody">
     <div class="chat-msg">
-      <div class="msg-avatar"><img src="assets/img/katia-logo-icon.svg" alt="KATIA" decoding="async" width="34" height="34" onerror="this.style.display='none';this.parentNode.textContent='K'"></div>
+      <div class="msg-avatar"><img src="assets/img/katia-logo-icon.svg" alt="" decoding="async" width="34" height="34" onerror="this.style.display='none';this.parentNode.textContent='K'"></div>
       <div class="msg-bubble" data-en="Hi, I&rsquo;m KATIA&rsquo;s assistant. Where is your business losing the most time or control today? Pick an option or just tell me.">Hola, soy el asistente de KATIA. ¿Dónde pierde más tiempo o control su negocio hoy? Elija una opción o cuénteme.</div>
     </div>
   </div>
@@ -3996,7 +4059,7 @@ function sendKatiaMsg(){
   const typingLabel=lang==='en'?'typing…':'escribiendo…';
   body.insertAdjacentHTML('beforeend',
     '<div class="chat-msg" id="'+typingId+'">'+
-      '<div class="msg-avatar"><img src="assets/img/katia-logo-icon.svg" alt="KATIA" width="18" height="18" onerror="this.style.display=\'none\';this.parentNode.textContent=\'K\'"></div>'+
+      '<div class="msg-avatar"><img src="assets/img/katia-logo-icon.svg" alt="" width="18" height="18" onerror="this.style.display=\'none\';this.parentNode.textContent=\'K\'"></div>'+
       '<div class="msg-bubble"><em>'+typingLabel+'</em></div>'+
     '</div>');
   body.scrollTop=body.scrollHeight;
@@ -4031,12 +4094,13 @@ function sendKatiaMsg(){
     if(typing)typing.remove();
     const replyText=(data&&data.response)?String(data.response):errorPrefix;
     let html='<div class="chat-msg">'+
-      '<div class="msg-avatar"><img src="assets/img/katia-logo-icon.svg" alt="KATIA" width="18" height="18" onerror="this.style.display=\'none\';this.parentNode.textContent=\'K\'"></div>'+
+      '<div class="msg-avatar"><img src="assets/img/katia-logo-icon.svg" alt="" width="18" height="18" onerror="this.style.display=\'none\';this.parentNode.textContent=\'K\'"></div>'+
       '<div class="msg-bubble">'+escapeHtml(replyText);
     if(data&&data.escalate){
       // Solo esquemas seguros: cualquier otro valor cae al fallback (mailto)
       let rawUrl=String(data.escalation_url||fallbackEscalation);
-      if(!/^(https?:|mailto:)/i.test(rawUrl))rawUrl=fallbackEscalation;
+      // Whitelist de DOMINIO (no solo esquema): cierra phishing via respuesta del agente
+      if(!/^(https:\/\/(www\.)?katia\.solutions(\/|$)|https:\/\/wa\.me\/|mailto:|tel:)/i.test(rawUrl))rawUrl=fallbackEscalation;
       const url=rawUrl.replace(/"/g,'&quot;');
       html+='<div style="margin-top:10px"><a href="'+url+'" target="_blank" rel="noopener" style="display:inline-block;padding:8px 14px;font-size:12.5px;background:linear-gradient(135deg,#3a78ff,#1f5bff);color:#fff;border-radius:8px;text-decoration:none;font-weight:600">'+escalateText+'</a></div>';
     }
@@ -4049,7 +4113,7 @@ function sendKatiaMsg(){
     if(typing)typing.remove();
     body.insertAdjacentHTML('beforeend',
       '<div class="chat-msg">'+
-        '<div class="msg-avatar"><img src="assets/img/katia-logo-icon.svg" alt="KATIA" width="18" height="18" onerror="this.style.display=\'none\';this.parentNode.textContent=\'K\'"></div>'+
+        '<div class="msg-avatar"><img src="assets/img/katia-logo-icon.svg" alt="" width="18" height="18" onerror="this.style.display=\'none\';this.parentNode.textContent=\'K\'"></div>'+
         '<div class="msg-bubble">'+errorPrefix+
           '<a href="'+fallbackEscalation+'">ventas@katia.solutions</a>'+
         '</div>'+
