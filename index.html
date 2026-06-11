@@ -1511,6 +1511,16 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
 .reveal.in{opacity:1;transform:none}
 .reveal.d1{transition-delay:.1s} .reveal.d2{transition-delay:.2s} .reveal.d3{transition-delay:.3s} .reveal.d4{transition-delay:.4s}
 
+/* Video del CEO · tarjeta vertical tipo reel (seccion #empresa) */
+.ceo-video-wrap{display:flex;flex-direction:column;align-items:center;margin:34px auto 10px}
+.ceo-video-card{position:relative;width:min(300px,78vw);aspect-ratio:9/16;border-radius:18px;overflow:hidden;border:1px solid rgba(58,120,255,.35);box-shadow:0 18px 60px -18px rgba(31,91,255,.45);background:#070d1f}
+.ceo-video-card video{width:100%;height:100%;object-fit:cover;display:block}
+.ceo-video-card .ceo-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(3,6,15,0) 55%,rgba(3,6,15,.55));cursor:pointer;border:0;padding:0;transition:opacity .3s}
+.ceo-video-card .ceo-play svg{width:64px;height:64px;filter:drop-shadow(0 6px 18px rgba(31,91,255,.6))}
+.ceo-video-card.playing .ceo-play{opacity:0;pointer-events:none}
+.ceo-video-caption{margin:14px 0 0;font-size:13px;color:var(--ink-mute);text-align:center;line-height:1.5}
+.ceo-video-caption b{color:#fff}
+
 /* Accesibilidad: respeta la preferencia de movimiento reducido del sistema */
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
@@ -2210,6 +2220,36 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
       <h2 data-en-html='We&rsquo;re building the operational future<br>of <span class="g">Hispanic SMBs.</span>'>Construimos el futuro contable<br>de las <span class="g">PYMEs hispanas.</span></h2>
       <p data-en="We&rsquo;re not an ERP. We&rsquo;re not software. We&rsquo;re a team of CPAs + Artificial Intelligence focused on one problem: making sure an SMB owner knows, every week, exactly how much they earn.">No somos un ERP. No somos un software. Somos un equipo de Contadores Públicos + Inteligencia Artificial dedicado a un solo problema: que un dueño de PYME sepa, cada semana, exactamente cuánto gana.</p>
     </div>
+
+    <!-- Mensaje del CEO · clic para reproducir (no autoplay: tiene voz; preload none = 0 bytes hasta el clic) -->
+    <div class="ceo-video-wrap reveal d1">
+      <div class="ceo-video-card" id="ceoVideoCard">
+        <video id="ceoIntroClip" controls playsinline preload="none" poster="assets/img/ceo-intro-poster.jpg">
+          <source src="assets/img/ceo-intro.mp4" type="video/mp4">
+        </video>
+        <button type="button" class="ceo-play" id="ceoPlayBtn" aria-label="Reproducir mensaje del CEO" data-en-aria="Play the CEO message">
+          <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="31" fill="rgba(31,91,255,.92)"/><path d="M26 21l18 11-18 11z" fill="#fff"/></svg>
+        </button>
+      </div>
+      <p class="ceo-video-caption" data-en-html='<b>Ignacio Romero</b> · Founder &amp; CEO<br>What we do at KATIA, in 60 seconds.'><b>Ignacio Romero</b> · Founder &amp; CEO<br>Qué hacemos en KATIA, en 60 segundos.</p>
+    </div>
+    <script>
+    (function(){
+      var card=document.getElementById('ceoVideoCard'),v=document.getElementById('ceoIntroClip'),btn=document.getElementById('ceoPlayBtn');
+      if(!card||!v||!btn)return;
+      btn.addEventListener('click',function(){
+        card.classList.add('playing');
+        v.play().catch(function(){});
+        try{gtag('event','video_play',{'event_category':'engagement','event_label':'ceo_intro'});}catch(e){}
+      });
+      v.addEventListener('play',function(){
+        card.classList.add('playing');
+        // Pausa los videos ambientales para no competir con la voz del CEO
+        document.querySelectorAll('video').forEach(function(o){if(o!==v&&!o.paused)o.pause()});
+      });
+      v.addEventListener('pause',function(){if(v.currentTime===0||v.ended)card.classList.remove('playing')});
+    })();
+    </script>
 
     <!-- Tabs -->
     <div class="comp-tabs reveal d1" id="compTabs">
