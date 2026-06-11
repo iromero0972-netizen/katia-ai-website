@@ -12,6 +12,22 @@
   gtag('js', new Date());
   gtag('config', 'G-LKNZZY2Z9Y');
 </script>
+<!-- Meta Pixel · KATIA.AI -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2021221848741117');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+src="https://www.facebook.com/tr?id=2021221848741117&ev=PageView&noscript=1"
+/></noscript>
 <title>¡Gracias! Solicitud recibida — KATIA.AI</title>
 <meta name="description" content="Hemos recibido su solicitud de Diagnóstico de Control Empresarial. Le contactaremos en menos de 24 horas.">
 <meta name="robots" content="noindex,follow">
@@ -59,13 +75,16 @@ a.btn:hover{transform:translateY(-2px)}
   <p class="links"><span data-en="Industries:">Industrias:</span> <a href="industrias/restaurantes.html" data-en="Restaurants">Restaurantes</a> · <a href="industrias/clinicas.html" data-en="Clinics">Clínicas</a> · <a href="industrias/construccion.html" data-en="Construction">Construcción</a> · <a href="industrias/retail.html" data-en="Retail">Retail</a> · <a href="industrias/servicios-profesionales.html" data-en="Professional Services">Servicios Profesionales</a></p>
 </div>
 <script>
-/* Evento de conversión (lead) en GA4 al ver la página de agradecimiento.
+/* Evento de conversión (lead) en GA4 + Meta Pixel al ver la página de agradecimiento.
    ?bot=1 = llegada por honeypot anti-spam: no contamina la conversión.
    sessionStorage 'katia_lead_fired' = dedup: recargas/revisitas en la misma sesión no disparan otra vez. */
 (function(){ try{
   if(/[?&]bot=1/.test(location.search)) return;
   if(sessionStorage.getItem('katia_lead_fired')) return;
-  if(window.gtag){ gtag('event','generate_lead',{value:1}); sessionStorage.setItem('katia_lead_fired','1'); }
+  var fired=false;
+  if(window.gtag){ gtag('event','generate_lead',{value:1}); fired=true; }
+  if(window.fbq){ fbq('track','Lead'); fired=true; }
+  if(fired) sessionStorage.setItem('katia_lead_fired','1');
 }catch(e){} })();
 </script>
 <script>
