@@ -13,7 +13,7 @@
   gtag('config', 'G-LKNZZY2Z9Y');
 </script>
 <title>¡Gracias! Solicitud recibida — KATIA.AI</title>
-<meta name="description" content="Hemos recibido su solicitud de Diagnóstico de Control Empresarial. Le contactaremos en menos de 2 horas hábiles.">
+<meta name="description" content="Hemos recibido su solicitud de Diagnóstico de Control Empresarial. Le contactaremos en menos de 24 horas.">
 <meta name="robots" content="noindex,follow">
 <link rel="canonical" href="https://katia.solutions/gracias.html">
 <link rel="icon" href="assets/img/katia-logo-icon.svg" type="image/svg+xml">
@@ -39,23 +39,42 @@ a.btn:hover{transform:translateY(-2px)}
 .ghost{border:1px solid var(--line);color:var(--ink)}
 .ghost:hover{border-color:rgba(58,120,255,.5)}
 .meta{margin-top:32px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-mute);letter-spacing:.02em}
+.links{margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--ink-mute);letter-spacing:.02em;line-height:1.9}
+.links a{color:var(--blue-300);text-decoration:none}
+.links a:hover{text-decoration:underline}
 </style>
 </head>
 <body>
 <div class="box">
   <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
-  <h1>¡Solicitud <span class="g">recibida</span>!</h1>
-  <p>Gracias por solicitar su <strong>Diagnóstico de Control Empresarial</strong>. Un responsable de KATIA.AI le contactará en <strong>menos de 2 horas hábiles</strong>.</p>
-  <p>¿Prefiere adelantar? Escríbanos directo por WhatsApp y lo atendemos ahora.</p>
+  <h1 data-en-html="Request <span class='g'>received</span>!">¡Solicitud <span class="g">recibida</span>!</h1>
+  <p data-en-html="Thank you for requesting your <strong>Business Control Diagnosis</strong>. A KATIA.AI representative will contact you within <strong>24 hours</strong>.">Gracias por solicitar su <strong>Diagnóstico de Control Empresarial</strong>. Un responsable de KATIA.AI le contactará en <strong>menos de 24 horas</strong>.</p>
+  <p data-en="Want to move faster? Message us directly on WhatsApp and we will assist you right away.">¿Prefiere adelantar? Escríbanos directo por WhatsApp y lo atendemos ahora.</p>
   <div class="actions">
-    <a class="btn primary" href="https://wa.me/13468920577?text=Hola%20KATIA.AI%2C%20acabo%20de%20solicitar%20mi%20Diagn%C3%B3stico%20de%20Control%20Empresarial." target="_blank" rel="noopener">Continuar por WhatsApp</a>
-    <a class="btn ghost" href="index.html">Volver al inicio</a>
+    <a class="btn primary" href="https://wa.me/13468920577?text=Hola%20KATIA.AI%2C%20acabo%20de%20solicitar%20mi%20Diagn%C3%B3stico%20de%20Control%20Empresarial." target="_blank" rel="noopener" data-en="Continue on WhatsApp">Continuar por WhatsApp</a>
+    <a class="btn ghost" href="index.html" data-en="Back to home">Volver al inicio</a>
   </div>
   <p class="meta">KATIA.AI · Katy, Texas · ventas@katia.solutions</p>
+  <p class="links"><a href="index.html" data-en="Home">Inicio</a> · <a href="metodologia.html" data-en="Methodology">Metodología</a> · <a href="casos.html" data-en="Case studies">Casos de éxito</a> · <a href="recursos.html" data-en="Resources">Recursos</a> · <a href="consulta.html" data-en="Request a consultation">Solicitar consulta</a></p>
+  <p class="links"><span data-en="Industries:">Industrias:</span> <a href="industrias/restaurantes.html" data-en="Restaurants">Restaurantes</a> · <a href="industrias/clinicas.html" data-en="Clinics">Clínicas</a> · <a href="industrias/construccion.html" data-en="Construction">Construcción</a> · <a href="industrias/retail.html" data-en="Retail">Retail</a> · <a href="industrias/servicios-profesionales.html" data-en="Professional Services">Servicios Profesionales</a></p>
 </div>
 <script>
-/* Evento de conversión (lead) en GA4 al ver la página de agradecimiento */
-(function(){ try{ if(window.gtag) gtag('event','generate_lead',{value:1}); }catch(e){} })();
+/* Evento de conversión (lead) en GA4 al ver la página de agradecimiento.
+   ?bot=1 = llegada por honeypot anti-spam: no contamina la conversión. */
+(function(){ try{ if(window.gtag && !/[?&]bot=1/.test(location.search)) gtag('event','generate_lead',{value:1}); }catch(e){} })();
+</script>
+<script>
+/* Soporte EN: si el idioma guardado es 'en', aplica data-en / data-en-html */
+(function(){
+  var lang='es';
+  try{ lang = localStorage.getItem('katia_lang') || sessionStorage.getItem('katia_lang') || 'es'; }catch(e){}
+  if(lang!=='en') return;
+  document.documentElement.setAttribute('lang','en');
+  document.querySelectorAll('[data-en],[data-en-html]').forEach(function(el){
+    if(el.hasAttribute('data-en-html')) el.innerHTML = el.getAttribute('data-en-html');
+    else el.textContent = el.getAttribute('data-en');
+  });
+})();
 </script>
 </body>
 </html>

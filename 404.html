@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#1f5bff">
+<title>Página no encontrada — KATIA.AI</title>
+<meta name="description" content="La página que busca no existe o cambió de dirección. Vuelva al inicio o solicite su diagnóstico.">
+<meta name="robots" content="noindex,follow">
+<link rel="icon" href="/assets/img/katia-logo-icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@500;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg-0:#03060f;--blue-500:#1f5bff;--blue-400:#3a78ff;--blue-300:#6aa0ff;--ink:#eef3ff;--ink-mute:#9fb0d4;--line:rgba(255,255,255,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;display:flex;align-items:center;justify-content:center;background:radial-gradient(120% 80% at 50% 15%,rgba(31,91,255,.18),#03060f 70%);color:var(--ink);font-family:'Inter',system-ui,sans-serif;text-align:center;padding:32px;-webkit-font-smoothing:antialiased}
+.box{max-width:580px}
+.code{font-family:'JetBrains Mono',monospace;font-size:clamp(64px,14vw,110px);font-weight:700;line-height:1;letter-spacing:-.04em;background:linear-gradient(180deg,#fff,#6aa0ff);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:18px}
+h1{font-family:'Sora',sans-serif;font-size:clamp(24px,4.5vw,34px);font-weight:800;letter-spacing:-.02em;margin-bottom:16px}
+p{color:var(--ink-mute);font-size:16px;line-height:1.7;margin-bottom:10px}
+.actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:36px}
+a.btn{display:inline-flex;align-items:center;gap:9px;padding:15px 28px;border-radius:12px;text-decoration:none;font-family:'Sora',sans-serif;font-weight:700;font-size:15px;transition:transform .2s,box-shadow .2s}
+a.btn:hover{transform:translateY(-2px)}
+.primary{background:linear-gradient(135deg,#3a78ff,#1f5bff);color:#fff;box-shadow:0 14px 30px -10px rgba(31,91,255,.6)}
+.primary:hover{box-shadow:0 22px 50px -10px rgba(31,91,255,.85)}
+.ghost{border:1px solid var(--line);color:var(--ink)}
+.ghost:hover{border-color:rgba(58,120,255,.5)}
+.meta{margin-top:32px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-mute);letter-spacing:.02em}
+</style>
+</head>
+<body>
+<div class="box">
+  <div class="code" aria-hidden="true">404</div>
+  <h1 data-en="Page not found">Página no encontrada</h1>
+  <p data-en="The page you are looking for does not exist or has moved. No worries — here are the fastest ways back on track.">La página que busca no existe o cambió de dirección. No se preocupe: estas son las salidas más rápidas.</p>
+  <div class="actions">
+    <a class="btn primary" href="/index.html#contacto" data-en="Request your diagnostic">Solicitar diagnóstico</a>
+    <a class="btn ghost" href="/index.html" data-en="Back to home">Volver al inicio</a>
+    <a class="btn ghost" href="/consulta.html" data-en="Request a consultation">Solicitar consulta</a>
+  </div>
+  <p class="meta">KATIA.AI · Katy, Texas · ventas@katia.solutions</p>
+</div>
+<script>
+(function(){
+  var lang='es';
+  try{lang=localStorage.getItem('katia_lang')||'es'}catch(e){}
+  if(lang!=='en')return;
+  document.documentElement.lang='en';
+  document.title='Page not found — KATIA.AI';
+  document.querySelectorAll('[data-en]').forEach(function(el){el.textContent=el.getAttribute('data-en');});
+})();
+</script>
+</body>
+</html>

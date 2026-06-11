@@ -9,7 +9,9 @@
 
 # Local-only backups (never publish via gh-pages)
 *.backup
+*.backup*
 *.backup_*
+index_backup*
 index_backup_*.html
 *_pre_*.html
 *.bak

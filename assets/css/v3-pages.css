@@ -135,3 +135,10 @@ footer a:hover{text-decoration:underline}
 .case-quote{font-family:'Sora',sans-serif;font-size:clamp(20px,2.6vw,28px);font-weight:600;line-height:1.4;color:#fff;max-width:820px;margin:20px 0}
 .case-image{border-radius:16px;overflow:hidden;border:1px solid var(--line);margin-top:24px}
 .case-image img{width:100%;height:auto;display:block}
+.case-author{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-mute);letter-spacing:.03em;margin-top:8px}
+
+/* Cross-links (otras industrias) */
+.xlinks{padding:0 0 90px}
+.xlinks-list{display:flex;flex-wrap:wrap;gap:12px}
+.xlinks-list a{font-family:'Sora',sans-serif;font-size:14px;font-weight:700;text-decoration:none;color:var(--blue-300);padding:12px 20px;border:1px solid var(--line);border-radius:99px;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));transition:border-color .3s,transform .2s}
+.xlinks-list a:hover{border-color:rgba(58,120,255,.45);transform:translateY(-2px)}

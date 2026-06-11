@@ -12,10 +12,26 @@
   gtag('js', new Date());
   gtag('config', 'G-LKNZZY2Z9Y');
 </script>
-<title>Solicitar Consulta — KATIA.AI</title>
+<title>Consulta Gratuita · Automatización con IA para PyMEs en Houston | KATIA.AI</title>
 <meta name="description" content="Solicita tu consulta gratuita de automatización con IA. Te contactamos en menos de 24 horas con un plan personalizado.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://katia.solutions/consulta.html">
+<link rel="alternate" hreflang="es" href="https://katia.solutions/consulta.html">
+<link rel="alternate" hreflang="en" href="https://katia.solutions/consultation.html">
+<link rel="alternate" hreflang="x-default" href="https://katia.solutions/consulta.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://katia.solutions/consulta.html">
+<meta property="og:title" content="Consulta Gratuita · Automatización con IA para PyMEs en Houston | KATIA.AI">
+<meta property="og:description" content="Solicita tu consulta gratuita de automatización con IA. Te contactamos en menos de 24 horas con un plan personalizado.">
+<meta property="og:image" content="https://katia.solutions/assets/img/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="KATIA.AI">
+<meta property="og:locale" content="es_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Consulta Gratuita · Automatización con IA para PyMEs en Houston | KATIA.AI">
+<meta name="twitter:description" content="Solicita tu consulta gratuita de automatización con IA. Te contactamos en menos de 24 horas con un plan personalizado.">
+<meta name="twitter:image" content="https://katia.solutions/assets/img/og-card.jpg">
 <link rel="icon" href="assets/img/katia-logo-icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,6 +72,9 @@
 .trust-badge{text-align:center;font-size:11.5px;color:var(--ink-mute);line-height:1.4}
 .trust-badge strong{display:block;font-family:'Sora',sans-serif;font-size:17px;color:var(--blue-300);margin-bottom:3px}
 .cf-foot{margin-top:14px;text-align:center;color:var(--ink-mute);font-size:12px;line-height:1.55}
+.cf-check{display:flex;gap:10px;align-items:flex-start;margin:18px 0 0;color:var(--ink-mute);font-size:13px;line-height:1.5}
+.cf-check input{width:18px;height:18px;accent-color:#3a78ff;flex:0 0 auto;margin-top:2px}
+.cf-check a{color:#6aa0ff;text-decoration:underline}
 </style>
 </head>
 <body>
@@ -63,7 +82,7 @@
   <a href="index.html" class="logo" aria-label="KATIA.AI"><img src="assets/img/katia-logo-brand.png" alt="KATIA.AI · AI Automation Agency"></a>
   <div class="nav-right">
     <a href="index.html" class="nav-back">← Volver al inicio</a>
-    <a href="index.html#planes" class="nav-cta">Ver planes</a>
+    <a href="#formCard" class="nav-cta">Solicitar consulta</a>
   </div>
 </div></nav>
 
@@ -75,21 +94,21 @@
 
 <section style="padding:50px 0 90px"><div class="container">
   <div class="form-card" id="formCard">
-    <div id="formContent">
+    <form id="formContent" onsubmit="submitForm(event);return false">
       <input type="text" class="kt-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none">
       <div class="section-title">Tus datos</div>
       <div class="row">
-        <div class="field"><label>Nombre completo <span class="req">*</span></label><input type="text" id="nombre" placeholder="Ej: María González" required></div>
-        <div class="field"><label>Nombre de tu empresa <span class="req">*</span></label><input type="text" id="empresa" placeholder="Ej: González Bakery LLC" required></div>
+        <div class="field"><label for="nombre">Nombre completo <span class="req">*</span></label><input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Ej: María González" required></div>
+        <div class="field"><label for="empresa">Nombre de tu empresa <span class="req">*</span></label><input type="text" id="empresa" name="empresa" autocomplete="organization" placeholder="Ej: González Bakery LLC" required></div>
       </div>
       <div class="row">
-        <div class="field"><label>Email <span class="req">*</span></label><input type="email" id="email" placeholder="tu@email.com" required></div>
-        <div class="field"><label>Teléfono <span class="req">*</span></label><input type="tel" id="telefono" placeholder="(832) 555-1234" required></div>
+        <div class="field"><label for="email">Email <span class="req">*</span></label><input type="email" id="email" name="email" autocomplete="email" placeholder="tu@email.com" required></div>
+        <div class="field"><label for="telefono">Teléfono <span class="req">*</span></label><input type="tel" id="telefono" name="telefono" autocomplete="tel" placeholder="(832) 555-1234" required></div>
       </div>
       <div class="row">
-        <div class="field"><label>Ciudad</label><input type="text" id="ciudad" placeholder="Ej: Houston, Katy, Sugar Land"></div>
-        <div class="field"><label for="puesto">Tu rol en la empresa <span class="req">*</span></label>
-          <select id="puesto" required>
+        <div class="field"><label for="ciudad">Ciudad (opcional)</label><input type="text" id="ciudad" name="ciudad" autocomplete="address-level2" placeholder="Ej: Houston, Katy, Sugar Land"></div>
+        <div class="field"><label for="puesto">Tu rol en la empresa (opcional)</label>
+          <select id="puesto" name="puesto">
             <option value="">Selecciona tu rol</option>
             <option value="owner">Dueño / Fundador</option>
             <option value="ceo">CEO / Director General</option>
@@ -101,8 +120,8 @@
         </div>
       </div>
       <div class="row">
-        <div class="field"><label>Industria / Tipo de negocio <span class="req">*</span></label>
-          <select id="industria" required>
+        <div class="field"><label for="industria">Industria / Tipo de negocio (opcional)</label>
+          <select id="industria" name="industria">
             <option value="">Selecciona una opción</option>
             <option value="restaurante">Restaurante / Food Service</option>
             <option value="bakery">Bakery / Pastelería</option>
@@ -121,23 +140,21 @@
         </div>
       </div>
 
-      <div class="section-title">¿Qué te interesa automatizar?</div>
-      <p style="font-size:.9rem;color:var(--ink-mute);margin-bottom:16px">Selecciona todos los que apliquen:</p>
+      <div class="section-title">¿Qué área quieres poner bajo control?</div>
+      <p style="font-size:.9rem;color:var(--ink-mute);margin-bottom:16px">Selecciona todas las que apliquen (opcional):</p>
       <div class="services-grid">
-        <div class="service-option"><input type="checkbox" id="s1" value="pagina_web"><label for="s1"><span class="check-icon"></span>Página web profesional</label></div>
-        <div class="service-option"><input type="checkbox" id="s2" value="redes_sociales"><label for="s2"><span class="check-icon"></span>Contenido en redes sociales</label></div>
-        <div class="service-option"><input type="checkbox" id="s3" value="pedidos"><label for="s3"><span class="check-icon"></span>Automatización de pedidos</label></div>
-        <div class="service-option"><input type="checkbox" id="s4" value="chatbot"><label for="s4"><span class="check-icon"></span>Asistente virtual / Chatbot</label></div>
-        <div class="service-option"><input type="checkbox" id="s5" value="contabilidad"><label for="s5"><span class="check-icon"></span>Contabilidad y finanzas</label></div>
-        <div class="service-option"><input type="checkbox" id="s6" value="email_marketing"><label for="s6"><span class="check-icon"></span>Email marketing automático</label></div>
-        <div class="service-option"><input type="checkbox" id="s7" value="crm"><label for="s7"><span class="check-icon"></span>CRM / Gestión de clientes</label></div>
-        <div class="service-option"><input type="checkbox" id="s8" value="integraciones"><label for="s8"><span class="check-icon"></span>Integraciones a medida</label></div>
+        <div class="service-option"><input type="checkbox" id="s1" name="servicios" value="cobros_facturas"><label for="s1"><span class="check-icon"></span>Cobros y facturas atrasadas</label></div>
+        <div class="service-option"><input type="checkbox" id="s2" name="servicios" value="cierre_reportes"><label for="s2"><span class="check-icon"></span>Cierre mensual / reportes</label></div>
+        <div class="service-option"><input type="checkbox" id="s3" name="servicios" value="gastos_documentos"><label for="s3"><span class="check-icon"></span>Gastos y documentos</label></div>
+        <div class="service-option"><input type="checkbox" id="s4" name="servicios" value="pedidos_whatsapp"><label for="s4"><span class="check-icon"></span>Pedidos y atención por WhatsApp</label></div>
+        <div class="service-option"><input type="checkbox" id="s5" name="servicios" value="fiscal_fechas"><label for="s5"><span class="check-icon"></span>Preparación fiscal / fechas clave</label></div>
+        <div class="service-option"><input type="checkbox" id="s6" name="servicios" value="multiples_areas"><label for="s6"><span class="check-icon"></span>Múltiples áreas</label></div>
       </div>
 
       <div class="section-title">Cuéntanos más</div>
-      <div class="field"><label>¿Cuál es tu mayor dolor de cabeza operativo hoy?</label><textarea id="dolor" placeholder="Ej: Pierdo muchos pedidos porque no tengo un sistema organizado, paso horas haciendo facturas a mano, no tengo tiempo para publicar en redes..."></textarea></div>
-      <div class="field"><label>¿Cuántos empleados tiene tu negocio?</label>
-        <select id="empleados">
+      <div class="field"><label for="dolor">¿Cuál es tu mayor dolor de cabeza operativo hoy? (opcional)</label><textarea id="dolor" name="dolor" placeholder="Ej: Pierdo muchos pedidos porque no tengo un sistema organizado, paso horas haciendo facturas a mano, no sé cuánto me deben mis clientes..."></textarea></div>
+      <div class="field"><label for="empleados">¿Cuántos empleados tiene tu negocio? (opcional)</label>
+        <select id="empleados" name="empleados">
           <option value="">Selecciona</option>
           <option value="solo">Solo yo</option>
           <option value="2-5">2 a 5</option>
@@ -153,8 +170,8 @@
           <div class="urgency-option"><input type="radio" name="urgencia" id="u3" value="explorando"><label for="u3">Solo estoy explorando</label></div>
         </div>
       </div>
-      <div class="field"><label>¿Cómo prefieres que te contactemos?</label>
-        <select id="contacto_pref">
+      <div class="field"><label for="contacto_pref">¿Cómo prefieres que te contactemos?</label>
+        <select id="contacto_pref" name="contacto_pref">
           <option value="email">Email</option>
           <option value="whatsapp">WhatsApp</option>
           <option value="telegram">Telegram</option>
@@ -162,7 +179,12 @@
         </select>
       </div>
 
-      <button class="submit-btn" id="submitBtn" type="button" onclick="submitForm()">Solicitar mi consulta gratuita →</button>
+      <label class="cf-check">
+        <input type="checkbox" id="consent" name="consent" required>
+        <span>Acepto la <a href="privacidad.html">Política de Privacidad</a> y el tratamiento de mis datos para ser contactado sobre la consulta.</span>
+      </label>
+
+      <button class="submit-btn" id="submitBtn" type="submit">Solicitar mi consulta gratuita →</button>
       <p class="cf-foot">Tus datos no se comparten con terceros. Respondemos en menos de 24 horas.</p>
 
       <div class="trust-badges">
@@ -171,21 +193,24 @@
         <div class="trust-badge"><strong>ES/EN</strong>Bilingüe</div>
         <div class="trust-badge"><strong>$0</strong>Sin compromiso</div>
       </div>
-    </div>
+    </form>
   </div>
 </div></section>
 
 <footer>
+  <div><a href="index.html">Inicio</a> · <a href="metodologia.html">Metodología</a> · <a href="casos.html">Casos de éxito</a> · <a href="recursos.html">Recursos</a> · <a href="consulta.html">Solicitar consulta</a></div>
+  <div>Industrias: <a href="industrias/restaurantes.html">Restaurantes</a> · <a href="industrias/clinicas.html">Clínicas</a> · <a href="industrias/construccion.html">Construcción</a> · <a href="industrias/retail.html">Retail</a> · <a href="industrias/servicios-profesionales.html">Servicios Profesionales</a></div>
   <div>© 2026 KATIA.AI · Katy, Texas · Estados Unidos · <a href="mailto:ventas@katia.solutions">ventas@katia.solutions</a></div>
-  <div><a href="privacidad.html">Privacidad</a> · <a href="terminos.html">Términos</a> · <a href="index.html">Inicio</a></div>
+  <div><a href="privacidad.html">Privacidad</a> · <a href="terminos.html">Términos</a></div>
 </footer>
 
 <script>
 const WEBHOOK_URL = 'https://srv1448901.hstgr.cloud/webhook/katia2-lead-capture';
-function submitForm(){
+function submitForm(e){
+  if(e && e.preventDefault) e.preventDefault();
   var btn=document.getElementById('submitBtn');
   var hp=document.querySelector('.kt-hp');
-  if(hp && hp.value){ return; }
+  if(hp && hp.value){ window.location.href='gracias.html?bot=1'; return; }
   var g=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
   var nombre=g('nombre'),empresa=g('empresa'),email=g('email'),telefono=g('telefono'),
       puesto=document.getElementById('puesto').value,industria=document.getElementById('industria').value;
@@ -194,16 +219,16 @@ function submitForm(){
   if(!empresa)missing.push('Empresa');
   if(!email)missing.push('Email');
   if(!telefono)missing.push('Teléfono');
-  if(!puesto)missing.push('Tu rol');
-  if(!industria)missing.push('Industria');
   if(missing.length){ alert('Por favor completa los campos requeridos: '+missing.join(', ')+'.'); return; }
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ alert('Por favor ingresa un correo electrónico válido.'); return; }
+  var consentEl=document.getElementById('consent');
+  if(consentEl && !consentEl.checked){ alert('Debes aceptar la Política de Privacidad para continuar.'); return; }
   var servicios=[];
   document.querySelectorAll('.service-option input:checked').forEach(function(cb){servicios.push(cb.value);});
   var urg=document.querySelector('input[name="urgencia"]:checked');
   var payload={
     nombre:nombre, empresa:empresa, email:email, telefono:telefono,
-    puesto:puesto, ciudad:g('ciudad'), industria:industria,
+    puesto:puesto||'No especificado', ciudad:g('ciudad'), industria:industria||'No especificado',
     servicios:servicios.join(', ')||'No especificado',
     dolor:g('dolor')||'No especificado',
     empleados:document.getElementById('empleados').value||'No especificado',

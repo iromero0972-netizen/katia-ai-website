@@ -12,10 +12,26 @@
   gtag('js', new Date());
   gtag('config', 'G-LKNZZY2Z9Y');
 </script>
-<title>Request a Consultation — KATIA.AI</title>
+<title>Free Consultation · AI Automation for Houston SMBs | KATIA.AI</title>
 <meta name="description" content="Request your free AI automation consultation. We'll contact you within 24 hours with a personalized plan for your business.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://katia.solutions/consultation.html">
+<link rel="alternate" hreflang="es" href="https://katia.solutions/consulta.html">
+<link rel="alternate" hreflang="en" href="https://katia.solutions/consultation.html">
+<link rel="alternate" hreflang="x-default" href="https://katia.solutions/consulta.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://katia.solutions/consultation.html">
+<meta property="og:title" content="Free Consultation · AI Automation for Houston SMBs | KATIA.AI">
+<meta property="og:description" content="Request your free AI automation consultation. We'll contact you within 24 hours with a personalized plan for your business.">
+<meta property="og:image" content="https://katia.solutions/assets/img/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="KATIA.AI">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Consultation · AI Automation for Houston SMBs | KATIA.AI">
+<meta name="twitter:description" content="Request your free AI automation consultation. We'll contact you within 24 hours with a personalized plan for your business.">
+<meta name="twitter:image" content="https://katia.solutions/assets/img/og-card.jpg">
 <link rel="icon" href="assets/img/katia-logo-icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,6 +74,9 @@
 .trust-badge{text-align:center;font-size:11.5px;color:var(--ink-mute);line-height:1.4}
 .trust-badge strong{display:block;font-family:'Sora',sans-serif;font-size:17px;color:var(--blue-300);margin-bottom:3px}
 .cf-foot{margin-top:14px;text-align:center;color:var(--ink-mute);font-size:12px;line-height:1.55}
+.cf-check{display:flex;gap:10px;align-items:flex-start;margin:18px 0 0;color:var(--ink-mute);font-size:13px;line-height:1.5}
+.cf-check input{width:18px;height:18px;accent-color:#3a78ff;flex:0 0 auto;margin-top:2px}
+.cf-check a{color:#6aa0ff;text-decoration:underline}
 </style>
 </head>
 <body>
@@ -65,7 +84,7 @@
   <a href="index.html" class="logo" aria-label="KATIA.AI"><img src="assets/img/katia-logo-brand.png" alt="KATIA.AI · AI Automation Agency"></a>
   <div class="nav-right">
     <a href="index.html" class="nav-back">← Back to home</a>
-    <a href="index.html#planes" class="nav-cta">See plans</a>
+    <a href="#formCard" class="nav-cta">Request a consultation</a>
   </div>
 </div></nav>
 
@@ -77,21 +96,21 @@
 
 <section style="padding:50px 0 90px"><div class="container">
   <div class="form-card" id="formCard">
-    <div id="formContent">
+    <form id="formContent" onsubmit="submitForm(event);return false">
       <input type="text" class="kt-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none">
       <div class="section-title">Your information</div>
       <div class="row">
-        <div class="field"><label>Full name <span class="req">*</span></label><input type="text" id="nombre" placeholder="E.g.: John Smith" required></div>
-        <div class="field"><label>Business name <span class="req">*</span></label><input type="text" id="empresa" placeholder="E.g.: Smith's Bakery LLC" required></div>
+        <div class="field"><label for="nombre">Full name <span class="req">*</span></label><input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="E.g.: John Smith" required></div>
+        <div class="field"><label for="empresa">Business name <span class="req">*</span></label><input type="text" id="empresa" name="empresa" autocomplete="organization" placeholder="E.g.: Smith's Bakery LLC" required></div>
       </div>
       <div class="row">
-        <div class="field"><label>Email <span class="req">*</span></label><input type="email" id="email" placeholder="you@email.com" required></div>
-        <div class="field"><label>Phone <span class="req">*</span></label><input type="tel" id="telefono" placeholder="(832) 555-1234" required></div>
+        <div class="field"><label for="email">Email <span class="req">*</span></label><input type="email" id="email" name="email" autocomplete="email" placeholder="you@email.com" required></div>
+        <div class="field"><label for="telefono">Phone <span class="req">*</span></label><input type="tel" id="telefono" name="telefono" autocomplete="tel" placeholder="(832) 555-1234" required></div>
       </div>
       <div class="row">
-        <div class="field"><label>City</label><input type="text" id="ciudad" placeholder="E.g.: Houston, Katy, Sugar Land"></div>
-        <div class="field"><label for="puesto">Your role at the company <span class="req">*</span></label>
-          <select id="puesto" required>
+        <div class="field"><label for="ciudad">City (optional)</label><input type="text" id="ciudad" name="ciudad" autocomplete="address-level2" placeholder="E.g.: Houston, Katy, Sugar Land"></div>
+        <div class="field"><label for="puesto">Your role at the company (optional)</label>
+          <select id="puesto" name="puesto">
             <option value="">Select your role</option>
             <option value="owner">Owner / Founder</option>
             <option value="ceo">CEO / Director</option>
@@ -103,8 +122,8 @@
         </div>
       </div>
       <div class="row">
-        <div class="field"><label>Industry / Business type <span class="req">*</span></label>
-          <select id="industria" required>
+        <div class="field"><label for="industria">Industry / Business type (optional)</label>
+          <select id="industria" name="industria">
             <option value="">Select an option</option>
             <option value="restaurant">Restaurant / Food Service</option>
             <option value="bakery">Bakery / Pastry Shop</option>
@@ -123,23 +142,21 @@
         </div>
       </div>
 
-      <div class="section-title">What would you like to automate?</div>
-      <p style="font-size:.9rem;color:var(--ink-mute);margin-bottom:16px">Select all that apply:</p>
+      <div class="section-title">What area do you want to bring under control?</div>
+      <p style="font-size:.9rem;color:var(--ink-mute);margin-bottom:16px">Select all that apply (optional):</p>
       <div class="services-grid">
-        <div class="service-option"><input type="checkbox" id="s1" value="website"><label for="s1"><span class="check-icon"></span>Professional website</label></div>
-        <div class="service-option"><input type="checkbox" id="s2" value="social_media"><label for="s2"><span class="check-icon"></span>Social media content</label></div>
-        <div class="service-option"><input type="checkbox" id="s3" value="orders"><label for="s3"><span class="check-icon"></span>Order automation</label></div>
-        <div class="service-option"><input type="checkbox" id="s4" value="chatbot"><label for="s4"><span class="check-icon"></span>Virtual assistant / Chatbot</label></div>
-        <div class="service-option"><input type="checkbox" id="s5" value="accounting"><label for="s5"><span class="check-icon"></span>Accounting &amp; finance</label></div>
-        <div class="service-option"><input type="checkbox" id="s6" value="email_marketing"><label for="s6"><span class="check-icon"></span>Automated email marketing</label></div>
-        <div class="service-option"><input type="checkbox" id="s7" value="crm"><label for="s7"><span class="check-icon"></span>CRM / Client management</label></div>
-        <div class="service-option"><input type="checkbox" id="s8" value="integrations"><label for="s8"><span class="check-icon"></span>Custom integrations</label></div>
+        <div class="service-option"><input type="checkbox" id="s1" name="servicios" value="cobros_facturas"><label for="s1"><span class="check-icon"></span>Overdue collections and invoices</label></div>
+        <div class="service-option"><input type="checkbox" id="s2" name="servicios" value="cierre_reportes"><label for="s2"><span class="check-icon"></span>Monthly close / reports</label></div>
+        <div class="service-option"><input type="checkbox" id="s3" name="servicios" value="gastos_documentos"><label for="s3"><span class="check-icon"></span>Expenses and documents</label></div>
+        <div class="service-option"><input type="checkbox" id="s4" name="servicios" value="pedidos_whatsapp"><label for="s4"><span class="check-icon"></span>Orders and WhatsApp service</label></div>
+        <div class="service-option"><input type="checkbox" id="s5" name="servicios" value="fiscal_fechas"><label for="s5"><span class="check-icon"></span>Tax prep / key dates</label></div>
+        <div class="service-option"><input type="checkbox" id="s6" name="servicios" value="multiples_areas"><label for="s6"><span class="check-icon"></span>Multiple areas</label></div>
       </div>
 
       <div class="section-title">Tell us more</div>
-      <div class="field"><label>What is your biggest operational headache today?</label><textarea id="dolor" placeholder="E.g.: I lose orders because I don't have an organized system, I spend hours doing invoices by hand, I have no time to post on social media..."></textarea></div>
-      <div class="field"><label>How many employees does your business have?</label>
-        <select id="empleados">
+      <div class="field"><label for="dolor">What is your biggest operational headache today? (optional)</label><textarea id="dolor" name="dolor" placeholder="E.g.: I lose orders because I don't have an organized system, I spend hours doing invoices by hand, I don't know how much my clients owe me..."></textarea></div>
+      <div class="field"><label for="empleados">How many employees does your business have? (optional)</label>
+        <select id="empleados" name="empleados">
           <option value="">Select</option>
           <option value="just_me">Just me</option>
           <option value="2-5">2 to 5</option>
@@ -155,8 +172,8 @@
           <div class="urgency-option"><input type="radio" name="urgencia" id="u3" value="exploring"><label for="u3">Just exploring</label></div>
         </div>
       </div>
-      <div class="field"><label>How would you prefer to be contacted?</label>
-        <select id="contacto_pref">
+      <div class="field"><label for="contacto_pref">How would you prefer to be contacted?</label>
+        <select id="contacto_pref" name="contacto_pref">
           <option value="email">Email</option>
           <option value="whatsapp">WhatsApp</option>
           <option value="telegram">Telegram</option>
@@ -164,7 +181,12 @@
         </select>
       </div>
 
-      <button class="submit-btn" id="submitBtn" type="button" onclick="submitForm()">Request my free consultation →</button>
+      <label class="cf-check">
+        <input type="checkbox" id="consent" name="consent" required>
+        <span>I accept the <a href="privacidad.html">Privacy Policy</a> and the processing of my data to be contacted about the consultation.</span>
+      </label>
+
+      <button class="submit-btn" id="submitBtn" type="submit">Request my free consultation →</button>
       <p class="cf-foot">Your data is not shared with third parties. We respond within 24 hours.</p>
 
       <div class="trust-badges">
@@ -173,42 +195,43 @@
         <div class="trust-badge"><strong>ES/EN</strong>Bilingual</div>
         <div class="trust-badge"><strong>$0</strong>No commitment</div>
       </div>
-    </div>
+    </form>
   </div>
 </div></section>
 
 <footer>
+  <div><a href="index.html">Home</a> · <a href="metodologia.html">Methodology</a> · <a href="casos.html">Case studies</a> · <a href="recursos.html">Resources</a> · <a href="consultation.html">Request a consultation</a></div>
+  <div>Industries: <a href="industrias/restaurantes.html">Restaurants</a> · <a href="industrias/clinicas.html">Clinics</a> · <a href="industrias/construccion.html">Construction</a> · <a href="industrias/retail.html">Retail</a> · <a href="industrias/servicios-profesionales.html">Professional Services</a></div>
   <div>© 2026 KATIA.AI · Katy, Texas · United States · <a href="mailto:ventas@katia.solutions">ventas@katia.solutions</a></div>
-  <div><a href="privacidad.html">Privacy</a> · <a href="terminos.html">Terms</a> · <a href="index.html">Home</a></div>
+  <div><a href="privacidad.html">Privacy</a> · <a href="terminos.html">Terms</a></div>
 </footer>
 
 <script>
 const WEBHOOK_URL = 'https://srv1448901.hstgr.cloud/webhook/katia2-lead-capture';
-function submitForm(){
+function submitForm(e){
+  if(e && e.preventDefault) e.preventDefault();
   var btn=document.getElementById('submitBtn');
   var hp=document.querySelector('.kt-hp');
-  if(hp && hp.value){ return; } // honeypot: bot
+  if(hp && hp.value){ window.location.href='gracias.html?bot=1'; return; }
   var g=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
   var nombre=g('nombre'),empresa=g('empresa'),email=g('email'),telefono=g('telefono'),
       puesto=document.getElementById('puesto').value,industria=document.getElementById('industria').value;
-
   var missing=[];
   if(!nombre)missing.push('Name');
   if(!empresa)missing.push('Business');
   if(!email)missing.push('Email');
   if(!telefono)missing.push('Phone');
-  if(!puesto)missing.push('Your role');
-  if(!industria)missing.push('Industry');
   if(missing.length){ alert('Please fill in the required fields: '+missing.join(', ')+'.'); return; }
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ alert('Please enter a valid email address.'); return; }
-
+  var consentEl=document.getElementById('consent');
+  if(consentEl && !consentEl.checked){ alert('Please accept the Privacy Policy to continue.'); return; }
   var servicios=[];
   document.querySelectorAll('.service-option input:checked').forEach(function(cb){servicios.push(cb.value);});
   var urg=document.querySelector('input[name="urgencia"]:checked');
 
   var payload={
     nombre:nombre, empresa:empresa, email:email, telefono:telefono,
-    puesto:puesto, ciudad:g('ciudad'), industria:industria,
+    puesto:puesto||'Not specified', ciudad:g('ciudad'), industria:industria||'Not specified',
     servicios:servicios.join(', ')||'Not specified',
     dolor:g('dolor')||'Not specified',
     empleados:document.getElementById('empleados').value||'Not specified',
