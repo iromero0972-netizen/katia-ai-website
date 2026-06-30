@@ -148,16 +148,17 @@ section{position:relative}
 footer{padding:48px 0;background:var(--bg-0);border-top:1px solid var(--line);color:var(--ink-mute);font-family:'JetBrains Mono',monospace;font-size:11.5px;text-align:center;letter-spacing:.02em;line-height:1.8}
 footer a{color:var(--blue-300);text-decoration:none}
 footer a:hover{text-decoration:underline}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 <nav class="nav"><div class="nav-inner">
-  <a href="index.html" class="logo" aria-label="KATIA.AI"><img src="assets/img/katia-logo-brand.png" alt="KATIA.AI · AI Automation Agency"></a>
+  <a href="index.html" class="logo" aria-label="KATIA.AI"><img src="assets/img/katia-logo-brand.png" alt="KATIA.AI · AI Automation Agency" width="800" height="197"></a>
   <div class="nav-right">
     <div class="lang-toggle" role="group" aria-label="Idioma">
       <button type="button" data-lang="es" class="active">ES</button><span class="sep">·</span><button type="button" data-lang="en">EN</button>
     </div>
-    <a href="index.html" class="nav-back"><svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 7H1M7 1L1 7l6 6"/></svg> <span data-en="Back to home">Volver al inicio</span></a>
+    <a href="index.html" class="nav-back"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 7H1M7 1L1 7l6 6"/></svg> <span data-en="Back to home">Volver al inicio</span></a>
     <a href="index.html#contacto" class="nav-cta" data-en="Request diagnosis">Solicitar diagnóstico</a>
   </div>
 </div></nav>

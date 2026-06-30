@@ -207,6 +207,7 @@ src="https://www.facebook.com/tr?id=2021221848741117&ev=PageView&noscript=1"
   --ink:#eef3ff; --ink-mute:#9fb0d4;
   --line:rgba(255,255,255,.08);
   --shadow-blue:0 30px 80px -20px rgba(31,91,255,.55);
+  color-scheme:dark;
 }
 *{box-sizing:border-box}
 html,body{margin:0;background:var(--bg-0);color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -500,7 +501,7 @@ body.intro-active .cine-letterbox{height:9vh}
 @keyframes cineRing{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.9);opacity:0}}
 
 /* Skip intro button · top-right */
-.cine-skip{position:absolute;top:24px;right:24px;z-index:6;display:inline-flex;align-items:center;gap:8px;padding:9px 16px;background:rgba(7,13,31,.55);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.18);border-radius:99px;color:#cfe0ff;font-family:'Inter',sans-serif;font-weight:500;font-size:12px;cursor:pointer;transition:all .25s;animation:cineSkipIn .6s ease 1.2s both}
+.cine-skip{position:absolute;top:24px;right:24px;z-index:6;display:inline-flex;align-items:center;gap:8px;padding:9px 16px;background:rgba(7,13,31,.55);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.18);border-radius:99px;color:#cfe0ff;font-family:'Inter',sans-serif;font-weight:500;font-size:12px;cursor:pointer;transition:transform .25s,background-color .25s,border-color .25s,color .25s;animation:cineSkipIn .6s ease 1.2s both}
 .cine-skip:hover{background:rgba(58,120,255,.25);border-color:rgba(106,160,255,.6);color:#fff;transform:translateX(2px)}
 .cine-skip.gone{animation:cineSkipOut .5s ease forwards}
 .cine-skip svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
@@ -911,7 +912,7 @@ body.intro-active .cine-letterbox{height:9vh}
 .workflows-title{font-family:'JetBrains Mono';font-size:10.5px;color:var(--ink-mute);letter-spacing:.14em;text-transform:uppercase;font-weight:700;display:flex;align-items:center;gap:8px}
 .workflows-title::before{content:"";width:6px;height:6px;border-radius:50%;background:#5fffb0;box-shadow:0 0 8px #5fffb0;animation:blink 2s infinite}
 .workflows{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.workflow{display:flex;gap:12px;padding:12px 14px;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:10px;transition:all .25s;opacity:0;animation:wfIn .4s forwards}
+.workflow{display:flex;gap:12px;padding:12px 14px;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:10px;transition:transform .25s,background-color .25s,border-color .25s;opacity:0;animation:wfIn .4s forwards}
 .pane.active .workflow:nth-child(1){animation-delay:.05s} .pane.active .workflow:nth-child(2){animation-delay:.1s} .pane.active .workflow:nth-child(3){animation-delay:.15s}
 .pane.active .workflow:nth-child(4){animation-delay:.2s} .pane.active .workflow:nth-child(5){animation-delay:.25s} .pane.active .workflow:nth-child(6){animation-delay:.3s}
 @keyframes wfIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
@@ -935,6 +936,7 @@ body.intro-active .cine-letterbox{height:9vh}
 .roi-form label{display:flex;justify-content:space-between;font-size:14px;font-weight:600;margin-bottom:12px}
 .roi-form label span{color:#6aa0ff;font-family:'JetBrains Mono';font-size:15px;white-space:nowrap;flex-shrink:0;margin-left:12px}
 .slider{-webkit-appearance:none;width:100%;height:6px;background:rgba(255,255,255,.08);border-radius:99px;outline:none;background-image:linear-gradient(90deg,#3a78ff,#1f5bff);background-size:50% 100%;background-repeat:no-repeat}
+.slider:focus-visible{outline:2px solid #6aa0ff;outline-offset:2px}
 .slider::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:#fff;cursor:pointer;box-shadow:0 4px 14px rgba(58,120,255,.6),0 0 0 6px rgba(58,120,255,.15)}
 .slider::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#fff;cursor:pointer;border:0;box-shadow:0 4px 14px rgba(58,120,255,.6)}
 .roi-out{display:flex;flex-direction:column;gap:18px}
@@ -989,7 +991,7 @@ body.intro-active .cine-letterbox{height:9vh}
 
 /* Tabs */
 .comp-tabs{display:grid;grid-template-columns:repeat(6,1fr);gap:0;max-width:1120px;margin:0 auto 50px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative}
-.comp-tab{padding:22px 14px;cursor:pointer;text-align:center;color:var(--ink-mute);transition:all .35s ease;position:relative;border-right:1px solid var(--line);background:rgba(255,255,255,.01)}
+.comp-tab{padding:22px 14px;cursor:pointer;text-align:center;color:var(--ink-mute);transition:color .35s ease,background-color .35s ease;position:relative;border-right:1px solid var(--line);background:rgba(255,255,255,.01)}
 .comp-tab:last-child{border-right:0}
 .comp-tab .num{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.12em;display:block;margin-bottom:8px;opacity:.55;color:#6aa0ff}
 .comp-tab .lbl{font-family:'Sora';font-weight:600;font-size:13.5px;line-height:1.2;letter-spacing:-.005em}
@@ -1278,7 +1280,7 @@ body.intro-active .cine-letterbox{height:9vh}
 .faq-list::-webkit-scrollbar-thumb{background:rgba(58,120,255,.25);border-radius:99px}
 .faq-list::-webkit-scrollbar-thumb:hover{background:rgba(58,120,255,.5)}
 
-.faq-item{background:rgba(255,255,255,.025);border:1px solid var(--line);border-radius:11px;cursor:pointer;transition:all .25s ease;position:relative;overflow:hidden}
+.faq-item{background:rgba(255,255,255,.025);border:1px solid var(--line);border-radius:11px;cursor:pointer;transition:transform .25s ease,background-color .25s ease,border-color .25s ease,box-shadow .25s ease;position:relative;overflow:hidden}
 .faq-item:hover{background:rgba(58,120,255,.06);border-color:rgba(58,120,255,.3);transform:translateX(3px)}
 .faq-item.active{background:linear-gradient(90deg,rgba(58,120,255,.18),rgba(58,120,255,.04));border-color:rgba(58,120,255,.55);box-shadow:0 6px 20px -8px rgba(58,120,255,.4)}
 .faq-item.active::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,#6aa0ff,#1f5bff);box-shadow:0 0 12px #3a78ff}
@@ -1337,6 +1339,7 @@ body.intro-active .cine-letterbox{height:9vh}
 .cf-form{background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.005));border:1px solid var(--line);border-radius:22px;padding:36px;box-shadow:0 30px 80px -30px rgba(31,91,255,.35)}
 .cf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
 .cf-input,.cf-select,.cf-textarea{width:100%;padding:14px 16px;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:10px;color:#fff;font-family:'Inter',sans-serif;font-size:14px;outline:none;transition:border-color .3s,background .3s}
+.cf-input:focus-visible,.cf-select:focus-visible,.cf-textarea:focus-visible{outline:2px solid #6aa0ff;outline-offset:2px}
 .cf-input::placeholder,.cf-textarea::placeholder{color:#6e7a99}
 .cf-input:focus,.cf-select:focus,.cf-textarea:focus{border-color:#3a78ff;background:rgba(58,120,255,.06);box-shadow:0 0 0 4px rgba(58,120,255,.1)}
 .cf-select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='%236aa0ff'><path d='M6 8L0 0h12z'/></svg>");background-repeat:no-repeat;background-position:right 16px center;background-size:10px;padding-right:38px}
@@ -1356,7 +1359,7 @@ body.intro-active .cine-letterbox{height:9vh}
 
 /* ===== Floating contact widgets ===== */
 .float-widgets{position:fixed;right:20px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:40}
-.float-widgets a{width:44px;height:44px;border-radius:12px;background:rgba(7,13,31,.85);backdrop-filter:blur(14px);border:1px solid rgba(58,120,255,.3);display:grid;place-items:center;color:#6aa0ff;transition:all .3s ease;position:relative;box-shadow:0 8px 20px -8px rgba(0,0,0,.5)}
+.float-widgets a{width:44px;height:44px;border-radius:12px;background:rgba(7,13,31,.85);backdrop-filter:blur(14px);border:1px solid rgba(58,120,255,.3);display:grid;place-items:center;color:#6aa0ff;transition:transform .3s ease,background-color .3s ease,border-color .3s ease,color .3s ease,box-shadow .3s ease;position:relative;box-shadow:0 8px 20px -8px rgba(0,0,0,.5)}
 .float-widgets a:hover{background:linear-gradient(135deg,#3a78ff,#1f5bff);color:#fff;border-color:#3a78ff;transform:translateX(-4px);box-shadow:0 12px 30px -8px rgba(58,120,255,.6)}
 .float-widgets a svg{width:20px;height:20px}
 .float-widgets a .tt{position:absolute;right:54px;top:50%;transform:translateY(-50%);padding:6px 12px;background:#03060f;border:1px solid rgba(58,120,255,.4);border-radius:8px;font-family:'Sora';font-weight:600;font-size:11px;color:#fff;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s}
@@ -1381,7 +1384,7 @@ body.intro-active .cine-letterbox{height:9vh}
 .chat-header-text{flex:1;min-width:0}
 .chat-header-text h4{font-family:'Sora',sans-serif;font-size:15px;font-weight:700;margin:0;letter-spacing:-.01em;color:#fff}
 .chat-header-text p{font-size:12px;color:#9fb0d4;margin:2px 0 0;font-weight:400}
-.chat-close{width:30px;height:30px;border:none;background:rgba(255,255,255,.06);color:#cfe0ff;border-radius:8px;cursor:pointer;display:grid;place-items:center;transition:all .2s ease;flex-shrink:0}
+.chat-close{width:30px;height:30px;border:none;background:rgba(255,255,255,.06);color:#cfe0ff;border-radius:8px;cursor:pointer;display:grid;place-items:center;transition:transform .2s ease,background-color .2s ease,color .2s ease;flex-shrink:0}
 .chat-close:hover{background:rgba(255,255,255,.14);transform:rotate(90deg);color:#fff}
 .chat-close svg{width:14px;height:14px}
 
@@ -1403,14 +1406,15 @@ body.intro-active .cine-letterbox{height:9vh}
 .katia-chat .msg-bubble em{color:#9fb0d4}
 
 .chat-suggestions{display:flex;flex-wrap:wrap;gap:6px;padding:0 18px 12px;background:#070d1f}
-.chat-suggestion{font-size:11.5px;color:#6aa0ff;background:rgba(58,120,255,.08);border:1px solid rgba(58,120,255,.25);padding:6px 11px;border-radius:99px;cursor:pointer;transition:all .2s ease;font-family:'Inter',sans-serif;font-weight:500}
+.chat-suggestion{font-size:11.5px;color:#6aa0ff;background:rgba(58,120,255,.08);border:1px solid rgba(58,120,255,.25);padding:6px 11px;border-radius:99px;cursor:pointer;transition:transform .2s ease,background-color .2s ease,border-color .2s ease,color .2s ease;font-family:'Inter',sans-serif;font-weight:500}
 .chat-suggestion:hover{background:linear-gradient(135deg,#3a78ff,#1f5bff);color:#fff;border-color:transparent;transform:translateY(-1px)}
 
 .chat-footer{padding:12px 14px;background:rgba(7,13,31,.85);border-top:1px solid rgba(58,120,255,.15);display:flex;gap:8px;align-items:center}
 .chat-input{flex:1;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:#fff;padding:10px 13px;border-radius:10px;font-family:'Inter',sans-serif;font-size:13px;outline:none;transition:border-color .2s,background .2s}
+.chat-input:focus-visible{outline:2px solid #6aa0ff;outline-offset:2px}
 .chat-input:focus{border-color:#3a78ff;background:rgba(58,120,255,.08);box-shadow:0 0 0 3px rgba(58,120,255,.18)}
 .chat-input::placeholder{color:#6e7a99}
-.chat-send{background:linear-gradient(135deg,#3a78ff,#1f5bff);color:#fff;border:none;padding:10px 16px;border-radius:10px;font-family:'Inter',sans-serif;font-weight:600;font-size:12.5px;cursor:pointer;transition:all .2s ease;letter-spacing:.01em;box-shadow:0 6px 16px -6px rgba(58,120,255,.6)}
+.chat-send{background:linear-gradient(135deg,#3a78ff,#1f5bff);color:#fff;border:none;padding:10px 16px;border-radius:10px;font-family:'Inter',sans-serif;font-weight:600;font-size:12.5px;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;letter-spacing:.01em;box-shadow:0 6px 16px -6px rgba(58,120,255,.6)}
 .chat-send:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 10px 22px -6px rgba(58,120,255,.8)}
 .chat-send:disabled{opacity:.55;cursor:not-allowed;transform:none}
 
@@ -1595,7 +1599,7 @@ body{padding-top:78px}
 <!-- SPLASH GATE · ahora opt-in: oculto por defecto, solo visible con ?intro (demos) -->
 <div class="splash-gate" id="splashGate" style="display:none" role="dialog" aria-label="Iniciar experiencia KATIA.AI" data-en-aria="Start KATIA.AI experience">
   <div class="splash-inner">
-    <img src="assets/img/katia-logo-brand.png" alt="KATIA.AI" class="splash-logo">
+    <img src="assets/img/katia-logo-brand.png" alt="KATIA.AI" width="800" height="197" class="splash-logo">
     <div class="splash-tagline" data-en-html='A <span class="accent">cinematic</span> experience'>Una experiencia <span class="accent">cinematográfica</span></div>
     <button class="splash-btn" type="button" id="splashStart" aria-label="Iniciar experiencia con sonido" data-en-aria="Start experience with sound">
       <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -1635,7 +1639,7 @@ body{padding-top:78px}
 <div class="nav-wrap" id="navWrap">
   <div class="container nav">
     <a href="/" class="brand" aria-label="KATIA.AI · AI Automation Agency">
-      <img src="assets/img/katia-logo-brand.png" alt="KATIA.AI · AI Automation Agency">
+      <img src="assets/img/katia-logo-brand.png" alt="KATIA.AI · AI Automation Agency" width="800" height="197">
     </a>
     <nav class="nav-menu" id="navMenu" aria-label="Navegación principal" data-en-aria="Main navigation">
       <a data-view="inicio" data-en="Home">Inicio</a>
@@ -2000,28 +2004,28 @@ document.addEventListener('DOMContentLoaded',function(){
       <a href="#contacto" class="sol tilt reveal">
         <div class="img">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg></div>
-          <img src="assets/img/v3/sol-analytics.webp" alt="Dashboard de workflow KATIA en laptop" loading="lazy">
+          <img src="assets/img/v3/sol-analytics.webp" alt="Dashboard de workflow KATIA en laptop" width="900" height="425" loading="lazy">
         </div>
         <div class="body"><h3 data-en-html='Predictive Analytics <span class="ar">→</span>'>Analítica Predictiva <span class="ar">→</span></h3><p data-en="Anticipate sales trends, customer behavior and financial risks before they happen.">Anticipa tendencias de venta, comportamiento de clientes y riesgos financieros antes de que ocurran.</p></div>
       </a>
       <a href="#contacto" class="sol tilt reveal d1">
         <div class="img">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 10v6m11-11h-6m-10 0H1m17.5-6.5l-4.2 4.2m-4.6 4.6L5.5 18.5m13 0l-4.2-4.2m-4.6-4.6L5.5 5.5"/></svg></div>
-          <img src="assets/img/v3/sol-automation.webp" alt="Mano robótica de IA — automatización" loading="lazy">
+          <img src="assets/img/v3/sol-automation.webp" alt="Mano robótica de IA — automatización" width="900" height="600" loading="lazy">
         </div>
         <div class="body"><h3 data-en-html='Automation <span class="ar">→</span>'>Automatización <span class="ar">→</span></h3><p data-en="Optimize repetitive tasks with smart bots and workflows that free up your team.">Optimiza tareas repetitivas con bots y workflows inteligentes que liberan a tu equipo.</p></div>
       </a>
       <a href="#contacto" class="sol tilt reveal d2">
         <div class="img">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8z"/></svg></div>
-          <img src="assets/img/v3/sol-nlp.webp" alt="Conversación con IA en móvil" loading="lazy">
+          <img src="assets/img/v3/sol-nlp.webp" alt="Conversación con IA en móvil" width="900" height="506" loading="lazy">
         </div>
         <div class="body"><h3 data-en-html='Natural Language <span class="ar">→</span>'>Lenguaje Natural <span class="ar">→</span></h3><p data-en="Serve customers in Spanish/English with AI assistants connected to WhatsApp, email and web.">Atiende clientes en español/inglés con asistentes IA conectados a WhatsApp, email y web.</p></div>
       </a>
       <a href="#contacto" class="sol tilt reveal d3">
         <div class="img">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
-          <img src="assets/img/v3/sol-realtime.webp" alt="Pantalla de datos en tiempo real" loading="lazy">
+          <img src="assets/img/v3/sol-realtime.webp" alt="Pantalla de datos en tiempo real" width="900" height="600" loading="lazy">
         </div>
         <div class="body"><h3 data-en-html='Real-Time Data <span class="ar">→</span>'>Datos en Tiempo Real <span class="ar">→</span></h3><p data-en="Executive dashboards with live KPIs for instant, well-informed decisions.">Dashboards ejecutivos con KPIs vivos para decisiones instantáneas y bien informadas.</p></div>
       </a>
@@ -2054,7 +2058,7 @@ document.addEventListener('DOMContentLoaded',function(){
         <!-- Food & Catering -->
         <div class="pane active">
           <div class="pane-img">
-            <img src="assets/img/v3/ind-food.webp" alt="Restaurante mood lighting" loading="lazy">
+            <img src="assets/img/v3/ind-food.webp" alt="Restaurante mood lighting" width="900" height="675" loading="lazy">
             <div class="head">
               <h5 data-en="Restaurants &amp; catering">Restaurantes &amp; catering</h5>
               <p class="desc" data-en="Orders, inventory, margins, collections and operational documentation under control.">Pedidos, inventario, márgenes, cobros y documentación operativa bajo control.</p>
@@ -2076,7 +2080,7 @@ document.addEventListener('DOMContentLoaded',function(){
         <!-- Beauty & Salones -->
         <div class="pane">
           <div class="pane-img">
-            <img src="assets/img/v3/ind-beauty.webp" alt="Salón moderno" loading="lazy">
+            <img src="assets/img/v3/ind-beauty.webp" alt="Salón moderno" width="900" height="600" loading="lazy">
             <div class="head">
               <h5 data-en="Salons &amp; beauty">Salones &amp; beauty</h5>
               <p class="desc" data-en="No-shows, scheduling, repeat customers and automated reminders.">No-shows, agenda, clientes recurrentes y recordatorios automatizados.</p>
@@ -2098,7 +2102,7 @@ document.addEventListener('DOMContentLoaded',function(){
         <!-- Contractors & Servicios -->
         <div class="pane">
           <div class="pane-img">
-            <img src="assets/img/v3/ind-contractors.webp" alt="Construcción golden hour" loading="lazy">
+            <img src="assets/img/v3/ind-contractors.webp" alt="Construcción golden hour" width="900" height="507" loading="lazy">
             <div class="head">
               <h5 data-en="Contractors &amp; services">Contractors &amp; servicios</h5>
               <p class="desc" data-en="Quotes, follow-up, payments, materials and project documentation.">Cotizaciones, seguimiento, pagos, materiales y documentación del proyecto.</p>
@@ -2120,7 +2124,7 @@ document.addEventListener('DOMContentLoaded',function(){
         <!-- E-Commerce / Retail -->
         <div class="pane">
           <div class="pane-img">
-            <img src="assets/img/v3/ind-ecommerce.webp" alt="Almacén logístico" loading="lazy">
+            <img src="assets/img/v3/ind-ecommerce.webp" alt="Almacén logístico" width="900" height="600" loading="lazy">
             <div class="head">
               <h5 data-en="Retail &amp; e-commerce">Retail &amp; e-commerce</h5>
               <p class="desc" data-en="Inventory, sales, returns, margins and consolidated reports.">Inventario, ventas, devoluciones, márgenes y reportes consolidados.</p>
@@ -2142,7 +2146,7 @@ document.addEventListener('DOMContentLoaded',function(){
         <!-- Servicios Profesionales -->
         <div class="pane">
           <div class="pane-img">
-            <img src="assets/img/v3/ind-professional.webp" alt="Sala de juntas moderna" loading="lazy">
+            <img src="assets/img/v3/ind-professional.webp" alt="Sala de juntas moderna" width="900" height="601" loading="lazy">
             <div class="head">
               <h5 data-en="Professional services">Servicios profesionales</h5>
               <p class="desc" data-en="Leads, scheduling, billing, follow-up and documents per client.">Leads, agenda, facturación, seguimiento y documentos por cliente.</p>
@@ -2479,15 +2483,15 @@ document.addEventListener('DOMContentLoaded',function(){
     <div class="houston-grid">
       <div class="houston-card reveal">
         <span class="houston-badge">Houston · TX</span>
-        <img src="assets/img/v3/houston-skyline.webp" alt="Equipo KATIA diverso en Houston · Una ciudad, todos orígenes" loading="lazy">
+        <img src="assets/img/v3/houston-skyline.webp" alt="Equipo KATIA diverso en Houston · Una ciudad, todos orígenes" width="900" height="600" loading="lazy">
       </div>
       <div class="houston-card reveal d1">
         <span class="houston-badge" data-en="Diverse team">Equipo diverso</span>
-        <img src="assets/img/v3/houston-team.webp" alt="Líderes KATIA · Diferentes historias, un mismo objetivo · Houston, TX" loading="lazy">
+        <img src="assets/img/v3/houston-team.webp" alt="Líderes KATIA · Diferentes historias, un mismo objetivo · Houston, TX" width="900" height="600" loading="lazy">
       </div>
       <div class="houston-card reveal d2">
         <span class="houston-badge" data-en="Hispanic SMB leader">Líder PYME hispana</span>
-        <img src="assets/img/v3/houston-owner.webp" alt="Dueño de PYME hispano en Houston · IA que trabaja tan duro como tú" loading="lazy">
+        <img src="assets/img/v3/houston-owner.webp" alt="Dueño de PYME hispano en Houston · IA que trabaja tan duro como tú" width="900" height="1350" loading="lazy">
       </div>
     </div>
 
@@ -2997,7 +3001,7 @@ document.addEventListener('DOMContentLoaded',function(){
             <option data-en="Multiple areas">Múltiples áreas</option>
           </select>
         </div>
-        <textarea class="cf-textarea" name="mensaje" placeholder="Cuéntenos brevemente qué proceso le consume más tiempo o dónde siente que pierde control" data-en-placeholder="Tell us briefly which process consumes the most time or where you feel you lose control"></textarea>
+        <textarea class="cf-textarea" name="mensaje" aria-label="Mensaje adicional" placeholder="Cuéntenos brevemente qué proceso le consume más tiempo o dónde siente que pierde control" data-en-placeholder="Tell us briefly which process consumes the most time or where you feel you lose control"></textarea>
         <label class="cf-check">
           <input type="checkbox" required>
           <span data-en-html='I accept the <a href="privacidad.html">Privacy Policy</a> and the processing of my data to be contacted about the diagnosis.'>Acepto la <a href="privacidad.html">Política de Privacidad</a> y el tratamiento de mis datos para ser contactado sobre el diagnóstico.</span>
@@ -3014,12 +3018,12 @@ document.addEventListener('DOMContentLoaded',function(){
   <div class="container">
     <h5 data-en-html='Follow us · <a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" style="color:#6aa0ff">@katia.ai_</a> on Instagram'>Síguenos · <a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" style="color:#6aa0ff">@katia.ai_</a> en Instagram</h5>
     <div class="insta-grid">
-      <a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" class="insta-tile"><img src="assets/img/v3/ig-1-cube.webp" alt="Post KATIA · IA arquitectura datos" loading="lazy"></a>
-      <a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" class="insta-tile"><img src="assets/img/v3/ig-2-robot.webp" alt="Post KATIA · automatización" loading="lazy"></a>
-      <a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" class="insta-tile"><img src="assets/img/v3/ig-3-circuit.webp" alt="Post KATIA · infraestructura" loading="lazy"></a>
-      <a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" class="insta-tile"><img src="assets/img/v3/ig-4-handshake.webp" alt="Post KATIA · IA + humano" loading="lazy"></a>
-      <a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" class="insta-tile"><img src="assets/img/v3/ig-5-hand-ai.webp" alt="Post KATIA · interfaz IA" loading="lazy"></a>
-      <a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" class="insta-tile"><img src="assets/img/v3/ig-6-equations.webp" alt="Post KATIA · criterio contable" loading="lazy"></a>
+      <a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" class="insta-tile"><img src="assets/img/v3/ig-1-cube.webp" alt="Post KATIA · IA arquitectura datos" loading="lazy" width="600" height="338"></a>
+      <a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" class="insta-tile"><img src="assets/img/v3/ig-2-robot.webp" alt="Post KATIA · automatización" loading="lazy" width="600" height="400"></a>
+      <a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" class="insta-tile"><img src="assets/img/v3/ig-3-circuit.webp" alt="Post KATIA · infraestructura" loading="lazy" width="600" height="410"></a>
+      <a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" class="insta-tile"><img src="assets/img/v3/ig-4-handshake.webp" alt="Post KATIA · IA + humano" loading="lazy" width="600" height="750"></a>
+      <a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" class="insta-tile"><img src="assets/img/v3/ig-5-hand-ai.webp" alt="Post KATIA · interfaz IA" loading="lazy" width="600" height="338"></a>
+      <a href="https://instagram.com/katia.ai_" target="_blank" rel="noopener" class="insta-tile"><img src="assets/img/v3/ig-6-equations.webp" alt="Post KATIA · criterio contable" loading="lazy" width="600" height="400"></a>
     </div>
     <div class="insta-handle" data-en="@katia.ai_ · AI tips, real cases and Hispanic SMB growth">@katia.ai_ · Tips de IA, casos reales y crecimiento de PYMEs hispanas</div>
   </div>
@@ -3030,7 +3034,7 @@ document.addEventListener('DOMContentLoaded',function(){
   <div class="container">
     <div class="f-grid">
       <div class="f-col-brand">
-        <div class="f-brand"><img src="assets/img/katia-logo-brand.png" alt="KATIA.AI · AI Automation Agency"></div>
+        <div class="f-brand"><img src="assets/img/katia-logo-brand.png" alt="KATIA.AI · AI Automation Agency" width="800" height="197"></div>
         <p class="f-tag" data-en="AI automation agency for SMBs in Houston Metro, Texas. We help owners organize, automate and monitor administrative, financial and operational processes.">Agencia de automatización con IA para PYMEs en Houston Metro, Texas. Ayudamos a dueños a organizar, automatizar y monitorear procesos administrativos, financieros y operativos.</p>
         <div class="f-socials">
           <a href="https://www.facebook.com/profile.php?id=61575396974517" target="_blank" rel="noopener" aria-label="Facebook">
@@ -3992,7 +3996,7 @@ updateRoi();
     <button class="chat-suggestion" onclick="try{closeKatiaChat()}catch(e){};location.hash='contacto'" data-en="Get my free diagnosis →">Quiero mi diagnóstico gratuito →</button>
   </div>
   <div class="chat-footer">
-    <input type="text" class="chat-input" id="katiaChatInput" placeholder="¿En qué puedo ayudar..." data-en-placeholder="How can I help…" onkeypress="if(event.key==='Enter')sendKatiaMsg()">
+    <input type="text" class="chat-input" id="katiaChatInput" aria-label="Escribe tu mensaje" placeholder="¿En qué puedo ayudar..." data-en-placeholder="How can I help…" onkeypress="if(event.key==='Enter')sendKatiaMsg()">
     <button class="chat-send" onclick="sendKatiaMsg()" data-en="Send">Enviar</button>
   </div>
 </div>

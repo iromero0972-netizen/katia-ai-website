@@ -68,20 +68,21 @@ src="https://www.facebook.com/tr?id=2021221848741117&ev=PageView&noscript=1"
 .field input,.field select,.field textarea{width:100%;background:rgba(3,6,15,.6);border:1px solid var(--line);border-radius:11px;padding:13px 15px;color:var(--ink);font-family:'Inter',sans-serif;font-size:15px;transition:border-color .2s,box-shadow .2s}
 .field input::placeholder,.field textarea::placeholder{color:#5e6b8a}
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue-400);box-shadow:0 0 0 3px rgba(58,120,255,.18)}
+.field input:focus-visible,.field select:focus-visible,.field textarea:focus-visible{outline:2px solid var(--blue-300);outline-offset:2px}
 .field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236aa0ff' stroke-width='2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;padding-right:38px}
 .field textarea{min-height:110px;resize:vertical}
 .services-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:8px}
 @media (max-width:600px){.services-grid{grid-template-columns:1fr}}
 .service-option input{position:absolute;opacity:0}
-.service-option label{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid var(--line);border-radius:11px;cursor:pointer;font-size:14px;color:var(--ink-mute);transition:all .2s}
-.service-option .check-icon{width:18px;height:18px;border:1.5px solid #44557d;border-radius:5px;flex-shrink:0;transition:all .2s;position:relative}
+.service-option label{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid var(--line);border-radius:11px;cursor:pointer;font-size:14px;color:var(--ink-mute);transition:border-color .2s,color .2s,background .2s}
+.service-option .check-icon{width:18px;height:18px;border:1.5px solid #44557d;border-radius:5px;flex-shrink:0;transition:background .2s,border-color .2s;position:relative}
 .service-option input:checked+label{border-color:rgba(58,120,255,.55);color:var(--ink);background:rgba(58,120,255,.08)}
 .service-option input:checked+label .check-icon{background:var(--blue-500);border-color:var(--blue-500)}
 .service-option input:checked+label .check-icon::after{content:'';position:absolute;left:5px;top:1px;width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
 .service-option input:focus-visible+label{box-shadow:0 0 0 3px rgba(58,120,255,.25)}
 .urgency-options{display:flex;gap:10px;flex-wrap:wrap}
 .urgency-option input{position:absolute;opacity:0}
-.urgency-option label{display:inline-block;padding:11px 18px;border:1px solid var(--line);border-radius:99px;cursor:pointer;font-size:13.5px;color:var(--ink-mute);transition:all .2s}
+.urgency-option label{display:inline-block;padding:11px 18px;border:1px solid var(--line);border-radius:99px;cursor:pointer;font-size:13.5px;color:var(--ink-mute);transition:border-color .2s,color .2s,background .2s}
 .urgency-option input:checked+label{border-color:var(--blue-400);color:#fff;background:rgba(58,120,255,.14)}
 .submit-btn{width:100%;margin-top:26px;padding:17px;background:linear-gradient(135deg,#3a78ff,#1f5bff);color:#fff;border:0;border-radius:12px;font-family:'Sora',sans-serif;font-weight:700;font-size:15.5px;cursor:pointer;box-shadow:0 14px 30px -10px rgba(31,91,255,.6);transition:transform .2s,box-shadow .2s}
 .submit-btn:hover{transform:translateY(-2px);box-shadow:0 22px 50px -10px rgba(31,91,255,.85)}
@@ -101,7 +102,7 @@ src="https://www.facebook.com/tr?id=2021221848741117&ev=PageView&noscript=1"
 </head>
 <body>
 <nav class="nav"><div class="nav-inner">
-  <a href="index.html" class="logo" aria-label="KATIA.AI"><img src="assets/img/katia-logo-brand.png" alt="KATIA.AI · AI Automation Agency"></a>
+  <a href="index.html" class="logo" aria-label="KATIA.AI"><img src="assets/img/katia-logo-brand.png" alt="KATIA.AI · AI Automation Agency" width="800" height="197"></a>
   <div class="nav-right">
     <a href="index.html" class="nav-back">← Back to home</a>
     <a href="#formCard" class="nav-cta">Request a consultation</a>
@@ -125,7 +126,7 @@ src="https://www.facebook.com/tr?id=2021221848741117&ev=PageView&noscript=1"
         <div class="field"><label for="empresa">Business name <span class="req">*</span></label><input type="text" id="empresa" name="empresa" autocomplete="organization" placeholder="E.g.: Smith's Bakery LLC" required></div>
       </div>
       <div class="row">
-        <div class="field"><label for="email">Email <span class="req">*</span></label><input type="email" id="email" name="email" autocomplete="email" placeholder="you@email.com" required></div>
+        <div class="field"><label for="email">Email <span class="req">*</span></label><input type="email" id="email" name="email" autocomplete="email" placeholder="you@email.com" spellcheck="false" required></div>
         <div class="field"><label for="telefono">Phone <span class="req">*</span></label><input type="tel" id="telefono" name="telefono" autocomplete="tel" placeholder="(832) 555-1234" required></div>
       </div>
       <div class="row">

@@ -7,7 +7,7 @@
   --shadow-blue:0 30px 80px -20px rgba(31,91,255,.55);
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;color-scheme:dark}
 body{background:var(--bg-0);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit}
 .container{max-width:1100px;margin:0 auto;padding:0 40px}
