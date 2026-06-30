@@ -1673,6 +1673,11 @@ body{padding-top:78px}
   </video>
   <script>(function(){var v=document.getElementById('heroFlow');if(!v)return;var small=matchMedia('(max-width:1279px)').matches||(navigator.connection&&navigator.connection.saveData);if(small){[].slice.call(v.querySelectorAll('source')).forEach(function(s){s.remove();});var s=document.createElement('source');s.src='assets/video/hero-flow-720.mp4';s.type='video/mp4';v.appendChild(s);v.load();}v.play&&v.play().catch(function(){});})();</script>
   <div class="hero-overlay"></div>
+  <button class="hero-sound" id="heroSound" type="button" aria-pressed="false" aria-label="Activar sonido" data-en-aria="Enable sound">
+    <svg class="ic-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M22 9l-6 6M16 9l6 6"/></svg>
+    <svg class="ic-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+    <span class="hero-sound-tip" data-en="Sound">Sonido</span>
+  </button>
   <div class="container">
     <div class="hero-inner-min">
       <h1 class="hero-h1-min" data-en="Your business shouldn&#39;t depend on you for everything.">Su negocio no debería depender de usted para todo.</h1>
@@ -4226,5 +4231,20 @@ function katiaSubmitLead(e){
   showView('inicio'); window.__showView=showView;
 })();
 </script>
+
+<style id="hero-sound-css">
+.hero-sound{position:absolute;right:24px;bottom:96px;z-index:4;display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 16px 0 13px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(10,18,40,.5);color:#cfe0ff;cursor:pointer;backdrop-filter:blur(8px);transition:.2s;font-family:'Inter',sans-serif;font-size:13px;font-weight:600}
+.hero-sound:hover{background:rgba(31,91,255,.4);color:#fff;transform:translateY(-1px)}
+.hero-sound svg{width:20px;height:20px;flex:0 0 auto}
+.hero-sound .ic-on{display:none}
+.hero-sound.on .ic-off{display:none}.hero-sound.on .ic-on{display:block}
+.hero-sound.on{background:rgba(31,91,255,.55);color:#fff;border-color:rgba(120,160,255,.55)}
+.hero-sound-tip{white-space:nowrap}
+@media(max-width:760px){.hero-sound{bottom:90px;right:16px}}
+</style>
+<script>(function(){var v=document.getElementById('heroFlow'),b=document.getElementById('heroSound');if(!v||!b)return;
+v.muted=true;
+b.addEventListener('click',function(){var on=v.muted;v.muted=!on;b.classList.toggle('on',on);b.setAttribute('aria-pressed',String(on));b.setAttribute('aria-label',on?'Silenciar sonido':'Activar sonido');var t=b.querySelector('.hero-sound-tip');if(t){t.textContent=on?'Silenciar':'Sonido';t.setAttribute('data-en',on?'Mute':'Sound');}if(on){v.play().catch(function(){});}});
+})();</script>
 </body>
 </html>
