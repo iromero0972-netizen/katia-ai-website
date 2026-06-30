@@ -1576,6 +1576,18 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
   .cine-title,.cine-sound-prompt,.cine-skip,.cine-progress,.cine-letterbox,.cine-blackout,.cine-flare,.splash-gate{display:none!important}
   body.splash-pending .hero-bg-video{opacity:.5!important}
 </style></noscript>
+<style id="hero-video-override">
+.nav-wrap{position:fixed!important;top:0;left:0;right:0}
+body{padding-top:78px}
+.hero{background:#03060f!important;align-items:flex-end!important;padding:0!important;min-height:calc(100vh - 78px)!important}
+.hero>.container{width:100%}
+.hero-bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;filter:brightness(1.07) contrast(1.05) saturate(1.12)}
+.hero-overlay{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(to top,rgba(3,6,15,.8) 0%,rgba(3,6,15,.42) 22%,rgba(3,6,15,0) 50%),linear-gradient(90deg,rgba(3,6,15,.34) 0%,rgba(3,6,15,0) 32%)}
+.hero-inner-min{position:relative;z-index:2;max-width:680px;padding-bottom:10vh}
+.hero-h1-min{font-family:'Sora';font-weight:800;font-size:clamp(34px,4.3vw,62px);line-height:1.07;letter-spacing:-.022em;margin:0 0 32px;text-wrap:balance;text-shadow:0 1px 3px rgba(0,0,0,.6),0 2px 16px rgba(0,0,0,.45);color:#fff}
+.cta-xl{padding:18px 34px!important;font-size:16.5px!important;border-radius:14px!important;box-shadow:0 18px 44px -10px rgba(31,91,255,.85)!important}
+@media(max-width:760px){.hero-overlay{background:linear-gradient(0deg,rgba(3,6,15,.95) 0%,rgba(3,6,15,.5) 32%,transparent 62%)}.hero-inner-min{padding-bottom:8vh}.hero-h1-min{margin-bottom:24px}}
+</style>
 </head>
 <body class="splash-pending">
 <a class="skip-link" href="#contenido" data-en="Skip to content">Saltar al contenido</a>
@@ -1626,12 +1638,13 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
       <img src="assets/img/katia-logo-brand.png" alt="KATIA.AI · AI Automation Agency">
     </a>
     <nav class="nav-menu" id="navMenu" aria-label="Navegación principal" data-en-aria="Main navigation">
-      <a href="#problema" data-en="Problem">Problema</a>
-      <a href="#servicios" data-en="Solutions">Soluciones</a>
-      <a href="#industrias" data-en="Industries">Industrias</a>
-      <a href="#planes" data-en="Pricing">Planes</a>
-      <a href="#planes" data-en="Pilot">Piloto</a>
-      <a href="#faq" data-en="FAQ">FAQ</a>
+      <a data-view="inicio" data-en="Home">Inicio</a>
+      <a data-view="problema" data-en="Problem">Problema</a>
+      <a data-view="soluciones" data-en="Solutions">Soluciones</a>
+      <a data-view="industrias" data-en="Industries">Industrias</a>
+      <a data-view="planes" data-en="Pricing">Planes</a>
+      <a data-view="testimonios" data-en="Testimonials">Testimonios</a>
+      <a data-view="faq" data-en="FAQ">FAQ</a>
       <div class="nav-menu-lang" aria-label="Idioma" data-en-aria="Language">
         <a class="active" data-lang="es" role="button" tabindex="0" aria-label="Español">ES</a>
         <span class="sep">·</span>
@@ -1654,83 +1667,18 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 
 <!-- HERO -->
 <section class="hero" id="contenido">
-  <!-- HERO_BG_VIDEO_START · borrar este bloque (entre los comentarios START/END) para revertir al hero original -->
-  <video class="hero-bg-video" id="heroBgVideo" loop muted playsinline preload="metadata" disablepictureinpicture aria-hidden="true" poster="assets/img/hero-katia-intro-v2-poster.jpg?v=2">
-    <source src="assets/img/hero-katia-intro-v2.mp4?v=3" type="video/mp4">
+  <video class="hero-bg-video" id="heroFlow" autoplay muted loop playsinline preload="auto" poster="assets/img/hero-flow-poster.jpg" aria-hidden="true">
+    <source src="assets/video/hero-flow-4k.webm" type="video/webm">
+    <source src="assets/video/hero-flow-1080.mp4" type="video/mp4">
   </video>
-  <div class="hero-bg-overlay"></div>
-  <div class="hero-bg-scanline"></div>
-  <button type="button" class="hero-sound-btn" id="heroSoundBtn" data-muted="true" aria-label="Activar sonido del video" data-en-aria="Activate video sound">
-    <svg class="ic-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4z"/><path d="M22 9l-6 6M16 9l6 6"/></svg>
-    <svg class="ic-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4z"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>
-  </button>
-
-  <!-- Cinematic intro UI · 2 narrative acts during 20s · removed by JS at end -->
-  <div class="cine-title" id="cineTitle" aria-hidden="true">
-    <!-- Act 1 · 0–11s · the question · word-stagger with 3D rotate + bloom + light sweep -->
-    <div class="cine-act cine-act-1" data-en-html='<span class="cw" style="--d:0">Are</span> <span class="cw" style="--d:1">you</span> <span class="cw highlight" style="--d:2">ready</span><span class="cw tail" style="--d:3">...?</span>'>
-      <span class="cw" style="--d:0">¿Está</span> <span class="cw" style="--d:1">dispuesto</span> <span class="cw" style="--d:2">a</span> <span class="cw highlight" style="--d:3">evolucionar</span><span class="cw tail" style="--d:4">...?</span>
-    </div>
-    <!-- Act 2 · 11.5–15.5s · two-line historical narrative · cascading word reveal -->
-    <div class="cine-act cine-act-2" data-en-html='<span class="cw-line"><span class="cw" style="--d:0">FROM</span> <span class="cw" style="--d:1">THE</span> <span class="cw" style="--d:2">TABLET</span> <span class="cw" style="--d:3">TO</span> <span class="cw" style="--d:4">THE</span> <span class="cw" style="--d:5">CALCULATOR.</span></span><br><span class="cw-line"><span class="cw" style="--d:8">FROM</span> <span class="cw" style="--d:9">THE</span> <span class="cw" style="--d:10">CALCULATOR</span> <span class="cw" style="--d:11">TO</span> <span class="cw highlight" style="--d:12">ARTIFICIAL</span> <span class="cw highlight" style="--d:13">INTELLIGENCE.</span></span>'>
-      <span class="cw-line"><span class="cw" style="--d:0">DE</span> <span class="cw" style="--d:1">LA</span> <span class="cw" style="--d:2">TABLILLA</span> <span class="cw" style="--d:3">A</span> <span class="cw" style="--d:4">LA</span> <span class="cw" style="--d:5">CALCULADORA.</span></span><br><span class="cw-line"><span class="cw" style="--d:8">DE</span> <span class="cw" style="--d:9">LA</span> <span class="cw" style="--d:10">CALCULADORA</span> <span class="cw" style="--d:11">A</span> <span class="cw" style="--d:12">LA</span> <span class="cw highlight" style="--d:13">INTELIGENCIA</span> <span class="cw highlight" style="--d:14">ARTIFICIAL.</span></span>
+  <script>(function(){var v=document.getElementById('heroFlow');if(!v)return;var small=matchMedia('(max-width:1279px)').matches||(navigator.connection&&navigator.connection.saveData);if(small){[].slice.call(v.querySelectorAll('source')).forEach(function(s){s.remove();});var s=document.createElement('source');s.src='assets/video/hero-flow-720.mp4';s.type='video/mp4';v.appendChild(s);v.load();}v.play&&v.play().catch(function(){});})();</script>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-inner-min">
+      <h1 class="hero-h1-min" data-en="Your business shouldn&#39;t depend on you for everything.">Su negocio no debería depender de usted para todo.</h1>
+      <a href="#contacto" class="btn btn-primary cta-xl" data-cta="hero-agenda" data-en="Book your call &rarr;">Agenda tu cita &rarr;</a>
     </div>
   </div>
-  <div class="cine-sound-prompt" id="cineSoundPrompt" role="button" aria-label="Activar sonido cinematográfico" data-en-aria="Enable cinematic sound">
-    <div class="cine-ring">
-      <svg viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4z"/><path d="M15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14"/></svg>
-    </div>
-    <div class="cine-txt" data-en="Click to enable sound">Activar sonido</div>
-  </div>
-  <button type="button" class="cine-skip" id="cineSkip" aria-label="Saltar intro" data-en-aria="Skip intro">
-    <span data-en="Skip intro">Saltar intro</span>
-    <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-  </button>
-  <div class="cine-progress" id="cineProgress" aria-hidden="true"></div>
-  <!-- HERO_BG_VIDEO_END -->
-  <canvas id="neuralCanvas"></canvas>
-  <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
-  <div class="hero-grid"></div>
-  <div class="container hero-inner">
-    <div>
-      <span class="eyebrow" data-en-html='<span class="dot"></span>Founders Program · Hispanic SMBs · Houston Metro, Texas'><span class="dot"></span>Programa Founders · PYMEs hispanas · Houston Metro, Texas</span>
-      <h1 data-en-html='Know exactly <span class="katia">how much your business earns</span> — every week.'>Sepa exactamente <span class="katia">cuánto gana</span><br>su negocio, cada semana.</h1>
-      <p class="hero-sub" data-en="AI with 30+ years of accounting expertise, for Hispanic SMBs in Houston: collections on time, faster monthly closes and alerts before money leaks away.">IA con criterio contable de 30+ años, para PYMEs hispanas en Houston: cobros al día, cierres mensuales más rápidos y alertas antes de que el dinero se fugue.</p>
-      <div class="hero-cta">
-        <a href="#contacto" class="btn btn-primary" data-cta="hero-diagnostico" data-en="Get my free diagnosis →">Quiero mi diagnóstico gratis →</a>
-        <a href="#planes" class="btn btn-ghost hero-talk-desktop" data-cta="hero-planes" data-en="See plans &amp; pricing">Ver planes y precios</a>
-        <a href="tel:+13462204052" class="btn btn-ghost hero-talk-mobile" data-cta="hero-call" data-en="📞 Talk to Leo, our AI" onclick="try{gtag('event','call_click',{'event_category':'contact','event_label':'leo_hero_button'});}catch(e){}try{fbq('track','Contact');}catch(e){}\">📞 Hablar con Leo, nuestra IA</a>
-      </div>
-      <p class="hero-microcopy" data-en="In a free 30-minute diagnosis we identify leaks of time, money and control in your business.">En un diagnóstico gratuito de 30 minutos identificamos fugas de tiempo, dinero y control en su negocio.</p>
-      <p class="hero-microcopy" data-en-html='Want to hear our AI in action? Call <a href="tel:+13462204052">+1 346-220-4052</a> and talk to <b>Leo</b>, our voice agent — 24/7 in English and Spanish.'>¿Quiere oír nuestra IA en acción? Llame al <a href="tel:+13462204052">+1 346-220-4052</a> y hable con <b>Leo</b>, nuestro agente de voz — 24/7 en español e inglés.</p>
-      <div class="hero-disclaimer">
-        <span class="hd-ic">ⓘ</span>
-        <span data-en="KATIA.AI does not replace your CPA, bookkeeper, tax preparer or legal/tax advisor. We organize processes, data, alerts and reports so you and your advisors work with more control.">KATIA.AI no reemplaza a su CPA, bookkeeper, tax preparer ni asesor legal/fiscal. Organizamos procesos, datos, alertas y reportes para que usted y sus asesores trabajen con más control.</span>
-      </div>
-      <div class="hero-trust">
-        <span data-en="Led by Ignacio Romero · 30+ years in administration and finance">Dirigido por Ignacio Romero, Contador Público · 30+ años en administración y finanzas</span><span class="sep"></span>
-        <span data-en="Houston Metro, Texas">Houston Metro, Texas</span>
-      </div>
-    </div>
-    <div class="hero-stack" id="heroStack">
-      <div class="kpi-badge k1">
-        <div class="label" data-en="Monthly profit">Utilidad mensual</div>
-        <div class="val" data-counter="38420" data-prefix="$">$0 <span class="up">▲ 24%</span></div>
-        <svg class="spark" viewBox="0 0 80 24" fill="none"><path d="M0 18 L10 14 L20 16 L30 10 L40 12 L50 6 L60 8 L70 4 L80 2" stroke="#5fffb0" stroke-width="2" fill="none"/></svg>
-      </div>
-      <div class="kpi-badge k2">
-        <div class="label" data-en="Hours saved / month">Horas ahorradas / mes</div>
-        <div class="val" data-counter="142">0 <span class="up">▲ 3x</span></div>
-        <svg class="spark" viewBox="0 0 80 24" fill="none"><path d="M0 20 L10 18 L20 14 L30 16 L40 10 L50 12 L60 6 L70 8 L80 2" stroke="#6aa0ff" stroke-width="2" fill="none"/></svg>
-      </div>
-      <div class="h-card c1"><video loop muted playsinline preload="none"><source data-src="assets/img/KATIA_AI_Video_Workflows.mp4" type="video/mp4"></video></div>
-      <div class="h-card c2"><canvas id="dashCanvas" style="width:100%;height:100%;display:block;background:#0a1228"></canvas></div>
-      <div class="h-card c3"><canvas id="netCanvas" style="width:100%;height:100%;display:block;background:#03060f"></canvas></div>
-      <div class="h-card c4"><video loop muted playsinline preload="none"><source data-src="assets/img/video-hero-robot-clean.mp4" type="video/mp4"></video></div>
-    </div>
-  </div>
-  <!-- Lens flare sweep · triggered during intro→content transition -->
-  <div class="cine-flare" id="cineFlare" aria-hidden="true"></div>
 </section>
 <script>
 // h-cards: los videos (3MB) solo se descargan en desktop — en movil estan ocultos por CSS
@@ -4245,5 +4193,38 @@ function katiaSubmitLead(e){
   .float-widgets a[data-cta="float-fb"],.float-widgets a[data-cta="float-ig"],.float-widgets a[data-cta="float-email"]{display:none}
 }
 </style>
+
+<style id="views-css">
+.nav-menu a[data-view]{cursor:pointer}
+.view-anim{animation:viewIn .45s ease}
+@keyframes viewIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+</style>
+<script>
+(function(){
+  var BOUNDS={contenido:'inicio',problema:'problema',servicios:'soluciones',industrias:'industrias',empresa:'testimonios',planes:'planes',faq:'faq',contacto:'contacto'};
+  var secs=[].slice.call(document.querySelectorAll('section'));
+  var cur='inicio';
+  secs.forEach(function(s){ if(s.id&&BOUNDS[s.id]) cur=BOUNDS[s.id]; s.dataset.view=cur; });
+  var navAs=[].slice.call(document.querySelectorAll('.nav-menu a[data-view]'));
+  function showView(v,anchorId){
+    secs.forEach(function(s){ var on=(s.dataset.view===v); s.style.display=on?'':'none';
+      if(on){ s.classList.remove('view-anim'); void s.offsetWidth; s.classList.add('view-anim'); } });
+    document.querySelectorAll('section[data-view="'+v+'"] .reveal').forEach(function(el){el.classList.add('in');});
+    navAs.forEach(function(a){ a.classList.toggle('active', a.dataset.view===v); });
+    var t=anchorId&&document.getElementById(anchorId);
+    if(t){ t.scrollIntoView({behavior:'auto',block:'start'}); } else { window.scrollTo(0,0); }
+    var nm=document.getElementById('navMenu'); if(nm)nm.classList.remove('open');
+  }
+  navAs.forEach(function(a){ a.addEventListener('click',function(e){e.preventDefault();showView(a.dataset.view);});});
+  document.addEventListener('click',function(e){
+    var a=e.target.closest?e.target.closest('a[href^="#"]'):null; if(!a)return;
+    var id=a.getAttribute('href').slice(1); if(!id)return;
+    var el=document.getElementById(id); if(!el)return;
+    var host=el.closest('section'); if(!host||!host.dataset.view)return;
+    e.preventDefault(); showView(host.dataset.view, id);
+  },true);
+  showView('inicio'); window.__showView=showView;
+})();
+</script>
 </body>
 </html>
