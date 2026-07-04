@@ -1,0 +1,48 @@
+name: IndexNow submit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '*.html'
+      - 'industrias/*.html'
+      - 'sitemap.xml'
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Submit site URLs to IndexNow
+        run: |
+          cat > payload.json <<'EOF'
+          {
+            "host": "katia.solutions",
+            "key": "53057d35a5d8f948d8ded2825b6b9e75",
+            "keyLocation": "https://katia.solutions/53057d35a5d8f948d8ded2825b6b9e75.txt",
+            "urlList": [
+              "https://katia.solutions/",
+              "https://katia.solutions/consulta.html",
+              "https://katia.solutions/consultation.html",
+              "https://katia.solutions/metodologia.html",
+              "https://katia.solutions/casos.html",
+              "https://katia.solutions/recursos.html",
+              "https://katia.solutions/enlaces.html",
+              "https://katia.solutions/industrias/restaurantes.html",
+              "https://katia.solutions/industrias/clinicas.html",
+              "https://katia.solutions/industrias/retail.html",
+              "https://katia.solutions/industrias/servicios-profesionales.html",
+              "https://katia.solutions/industrias/construccion.html",
+              "https://katia.solutions/privacidad.html",
+              "https://katia.solutions/terminos.html"
+            ]
+          }
+          EOF
+          code=$(curl -sS -o resp.txt -w '%{http_code}' -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" --data-binary @payload.json)
+          echo "IndexNow HTTP $code"
+          cat resp.txt || true
+          case "$code" in
+            200|202) echo "Submission accepted" ;;
+            *) echo "Submission failed" ; exit 1 ;;
+          esac
