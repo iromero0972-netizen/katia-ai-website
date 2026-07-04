@@ -62,12 +62,17 @@ src="https://www.facebook.com/tr?id=2021221848741117&ev=PageView&noscript=1"
   "logo": "https://katia.solutions/assets/img/katia-logo-brand.png",
   "image": "https://katia.solutions/assets/img/og-card.jpg",
   "description": "Automatización con IA y control administrativo, contable y financiero para PYMEs hispanas en Houston, Texas.",
-  "areaServed": {
-    "@type": "Place",
-    "name": "Houston Metro, Texas, US"
-  },
+  "areaServed": [
+    {"@type": "Place", "name": "Houston Metro, Texas, US"},
+    {"@type": "City", "name": "Houston"},
+    {"@type": "City", "name": "Katy"},
+    {"@type": "City", "name": "Sugar Land"},
+    {"@type": "City", "name": "Cypress"},
+    {"@type": "City", "name": "Pearland"}
+  ],
   "knowsLanguage": ["es", "en"],
-  "priceRange": "$$",
+  "knowsAbout": ["automatización con IA para PYMEs", "control administrativo y financiero", "cobranza automatizada", "dashboards ejecutivos", "cierre mensual contable", "asistente financiero con IA", "atención 24/7 en español e inglés"],
+  "priceRange": "$197-$997",
   "founder": {
     "@type": "Person",
     "name": "Ignacio Romero",
@@ -1667,9 +1672,8 @@ body{padding-top:78px}
 
 <!-- HERO -->
 <section class="hero" id="contenido">
-  <video class="hero-bg-video" id="heroFlow" autoplay muted loop playsinline preload="auto" poster="assets/img/hero-flow-poster.jpg" aria-hidden="true">
-    <source src="assets/video/hero-flow-4k.webm" type="video/webm">
-    <source src="assets/video/hero-flow-1080.mp4" type="video/mp4">
+  <video class="hero-bg-video" id="heroFlow" autoplay muted loop playsinline preload="metadata" poster="assets/img/hero-flow-poster.jpg" aria-hidden="true">
+    <source src="assets/video/hero-flow-1080-opt.mp4" type="video/mp4">
   </video>
   <script>(function(){var v=document.getElementById('heroFlow');if(!v)return;var small=matchMedia('(max-width:1279px)').matches||(navigator.connection&&navigator.connection.saveData);if(small){[].slice.call(v.querySelectorAll('source')).forEach(function(s){s.remove();});var s=document.createElement('source');s.src='assets/video/hero-flow-720.mp4';s.type='video/mp4';v.appendChild(s);v.load();}v.play&&v.play().catch(function(){});})();</script>
   <div class="hero-overlay"></div>
@@ -1753,17 +1757,17 @@ document.addEventListener('DOMContentLoaded',function(){
     <div class="stats-grid">
       <div class="stat reveal">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M5 9l7-7 7 7"/></svg>
-        <div class="n" data-counter="3" data-suffix="x">0x</div>
+        <div class="n" data-counter="3" data-suffix="x">3x</div>
         <div class="l" data-en="Potentially faster monthly close">Cierre mensual potencialmente más rápido</div>
       </div>
       <div class="stat reveal d1">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-        <div class="n" data-counter="142" data-suffix="h">0h</div>
+        <div class="n" data-counter="142" data-suffix="h">142h</div>
         <div class="l" data-en="Estimated hours saved in monthly operations">Horas estimadas ahorradas en operación mensual</div>
       </div>
       <div class="stat reveal d2">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
-        <div class="n" data-counter="24" data-suffix="%">0%</div>
+        <div class="n" data-counter="24" data-suffix="%">24%</div>
         <div class="l" data-en="Estimated potential improvement in operating profit">Mejora potencial estimada en utilidad operativa</div>
       </div>
       <div class="stat reveal d3">
@@ -1779,7 +1783,7 @@ document.addEventListener('DOMContentLoaded',function(){
 <!-- HANDSHAKE -->
 <section class="handshake">
   <div class="handshake-wrap">
-    <video id="handshakeVideo" loop muted playsinline preload="metadata" disablepictureinpicture x-webkit-airplay="deny"><source src="assets/img/KATIA_AI_Video_Workflows.mp4" type="video/mp4"></video>
+    <video id="handshakeVideo" loop muted playsinline preload="metadata" poster="assets/img/workflows-video-poster.jpg" disablepictureinpicture x-webkit-airplay="deny"><source src="assets/img/KATIA_AI_Video_Workflows.mp4" type="video/mp4"></video>
     <div class="handshake-quote">
       <h2 data-en-html='Where <span class="g">accounting expertise</span><br>meets <span class="g">Artificial Intelligence</span>.'>Donde la <span class="g">experiencia contable</span><br>se da la mano con la <span class="g">Inteligencia Artificial</span>.</h2>
     </div>
@@ -2493,9 +2497,9 @@ document.addEventListener('DOMContentLoaded',function(){
 
     <!-- Stats PYMEs Latinas USA -->
     <div class="houston-stats reveal">
-      <div class="h-stat"><div class="num" data-counter="5" data-suffix="M+">0</div><div class="lab" data-en="Active Latina-owned SMBs in USA">PYMEs Latina-owned activas en USA</div><span class="src">US Hispanic Chamber of Commerce</span></div>
-      <div class="h-stat"><div class="num" data-counter="800" data-prefix="$" data-suffix="B+">$0</div><div class="lab" data-en="Annual contribution to US GDP">Aporte anual al PIB de USA</div><span class="src">Latino Donor Collaborative</span></div>
-      <div class="h-stat"><div class="num" data-counter="44" data-suffix="%">0%</div><div class="lab" data-en="Growth last decade (vs 4% overall)">Crecimiento última década (vs 4% general)</div><span class="src">JPMorgan Chase Institute</span></div>
+      <div class="h-stat"><div class="num" data-counter="5" data-suffix="M+">5M+</div><div class="lab" data-en="Active Latina-owned SMBs in USA">PYMEs Latina-owned activas en USA</div><span class="src">US Hispanic Chamber of Commerce</span></div>
+      <div class="h-stat"><div class="num" data-counter="800" data-prefix="$" data-suffix="B+">$800B+</div><div class="lab" data-en="Annual contribution to US GDP">Aporte anual al PIB de USA</div><span class="src">Latino Donor Collaborative</span></div>
+      <div class="h-stat"><div class="num" data-counter="44" data-suffix="%">44%</div><div class="lab" data-en="Growth last decade (vs 4% overall)">Crecimiento última década (vs 4% general)</div><span class="src">JPMorgan Chase Institute</span></div>
       <div class="h-stat"><div class="num">#1</div><div class="lab" data-en="Texas · state with the most Latina-owned SMBs (~600K)">Texas · estado con más PYMEs Latinas (~600K)</div><span class="src">US Census Bureau</span></div>
     </div>
 
@@ -3030,7 +3034,7 @@ document.addEventListener('DOMContentLoaded',function(){
   <div class="container">
     <div class="f-grid">
       <div class="f-col-brand">
-        <div class="f-brand"><img src="assets/img/katia-logo-brand.png" alt="KATIA.AI · AI Automation Agency"></div>
+        <div class="f-brand"><img src="assets/img/katia-logo-brand.png" alt="KATIA.AI · AI Automation Agency" loading="lazy"></div>
         <p class="f-tag" data-en="AI automation agency for SMBs in Houston Metro, Texas. We help owners organize, automate and monitor administrative, financial and operational processes.">Agencia de automatización con IA para PYMEs en Houston Metro, Texas. Ayudamos a dueños a organizar, automatizar y monitorear procesos administrativos, financieros y operativos.</p>
         <div class="f-socials">
           <a href="https://www.facebook.com/profile.php?id=61575396974517" target="_blank" rel="noopener" aria-label="Facebook">
@@ -3088,7 +3092,7 @@ document.addEventListener('DOMContentLoaded',function(){
       <span data-en="KATIA.AI automates processes, organizes information and generates reports for human review. It does not offer certified legal, tax or accounting advice, nor does it replace authorized professionals (CPA, bookkeeper, tax preparer, legal/tax advisor). Any metric, scenario or result shown on this site is illustrative and does not constitute a guarantee of savings, profit or income.">KATIA.AI automatiza procesos, organiza información y genera reportes para revisión humana. No ofrece asesoría legal, fiscal o contable certificada, ni sustituye a profesionales autorizados (CPA, bookkeeper, tax preparer, asesor legal/fiscal). Toda métrica, escenario o resultado mostrado en este sitio es ilustrativo y no constituye garantía de ahorro, utilidad o ingresos.</span>
     </div>
     <div class="f-bot" style="margin-top:24px">
-      <div data-en="© 2026 KATIA.AI · AI automation for SMBs">© 2026 KATIA.AI · Automatización con IA para PYMEs</div>
+      <div data-en="© 2026 KATIA.AI · AI automation for SMBs · Updated July 2026">© 2026 KATIA.AI · Automatización con IA para PYMEs · Actualizado julio 2026</div>
       <div>Houston Metro, Texas · USA</div>
     </div>
   </div>
