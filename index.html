@@ -1672,9 +1672,8 @@ body{padding-top:78px}
 
 <!-- HERO -->
 <section class="hero" id="contenido">
-  <video class="hero-bg-video" id="heroFlow" autoplay muted loop playsinline preload="auto" poster="assets/img/hero-flow-poster.jpg" aria-hidden="true">
-    <source src="assets/video/hero-flow-4k.webm" type="video/webm">
-    <source src="assets/video/hero-flow-1080.mp4" type="video/mp4">
+  <video class="hero-bg-video" id="heroFlow" autoplay muted loop playsinline preload="metadata" poster="assets/img/hero-flow-poster.jpg" aria-hidden="true">
+    <source src="assets/video/hero-flow-1080-opt.mp4" type="video/mp4">
   </video>
   <script>(function(){var v=document.getElementById('heroFlow');if(!v)return;var small=matchMedia('(max-width:1279px)').matches||(navigator.connection&&navigator.connection.saveData);if(small){[].slice.call(v.querySelectorAll('source')).forEach(function(s){s.remove();});var s=document.createElement('source');s.src='assets/video/hero-flow-720.mp4';s.type='video/mp4';v.appendChild(s);v.load();}v.play&&v.play().catch(function(){});})();</script>
   <div class="hero-overlay"></div>
@@ -1784,7 +1783,7 @@ document.addEventListener('DOMContentLoaded',function(){
 <!-- HANDSHAKE -->
 <section class="handshake">
   <div class="handshake-wrap">
-    <video id="handshakeVideo" loop muted playsinline preload="metadata" disablepictureinpicture x-webkit-airplay="deny"><source src="assets/img/KATIA_AI_Video_Workflows.mp4" type="video/mp4"></video>
+    <video id="handshakeVideo" loop muted playsinline preload="metadata" poster="assets/img/workflows-video-poster.jpg" disablepictureinpicture x-webkit-airplay="deny"><source src="assets/img/KATIA_AI_Video_Workflows.mp4" type="video/mp4"></video>
     <div class="handshake-quote">
       <h2 data-en-html='Where <span class="g">accounting expertise</span><br>meets <span class="g">Artificial Intelligence</span>.'>Donde la <span class="g">experiencia contable</span><br>se da la mano con la <span class="g">Inteligencia Artificial</span>.</h2>
     </div>
