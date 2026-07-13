@@ -1,15 +1,25 @@
 # KATIA.AI
 
-> KATIA.AI es una capa de control empresarial impulsada por IA para PYMEs hispanas en Houston, Texas.
-> Automatiza cobros, reportes y control administrativo, contable y financiero con IA supervisada — 100% bilingüe (español e inglés).
+> KATIA.AI diseña automatizaciones, Apps e integraciones empresariales para PYMEs en Houston, Texas.
+> Conecta procesos, clientes, equipos y datos con soluciones supervisadas y atención bilingüe en español e inglés.
 
-## Qué hacemos
+## Catálogo de servicios
 
-- Automatización con IA para PYMEs con $200K–$5M de revenue anual
-- Control administrativo, contable y financiero (cobranza automatizada, dashboards ejecutivos, cierre mensual)
-- Asistente financiero con IA y atención 24/7 en español e inglés
-- Nos conectamos a lo que ya usa el negocio: QuickBooks, Xero, Square, Shopify, Stripe, Google Sheets, WhatsApp Business
-- La IA nunca toma decisiones financieras o fiscales sola: todo pasa por el dueño y su CPA
+- Automatización de procesos administrativos, contables, financieros y operativos
+- Agentes de IA y atención bilingüe para clientes y equipos
+- Apps empresariales personalizadas B2B/B2C para iOS, Android y Web
+- E-commerce y operaciones multicanal
+- Integraciones con ERP, CRM, pagos, logística y APIs
+- Dashboards, reportes y control empresarial
+
+## Apps empresariales personalizadas
+
+- Capacidades posibles: catálogo/SKU, inventario, carrito y checkout, descuentos, fidelidad, puntos, usuarios, roles, soporte, paneles y métricas
+- Pagos con Stripe y opciones BNPL sujetas a disponibilidad, elegibilidad y aprobación del proveedor
+- Envíos y tracking con UPS/FedEx cuando las cuentas y APIs del cliente lo permiten
+- Integraciones posibles con Oracle NetSuite, QuickBooks, CRM y otras APIs, sujetas a acceso, documentación y compatibilidad
+- Proceso: discovery, diseño, desarrollo, integraciones, UAT y lanzamiento controlado
+- Alcance, inversión, cronograma y soporte se definen en la propuesta de cada proyecto
 
 ## Planes
 
@@ -32,6 +42,7 @@ Houston Metro, Texas: Houston, Katy, Cypress, Sugar Land, Pearland, Energy Corri
 ## Páginas clave
 
 - [Inicio](https://katia.solutions/): propuesta de valor, planes, FAQ completo
+- [Apps empresariales personalizadas](https://katia.solutions/apps.html): Apps B2B/B2C para iOS, Android y Web
 - [Consulta / diagnóstico gratis](https://katia.solutions/consulta.html): agendar diagnóstico de 30 minutos
 - [Consultation (English)](https://katia.solutions/consultation.html): English version of the consultation page
 - [Metodología](https://katia.solutions/metodologia.html): proceso de 4 fases (diagnóstico, mapa IA, implementación, mejora continua)
