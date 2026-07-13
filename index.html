@@ -248,9 +248,11 @@ button,input{font-family:inherit}
 .brand img{height:42px;width:auto;display:block;filter:drop-shadow(0 0 14px rgba(58,120,255,.5))}
 
 /* Menu plain links */
-.nav-menu{display:flex;align-items:center;gap:34px;flex:1;justify-content:center}
+.nav-menu{display:flex;align-items:center;gap:clamp(14px,1.7vw,30px);flex:1;justify-content:center}
 .nav-menu a{font-family:'Inter',sans-serif;font-size:14px;color:var(--ink-mute);font-weight:500;letter-spacing:-.005em;transition:.2s;position:relative;text-decoration:none;padding:6px 2px}
 .nav-menu a:hover{color:#fff}
+.nav-menu a.nav-app-link{padding:7px 12px;border:1px solid rgba(106,160,255,.3);border-radius:999px;background:rgba(58,120,255,.09);color:#bcd0ff;font-weight:700}
+.nav-menu a.nav-app-link:hover{border-color:rgba(106,160,255,.65);background:rgba(58,120,255,.18);color:#fff}
 .nav-menu a.active{color:#fff}
 .nav-menu a.active::after{content:"";position:absolute;left:50%;bottom:-2px;width:18px;height:2px;background:linear-gradient(90deg,#3a78ff,#6aa0ff);border-radius:99px;transform:translateX(-50%);box-shadow:0 0 10px #3a78ff}
 
@@ -1564,6 +1566,8 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;back
   /* Section padding reducido */
   .empower,.solutions,.app-feature,.industries,.testimonials,.cta,.process,.chat-sec,.compare,.roi,.founder,.map{padding:70px 0}
   .app-shell{padding:34px 24px;border-radius:22px}
+  .app-actions{flex-direction:column;align-items:stretch;width:100%}
+  .app-actions .btn{width:100%;justify-content:center}
   .app-visual{min-height:330px}
   .app-note{right:-4px}
   /* Floating widgets ocultos en mobile (chatbot Rasa cubre el rol) */
@@ -1693,6 +1697,7 @@ body{padding-top:78px}
       <a href="#contenido" data-view="inicio" data-en="Home">Inicio</a>
       <a href="#problema" data-view="problema" data-en="Problem">Problema</a>
       <a href="#servicios" data-view="soluciones" data-en="Services">Servicios</a>
+      <a href="#apps" class="nav-app-link" data-cta="nav-app-product" data-en="App" aria-label="Producto App empresarial" data-es-aria="Producto App empresarial" data-en-aria="Business App product">App</a>
       <a href="#industrias" data-view="industrias" data-en="Industries">Industrias</a>
       <a href="#planes" data-view="planes" data-en="Pricing">Planes</a>
       <a href="#empresa" data-view="testimonios" data-en="Testimonials">Testimonios</a>
@@ -2062,7 +2067,7 @@ document.addEventListener('DOMContentLoaded',function(){
         </div>
         <div class="body"><h3 data-en-html='AI Agents &amp; Bilingual Service <span class="ar">→</span>'>Agentes IA &amp; Atención Bilingüe <span class="ar">→</span></h3><p data-en="Serve and qualify customers through web, phone, messaging and email in English and Spanish.">Atendemos y calificamos clientes por web, teléfono, mensajería y email en español e inglés.</p></div>
       </a>
-      <a href="apps.html" data-href-en="apps.html?lang=en" class="sol tilt reveal d2" data-cta="service-custom-apps">
+      <a href="#apps" class="sol tilt reveal d2" data-cta="service-custom-apps">
         <div class="img">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M9 6h6M10 18h4"/></svg></div>
           <img src="assets/img/v3/sol-realtime.webp" alt="App empresarial personalizada en dispositivo móvil" loading="lazy">
@@ -2099,8 +2104,8 @@ document.addEventListener('DOMContentLoaded',function(){
   <div class="container">
     <div class="app-shell reveal">
       <div class="app-copy">
-        <span class="app-kicker" data-en="New service · Custom development">Nuevo servicio · Desarrollo personalizado</span>
-        <h2 data-en-html='Your operation.<br><span>Your own App.</span>'>Su operación.<br><span>Su propia App.</span></h2>
+        <span class="app-kicker" data-en="KATIA Product · Custom Business App">Producto KATIA · App empresarial personalizada</span>
+        <h2 data-en-html='Your own App,<br><span>connected to your entire operation.</span>'>Una App propia,<br><span>conectada a toda su operación.</span></h2>
         <p data-en="We design mobile and web experiences around the real workflow of your business—not a generic template—with security and scalability requirements defined for each scope. From customer access to inventory, payments, loyalty, service, field work and management control.">Diseñamos experiencias móviles y web alrededor del flujo real de su negocio, no de una plantilla genérica, con requisitos de seguridad y escalabilidad definidos para cada alcance. Desde acceso de clientes hasta inventario, pagos, fidelidad, servicio, trabajo de campo y control gerencial.</p>
         <div class="app-chips" role="list" aria-label="Capacidades de Apps" data-en-aria="App capabilities">
           <span role="listitem">iOS · Android · Web</span>
@@ -2110,8 +2115,8 @@ document.addEventListener('DOMContentLoaded',function(){
           <span role="listitem" data-en="Integrations by scope">Integraciones por alcance</span>
         </div>
         <div class="app-actions">
-          <a href="apps.html" data-href-en="apps.html?lang=en" class="btn btn-primary" data-cta="apps-learn-more" data-en="Explore custom Apps →">Explorar Apps personalizadas →</a>
-          <a href="#contacto" class="btn btn-ghost" data-service-prefill="app_personalizada" data-cta="apps-proposal" data-en="Request an App proposal">Solicitar propuesta de App</a>
+          <a href="#contacto" class="btn btn-primary" data-service-prefill="app_personalizada" data-cta="apps-proposal" data-en="Request a proposal for my App">Solicitar propuesta para mi App</a>
+          <a href="apps.html" data-href-en="apps.html?lang=en" class="btn btn-ghost" data-cta="apps-learn-more" data-en="View product capabilities →">Ver capacidades del producto →</a>
         </div>
       </div>
       <div class="app-visual" aria-hidden="true">
@@ -3175,7 +3180,7 @@ document.addEventListener('DOMContentLoaded',function(){
       <div>
         <h5 data-en="Services">Servicios</h5>
         <a href="#servicios" data-en="All services">Todos los servicios</a>
-        <a href="apps.html" data-href-en="apps.html?lang=en" data-en="Custom business Apps">Apps empresariales personalizadas</a>
+        <a href="#apps" data-en="Custom business App product">Producto App empresarial</a>
         <a href="#planes" data-en="Plans &amp; pricing">Planes y precios</a>
         <a href="#empresa" data-en="Who&rsquo;s behind it">Quién está al frente</a>
         <a href="metodologia.html" data-en="Methodology">Metodología</a>

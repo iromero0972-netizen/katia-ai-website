@@ -157,6 +157,8 @@
     .nav-links a{transition:.2s}
     .nav-links a:hover{color:#fff}
     .nav-actions{display:flex;align-items:center;gap:12px}
+    .product-back{display:inline-flex;align-items:center;margin:0 0 16px;color:#91b3ff;font:700 11px/1.4 "JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;transition:.2s}
+    .product-back:hover{color:#fff;transform:translateX(-2px)}
     .lang{display:flex;align-items:center;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:999px;padding:3px}
     .lang button{border:0;background:transparent;color:#91a3c8;border-radius:999px;padding:7px 10px;cursor:pointer;font-size:12px;font-weight:800}
     .lang button[aria-pressed="true"]{background:#edf3ff;color:#081126}
@@ -310,6 +312,7 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
+          <a class="product-back" href="index.html#apps" data-es="← KATIA.AI / Producto App" data-en="← KATIA.AI / App Product">← KATIA.AI / Producto App</a>
           <div class="eyebrow" data-es="Apps empresariales · B2B + B2C" data-en="Business Apps · B2B + B2C">Apps empresariales · B2B + B2C</div>
           <h1 data-es-html="Su operación merece una App <span>hecha a su medida.</span>" data-en-html="Your operation deserves an App <span>built around it.</span>">Su operación merece una App <span>hecha a su medida.</span></h1>
           <p data-es="Diseñamos Apps personalizadas para iOS, Android y Web que conectan clientes, equipos, ventas, inventario y sistemas empresariales en una experiencia coherente." data-en="We design custom iOS, Android and Web Apps that connect customers, teams, sales, inventory and business systems through one coherent experience.">Diseñamos Apps personalizadas para iOS, Android y Web que conectan clientes, equipos, ventas, inventario y sistemas empresariales en una experiencia coherente.</p>
@@ -479,12 +482,12 @@
   <script>
     (function(){
       'use strict';
-      var storageKey = 'katia-language';
+      var storageKey = 'katia_lang';
       var buttons = Array.prototype.slice.call(document.querySelectorAll('[data-lang]'));
       var params = new URLSearchParams(window.location.search);
       var queryLang = params.get('lang');
       var storedLang;
-      try { storedLang = localStorage.getItem(storageKey); } catch (error) { storedLang = null; }
+      try { storedLang = localStorage.getItem(storageKey) || localStorage.getItem('katia-language'); } catch (error) { storedLang = null; }
       var currentLang = (queryLang === 'en' || queryLang === 'es') ? queryLang : (storedLang === 'en' ? 'en' : 'es');
 
       function updateStructuredData(lang, title, description, localizedUrl){
