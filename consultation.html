@@ -2,33 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=()">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self' https:; connect-src 'self' https://srv1448901.hstgr.cloud https://www.google-analytics.com https://region1.google-analytics.com; frame-src https://calendly.com https://www.youtube.com; form-action 'self'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#1f5bff">
 <!-- Google tag (gtag.js) · GA4 · KATIA.AI -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LKNZZY2Z9Y"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-LKNZZY2Z9Y');
-  gtag('config', 'AW-18207097336');
-</script>
-<!-- Meta Pixel · KATIA.AI -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2021221848741117');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none" alt=""
-src="https://www.facebook.com/tr?id=2021221848741117&ev=PageView&noscript=1"
-/></noscript>
+<script src="assets/js/katia-consent.js" defer></script>
 <title>Automation and App consultation in Houston | KATIA.AI</title>
 <meta name="description" content="Request a consultation for automation, Apps, e-commerce, integrations, AI agents or dashboards. We normally respond within one business day.">
 <meta name="robots" content="index,follow">
@@ -301,6 +282,7 @@ function submitForm(e){
     source:'web_form_en', fuente:'web_form_en'
   };
 
+  if(window.KatiaRequestGuard){var guardResult=window.KatiaRequestGuard.validateLead(payload);if(!guardResult.ok){alert(guardResult.message);return;}}
   btn.textContent='Sending…'; btn.disabled=true;
   fetch(WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
     .then(function(res){
@@ -340,5 +322,6 @@ function initializeServiceOrder(){
 if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initializeServiceOrder);
 else initializeServiceOrder();
 </script>
+<script src="assets/js/katia-request-guard.js" defer></script>
 </body>
 </html>
