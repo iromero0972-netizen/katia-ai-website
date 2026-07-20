@@ -8,6 +8,7 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://katia.solutions/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://katia.solutions/?lang=en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://katia.solutions/"/>
   </url>
   <url>
