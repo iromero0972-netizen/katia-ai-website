@@ -282,6 +282,7 @@ function submitForm(e){
     source:'web_form_en', fuente:'web_form_en'
   };
 
+  if(window.KatiaRequestGuard){var guardResult=window.KatiaRequestGuard.validateLead(payload);if(!guardResult.ok){alert(guardResult.message);return;}}
   btn.textContent='Sending…'; btn.disabled=true;
   fetch(WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
     .then(function(res){
