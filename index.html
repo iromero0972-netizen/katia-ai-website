@@ -2,37 +2,21 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=()">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self' https:; connect-src 'self' https://srv1448901.hstgr.cloud https://www.google-analytics.com https://region1.google-analytics.com; frame-src https://calendly.com https://www.youtube.com; form-action 'self'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#1f5bff">
 <!-- Google tag (gtag.js) · GA4 · KATIA.AI -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LKNZZY2Z9Y"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-LKNZZY2Z9Y');
-  gtag('config', 'AW-18207097336');
-</script>
-<!-- Meta Pixel · KATIA.AI -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2021221848741117');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none" alt=""
-src="https://www.facebook.com/tr?id=2021221848741117&ev=PageView&noscript=1"
-/></noscript>
+<script src="assets/js/katia-consent.js" defer></script>
 <title>Automatización, Apps e IA para PYMEs en Houston | KATIA.AI</title>
 <meta name="description" content="Automatizaciones, agentes bilingües, Apps empresariales, e-commerce, integraciones ERP/API y dashboards para PYMEs en Houston.">
 <meta name="author" content="KATIA.AI">
 <link rel="canonical" href="https://katia.solutions/">
+<link rel="alternate" hreflang="es" href="https://katia.solutions/">
+<link rel="alternate" hreflang="en" href="https://katia.solutions/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://katia.solutions/">
 <link rel="icon" href="assets/img/katia-logo-icon.svg" type="image/svg+xml">
 
 <!-- Open Graph -->
@@ -4465,5 +4449,6 @@ function katiaSubmitLead(e){
 v.muted=true;
 b.addEventListener('click',function(){var on=v.muted;v.muted=!on;b.classList.toggle('on',on);b.setAttribute('aria-pressed',String(on));b.setAttribute('aria-label',on?'Silenciar sonido':'Activar sonido');var t=b.querySelector('.hero-sound-tip');if(t){t.textContent=on?'Silenciar':'Sonido';t.setAttribute('data-en',on?'Mute':'Sound');}if(on){v.muted=false;v.volume=1;v.play().catch(function(){});}});
 })();</script>
+<script src="assets/js/katia-request-guard.js" defer></script>
 </body>
 </html>
