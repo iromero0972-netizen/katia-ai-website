@@ -1,0 +1,4 @@
+Contact: mailto:ventas@katia.solutions
+Policy: https://katia.solutions/privacidad.html
+Preferred-Languages: es, en
+Canonical: https://katia.solutions/security.txt
