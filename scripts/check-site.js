@@ -10,7 +10,14 @@ for(const file of files){
   if(!/<title>[^<]+<\/title>/i.test(html))errors.push(label+': missing title');
   if(!/<meta\s+name=["']description["']/i.test(html))errors.push(label+': missing description');
   for(const m of html.matchAll(/<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)){try{JSON.parse(m[1]);}catch(e){errors.push(label+': invalid JSON-LD: '+e.message);}}
-  for(const m of html.matchAll(/<a\b[^>]*target=["']_blank["'][^>]*>/gi)){if(!/\brel=["'][^"']*noopener/i.test(m[0]))errors.push(label+': target=_blank without noopener');}
+  for(const m of html.matchAll(/<a\b[^>]*target=["']_blank["'][^>]*>/gi)){if(!/\brel=["'][^"']*\bnoopener\b/i.test(m[0]))errors.push(label+': target=_blank without noopener');}
+}
+const index=path.join(root,'index.html');
+if(fs.existsSync(index)){
+  const html=fs.readFileSync(index,'utf8');
+  for(const asset of ['assets/js/katia-consent.js','assets/js/katia-request-guard.js'])if(!html.includes(asset))errors.push('index.html: missing '+asset);
+  if(!html.includes('window.KatiaRequestGuard.validateLead(payload)'))errors.push('index.html: lead form bypasses request guard');
+  if(!html.includes('KatiaRequestGuard.validateChat(message)'))errors.push('index.html: chat bypasses request guard');
 }
 for(const file of walk(root)){
   if(!file.match(/\.(html|js|json|ya?ml|md|txt)$/))continue;

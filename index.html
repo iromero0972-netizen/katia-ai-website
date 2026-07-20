@@ -4295,6 +4295,9 @@ function katiaSubmitLead(e){
   if(!emailOk){ alert(en?'Please enter a valid email address.':'Por favor ingrese un correo electrónico válido.'); return false; }
   if(!telOk){ alert(en?'The phone number does not look valid. Check it or leave it empty.':'El teléfono no parece válido. Revíselo o déjelo vacío.'); return false; }
   if(!payload.consent){ alert(en?'You must accept the Privacy Policy to continue.':'Debe aceptar la Política de Privacidad para continuar.'); return false; }
+  if(!window.KatiaRequestGuard){ alert(en?'The security check is still loading. Please try again in a moment.':'La verificación de seguridad todavía está cargando. Inténtelo de nuevo en un momento.'); return false; }
+  var securityCheck=window.KatiaRequestGuard.validateLead(payload);
+  if(!securityCheck.ok){ alert(securityCheck.message); return false; }
 
   var orig=btn.textContent;
   btn.textContent=en?'Sending…':'Enviando…';
