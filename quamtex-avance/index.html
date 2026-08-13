@@ -1,0 +1,338 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Tienda Quamtex · Avance</title>
+<meta name="description" content="Vista previa de la tienda online de Quamtex, con las 12 pantallas construidas y lo que falta para publicarla.">
+<style>
+  :root {
+    --navy:#13294B; --navy-900:#081A32; --blue:#2E75B6; --blue-700:#245B8C;
+    --gold:#B8912A; --gold-claro:#D8AD47; --gold-100:#F6EED9;
+    --ink:#142033; --muted:#647287; --line:#DCE3EB;
+    --paper:#F4F7FA; --surface:#FFFFFF; --chrome:#13294B; --on-chrome:#FFFFFF;
+    --chrome-muted:#B9C9DC; --marco:#0B1728; --nota:#F6EED9; --nota-linea:#B8912A;
+    --body:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --dato:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  }
+  @media (prefers-color-scheme:dark) {
+    :root:not([data-theme="light"]) {
+      --ink:#E7EEF6; --muted:#9FB0C4; --line:#26364B; --paper:#0A1220; --surface:#101B2C;
+      --chrome:#081A32; --on-chrome:#EAF2F8; --chrome-muted:#9FB0C4; --marco:#050C16;
+      --blue:#7FB3E0; --blue-700:#A8CCEC; --nota:#1E1A0E; --nota-linea:#D8AD47;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink:#E7EEF6; --muted:#9FB0C4; --line:#26364B; --paper:#0A1220; --surface:#101B2C;
+    --chrome:#081A32; --on-chrome:#EAF2F8; --chrome-muted:#9FB0C4; --marco:#050C16;
+    --blue:#7FB3E0; --blue-700:#A8CCEC; --nota:#1E1A0E; --nota-linea:#D8AD47;
+  }
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);
+       font-size:17px;line-height:1.62;-webkit-text-size-adjust:100%}
+  .env{max-width:1120px;margin:0 auto;padding:0 24px 84px}
+
+  header.top{background:var(--chrome);color:var(--on-chrome);border-bottom:3px solid var(--gold)}
+  .top__env{max-width:1120px;margin:0 auto;padding:40px 24px 34px}
+  .top .eyebrow{font-family:var(--dato);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+                 color:var(--chrome-muted);margin:0}
+  .top h1{margin:12px 0 0;font-size:clamp(28px,5vw,46px);line-height:1.06;letter-spacing:-.028em;
+           font-weight:780;text-wrap:balance}
+  .top .sub{margin:16px 0 0;max-width:58ch;color:var(--chrome-muted);font-size:18px}
+  .estado{display:inline-block;margin:22px 0 0;font-family:var(--dato);font-size:11.5px;
+           letter-spacing:.1em;text-transform:uppercase;color:var(--gold-claro);
+           border:1.5px solid var(--gold-claro);padding:7px 12px}
+
+  .aviso{background:var(--nota);border:1px solid var(--line);border-left:3px solid var(--nota-linea);
+          padding:20px 24px;margin:30px 0 0;max-width:72ch}
+  .aviso p{margin:0 0 10px;max-width:none} .aviso p:last-child{margin:0}
+
+  .grupo{margin:56px 0 0}
+  h2{font-size:26px;line-height:1.18;letter-spacing:-.02em;margin:0;font-weight:750;text-wrap:balance}
+  .bajada{color:var(--muted);margin:6px 0 0;max-width:62ch}
+  .rejilla{display:grid;gap:30px;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));margin-top:22px}
+
+  .vista{margin:0;background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column}
+  .vista__cab{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline;padding:13px 15px;
+               border-bottom:1px solid var(--line)}
+  .ref{font-family:var(--dato);font-size:11.5px;font-weight:600;letter-spacing:.06em;
+        background:var(--chrome);color:var(--on-chrome);padding:3px 8px}
+  .vista__titulo{font-weight:650;flex:1}
+  .vista__ruta{font-family:var(--dato);font-size:12px;color:var(--blue-700);word-break:break-all;width:100%}
+  .marco{background:var(--marco);height:var(--alto);max-height:60vh;overflow-y:auto;overflow-x:hidden}
+  .marco:focus-visible{outline:2px solid var(--blue);outline-offset:-2px}
+  .marco--mobile{max-width:300px;margin:12px auto;border:1px solid var(--line)}
+  .marco img{display:block;width:100%;height:auto}
+  .movil{border-top:1px solid var(--line)}
+  .movil summary{cursor:pointer;padding:11px 15px;font-family:var(--dato);font-size:12px;
+                  letter-spacing:.06em;text-transform:uppercase;color:var(--blue-700)}
+  .movil summary:focus-visible{outline:2px solid var(--blue);outline-offset:-2px}
+
+  .tw{overflow-x:auto;border:1px solid var(--line);margin:22px 0 0;background:var(--surface)}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:15.5px}
+  th{text-align:left;font-family:var(--dato);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+      color:var(--muted);padding:12px 16px;border-bottom:1px solid var(--line);white-space:nowrap}
+  td{padding:13px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  .quien{font-family:var(--dato);font-size:11px;letter-spacing:.07em;text-transform:uppercase;
+          padding:3px 8px;border:1px solid currentColor;white-space:nowrap}
+  .quien--cliente{color:var(--gold);background:var(--gold-100)}
+  .quien--nuestro{color:var(--blue-700)}
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) .quien--cliente{background:transparent;color:var(--gold-claro)}
+  }
+  :root[data-theme="dark"] .quien--cliente{background:transparent;color:var(--gold-claro)}
+
+  p{max-width:66ch}
+  footer{margin-top:60px;padding-top:22px;border-top:2px solid var(--chrome);
+          font-family:var(--dato);font-size:12px;color:var(--muted);
+          display:flex;flex-wrap:wrap;gap:6px 28px;justify-content:space-between}
+
+  @media (max-width:640px){
+    body{font-size:16px} .env{padding:0 16px 60px} .top__env{padding:28px 16px 26px}
+    .rejilla{grid-template-columns:1fr;gap:24px} .marco{max-height:68vh}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+</head><body>
+<header class="top">
+  <div class="top__env">
+    <p class="eyebrow">Quamtex · Tienda online</p>
+    <h1>Cómo va la tienda</h1>
+    <p class="sub">Las 12 pantallas construidas hasta hoy, con el recorrido completo de compra
+      y el circuito mayorista. Cada una lleva una referencia para poder comentarla.</p>
+    <span class="estado">Vista previa · aún no publicada</span>
+  </div>
+</header>
+
+<div class="env">
+  <div class="aviso">
+    <p><strong>Qué está viendo.</strong> Capturas de la tienda funcionando en el entorno de
+      pruebas. El recorrido completo —catálogo, ficha, carrito, pago y alta de mayorista—
+      está construido y probado de punta a punta.</p>
+    <p><strong>Los productos son de ejemplo.</strong> Los 20 artículos, sus precios y sus
+      fichas técnicas son datos de prueba, no el catálogo de Quamtex. Se sustituyen por el
+      real en cuanto lleguen los datos de producto.</p>
+    <p><strong>Para comentar un cambio</strong>, basta con citar la referencia: «en la V3,
+      mover el precio arriba». Cada pantalla tiene la suya.</p>
+  </div>
+
+          <section class="grupo"><h2>El recorrido de compra</h2>
+        <p class="bajada">Lo que hace un cliente desde que entra hasta que paga.</p>
+        <div class="rejilla">
+        <figure class="vista" id="v1">
+          <figcaption class="vista__cab">
+            <span class="ref">V1</span><span class="vista__titulo">Portada</span>
+            <code class="vista__ruta">/</code>
+          </figcaption>
+          <div class="marco" style="--alto:900px" tabindex="0" aria-label="Portada, desplazable">
+            <img src="img/v1-portada.jpg" alt="Portada" loading="lazy" decoding="async">
+          </div>
+          <details class="movil"><summary>Ver en móvil</summary>
+            <div class="marco marco--mobile" style="--alto:844px" tabindex="0">
+              <img src="img/v1-portada-movil.jpg" alt="Portada en móvil" loading="lazy" decoding="async">
+            </div>
+          </details>
+        </figure>
+        <figure class="vista" id="v2">
+          <figcaption class="vista__cab">
+            <span class="ref">V2</span><span class="vista__titulo">Catálogo</span>
+            <code class="vista__ruta">/shop/</code>
+          </figcaption>
+          <div class="marco" style="--alto:900px" tabindex="0" aria-label="Catálogo, desplazable">
+            <img src="img/v2-catalogo.jpg" alt="Catálogo" loading="lazy" decoding="async">
+          </div>
+          <details class="movil"><summary>Ver en móvil</summary>
+            <div class="marco marco--mobile" style="--alto:844px" tabindex="0">
+              <img src="img/v2-catalogo-movil.jpg" alt="Catálogo en móvil" loading="lazy" decoding="async">
+            </div>
+          </details>
+        </figure>
+        <figure class="vista" id="v3">
+          <figcaption class="vista__cab">
+            <span class="ref">V3</span><span class="vista__titulo">Ficha de producto</span>
+            <code class="vista__ruta">/product/primer-epoxico-rico-en-zinc-p1105-base/</code>
+          </figcaption>
+          <div class="marco" style="--alto:900px" tabindex="0" aria-label="Ficha de producto, desplazable">
+            <img src="img/v3-ficha-de-producto.jpg" alt="Ficha de producto" loading="lazy" decoding="async">
+          </div>
+          <details class="movil"><summary>Ver en móvil</summary>
+            <div class="marco marco--mobile" style="--alto:844px" tabindex="0">
+              <img src="img/v3-ficha-de-producto-movil.jpg" alt="Ficha de producto en móvil" loading="lazy" decoding="async">
+            </div>
+          </details>
+        </figure>
+        <figure class="vista" id="v4">
+          <figcaption class="vista__cab">
+            <span class="ref">V4</span><span class="vista__titulo">Carrito</span>
+            <code class="vista__ruta">/cart/</code>
+          </figcaption>
+          <div class="marco" style="--alto:900px" tabindex="0" aria-label="Carrito, desplazable">
+            <img src="img/v4-carrito.jpg" alt="Carrito" loading="lazy" decoding="async">
+          </div>
+          <details class="movil"><summary>Ver en móvil</summary>
+            <div class="marco marco--mobile" style="--alto:844px" tabindex="0">
+              <img src="img/v4-carrito-movil.jpg" alt="Carrito en móvil" loading="lazy" decoding="async">
+            </div>
+          </details>
+        </figure>
+        <figure class="vista" id="v5">
+          <figcaption class="vista__cab">
+            <span class="ref">V5</span><span class="vista__titulo">Pago</span>
+            <code class="vista__ruta">/checkout/</code>
+          </figcaption>
+          <div class="marco" style="--alto:900px" tabindex="0" aria-label="Pago, desplazable">
+            <img src="img/v5-pago.jpg" alt="Pago" loading="lazy" decoding="async">
+          </div>
+          <details class="movil"><summary>Ver en móvil</summary>
+            <div class="marco marco--mobile" style="--alto:844px" tabindex="0">
+              <img src="img/v5-pago-movil.jpg" alt="Pago en móvil" loading="lazy" decoding="async">
+            </div>
+          </details>
+        </figure>
+        </div></section>
+      <section class="grupo"><h2>La cuenta mayorista</h2>
+        <p class="bajada">El circuito B2B: alta, aprobación, precio neto y pedido por SKU.</p>
+        <div class="rejilla">
+        <figure class="vista" id="v6">
+          <figcaption class="vista__cab">
+            <span class="ref">V6</span><span class="vista__titulo">Alta de mayorista</span>
+            <code class="vista__ruta">/wholesale/</code>
+          </figcaption>
+          <div class="marco" style="--alto:900px" tabindex="0" aria-label="Alta de mayorista, desplazable">
+            <img src="img/v6-alta-de-mayorista.jpg" alt="Alta de mayorista" loading="lazy" decoding="async">
+          </div>
+          <details class="movil"><summary>Ver en móvil</summary>
+            <div class="marco marco--mobile" style="--alto:844px" tabindex="0">
+              <img src="img/v6-alta-de-mayorista-movil.jpg" alt="Alta de mayorista en móvil" loading="lazy" decoding="async">
+            </div>
+          </details>
+        </figure>
+        <figure class="vista" id="v7">
+          <figcaption class="vista__cab">
+            <span class="ref">V7</span><span class="vista__titulo">Mi cuenta</span>
+            <code class="vista__ruta">/my-account/</code>
+          </figcaption>
+          <div class="marco" style="--alto:900px" tabindex="0" aria-label="Mi cuenta, desplazable">
+            <img src="img/v7-mi-cuenta.jpg" alt="Mi cuenta" loading="lazy" decoding="async">
+          </div>
+          <details class="movil"><summary>Ver en móvil</summary>
+            <div class="marco marco--mobile" style="--alto:844px" tabindex="0">
+              <img src="img/v7-mi-cuenta-movil.jpg" alt="Mi cuenta en móvil" loading="lazy" decoding="async">
+            </div>
+          </details>
+        </figure>
+        <figure class="vista" id="v8">
+          <figcaption class="vista__cab">
+            <span class="ref">V8</span><span class="vista__titulo">Pedido rápido por SKU</span>
+            <code class="vista__ruta">/quick-order/</code>
+          </figcaption>
+          <div class="marco" style="--alto:900px" tabindex="0" aria-label="Pedido rápido por SKU, desplazable">
+            <img src="img/v8-pedido-rapido-por-sku.jpg" alt="Pedido rápido por SKU" loading="lazy" decoding="async">
+          </div>
+          <details class="movil"><summary>Ver en móvil</summary>
+            <div class="marco marco--mobile" style="--alto:844px" tabindex="0">
+              <img src="img/v8-pedido-rapido-por-sku-movil.jpg" alt="Pedido rápido por SKU en móvil" loading="lazy" decoding="async">
+            </div>
+          </details>
+        </figure>
+        </div></section>
+      <section class="grupo"><h2>Páginas de la empresa</h2>
+        <p class="bajada">Contenido institucional y navegación.</p>
+        <div class="rejilla">
+        <figure class="vista" id="v9">
+          <figcaption class="vista__cab">
+            <span class="ref">V9</span><span class="vista__titulo">Quiénes somos</span>
+            <code class="vista__ruta">/about/</code>
+          </figcaption>
+          <div class="marco" style="--alto:900px" tabindex="0" aria-label="Quiénes somos, desplazable">
+            <img src="img/v9-quienes-somos.jpg" alt="Quiénes somos" loading="lazy" decoding="async">
+          </div>
+          <details class="movil"><summary>Ver en móvil</summary>
+            <div class="marco marco--mobile" style="--alto:844px" tabindex="0">
+              <img src="img/v9-quienes-somos-movil.jpg" alt="Quiénes somos en móvil" loading="lazy" decoding="async">
+            </div>
+          </details>
+        </figure>
+        <figure class="vista" id="v10">
+          <figcaption class="vista__cab">
+            <span class="ref">V10</span><span class="vista__titulo">Contacto</span>
+            <code class="vista__ruta">/contact/</code>
+          </figcaption>
+          <div class="marco" style="--alto:900px" tabindex="0" aria-label="Contacto, desplazable">
+            <img src="img/v10-contacto.jpg" alt="Contacto" loading="lazy" decoding="async">
+          </div>
+          <details class="movil"><summary>Ver en móvil</summary>
+            <div class="marco marco--mobile" style="--alto:844px" tabindex="0">
+              <img src="img/v10-contacto-movil.jpg" alt="Contacto en móvil" loading="lazy" decoding="async">
+            </div>
+          </details>
+        </figure>
+        <figure class="vista" id="v11">
+          <figcaption class="vista__cab">
+            <span class="ref">V11</span><span class="vista__titulo">Mega-menú abierto</span>
+            <code class="vista__ruta">/</code>
+          </figcaption>
+          <div class="marco" style="--alto:900px" tabindex="0" aria-label="Mega-menú abierto, desplazable">
+            <img src="img/v11-mega-menu-abierto.jpg" alt="Mega-menú abierto" loading="lazy" decoding="async">
+          </div>
+        </figure>
+        <figure class="vista" id="v12">
+          <figcaption class="vista__cab">
+            <span class="ref">V12</span><span class="vista__titulo">Menú móvil abierto</span>
+            <code class="vista__ruta">/</code>
+          </figcaption>
+          <div class="marco" style="--alto:844px" tabindex="0" aria-label="Menú móvil abierto, desplazable">
+            <img src="img/v12-menu-movil-abierto.jpg" alt="Menú móvil abierto" loading="lazy" decoding="async">
+          </div>
+        </figure>
+        </div></section>
+  <section class="grupo">
+    <h2>Qué falta para publicarla</h2>
+    <p class="bajada">Lo que queda, y de quién depende cada cosa.</p>
+    <div class="tw">
+      <table>
+        <thead>
+          <tr><th scope="col">Pendiente</th><th scope="col">Depende de</th><th scope="col">Sin esto…</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Catálogo real: precios, unidades de venta y existencias</td>
+            <td><span class="quien quien--cliente">Quamtex</span></td>
+            <td>La tienda vende el catálogo de ejemplo</td>
+          </tr>
+          <tr>
+            <td>Llaves de la pasarela de pago, en modo prueba</td>
+            <td><span class="quien quien--cliente">Quamtex</span></td>
+            <td>Un cliente minorista no puede pagar con tarjeta</td>
+          </tr>
+          <tr>
+            <td>Fotografía por producto y fichas técnicas oficiales</td>
+            <td><span class="quien quien--cliente">Quamtex</span></td>
+            <td>Las fichas muestran imágenes y datos de ejemplo</td>
+          </tr>
+          <tr>
+            <td>Textos legales: privacidad, términos, envíos y devoluciones</td>
+            <td><span class="quien quien--cliente">Quamtex</span></td>
+            <td>No se puede abrir al público</td>
+          </tr>
+          <tr>
+            <td>Dominio, alojamiento y accesos del sitio</td>
+            <td><span class="quien quien--cliente">Quamtex</span></td>
+            <td>No hay dónde publicarla</td>
+          </tr>
+          <tr>
+            <td>Instalación en el servidor definitivo y pruebas de aceptación</td>
+            <td><span class="quien quien--nuestro">KATIA.AI</span></td>
+            <td>Es el último paso, una vez estén los cinco anteriores</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:20px">Los cinco primeros puntos dependen de Quamtex y no tienen
+      trabajo técnico pendiente de nuestro lado: en cuanto lleguen, se cargan y se prueba.</p>
+  </section>
+
+  <footer>
+    <span>Quamtex · tienda online · avance al 10 de agosto de 2026</span>
+    <span>Preparado por KATIA.AI</span>
+  </footer>
+</div></body></html>
