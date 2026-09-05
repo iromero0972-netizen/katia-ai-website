@@ -26,6 +26,8 @@
   });
   document.querySelectorAll('[data-service]').forEach(a => a.addEventListener('click', () => {
     document.getElementById('serviceInterest').value = a.dataset.service;
+    const drawer = document.getElementById('contact-drawer');
+    if (drawer) drawer.open = true;
   }));
 
   const cases = {
@@ -218,6 +220,21 @@
       submit.disabled = false;
       chatBody.scrollTop = chatBody.scrollHeight;
     }
+  });
+  // Project dossiers use native dialogs: keyboard focus, Escape and return focus.
+  document.querySelectorAll('[data-project]').forEach(button => {
+    button.addEventListener('click', () => {
+      const dialog = document.getElementById('project-' + button.dataset.project);
+      if (dialog && !dialog.open) dialog.showModal();
+    });
+  });
+  document.querySelectorAll('.project-dialog').forEach(dialog => {
+    dialog.querySelectorAll('[data-close-project]').forEach(button => button.addEventListener('click', () => dialog.close()));
+    dialog.addEventListener('click', event => {
+      if (event.target !== dialog) return;
+      const box = dialog.getBoundingClientRect();
+      if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close();
+    });
   });
   /* Existing July hashes keep their destinations after the redesign. */
   const legacyHashes = {servicios: 'soluciones',services: 'soluciones',methodology: 'metodo',metodologia: 'metodo',planes: 'preguntas',pricing: 'preguntas',faq: 'preguntas',contact: 'contacto',about: 'nosotros',company: 'nosotros',testimonios: 'nosotros',problema: 'soluciones',app: 'soluciones'};
