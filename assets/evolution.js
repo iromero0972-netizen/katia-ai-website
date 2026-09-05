@@ -30,6 +30,29 @@
     if (drawer) drawer.open = true;
   }));
 
+  // Direct links keep the detailed catalog and resources easy to reach.
+  function revealDetails(hash) {
+    if (!hash || hash === '#') return;
+    let target;
+    try { target = document.getElementById(decodeURIComponent(hash.slice(1))); }
+    catch { return; }
+    if (!target) return;
+    let opened = false;
+    for (let node = target; node; node = node.parentElement) {
+      if (node.tagName === 'DETAILS' && !node.open) {
+        node.open = true;
+        opened = true;
+      }
+    }
+    if (opened) requestAnimationFrame(() => target.scrollIntoView({block: 'start'}));
+  }
+  document.addEventListener('click', event => {
+    const anchor = event.target.closest('a[href^="#"]');
+    if (anchor) revealDetails(anchor.hash);
+  });
+  window.addEventListener('hashchange', () => revealDetails(location.hash));
+  revealDetails(location.hash);
+
   const cases = {
     retail: [
       ['De la venta al control de inventario.', 'Pedido recibido en tu tienda', 'Inventario y documentos conectados', 'Seguimiento y visibilidad del margen'],
