@@ -1,4 +1,4 @@
-/* Hero movement and color cycle; pause offscreen, in hidden tabs, or on request. */
+/* Hero color cycle; pauses offscreen, in hidden tabs, or on request. */
 (function () {
   'use strict';
   const visual = document.querySelector('.hero-visual');
