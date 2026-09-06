@@ -1,0 +1,59 @@
+/* A growing portfolio: quiet cards, useful filters, detail on request. */
+.catalog-section{padding-top:20px}
+.catalog-toolbar{border-block:1px solid var(--line);padding:24px 0;margin-bottom:30px}
+.catalog-search-row{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:20px}
+.catalog-search{width:min(100%,440px);display:block}
+.catalog-search>span{display:block;font-size:.8125rem;margin-bottom:8px;font-weight:500}
+.catalog-search input{width:100%;min-height:48px;border:1px solid #bcc9d7;border-radius:4px;background:white;padding:11px 14px;color:var(--ink);font-size:.9375rem}
+.catalog-count{font-size:.875rem;white-space:nowrap}
+.catalog-filters{display:flex;flex-wrap:wrap;gap:8px}
+.catalog-filters button{min-height:44px;padding:9px 16px;border:1px solid var(--line);border-radius:4px;background:white;color:#344a64;font-size:.8125rem}
+.catalog-filters button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:white}
+.catalog-filters button:hover{border-color:var(--ink)}
+.catalog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:38px 24px}
+.catalog-card{min-width:0;display:flex;flex-direction:column;scroll-margin-top:110px}
+.catalog-card[hidden],.catalog-section [hidden]{display:none!important}
+.catalog-image{margin:0;position:relative;aspect-ratio:4/3;border-radius:6px;overflow:hidden;background:#e6eaf0}
+.catalog-image img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.catalog-image.is-project img{object-position:center 35%}
+.catalog-status{position:absolute;left:14px;top:14px;padding:5px 10px;background:#fffffff5;border:1px solid #ffffff70;border-radius:3px;color:#263d55;font-size:.6875rem;letter-spacing:.025em;line-height:1.5}
+.catalog-copy{padding:20px 0 0;display:flex;flex-direction:column;flex:1}
+.catalog-sector{font-size:.6875rem;text-transform:uppercase;letter-spacing:.09em;color:#50637a;margin-bottom:8px}
+.catalog-copy h2{font-size:1.3rem;letter-spacing:-.02em;line-height:1.25;margin-bottom:10px}
+.catalog-copy>p:not(.catalog-sector){font-size:.9375rem;line-height:1.6;margin-bottom:14px}
+.catalog-card button{display:flex;align-items:center;justify-content:space-between;width:100%;background:transparent;border:0;border-bottom:1px solid var(--line);padding:12px 0;margin-top:auto;min-height:48px;color:var(--ink);font-size:.8125rem;text-align:left}
+.catalog-card button:hover{color:var(--blue);border-bottom-color:var(--blue)}
+.catalog-more{display:block;margin:38px auto 0}
+.catalog-section .btn-outline:hover,.home-portfolio .btn-outline:hover{background:var(--ink);border-color:var(--ink);color:#fff}
+.catalog-empty{padding:45px 20px;text-align:center;background:var(--soft)}
+.catalog-empty h2{font-size:1.5rem;margin-bottom:10px}
+.catalog-empty button{margin-top:20px}
+.catalog-note{font-size:.75rem;margin-top:28px;max-width:760px;line-height:1.7}
+.catalog-intro-note{display:inline-block;margin-top:23px;font-size:.8125rem;border-top:1px solid var(--line);padding-top:13px;color:#415873}
+.catalog-dialog .dialog-info{position:relative;padding:44px 38px}
+.catalog-dialog .dialog-art{height:100%;min-height:420px;object-fit:cover}
+.catalog-dialog .dialog-info>h2{font-size:2rem;line-height:1.15;overflow-wrap:anywhere}
+.catalog-dialog .dialog-info>.eyebrow{padding-right:35px}
+.catalog-dialog .dialog-info>p{line-height:1.65}
+.catalog-dialog .project-flow{margin:24px 0}
+.catalog-dialog .project-disclaimer{font-size:.75rem;margin-bottom:18px}
+.catalog-dialog .text-link{line-height:1.5;min-height:44px}
+.home-portfolio .portfolio-all{display:flex;justify-content:center;margin-top:35px}
+.technology-strip{padding:48px 0 52px;background:#f3f5f7;border-block:1px solid var(--line)}
+.technology-strip-head{display:flex;justify-content:space-between;align-items:center;gap:25px;margin-bottom:27px}
+.technology-strip h2{font-size:1rem;letter-spacing:0;line-height:1.5}
+.technology-strip .text-link{font-size:.8125rem;min-height:44px}
+.technology-names{list-style:none;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));align-items:center;gap:16px;margin:0;padding:0}
+.technology-names a{min-height:52px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:3px;text-align:center;font-size:1.22rem;font-weight:600;letter-spacing:-.04em;color:#263b54}
+.technology-names small{font-size:.6rem;letter-spacing:.13em;font-weight:400;line-height:1.4}
+.technology-names a:hover{color:var(--blue)}
+.technology-section{background:#f3f5f7;border-block:1px solid var(--line)}
+.technology-group-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:36px}
+.technology-group h3{font-size:.8125rem;letter-spacing:0;margin:0 0 15px;padding-bottom:14px;border-bottom:1px solid #c7d2df;color:#3c5573}
+.technology-item{display:block;padding:18px 0;border-bottom:1px solid var(--line);min-height:96px}
+.technology-item strong{font-size:1.35rem;font-weight:500;letter-spacing:-.035em;display:block;margin-bottom:5px;color:var(--ink)}
+.technology-item span{font-size:.875rem;line-height:1.55;color:#526174;display:block}
+.technology-item:hover strong{color:var(--blue)}
+.technology-section .catalog-note{margin-top:28px}
+@media(max-width:1000px){.catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.technology-names{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.technology-group-grid{gap:24px}.catalog-dialog .dialog-info{padding:35px 25px}}
+@media(max-width:680px){.catalog-section{padding-top:0}.catalog-search-row{display:block}.catalog-search{width:100%}.catalog-count{margin-top:15px}.catalog-filters{gap:7px}.catalog-filters button{font-size:.75rem;padding:8px 11px}.catalog-grid{grid-template-columns:1fr;gap:32px}.catalog-copy h2{font-size:1.4rem}.catalog-image{aspect-ratio:4/3}.catalog-dialog .dialog-art{min-height:0;max-height:250px;aspect-ratio:4/3;width:100%}.catalog-dialog .dialog-info{padding:30px 24px}.catalog-dialog .dialog-info>h2{font-size:1.7rem}.technology-strip-head{display:block;margin-bottom:20px}.technology-strip-head .text-link{margin-top:8px}.technology-names{grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.technology-names li:last-child{grid-column:1/-1}.technology-names a{font-size:1.3rem}.technology-group-grid{grid-template-columns:1fr;gap:30px}.technology-item{min-height:0;padding:15px 0}.technology-section .section-top{margin-bottom:30px}}
