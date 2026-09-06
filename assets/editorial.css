@@ -1,14 +1,4 @@
-/* KATIA editorial direction: people, business, and purposeful technology. */
-.editorial-home .hero{background:#f2f5f8;overflow:hidden}
-.editorial-home .hero-inner{grid-template-columns:1fr 1.05fr;gap:45px;min-height:650px;padding:48px 0 65px}
-.editorial-home .hero-copy{padding:0}
-.editorial-home .hero h1{font-size:clamp(2.8rem,4.45vw,3.85rem);line-height:1.1}
-.editorial-home .hero-visual{height:510px;margin:0;align-self:center;position:relative}
-.hero-business-photo{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 45%;border-radius:8px}
-.hero-glass-inset{position:absolute;right:-18px;bottom:-29px;width:200px;height:185px;background:#f5f7fa;border:7px solid #f2f5f8;border-radius:8px;box-shadow:0 14px 35px #132b4122;overflow:hidden}
-.hero-glass-inset .hero-art{position:absolute;inset:0;object-fit:cover;object-position:72% 50%;height:100%;width:100%;mix-blend-mode:multiply}
-.hero-glass-inset .hero-motion-toggle{width:44px;height:44px;left:8px;bottom:8px;background:#ffffffed}
-.hero-glass-inset .art-label{display:none}
+
 .editorial-home .home-solutions{padding-top:80px}
 .editorial-home .visual-practice-grid{grid-template-columns:1.1fr 1fr;grid-template-rows:264px 264px;gap:24px}
 .editorial-home .visual-practice.has-photo{position:relative;isolation:isolate;display:flex;justify-content:flex-end;padding:28px;border:0;overflow:hidden;min-width:0;border-radius:8px;background:#152c42}
@@ -62,14 +52,11 @@
 .project-photo-intro>.wrap{grid-template-columns:1.05fr 1fr;gap:50px}
 .project-photo-intro{padding-bottom:84px}.project-photo-intro h1{font-size:clamp(2.5rem,4.1vw,3.55rem)}
 @media(max-width:1100px){
- .editorial-home .hero-inner{gap:30px;min-height:610px}.editorial-home .hero-visual{height:470px}.hero-glass-inset{width:177px;height:168px;right:-10px}
  .editorial-home .visual-practice-grid{grid-template-rows:270px 270px}.editorial-home .visual-practice.has-photo{padding:25px}.editorial-home .visual-practice:first-child{padding:30px}
  .worlds-grid{gap:13px}.world-card>span{font-size:.9375rem;left:14px}
  .photo-intro>.wrap,.project-photo-intro>.wrap{gap:35px}.photo-intro .business-photo{height:345px}.project-intro-gallery{gap:9px}.project-intro-gallery img{height:275px}
 }
 @media(max-width:930px){
- .editorial-home .hero-inner{grid-template-columns:1fr 1fr;padding:39px 0 55px;gap:25px;min-height:560px}.editorial-home .hero h1{font-size:2.8rem}.editorial-home .hero-visual{height:430px}
- .hero-glass-inset{width:160px;height:150px;border-width:5px;right:-7px;bottom:-25px}
  .editorial-home .visual-practice-grid{grid-template-columns:1fr 1fr;grid-template-rows:290px 290px;gap:20px}.editorial-home .visual-practice:first-child>h3{font-size:1.9rem}.editorial-home .visual-practice.has-photo>h3{font-size:1.45rem}
  .worlds-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.world-card{aspect-ratio:4/5}.business-worlds h2{font-size:2.2rem}
  .photo-intro .business-photo{height:345px}.service-photo{height:210px}.solution-photo{height:285px}.integration-photo{height:315px}
@@ -77,10 +64,6 @@
  .project-intro-gallery img{height:225px}.contact-photo{height:300px}
 }
 @media(max-width:680px){
- .editorial-home .hero-inner{display:flex;flex-direction:column;align-items:stretch;padding:36px 0 49px;gap:29px;min-height:0}
- .editorial-home .hero-copy{padding:0}.editorial-home .hero h1{font-size:clamp(2.4rem,8.2vw,3.1rem)}
- .editorial-home .hero-visual{height:auto;aspect-ratio:1.12;margin:0 0 12px;align-self:stretch}.hero-business-photo{object-position:center 40%}
- .hero-glass-inset{width:138px;height:135px;right:-7px;bottom:-29px;border-width:5px}.hero-glass-inset .hero-motion-toggle{left:3px;bottom:3px}
  .editorial-home .home-solutions{padding-top:49px}.editorial-home .visual-practice-grid{display:grid;grid-template-columns:1fr;grid-template-rows:auto;gap:20px}
  .editorial-home .visual-practice.has-photo,.editorial-home .visual-practice:first-child{grid-row:auto;min-height:330px;padding:25px}
  .editorial-home .visual-practice:first-child{min-height:400px}.editorial-home .practice-photo{height:100%;aspect-ratio:auto;margin:0}
@@ -98,4 +81,28 @@
  .contact-photo{height:auto;aspect-ratio:4/3}.project-photo-intro>.wrap{display:block}.project-photo-intro{padding-bottom:68px}
  .project-intro-gallery{gap:10px;margin-top:29px}.project-intro-gallery img{height:205px}.project-intro-gallery img:nth-child(2){margin-top:16px}.project-intro-gallery img:nth-child(3){margin-top:32px}
  .project-photo-intro h1{font-size:clamp(2.25rem,8vw,2.8rem)}
+}
+
+/* Main hero window: the original glass object is centered and changes color only. */
+.editorial-home .hero{background:#f2f5f8;overflow:hidden}
+.editorial-home .hero-inner{display:flex;flex-direction:column;align-items:center;gap:24px;min-height:0;padding:36px 0 44px;text-align:center}
+.editorial-home .hero-copy{padding:0;width:100%;max-width:960px}
+.editorial-home .hero .eyebrow{margin-bottom:17px}
+.editorial-home .hero h1{font-size:clamp(2.5rem,4.3vw,3.45rem);line-height:1.1;max-width:960px;margin:0 auto}
+.editorial-home .hero-visual.hero-main-window{position:relative;flex:none;width:min(100%,440px);height:auto;aspect-ratio:1;margin:0;align-self:center;border:1px solid #cbd6e2;border-radius:12px;overflow:hidden;background:#e8edf3;box-shadow:0 14px 40px #142c4110}
+.editorial-home .hero-main-window .hero-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right center;mix-blend-mode:normal}
+.editorial-home .hero-main-window .hero-motion-toggle{left:auto;right:15px;bottom:15px;background:#ffffffed;width:44px;height:44px}
+.editorial-home .hero-followup{width:100%;max-width:650px}
+.editorial-home .hero-description{max-width:620px;margin:0 auto;font-size:1rem;line-height:1.65}
+.editorial-home .hero-actions{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:14px 24px;margin-top:20px}
+.editorial-home .hero-note{margin-top:13px;font-size:.8125rem}
+@media(max-width:680px){
+ .editorial-home .hero-inner{padding:31px 0 35px;gap:23px}
+ .editorial-home .hero h1{font-size:clamp(2.2rem,7.6vw,2.8rem);line-height:1.13}
+ .editorial-home .hero .eyebrow{margin-bottom:15px;font-size:.75rem}
+ .editorial-home .hero-visual.hero-main-window{width:min(100%,380px);height:auto;aspect-ratio:1;align-self:center}
+ .editorial-home .hero-description{font-size:1rem;line-height:1.65}
+ .editorial-home .hero-actions{gap:8px 20px;margin-top:20px}
+ .editorial-home .hero-actions .btn{font-size:.875rem;min-height:48px}
+ .editorial-home .hero-actions .text-link{font-size:.875rem;min-height:44px}
 }
