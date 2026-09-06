@@ -17,8 +17,8 @@
     visual.classList.toggle('motion-running', playing && inView && !document.hidden);
     button.hidden = !enabled;
     const label = english
-      ? (userPaused ? 'Resume animation' : 'Pause animation')
-      : (userPaused ? 'Reanudar animación' : 'Pausar animación');
+      ? (userPaused ? 'Resume color changes' : 'Pause color changes')
+      : (userPaused ? 'Reanudar cambio de colores' : 'Pausar cambio de colores');
     button.setAttribute('aria-label', label);
     button.setAttribute('title', label);
     button.dataset.paused = String(userPaused);
