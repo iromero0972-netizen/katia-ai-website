@@ -16,8 +16,10 @@ const index=path.join(root,'index.html');
 if(fs.existsSync(index)){
   const html=fs.readFileSync(index,'utf8');
   for(const asset of ['assets/js/katia-consent.js','assets/js/katia-request-guard.js'])if(!html.includes(asset))errors.push('index.html: missing '+asset);
-  if(!html.includes('window.KatiaRequestGuard.validateLead(payload)'))errors.push('index.html: lead form bypasses request guard');
-  if(!html.includes('KatiaRequestGuard.validateChat(message)'))errors.push('index.html: chat bypasses request guard');
+  const scripts=[...html.matchAll(/<script[^>]*src=["']([^"']+)["'][^>]*>/gi)].map(m=>m[1]).filter(src=>!/^https?:/.test(src)).map(src=>path.join(root,src.startsWith('/')?src.slice(1):src)).filter(file=>fs.existsSync(file)).map(file=>fs.readFileSync(file,'utf8')).join('\n');
+  const clientCode=html+'\n'+scripts;
+  if(!clientCode.includes('window.KatiaRequestGuard.validateLead(payload)'))errors.push('index.html: lead form bypasses request guard');
+  if(!/KatiaRequestGuard\.validateChat\((?:message|text)\)/.test(clientCode))errors.push('index.html: chat bypasses request guard');
 }
 for(const file of walk(root)){
   if(!file.match(/\.(html|js|json|ya?ml|md|txt)$/))continue;

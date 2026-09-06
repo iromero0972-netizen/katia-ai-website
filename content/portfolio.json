@@ -1,0 +1,500 @@
+[
+  {
+    "id": "qtx",
+    "name": "QTX Auto",
+    "categories": [
+      "apps",
+      "gestion"
+    ],
+    "status": "development",
+    "image": "projects/qtx",
+    "sector": [
+      "Automotriz",
+      "Automotive"
+    ],
+    "summary": [
+      "Recepción de vehículos, documentación y seguimiento de reparaciones.",
+      "Vehicle intake, documentation and repair follow-up."
+    ],
+    "scope": [
+      [
+        "Registro del vehículo y fotografías",
+        "Expediente para revisión del equipo",
+        "Estimados y seguimiento en desarrollo"
+      ],
+      [
+        "Vehicle registration and photos",
+        "Case file for team review",
+        "Estimates and follow-up in development"
+      ]
+    ],
+    "tags": [
+      "VIN",
+      "App",
+      "Operaciones"
+    ]
+  },
+  {
+    "id": "quamtex",
+    "name": "Quamtex Commerce",
+    "categories": [
+      "comercio",
+      "gestion"
+    ],
+    "status": "development",
+    "image": "projects/quamtex",
+    "sector": [
+      "Comercio industrial",
+      "Industrial commerce"
+    ],
+    "summary": [
+      "Catálogo, pedidos y una operación comercial conectada.",
+      "Product catalog, orders and connected business operations."
+    ],
+    "scope": [
+      [
+        "Experiencia de compra de pintura y recubrimientos",
+        "Catálogo y gestión de pedidos",
+        "Integración con Oracle NetSuite en desarrollo"
+      ],
+      [
+        "Shopping experience for paints and coatings",
+        "Catalog and order management",
+        "Oracle NetSuite integration in development"
+      ]
+    ],
+    "tags": [
+      "E-commerce",
+      "Oracle NetSuite",
+      "Color Hub USA"
+    ]
+  },
+  {
+    "id": "barber",
+    "name": "ZOHO Mobile Barber",
+    "categories": [
+      "apps"
+    ],
+    "status": "demo",
+    "image": "projects/barber",
+    "sector": [
+      "Belleza y cuidado personal",
+      "Beauty and personal care"
+    ],
+    "summary": [
+      "Servicios y reservas para una experiencia de barbería móvil.",
+      "Services and booking for a mobile barber experience."
+    ],
+    "scope": [
+      [
+        "Selección de servicios",
+        "Ubicación y solicitud de reserva",
+        "Variantes de reservas y operación"
+      ],
+      [
+        "Service selection",
+        "Location and booking requests",
+        "Booking and operations variants"
+      ]
+    ],
+    "tags": [
+      "App",
+      "Booking",
+      "Operations"
+    ]
+  },
+  {
+    "id": "andys",
+    "name": "Andy’s Bakery",
+    "categories": [
+      "apps",
+      "comercio"
+    ],
+    "status": "demo",
+    "image": "editorial/bakery",
+    "sector": [
+      "Gastronomía",
+      "Food and hospitality"
+    ],
+    "summary": [
+      "Pedidos, recompensas y gestión para una panadería.",
+      "Orders, rewards and management for a bakery."
+    ],
+    "scope": [
+      [
+        "Experiencia de pedidos",
+        "Recompensas para clientes",
+        "Gestión de la operación"
+      ],
+      [
+        "Ordering experience",
+        "Customer rewards",
+        "Operations management"
+      ]
+    ],
+    "tags": [
+      "App",
+      "Pedidos",
+      "Rewards",
+      "Orders"
+    ]
+  },
+  {
+    "id": "amazon-desk",
+    "name": "KATIA Amazon Service Desk",
+    "categories": [
+      "ia",
+      "gestion",
+      "comercio"
+    ],
+    "status": "demo",
+    "image": "photos/support",
+    "sector": [
+      "Atención al cliente",
+      "Customer service"
+    ],
+    "summary": [
+      "Atención de consultas de Amazon con revisión humana.",
+      "Amazon customer support with human review."
+    ],
+    "scope": [
+      [
+        "Portal de atención para Quamtex",
+        "Organización y control de consultas",
+        "Aprobación humana antes de actuar"
+      ],
+      [
+        "Support portal for Quamtex",
+        "Inquiry organization and tracking",
+        "Human approval before action"
+      ]
+    ],
+    "tags": [
+      "Amazon",
+      "IA",
+      "AI",
+      "Service Desk"
+    ]
+  },
+  {
+    "id": "faro",
+    "name": "Faro Finanzas",
+    "categories": [
+      "gestion"
+    ],
+    "status": "demo",
+    "image": "photos/finance",
+    "sector": [
+      "Finanzas y contabilidad",
+      "Finance and accounting"
+    ],
+    "summary": [
+      "Un panel para comprender la salud financiera de una pyme.",
+      "A dashboard to understand a small business’s financial health."
+    ],
+    "scope": [
+      [
+        "Vista de salud contable y financiera",
+        "Información presentada en un panel interactivo",
+        "Lectura orientada a pequeñas y medianas empresas"
+      ],
+      [
+        "Accounting and financial health overview",
+        "Information in an interactive dashboard",
+        "Designed for small and medium-sized businesses"
+      ]
+    ],
+    "tags": [
+      "Dashboard",
+      "Contabilidad",
+      "Finanzas",
+      "Accounting",
+      "Finance"
+    ]
+  },
+  {
+    "id": "lunea",
+    "name": "LUNEA",
+    "categories": [
+      "apps"
+    ],
+    "status": "demo",
+    "image": "editorial/beauty",
+    "sector": [
+      "Belleza y bienestar",
+      "Beauty and wellness"
+    ],
+    "summary": [
+      "Reservas y fidelidad para un estudio de belleza.",
+      "Bookings and loyalty for a beauty studio."
+    ],
+    "scope": [
+      [
+        "Reserva de servicios",
+        "Experiencia de fidelidad",
+        "Gestión de uñas, pestañas y cejas"
+      ],
+      [
+        "Service booking",
+        "Loyalty experience",
+        "Nail, lash and brow studio management"
+      ]
+    ],
+    "tags": [
+      "App",
+      "Reservas",
+      "Bookings",
+      "Loyalty"
+    ]
+  },
+  {
+    "id": "brasa",
+    "name": "Brasa Nómada",
+    "categories": [
+      "apps",
+      "gestion"
+    ],
+    "status": "demo",
+    "image": "editorial/restaurant",
+    "sector": [
+      "Gastronomía y eventos",
+      "Food and events"
+    ],
+    "summary": [
+      "Cotizaciones y coordinación para parrilla a domicilio.",
+      "Quotes and coordination for at-home catering."
+    ],
+    "scope": [
+      [
+        "Experiencia de parrilla venezolana a domicilio",
+        "Cotizador para clientes",
+        "Portal operativo para la empresa"
+      ],
+      [
+        "At-home Venezuelan grill experience",
+        "Customer quote builder",
+        "Business operations portal"
+      ]
+    ],
+    "tags": [
+      "App",
+      "Cotizaciones",
+      "Quotes",
+      "Katy"
+    ]
+  },
+  {
+    "id": "machos",
+    "name": "Machos Barber Shop VIP",
+    "categories": [
+      "apps",
+      "gestion"
+    ],
+    "status": "demo",
+    "image": "editorial/beauty",
+    "sector": [
+      "Belleza y cuidado personal",
+      "Beauty and personal care"
+    ],
+    "summary": [
+      "Citas, puntos y operación para una barbería.",
+      "Appointments, points and operations for a barbershop."
+    ],
+    "scope": [
+      [
+        "Experiencia de clientes y citas",
+        "Programa de puntos",
+        "Propuesta de gestión operativa"
+      ],
+      [
+        "Customer and appointment experience",
+        "Points program",
+        "Operations management proposal"
+      ]
+    ],
+    "tags": [
+      "App",
+      "Reservas",
+      "Bookings",
+      "Loyalty"
+    ]
+  },
+  {
+    "id": "ruta77",
+    "name": "Ruta 77 — Smash & Shakes",
+    "categories": [
+      "apps",
+      "comercio"
+    ],
+    "status": "demo",
+    "image": "editorial/restaurant",
+    "sector": [
+      "Gastronomía",
+      "Food and hospitality"
+    ],
+    "summary": [
+      "Pedidos y recompensas conectados a la operación de un food truck.",
+      "Orders and rewards connected to food truck operations."
+    ],
+    "scope": [
+      [
+        "Pedidos para clientes",
+        "Experiencia de recompensas",
+        "Portal operativo del food truck"
+      ],
+      [
+        "Customer orders",
+        "Rewards experience",
+        "Food truck operations portal"
+      ]
+    ],
+    "tags": [
+      "App",
+      "Food truck",
+      "Pedidos",
+      "Orders"
+    ]
+  },
+  {
+    "id": "siamara",
+    "name": "Siamara Thai Spa",
+    "categories": [
+      "apps",
+      "gestion"
+    ],
+    "status": "demo",
+    "image": "editorial/beauty",
+    "sector": [
+      "Belleza y bienestar",
+      "Beauty and wellness"
+    ],
+    "summary": [
+      "Una aplicación para la experiencia del cliente y la gestión del spa.",
+      "An application for the customer experience and spa management."
+    ],
+    "scope": [
+      [
+        "Experiencia digital para clientes",
+        "Presentación de servicios del spa",
+        "Gestión del negocio"
+      ],
+      [
+        "Digital customer experience",
+        "Spa service presentation",
+        "Business management"
+      ]
+    ],
+    "tags": [
+      "App",
+      "Spa",
+      "Bienestar",
+      "Wellness"
+    ]
+  },
+  {
+    "id": "fit",
+    "name": "KATIA Fit Coach",
+    "categories": [
+      "apps"
+    ],
+    "status": "prototype",
+    "image": "editorial/devices",
+    "sector": [
+      "Bienestar",
+      "Wellness"
+    ],
+    "summary": [
+      "Prototipo de aplicación para acompañamiento de entrenamiento.",
+      "An application prototype for training guidance."
+    ],
+    "scope": [
+      [
+        "Experiencia de entrenamiento",
+        "Prototipo de aplicación",
+        "Evaluación y validación en curso"
+      ],
+      [
+        "Training experience",
+        "Application prototype",
+        "Evaluation and validation in progress"
+      ]
+    ],
+    "tags": [
+      "App",
+      "Fitness",
+      "Coach"
+    ]
+  },
+  {
+    "id": "lead-intake",
+    "name": "Quamtex Lead Intake",
+    "categories": [
+      "ia",
+      "gestion"
+    ],
+    "status": "inuse",
+    "image": "editorial/retail",
+    "sector": [
+      "Desarrollo comercial",
+      "Business development"
+    ],
+    "summary": [
+      "Captura y clasificación de oportunidades para el equipo comercial.",
+      "Lead capture and classification for the sales team."
+    ],
+    "scope": [
+      [
+        "Recepción de leads desde formularios",
+        "Clasificación y control de duplicados",
+        "Revisión por el equipo comercial"
+      ],
+      [
+        "Lead capture from forms",
+        "Classification and duplicate checks",
+        "Sales team review"
+      ]
+    ],
+    "tags": [
+      "IA",
+      "AI",
+      "Leads",
+      "CRM"
+    ]
+  },
+  {
+    "id": "prospecting",
+    "name": "Quamtex · Prospección B2B",
+    "nameEn": "Quamtex · B2B Prospecting",
+    "categories": [
+      "ia"
+    ],
+    "status": "service",
+    "image": "editorial/advisory",
+    "sector": [
+      "Inteligencia comercial",
+      "Sales intelligence"
+    ],
+    "summary": [
+      "Investigación y depuración de prospectos para conversaciones relevantes.",
+      "Prospect research and refinement for relevant conversations."
+    ],
+    "scope": [
+      [
+        "Búsqueda de empresas con encaje comercial",
+        "Validación y depuración de contactos",
+        "Contexto para preparar el acercamiento"
+      ],
+      [
+        "Research into relevant businesses",
+        "Contact validation and refinement",
+        "Context to prepare outreach"
+      ]
+    ],
+    "tags": [
+      "B2B",
+      "Leads",
+      "Inteligencia de mercado",
+      "Market intelligence"
+    ]
+  }
+]
