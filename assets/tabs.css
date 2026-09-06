@@ -1,0 +1,161 @@
+/* KATIA multipage navigation and visual service narratives. */
+.nav-links{gap:22px}.nav-links>a{font-size:.8125rem;border-bottom:2px solid transparent;padding-top:2px}.nav-links>a[aria-current="page"]{border-bottom-color:#315c9e;color:#224c9f}.nav-wrap{gap:24px}.nav-actions{gap:16px}.brand,.brand img{width:151px}
+.page-intro{background:#f1f4f8;padding:66px 0 62px;border-bottom:1px solid var(--line)}
+.page-intro>.wrap{display:grid;grid-template-columns:1fr 190px;gap:60px;align-items:center}
+.page-intro h1{font-size:clamp(2.5rem,4.6vw,3.8rem);line-height:1.12;letter-spacing:-.045em;max-width:860px}
+.page-description{font-size:1.0625rem;line-height:1.75;max-width:650px;margin-top:25px}
+.intro-mark{width:170px;height:170px;display:flex;align-items:center;justify-content:center;color:#315683;background:#e4ebf3;border:1px solid #d3deeb;border-radius:24px}
+.intro-mark>.icon{width:82px;height:82px;stroke-width:1}
+.page-sections{display:flex;flex-wrap:wrap;gap:10px 27px;padding-top:17px;padding-bottom:17px;border-bottom:1px solid var(--line)}
+.page-sections>a{min-height:44px;display:flex;align-items:center;font-size:.9375rem;color:#3f5877}
+.page-sections>a:hover{text-decoration:underline;text-underline-offset:5px}
+.home-solutions .section-top{align-items:flex-end}.visual-practice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px}
+.visual-practice{border:1px solid #d8e1eb;border-radius:7px;padding:26px;background:#fff;display:flex;flex-direction:column;transition:border-color .2s,box-shadow .2s}
+.visual-practice:hover{border-color:#7d9bc3;box-shadow:0 9px 22px #17354a0b}
+.practice-graphic{display:flex;align-items:center;background:#f1f5fa;border:1px solid #e0e8f2;padding:27px 22px;margin-bottom:26px;border-radius:5px;min-height:112px;gap:17px;color:#365e93}
+.practice-graphic>.icon{width:37px;height:37px;stroke-width:1.3}.graphic-line{height:1px;background:#b9cce2;flex:1}.graphic-output{display:flex;align-items:center;justify-content:center;width:33px;height:33px;background:#dce7f4;border-radius:50%;color:#345b8f}
+.graphic-output>.icon{width:18px;height:18px}.practice-kicker{font-size:.8125rem;color:#708198;letter-spacing:.08em}
+.visual-practice h3{font-size:1.35rem;margin:13px 0;line-height:1.25}
+.visual-practice>p{font-size:.9375rem;line-height:1.75;margin-bottom:25px}
+.practice-action{display:flex;align-items:center;justify-content:space-between;margin-top:auto;font-size:.875rem;color:#244c87}.practice-action>.icon{width:19px;height:19px}
+.home-portfolio{background:#f6f8fa;padding-top:66px}
+.home-portfolio .project-cover{display:block}.home-portfolio .project-cover-title{pointer-events:none}
+.next-step{padding:46px 0;background:#eaf0f7;border-top:1px solid #d6e1ee;border-bottom:1px solid #d6e1ee}
+.next-step>.wrap{display:flex;align-items:center;justify-content:space-between;gap:32px}
+.next-step h2{font-size:2rem}.next-step .eyebrow{margin-bottom:12px}
+.business-matrix{padding-top:62px}
+.business-matrix .service-card{border:1px solid #d5dfeb;border-radius:7px;background:#fff}
+.business-matrix .service-card>summary{padding:25px 22px 18px;min-height:240px}
+.business-matrix .service-symbol{background:#edf3fa;border-radius:5px;padding:13px;margin-bottom:23px;color:#355c91}
+.business-matrix .service-card h3{font-size:1.3rem;line-height:1.3}
+.business-matrix .service-card summary p{font-size:.9375rem;line-height:1.65}
+.business-matrix .service-more{font-size:.8125rem;margin-top:21px}
+.business-matrix .service-detail{padding:0 22px 23px}.business-matrix .service-detail li{font-size:.875rem;line-height:1.65}
+.business-matrix .service-detail>.text-link{font-size:.875rem;line-height:1.5}
+.business-matrix .scope-note{font-size:.8125rem;line-height:1.7}
+.integration-services{background:#f5f7fa}
+.integration-service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.integration-service{padding:27px 24px;border:1px solid #d8e2ed;background:#fff;border-radius:7px;display:flex;flex-direction:column}
+.integration-service>.icon{color:#355e94;width:29px;height:29px;margin-bottom:22px}
+.integration-service h3{font-size:1.25rem;line-height:1.35;letter-spacing:-.02em}
+.mini-flow{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:25px -6px;padding:18px 7px;border-top:1px solid #dbe4ef;border-bottom:1px solid #dbe4ef}
+.mini-flow>span{font-size:.75rem;line-height:1.55;text-align:center;flex:1;color:#3b5678}
+.mini-flow>.icon{width:14px;height:14px;color:#6d88ac;flex:none}
+.integration-service>p{font-size:.9375rem;line-height:1.75;flex:1}
+.integration-service>.text-link{font-size:.875rem;margin-top:20px}
+.diagram-note{font-size:.8125rem;line-height:1.7;color:#5d6f86;margin-top:26px}
+.page-services .solution-gallery{padding-top:25px}
+.page-services .solution-caption h3{font-size:1.25rem;line-height:1.35}.page-services .solution-caption p{font-size:.9375rem;line-height:1.65}
+.page-services .ecosystem-section{padding-top:75px;padding-bottom:75px}
+.standalone-industries{padding-top:70px;padding-bottom:75px}
+.project-studies{padding-top:60px}
+.case-study{display:grid;grid-template-columns:1.03fr 1fr;gap:62px;align-items:center;padding:0 0 62px;margin-bottom:62px;border-bottom:1px solid var(--line)}
+.case-study:last-of-type{margin-bottom:0}
+.case-study:nth-child(even) .case-study-art{order:2}.case-study:nth-child(even) .case-study-content{order:1}
+.case-study-art{position:relative;height:465px;border-radius:7px;overflow:hidden;background:#11283e}
+.case-study-art img{height:100%;width:100%;object-fit:cover;object-position:center 70%}
+.case-quamtex .case-study-art img{object-position:65% center}
+.case-barber .case-study-art img{object-position:center bottom}
+.case-study-art>span{position:absolute;top:19px;left:19px;background:#102940e8;border:1px solid #ffffff80;color:#fff;border-radius:4px;padding:6px 10px;font-size:.8125rem}
+.case-study-content .eyebrow{font-size:.75rem;line-height:1.6}
+.case-study-content h2{font-size:2.7rem;margin-bottom:18px}
+.case-study-content h3{font-size:1.35rem;line-height:1.5;letter-spacing:-.015em;max-width:450px;margin-bottom:18px}
+.case-study-content>p:not(.eyebrow){font-size:1rem;line-height:1.8;max-width:440px}
+.case-journey{list-style:none;padding:0;margin:25px 0}
+.case-journey li{font-size:.9375rem;display:flex;gap:17px;align-items:center;padding:12px 0;border-top:1px solid var(--line)}
+.case-journey li>span{font-size:.75rem;color:#6b819d;letter-spacing:.05em}
+.case-file{border:0;background:transparent;padding:0;min-height:44px;cursor:pointer}
+.delivery-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;padding:0;list-style:none;margin:0}
+.delivery-cards li{padding:26px 23px;border:1px solid #d7e1ed;background:#f9fbfd;border-radius:6px;position:relative}
+.delivery-number{font-family:Georgia,'Times New Roman',serif;font-size:2.6rem;color:#d0dce9;line-height:1}
+.delivery-cards .icon{position:absolute;right:24px;top:27px;width:27px;height:27px;color:#3a6296}
+.delivery-cards h3{font-size:1.25rem;margin:26px 0 14px;line-height:1.4}
+.delivery-cards strong{font-size:.875rem;font-weight:500;line-height:1.55;display:block;color:#31537e}
+.delivery-cards p{font-size:.9375rem;line-height:1.75;margin-top:13px}
+.page-firm .firm-section{padding-top:70px}.page-firm .expertise-band>.wrap{padding-top:30px;padding-bottom:30px}
+.estimator-page{background:#f6f8fb}
+.estimator-layout{display:grid;grid-template-columns:.95fr 1.15fr;gap:65px;align-items:center}
+.estimator-layout h2{font-size:2.5rem;line-height:1.2}.estimator-layout>div>p:not(.eyebrow){font-size:1rem;line-height:1.8;margin-top:24px;max-width:420px}
+.estimator-layout>div>p.estimator-limit{font-size:.875rem;padding-left:17px;border-left:2px solid #a5bbd8}
+.estimator-layout .calculator{background:#fff;border:1px solid #d6e1ee;padding:28px;border-radius:7px;margin:0}
+.estimator-layout .calc-fields{gap:18px}
+.estimator-layout .calc-fields label{font-size:.875rem;line-height:1.55}
+.estimator-layout .calc-fields input{font-size:1.1rem;margin-top:12px}
+.estimator-layout .calc-result{border-top:1px solid var(--line);padding-top:24px;margin-top:25px}
+.estimator-layout .calc-note{font-size:.8125rem;line-height:1.7}
+.guidance-faq .resources-content{margin:0;max-width:920px}
+.contact-page .contact-copy h1{font-size:3.1rem;line-height:1.12;letter-spacing:-.04em;max-width:520px}
+.contact-page .contact-layout{align-items:start}
+.contact-page .contact-form{padding-top:28px}
+.contact-page .contact-form>h3{font-size:1.3rem}
+.meeting-brief{margin-top:27px;display:grid;gap:10px}
+.meeting-brief>span{display:flex;align-items:center;gap:12px;font-size:.875rem;color:#46607f}
+.meeting-brief .icon{width:19px;height:19px;color:#3b6091}
+.contact-page .contact-agents{margin-top:15px}
+@media(max-width:1100px){
+ .nav-links{display:none;position:absolute;left:0;top:83px;background:#fff;width:100%;border-bottom:1px solid var(--line);padding:18px 32px;flex-direction:column;align-items:stretch;gap:2px}
+ .nav-links.open{display:flex}.nav-links>a{padding:7px 0;min-height:44px;font-size:1rem}.nav-actions{margin-left:auto}
+ .menu-toggle{display:flex;align-items:center;justify-content:center}
+ .visual-practice{padding:22px}.practice-graphic{padding:23px 16px;gap:12px}
+ .visual-practice h3{font-size:1.2rem}.integration-service{padding:24px 18px}
+ .case-study{gap:40px}.case-study-art{height:415px}.case-study-content h2{font-size:2.35rem}
+ .delivery-cards{gap:17px}.delivery-cards li{padding:25px 19px}.delivery-cards .icon{right:20px}
+ .estimator-layout{gap:38px;grid-template-columns:.9fr 1.1fr}.estimator-layout .calculator{padding:24px}
+}
+@media(max-width:930px){
+ .nav-links{top:76px}.page-intro{padding:50px 0}.page-intro>.wrap{grid-template-columns:1fr 130px;gap:30px}
+ .intro-mark{width:130px;height:130px;border-radius:18px}.intro-mark>.icon{width:62px;height:62px}
+ .page-intro h1{font-size:3rem}.page-description{font-size:1rem}.visual-practice-grid{gap:17px}
+ .practice-graphic>.icon{width:31px;height:31px}.practice-graphic{gap:9px}.graphic-output{width:27px;height:27px}
+ .visual-practice>p{font-size:.875rem}.integration-service-grid{grid-template-columns:1fr 1fr}
+ .integration-service:last-child{grid-column:1/-1}.integration-service:last-child .mini-flow{max-width:430px;width:100%;margin-inline:0}
+ .case-study{gap:30px}.case-study-art{height:410px}.case-study-content h2{font-size:2.15rem}.case-study-content h3{font-size:1.2rem}
+ .case-study-content>p:not(.eyebrow){font-size:.9375rem}.delivery-cards{grid-template-columns:1fr 1fr;gap:21px}
+ .delivery-cards li{padding:27px}.delivery-cards .icon{right:27px}.estimator-layout{grid-template-columns:1fr;gap:32px}
+ .estimator-layout>div>p:not(.eyebrow){max-width:620px}.estimator-layout h2 br{display:none}.estimator-layout .calculator{max-width:720px}
+ .contact-page .contact-copy h1{font-size:2.75rem}.contact-page .contact-layout{gap:32px}
+}
+@media(max-width:680px){
+ .nav-links{top:73px;padding-inline:20px}.page-intro{padding:38px 0 36px}.page-intro>.wrap{display:block}
+ .page-intro h1{font-size:clamp(2.25rem,8vw,2.8rem);line-height:1.13;letter-spacing:-.04em}.page-intro .eyebrow{font-size:.75rem;margin-bottom:18px}
+ .page-description{font-size:1rem;line-height:1.75;margin-top:23px}.intro-mark{width:65px;height:65px;margin-top:27px;border-radius:10px}.intro-mark>.icon{width:34px;height:34px}
+ .page-sections{gap:1px 22px;padding-top:12px;padding-bottom:12px}.page-sections>a{font-size:.8125rem}
+ .home-solutions .section-top>.text-link{margin-top:16px}.visual-practice-grid{grid-template-columns:1fr;gap:20px}
+ .visual-practice{display:grid;grid-template-columns:68px 1fr;gap:0 20px;padding:24px 20px}
+ .practice-graphic{grid-column:1;grid-row:1/5;margin:0;min-height:80px;height:80px;padding:17px;justify-content:center}
+ .practice-graphic>.icon{width:32px;height:32px}.practice-graphic>.graphic-line,.practice-graphic>.graphic-output{display:none}
+ .practice-kicker{grid-column:2;font-size:.75rem}.visual-practice h3{grid-column:2;font-size:1.2rem;margin:11px 0 12px}
+ .visual-practice>p{grid-column:2;font-size:.9375rem;margin-bottom:17px}.practice-action{grid-column:2;font-size:.875rem;min-height:32px}
+ .home-portfolio{padding-top:49px}.next-step{padding:34px 0}.next-step>.wrap{display:block}.next-step h2{font-size:1.9rem}
+ .next-step .btn{margin-top:23px;font-size:.875rem}.next-step .eyebrow{font-size:.75rem}
+ .business-matrix{padding-top:45px}.business-matrix .service-card>summary{min-height:0;padding:23px 21px 18px}
+ .business-matrix .service-symbol{padding:11px;margin-bottom:18px}.business-matrix .service-card h3{font-size:1.4rem}
+ .business-matrix .service-card summary p{font-size:1rem}.business-matrix .service-detail{padding:0 21px 23px}.business-matrix .service-detail li{font-size:.9375rem}
+ .page-services .solution-gallery{padding-top:16px}.page-services .solution-caption h3{font-size:1.2rem}.page-services .solution-caption p{font-size:.9375rem}
+ .integration-service-grid{grid-template-columns:1fr;gap:19px}.integration-service{padding:25px 23px}.integration-service:last-child{grid-column:auto}
+ .integration-service h3{font-size:1.3rem}.mini-flow{margin-top:23px;margin-bottom:23px;padding:21px 6px}.mini-flow>span{font-size:.8125rem}
+ .integration-service>p{font-size:1rem}.diagram-note{font-size:.8125rem;line-height:1.75}
+ .page-services .ecosystem-section,.standalone-industries{padding-top:49px;padding-bottom:49px}
+ .project-studies{padding-top:35px}.case-study{grid-template-columns:1fr;gap:28px;margin-bottom:39px;padding-bottom:39px}
+ .case-study:nth-child(even) .case-study-art,.case-study:nth-child(even) .case-study-content{order:initial}
+ .case-study-art{height:290px}.case-study-art>span{font-size:.75rem;top:15px;left:15px}
+ .case-study-content .eyebrow{font-size:.75rem;margin-bottom:15px}.case-study-content h2{font-size:2.3rem;margin-bottom:16px}
+ .case-study-content h3{font-size:1.22rem;line-height:1.5;margin-bottom:16px}.case-study-content>p:not(.eyebrow){font-size:1rem}
+ .case-journey{margin:21px 0}.case-journey li{font-size:.9375rem;padding:13px 0}
+ .page-firm .firm-section{padding-top:47px}.delivery-cards{grid-template-columns:1fr;gap:17px}.delivery-cards li{padding:25px}
+ .delivery-cards h3{font-size:1.35rem;margin-top:22px}.delivery-cards strong{font-size:.9375rem}.delivery-cards p{font-size:1rem}
+ .estimator-layout h2{font-size:2rem}.estimator-layout .calculator{padding:24px 20px}.estimator-layout>div>p:not(.eyebrow){font-size:1rem}
+ .estimator-layout .calc-fields{grid-template-columns:1fr;gap:21px}.estimator-layout .calc-fields label{font-size:.9375rem}
+ .estimator-layout .calc-fields input{margin-top:7px}.estimator-layout .calc-result{gap:25px}
+ .contact-page .contact-copy h1{font-size:2.5rem}.contact-page .contact-form{padding:25px 20px}
+ .meeting-brief{gap:11px}.meeting-brief>span{font-size:.875rem}.contact-page .contact-agents{margin-top:2px}
+}
+@media(prefers-reduced-motion:reduce){.visual-practice{transition:none}}
+
+/* Contact channels remain visible, with a clear visual identity for each agent. */
+.contact-page .contact-agents{display:block}.contact-page .contact-agents>p{max-width:none;margin-bottom:22px}
+.contact-page .contact-agent-grid{gap:24px}.contact-page .contact-agent{border:1px solid #d5dfec;background:#f5f8fc;border-radius:7px;padding:23px;align-items:center;gap:20px}
+.contact-page .contact-agent>.icon:first-child{width:31px;height:31px;margin-top:0;color:#335e94}
+.contact-page .contact-agent>span>strong{font-size:1.15rem}.contact-page .contact-agent>span>span{font-size:.9375rem;margin-top:5px}
+.contact-page .contact-agent small{font-size:.8125rem;margin-top:5px}
+@media(max-width:680px){.contact-page .contact-agent-grid{grid-template-columns:1fr;gap:16px}.contact-page .contact-agent{padding:22px}.contact-page .contact-agent>span>span{font-size:.875rem}}

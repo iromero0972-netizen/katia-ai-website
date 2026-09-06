@@ -4,7 +4,8 @@
   const en = document.documentElement.lang === 'en';
   const say = (es, english) => en ? english : es;
   if (new URLSearchParams(location.search).get('lang') === 'en' && !en) {
-    location.replace('/en.html' + location.hash);
+    const target = document.querySelector('.lang a[lang="en"]');
+    location.replace(target ? target.href : '/en.html');
     return;
   }
   const menu = document.querySelector('.menu-toggle');
@@ -25,7 +26,8 @@
     if (!event.target.closest('.site-header')) closeMenu();
   });
   document.querySelectorAll('[data-service]').forEach(a => a.addEventListener('click', () => {
-    document.getElementById('serviceInterest').value = a.dataset.service;
+    const serviceField = document.getElementById('serviceInterest');
+    if (serviceField) serviceField.value = a.dataset.service;
     const drawer = document.getElementById('contact-drawer');
     if (drawer) drawer.open = true;
   }));
@@ -91,8 +93,10 @@
     document.getElementById('calc-time').textContent = result ? result.time.toLocaleString(en ? 'en-US' : 'es-US', {minimumFractionDigits: 1, maximumFractionDigits: 1}) + ' h' : '—';
     document.getElementById('calc-value').textContent = result ? result.value.toLocaleString('en-US', {style: 'currency', currency: 'USD', maximumFractionDigits: 0}) : '—';
   }
-  calcInputs.forEach(input => input.addEventListener('input', calculate));
-  calculate();
+  if (calcInputs.every(Boolean)) {
+    calcInputs.forEach(input => input.addEventListener('input', calculate));
+    calculate();
+  }
 
   function containsSensitive(value) {
     return /\b\d{3}-?\d{2}-?\d{4}\b/.test(value) || /\b(?:\d[ -]?){13,19}\b/.test(value);
@@ -114,6 +118,11 @@
     } finally {clearTimeout(timer);}
   }
   const form = document.getElementById('contactForm');
+  const selectedService = new URLSearchParams(location.search).get('servicio');
+  const serviceField = document.getElementById('serviceInterest');
+  if (selectedService && serviceField && [...serviceField.options].some(option => option.value === selectedService)) {
+    serviceField.value = selectedService;
+  }
   const leadStatus = document.getElementById('form-status');
   let leadBusy = false;
   function status(message, state) {
@@ -140,7 +149,7 @@
       source: 'website_form_v3', fuente: 'website_form_v3'
     };
   }
-  form.addEventListener('submit', async event => {
+  form?.addEventListener('submit', async event => {
     event.preventDefault();
     if (leadBusy || !form.reportValidity()) return;
     if (formValue('website')) {status(say('No pudimos validar la solicitud. Puedes contactarnos por correo.', 'We could not validate your inquiry. You can contact us by email.'), 'error'); return;}
@@ -182,7 +191,7 @@
       (note ? '\n' + note : '');
   }
   [['lead-whatsapp', 'whatsapp'], ['lead-email', 'email']].forEach(([id, channel]) => {
-    document.getElementById(id).addEventListener('click', function (event) {
+    document.getElementById(id)?.addEventListener('click', function (event) {
       const message = fallbackMessage();
       if (message === null) {event.preventDefault();status(privacyWarning, 'error');return;}
       this.href = channel === 'whatsapp' ? 'https://wa.me/13468920577?text=' + encodeURIComponent(message) : 'mailto:ventas@katia.solutions?subject=' + encodeURIComponent(say('Diagnóstico KATIA.AI', 'KATIA.AI consultation')) + '&body=' + encodeURIComponent(message);
@@ -262,5 +271,12 @@
   /* Existing July hashes keep their destinations after the redesign. */
   const legacyHashes = {servicios: 'soluciones',services: 'soluciones',methodology: 'metodo',metodologia: 'metodo',planes: 'preguntas',pricing: 'preguntas',faq: 'preguntas',contact: 'contacto',about: 'nosotros',company: 'nosotros',testimonios: 'nosotros',problema: 'soluciones',app: 'soluciones'};
   const mapped = legacyHashes[location.hash.slice(1)];
-  if (mapped) {location.hash = mapped;}
+  if (mapped && document.getElementById(mapped)) location.hash = mapped;
+  const destination = mapped || location.hash.slice(1);
+  if (destination && !document.getElementById(destination)) {
+    const routes = en
+      ? {soluciones:'/services.html',catalogo:'/services.html',ecosistema:'/services.html#ecosistema',industrias:'/services.html#industrias',proyectos:'/projects.html',nosotros:'/about.html',metodo:'/about.html#metodo',confianza:'/about.html#confianza',preguntas:'/guide.html#preguntas',agentes:'/contact.html#agentes',contacto:'/contact.html'}
+      : {soluciones:'/servicios.html',catalogo:'/servicios.html',ecosistema:'/servicios.html#ecosistema',industrias:'/servicios.html#industrias',proyectos:'/proyectos.html',nosotros:'/nosotros.html',metodo:'/nosotros.html#metodo',confianza:'/nosotros.html#confianza',preguntas:'/guia.html#preguntas',agentes:'/contacto.html#agentes',contacto:'/contacto.html'};
+    if (routes[destination]) location.replace(routes[destination]);
+  }
 }());
