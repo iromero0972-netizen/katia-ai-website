@@ -1,0 +1,42 @@
+name: Prepare verified KATIA hero asset
+on:
+  push:
+    branches: [codex/katia-media-20260914]
+    paths:
+      - '.katia-media/**'
+      - '.github/workflows/prepare-katia-hero.yml'
+permissions:
+  contents: read
+jobs:
+  assemble:
+    if: github.repository == 'iromero0972-netizen/katia-ai-website' && github.ref == 'refs/heads/codex/katia-media-20260914'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reconstruct and verify the approved video asset
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import base64, hashlib
+          parts = sorted(Path('.katia-media').glob('part-*.b64'))
+          assert len(parts) == 14, 'Incomplete video transfer'
+          content = base64.b64decode(''.join(p.read_text() for p in parts), validate=True)
+          assert len(content) == 651215, 'Unexpected video length'
+          assert hashlib.sha256(content).hexdigest() == 'b0f30386118acb5c04158592bd5e71e75edc45b23b1fb062a700c3a946cf01d7', 'Video integrity mismatch'
+          assert hashlib.sha1(b'blob ' + str(len(content)).encode() + b'\0' + content).hexdigest() == '4c1370f39b3b545a7d54e0bf4315c6ec59130b52'
+          target = Path('assets/hero/katia-connected-video.mp4')
+          target.parent.mkdir(parents=True, exist_ok=True)
+          target.write_bytes(content)
+          print('Verified hero: 651215 bytes; matching SHA-256 and Git blob ID.')
+          PY
+      - name: Save the asset on this preparation branch only
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/hero/katia-connected-video.mp4
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Prepare verified optimized KATIA hero video'
+          git push origin HEAD:refs/heads/codex/katia-media-20260914
