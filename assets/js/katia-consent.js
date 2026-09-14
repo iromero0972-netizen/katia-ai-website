@@ -1,5 +1,7 @@
 (function () {
   'use strict';
+  // Marketing measurement stays on the established production domain only.
+  if(!['katia.solutions','www.katia.solutions'].includes(location.hostname))return;
   var key='katia_analytics_consent_v1';
   function read(){var m=document.cookie.match(new RegExp('(?:^|; )'+key+'=([^;]*)'));return m?decodeURIComponent(m[1]):'';}
   function write(v){document.cookie=key+'='+encodeURIComponent(v)+'; Max-Age=15552000; Path=/; SameSite=Lax; Secure';}

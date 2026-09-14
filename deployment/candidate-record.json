@@ -1,0 +1,23 @@
+{
+  "baseline_commit": "5d0cf185325c6e258ce56762c3cfe5e0da99fcd3",
+  "review_source_commit": "a13ab22e6a4fbab20ae50d19535b462b846141d0",
+  "source_has_uncommitted_changes": false,
+  "new_or_updated_pages": 54,
+  "sitemap_urls": 67,
+  "preserved_routes": [
+    "consulta.html",
+    "consultation.html",
+    "metodologia.html",
+    "casos.html",
+    "recursos.html",
+    "industrias/restaurantes.html",
+    "industrias/clinicas.html",
+    "industrias/retail.html",
+    "industrias/servicios-profesionales.html",
+    "industrias/construccion.html",
+    "enlaces.html",
+    "privacidad.html",
+    "terminos.html"
+  ],
+  "published": false
+}

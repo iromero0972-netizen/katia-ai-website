@@ -1,0 +1,60 @@
+/* One contact hub, shared by the header, hero and persistent contact link. */
+.quick-contact:not([open]){display:none}
+.quick-contact{color:var(--ink);background:#fff;border:1px solid #d4dfeb;border-radius:18px;padding:0;width:min(640px,calc(100% - 32px));max-width:calc(100% - 32px);max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);margin:auto;overflow:auto;overscroll-behavior:contain;box-shadow:0 28px 90px #102b5033}
+.quick-contact::backdrop{background:#10243cc2}
+html.contact-hub-open,html.contact-hub-open body{overflow:hidden}
+.quick-contact-heading{position:sticky;top:0;z-index:1;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:27px 28px 23px;background:#f4f7fb;border-bottom:1px solid var(--line)}
+.contact-brand{font-size:.8125rem;letter-spacing:.09em;color:#426183;font-weight:600;margin-bottom:10px}
+.quick-contact-heading h2{font-size:2rem;line-height:1.15;letter-spacing:-.04em;margin-bottom:9px}
+.quick-contact-heading p:last-child{font-size:1rem;line-height:1.5}
+.quick-contact-close{flex:none;width:44px;height:44px;display:grid;place-items:center;border:1px solid #cbd7e5;border-radius:50%;background:#fff;color:#25466d}
+.quick-contact-close:hover{background:#e5edf7}
+.quick-contact-body{padding:24px 28px 18px}
+.contact-primary-grid,.contact-secondary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.contact-secondary-grid{margin-top:16px}
+.contact-choice{display:flex;align-items:center;gap:12px;min-height:88px;min-width:0;width:100%;padding:15px 13px;border:1px solid #d9e2ec;border-radius:9px;background:#fff;color:#193c67;text-align:left;font:inherit;line-height:1.4}
+.contact-choice:hover{border-color:#819cbb;background:#f2f6fb}
+.contact-choice-icon{flex:none;display:grid;place-items:center;width:32px;height:36px;color:#3b648f}
+.contact-choice-icon .icon{width:24px;height:24px}
+.contact-choice-copy{min-width:0;display:grid;gap:5px;flex:1}
+.contact-choice-copy strong{font-size:1rem;line-height:1.4;font-weight:600;letter-spacing:-.015em}
+.contact-choice-copy>span{font-size:.875rem;color:#52657d;overflow-wrap:anywhere}
+.contact-choice>.icon{width:16px;height:16px;flex:none}
+.contact-choice-primary{display:grid;grid-template-columns:1fr auto;gap:13px;padding:18px;background:#edf3fa;border-color:#cbdbea;align-items:start}
+.contact-choice-primary .contact-choice-icon{width:40px;height:40px;background:#173d68;border-radius:9px;color:#fff;grid-column:1;grid-row:1}
+.contact-choice-primary>.icon{grid-column:2;grid-row:1;margin-top:10px}
+.contact-choice-primary .contact-choice-copy{grid-column:1/-1}
+.contact-number{display:block;margin-top:8px;font-size:.875rem;color:#28486d;font-variant-numeric:tabular-nums}
+.quick-contact-social{display:flex;align-items:center;justify-content:space-between;gap:8px 20px;flex-wrap:wrap;margin-top:20px;padding-top:14px;border-top:1px solid var(--line);font-size:.875rem;color:#50647c}
+.quick-contact-social>div{display:flex;gap:18px;flex-wrap:wrap}
+.quick-contact-social a{display:inline-flex;align-items:center;gap:6px;min-height:44px;color:#244d7e}
+.quick-contact-social a:hover{text-decoration:underline;text-underline-offset:4px}
+.quick-contact-social .icon{width:15px;height:15px;transform:rotate(-45deg)}
+.nav-actions .contact-header-trigger{display:inline-flex;background:#173d68;gap:9px}
+.nav-actions .contact-header-trigger:hover{background:#225793}
+.contact-launcher{padding-bottom:max(12px,env(safe-area-inset-bottom));font-size:.9375rem}
+.contact-launcher .icon{width:22px;height:22px}
+@media(max-width:680px){
+ .site-header .nav-wrap{width:calc(100% - 32px);gap:10px}
+ .site-header .brand,.site-header .brand img{width:100px}
+ .site-header .nav-actions{gap:6px}
+ .site-header .lang{gap:2px}
+ .site-header .nav-actions .contact-header-trigger{display:inline-flex;min-width:44px;min-height:44px;padding:10px}
+ .quick-contact{border-radius:15px;max-height:calc(100dvh - 24px);width:calc(100% - 24px);max-width:calc(100% - 24px)}
+ .quick-contact-heading{padding:20px 18px 17px}
+ .quick-contact-heading h2{font-size:1.75rem}
+ .quick-contact-heading p:last-child{font-size:.9375rem}
+ .quick-contact-body{padding:18px 16px max(14px,env(safe-area-inset-bottom))}
+ .contact-primary-grid,.contact-secondary-grid{gap:10px}
+ .contact-choice-primary{padding:14px 12px}
+ .contact-secondary-grid{grid-template-columns:1fr;gap:8px;margin-top:12px}
+ .contact-secondary-grid .contact-choice{min-height:72px;padding:12px}
+ .contact-choice-copy strong{font-size:.9375rem}
+ .quick-contact-social{margin-top:16px;padding-top:10px}
+ .contact-launcher{min-height:50px;font-size:.875rem}
+}
+@media(max-width:480px){
+ .site-header .contact-header-trigger>span{display:none}
+ .site-header .contact-header-trigger .icon{width:21px;height:21px}
+}
+@media(max-height:520px){.quick-contact-heading{position:static}}

@@ -1,0 +1,52 @@
+/* A single, original brand image. Copy and controls remain accessible HTML. */
+.editorial-home .hero.hero-philosophy{background:#f4f6f8;padding:52px 0 38px;overflow:hidden}
+.philosophy-intro{display:grid;grid-template-columns:1.3fr 1fr;align-items:center;gap:50px;margin-bottom:34px}
+.philosophy-heading{min-width:0}
+.editorial-home .hero-philosophy .eyebrow{font-size:.8125rem;letter-spacing:.12em;margin-bottom:19px}
+.editorial-home .hero-philosophy h1{font-size:clamp(2.5rem,4.5vw,3.85rem);line-height:1.12;letter-spacing:-.055em;text-align:left;margin:0;max-width:760px}
+.editorial-home .hero-philosophy h1 em{color:#235599;font-weight:400}
+.philosophy-copy{min-width:0;max-width:470px;justify-self:end}
+.editorial-home .hero-philosophy .hero-description{font-size:1rem;line-height:1.7;margin:0;max-width:none;color:#45566d}
+.editorial-home .hero-philosophy .hero-actions{justify-content:flex-start;align-items:center;gap:8px 22px;margin-top:21px}
+.hero-philosophy .hero-actions .btn{gap:16px;background:#173c69;border-radius:6px;font-size:.9375rem;padding:13px 19px}
+.hero-philosophy .hero-actions .btn:hover{background:#225793}
+.hero-philosophy .hero-actions .icon{width:19px;height:19px}
+.hero-philosophy .hero-actions .text-link{font-size:.9375rem;gap:8px}
+.editorial-home .hero-philosophy .hero-note{font-size:.8125rem;line-height:1.6;margin-top:12px;color:#5c6d81}
+.philosophy-art{margin:0;position:relative;isolation:isolate;border:1px solid #d5dee7;border-radius:10px;overflow:hidden;background:#edf2f5;box-shadow:0 18px 45px -30px #203d6240}
+.philosophy-art>img{display:block;width:100%;height:auto;object-fit:contain}
+.philosophy-art figcaption{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:12px 23px;background:#fbfcfd;border-top:1px solid #dce4eb;font-size:.875rem;line-height:1.5;color:#3e536c}
+.philosophy-art figcaption>span{font-weight:500}
+.philosophy-art figcaption>a{display:inline-flex;align-items:center;gap:12px;min-height:44px;color:#1e4b7d;font-size:.875rem}
+.philosophy-art figcaption>a:hover{text-decoration:underline;text-underline-offset:4px}
+.philosophy-art figcaption .icon{width:18px;height:18px}
+@media(max-width:1100px){
+ .philosophy-intro{gap:30px;grid-template-columns:1.15fr 1fr}
+ .editorial-home .hero-philosophy h1{font-size:clamp(2.5rem,4.5vw,3.1rem)}
+ .editorial-home .hero-philosophy .hero-actions{gap:3px 18px}
+}
+@media(max-width:850px){
+ .editorial-home .hero.hero-philosophy{padding-top:38px}
+ .philosophy-intro{display:block;margin-bottom:28px}
+ .editorial-home .hero-philosophy h1{font-size:clamp(2.5rem,6.1vw,3.5rem)}
+ .philosophy-copy{max-width:610px;margin-top:22px}
+ .editorial-home .hero-philosophy .hero-description{max-width:580px}
+ .editorial-home .hero-philosophy .hero-actions{margin-top:16px}
+}
+@media(max-width:680px){
+ .editorial-home .hero.hero-philosophy{padding:32px 0 28px}
+ .editorial-home .hero-philosophy .eyebrow{font-size:.75rem;letter-spacing:.09em;margin-bottom:16px}
+ .editorial-home .hero-philosophy h1{font-size:clamp(2rem,7.2vw,3rem);line-height:1.14;letter-spacing:-.05em}
+ .philosophy-copy{margin-top:18px}
+ .editorial-home .hero-philosophy .hero-description{font-size:1rem;line-height:1.65}
+ .editorial-home .hero-philosophy .hero-actions{gap:4px 18px;align-items:flex-start}
+ .philosophy-art{border-radius:7px}
+ .philosophy-art figcaption{padding:11px 15px;flex-wrap:wrap;gap:0 16px;font-size:.875rem}
+ .philosophy-art figcaption>a{min-height:44px}
+}
+
+/* The complete supplied clip retains its native frame on desktop and mobile. */
+.philosophy-media{position:relative;width:100%;aspect-ratio:910/512;background:#e8edf1}
+.philosophy-media .hero-video{display:block;width:100%;height:100%;object-fit:contain}
+.philosophy-media .hero-motion-toggle{left:auto;right:18px;bottom:18px;width:44px;height:44px;background:#ffffffed;border-color:#c5d0de}
+@media(max-width:680px){.philosophy-media .hero-motion-toggle{right:10px;bottom:10px}}
