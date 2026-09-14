@@ -170,7 +170,7 @@
     try {
       await request('https://srv1448901.hstgr.cloud/webhook/katia2-lead-capture', payload);
       status(say('Tu solicitud fue recibida. También puedes elegir una fecha en la agenda. La cita se confirma al completar la reserva.', 'Your inquiry was received. You can also choose a time in the calendar. Your appointment is confirmed when you complete the booking.'), 'success');
-      if (typeof window.gtag === 'function') window.gtag('event', 'lead_form_submit', {industria: payload.industria});
+      window.KatiaMetrics?.leadReceived(payload.servicio_interes);
       form.reset();
     } catch {
       status(say('No pudimos confirmar la recepción. Conservamos tus datos en el formulario; puedes continuar por WhatsApp o correo, o agendar directamente.', 'We could not confirm receipt. Your details are still in the form; continue by WhatsApp or email, or book directly.'), 'error');
@@ -204,15 +204,61 @@
   const chatBody = document.getElementById('chat-body');
   let chatBusy = false;
   let sessionId = null;
+  const contactDialog = document.getElementById('quick-contact');
+  const contactTriggers = [...document.querySelectorAll('[data-contact-open]')];
+  let contactReturnFocus = null;
+  let chatReturnFocus = toggle;
   function openChat(open) {
     panel.hidden = !open;
-    toggle.setAttribute('aria-expanded', String(open));
-    (open ? chatInput : toggle).focus({preventScroll: true});
+    if (!contactDialog) toggle.setAttribute('aria-expanded', String(open));
+    (open ? chatInput : chatReturnFocus).focus({preventScroll: true});
   }
-  toggle.addEventListener('click', () => openChat(panel.hidden));
+  if (contactDialog && typeof contactDialog.showModal === 'function') {
+    function closeContact() { contactDialog.close(); }
+    contactTriggers.forEach(trigger => trigger.addEventListener('click', event => {
+      // Modified clicks retain the real contact-page link.
+      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      closeMenu();
+      panel.hidden = true;
+      contactReturnFocus = trigger;
+      contactDialog.showModal();
+      document.documentElement.classList.add('contact-hub-open');
+      contactTriggers.forEach(link => link.setAttribute('aria-expanded', 'true'));
+    }));
+    contactDialog.querySelector('[data-contact-close]').addEventListener('click', closeContact);
+    contactDialog.addEventListener('close', () => {
+      document.documentElement.classList.remove('contact-hub-open');
+      contactTriggers.forEach(link => link.setAttribute('aria-expanded', 'false'));
+      // Handing off to chat must keep focus inside the chat, not behind it.
+      if (panel.hidden) contactReturnFocus?.focus({preventScroll: true});
+    });
+    let backdropPress = false;
+    function outsideDialog(event) {
+      const box = contactDialog.getBoundingClientRect();
+      return event.target === contactDialog && (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom);
+    }
+    contactDialog.addEventListener('pointerdown', event => { backdropPress = outsideDialog(event); });
+    contactDialog.addEventListener('click', event => {
+      if (backdropPress && outsideDialog(event)) closeContact();
+      backdropPress = false;
+    });
+    contactDialog.querySelector('[data-contact-chat]').addEventListener('click', () => {
+      chatReturnFocus = contactReturnFocus || toggle;
+      closeContact();
+      openChat(true);
+    });
+    contactDialog.querySelectorAll('a[href]').forEach(link => link.addEventListener('click', event => {
+      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      closeContact();
+    }));
+  } else if (!contactDialog) {
+    toggle.addEventListener('click', () => openChat(panel.hidden));
+  }
   document.getElementById('chat-close').addEventListener('click', () => openChat(false));
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape') {
+      if (contactDialog?.open) return; // Native dialog handles Escape and focus.
       if (!panel.hidden) openChat(false);
       else if (navigation.classList.contains('open')) {closeMenu();menu.focus();}
     }
@@ -269,7 +315,7 @@
     });
   });
   /* Existing July hashes keep their destinations after the redesign. */
-  const legacyHashes = {servicios: 'soluciones',services: 'soluciones',methodology: 'metodo',metodologia: 'metodo',planes: 'preguntas',pricing: 'preguntas',faq: 'preguntas',contact: 'contacto',about: 'nosotros',company: 'nosotros',testimonios: 'nosotros',problema: 'soluciones',app: 'soluciones'};
+  const legacyHashes = {contenido: 'main',empresa: 'nosotros',servicios: 'soluciones',services: 'soluciones',methodology: 'metodo',metodologia: 'metodo',planes: 'preguntas',pricing: 'preguntas',faq: 'preguntas',contact: 'contacto',about: 'nosotros',company: 'nosotros',testimonios: 'nosotros',problema: 'soluciones',app: 'apps'};
   const mapped = legacyHashes[location.hash.slice(1)];
   if (mapped && document.getElementById(mapped)) location.hash = mapped;
   const destination = mapped || location.hash.slice(1);
@@ -277,6 +323,8 @@
     const routes = en
       ? {soluciones:'/services.html',catalogo:'/services.html',ecosistema:'/services.html#ecosistema',industrias:'/services.html#industrias',proyectos:'/projects.html',nosotros:'/about.html',metodo:'/about.html#metodo',confianza:'/about.html#confianza',preguntas:'/guide.html#preguntas',agentes:'/contact.html#agentes',contacto:'/contact.html'}
       : {soluciones:'/servicios.html',catalogo:'/servicios.html',ecosistema:'/servicios.html#ecosistema',industrias:'/servicios.html#industrias',proyectos:'/proyectos.html',nosotros:'/nosotros.html',metodo:'/nosotros.html#metodo',confianza:'/nosotros.html#confianza',preguntas:'/guia.html#preguntas',agentes:'/contacto.html#agentes',contacto:'/contacto.html'};
+    routes.apps = en ? '/business-apps.html' : '/apps.html';
+    routes.disclaimer = 'https://katia.solutions/terminos.html';
     if (routes[destination]) location.replace(routes[destination]);
   }
 }());

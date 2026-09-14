@@ -1,0 +1,134 @@
+[
+  {
+    "path": "index.html",
+    "lang": "es",
+    "pair": [
+      "index.html",
+      "en.html"
+    ],
+    "title": "Automatización con IA para PYMEs en Houston | KATIA.AI",
+    "description": "Agencia de automatización con IA para PYMEs en Houston y Katy. Apps, agentes e integraciones con criterio contable. Atención en español e inglés.",
+    "type": "WebPage"
+  },
+  {
+    "path": "en.html",
+    "lang": "en",
+    "pair": [
+      "index.html",
+      "en.html"
+    ],
+    "title": "AI Automation for Small Businesses in Houston | KATIA.AI",
+    "description": "AI automation for small businesses in Houston and Katy. Custom apps, AI agents and integrations informed by accounting expertise. English and Spanish.",
+    "type": "WebPage"
+  },
+  {
+    "path": "servicios.html",
+    "lang": "es",
+    "pair": [
+      "servicios.html",
+      "services.html"
+    ],
+    "title": "Agentes IA, Apps e integraciones en Houston | KATIA.AI",
+    "description": "Automatización administrativa, apps a medida, atención con IA, prospección e integraciones ERP. Soluciones según tu operación y alcance acordado.",
+    "type": "CollectionPage"
+  },
+  {
+    "path": "services.html",
+    "lang": "en",
+    "pair": [
+      "servicios.html",
+      "services.html"
+    ],
+    "title": "AI Agents, Business Apps & Integrations | KATIA.AI",
+    "description": "Administrative automation, custom apps, AI customer support, prospecting and ERP integrations. Solutions built around your operations and agreed scope.",
+    "type": "CollectionPage"
+  },
+  {
+    "path": "proyectos.html",
+    "lang": "es",
+    "pair": [
+      "proyectos.html",
+      "projects.html"
+    ],
+    "title": "Proyectos de Apps, automatización e IA | KATIA.AI",
+    "description": "Explora portadas, funciones y alcance de las aplicaciones y automatizaciones de KATIA. Cada proyecto identifica su estado de desarrollo.",
+    "type": "CollectionPage"
+  },
+  {
+    "path": "projects.html",
+    "lang": "en",
+    "pair": [
+      "proyectos.html",
+      "projects.html"
+    ],
+    "title": "Business App & AI Automation Projects | KATIA.AI",
+    "description": "Explore the interfaces, features and scope of KATIA apps and automations. Each project identifies its development stage.",
+    "type": "CollectionPage"
+  },
+  {
+    "path": "nosotros.html",
+    "lang": "es",
+    "pair": [
+      "nosotros.html",
+      "about.html"
+    ],
+    "title": "Agencia de automatización con experiencia contable | KATIA.AI",
+    "description": "Ignacio Romero, Contador Público y fundador de KATIA. Más de 30 años de experiencia en administración, finanzas y contabilidad aplicados a soluciones con IA.",
+    "type": "AboutPage"
+  },
+  {
+    "path": "about.html",
+    "lang": "en",
+    "pair": [
+      "nosotros.html",
+      "about.html"
+    ],
+    "title": "AI Automation with Accounting Expertise | KATIA.AI",
+    "description": "Meet Ignacio Romero, KATIA founder, with over 30 years of administrative, financial and accounting experience informing practical AI solutions.",
+    "type": "AboutPage"
+  },
+  {
+    "path": "guia.html",
+    "lang": "es",
+    "pair": [
+      "guia.html",
+      "guide.html"
+    ],
+    "title": "Automatización para PYMEs: costos y preguntas | KATIA.AI",
+    "description": "Consulta costos de referencia, integración, capacitación y manejo de datos. Evalúa un escenario de automatización antes de solicitar una propuesta.",
+    "type": "WebPage"
+  },
+  {
+    "path": "guide.html",
+    "lang": "en",
+    "pair": [
+      "guia.html",
+      "guide.html"
+    ],
+    "title": "Small Business Automation: Costs & FAQs | KATIA.AI",
+    "description": "Review reference costs, integrations, training and data handling. Explore an automation scenario before requesting a tailored proposal.",
+    "type": "WebPage"
+  },
+  {
+    "path": "contacto.html",
+    "lang": "es",
+    "pair": [
+      "contacto.html",
+      "contact.html"
+    ],
+    "title": "Consulta de automatización con IA en Houston | KATIA.AI",
+    "description": "Agenda un diagnóstico gratuito de 30 minutos. Habla con Leo por teléfono o con Andrés por WhatsApp. Atención en español e inglés en Houston y Katy.",
+    "type": "ContactPage"
+  },
+  {
+    "path": "contact.html",
+    "lang": "en",
+    "pair": [
+      "contacto.html",
+      "contact.html"
+    ],
+    "title": "AI Automation Consultation in Houston | KATIA.AI",
+    "description": "Book a free 30-minute consultation. Reach Leo by phone or Andrés on WhatsApp. English and Spanish service in Houston and Katy.",
+    "type": "ContactPage"
+  }
+]

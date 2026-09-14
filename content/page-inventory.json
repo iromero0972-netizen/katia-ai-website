@@ -1,0 +1,542 @@
+[
+  {
+    "path": "gestion-empresarial.html",
+    "pair": [
+      "gestion-empresarial.html",
+      "business-automation.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/gestion-empresarial.html",
+    "kind": "service"
+  },
+  {
+    "path": "agentes-ia.html",
+    "pair": [
+      "agentes-ia.html",
+      "ai-customer-support.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/agentes-ia.html",
+    "kind": "service"
+  },
+  {
+    "path": "apps.html",
+    "pair": [
+      "apps.html",
+      "business-apps.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/apps.html",
+    "kind": "service"
+  },
+  {
+    "path": "integraciones.html",
+    "pair": [
+      "integraciones.html",
+      "business-integrations.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/integraciones.html",
+    "kind": "service"
+  },
+  {
+    "path": "ecommerce.html",
+    "pair": [
+      "ecommerce.html",
+      "connected-commerce.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/ecommerce.html",
+    "kind": "service"
+  },
+  {
+    "path": "prospeccion-ia.html",
+    "pair": [
+      "prospeccion-ia.html",
+      "ai-lead-research.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/prospeccion-ia.html",
+    "kind": "service"
+  },
+  {
+    "path": "inteligencia-mercado.html",
+    "pair": [
+      "inteligencia-mercado.html",
+      "market-intelligence.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/inteligencia-mercado.html",
+    "kind": "service"
+  },
+  {
+    "path": "proyectos/qtx.html",
+    "pair": [
+      "proyectos/qtx.html",
+      "projects/qtx.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/proyectos/qtx.html",
+    "kind": "project"
+  },
+  {
+    "path": "proyectos/quamtex.html",
+    "pair": [
+      "proyectos/quamtex.html",
+      "projects/quamtex.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/proyectos/quamtex.html",
+    "kind": "project"
+  },
+  {
+    "path": "proyectos/barber.html",
+    "pair": [
+      "proyectos/barber.html",
+      "projects/barber.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/proyectos/barber.html",
+    "kind": "project"
+  },
+  {
+    "path": "proyectos/andys.html",
+    "pair": [
+      "proyectos/andys.html",
+      "projects/andys.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/proyectos/andys.html",
+    "kind": "project"
+  },
+  {
+    "path": "proyectos/amazon-desk.html",
+    "pair": [
+      "proyectos/amazon-desk.html",
+      "projects/amazon-desk.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/proyectos/amazon-desk.html",
+    "kind": "project"
+  },
+  {
+    "path": "proyectos/faro.html",
+    "pair": [
+      "proyectos/faro.html",
+      "projects/faro.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/proyectos/faro.html",
+    "kind": "project"
+  },
+  {
+    "path": "proyectos/lunea.html",
+    "pair": [
+      "proyectos/lunea.html",
+      "projects/lunea.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/proyectos/lunea.html",
+    "kind": "project"
+  },
+  {
+    "path": "proyectos/brasa.html",
+    "pair": [
+      "proyectos/brasa.html",
+      "projects/brasa.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/proyectos/brasa.html",
+    "kind": "project"
+  },
+  {
+    "path": "proyectos/machos.html",
+    "pair": [
+      "proyectos/machos.html",
+      "projects/machos.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/proyectos/machos.html",
+    "kind": "project"
+  },
+  {
+    "path": "proyectos/ruta77.html",
+    "pair": [
+      "proyectos/ruta77.html",
+      "projects/ruta77.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/proyectos/ruta77.html",
+    "kind": "project"
+  },
+  {
+    "path": "proyectos/siamara.html",
+    "pair": [
+      "proyectos/siamara.html",
+      "projects/siamara.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/proyectos/siamara.html",
+    "kind": "project"
+  },
+  {
+    "path": "proyectos/fit.html",
+    "pair": [
+      "proyectos/fit.html",
+      "projects/fit.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/proyectos/fit.html",
+    "kind": "project"
+  },
+  {
+    "path": "proyectos/lead-intake.html",
+    "pair": [
+      "proyectos/lead-intake.html",
+      "projects/lead-intake.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/proyectos/lead-intake.html",
+    "kind": "project"
+  },
+  {
+    "path": "proyectos/prospecting.html",
+    "pair": [
+      "proyectos/prospecting.html",
+      "projects/prospecting.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/proyectos/prospecting.html",
+    "kind": "project"
+  },
+  {
+    "path": "business-automation.html",
+    "pair": [
+      "gestion-empresarial.html",
+      "business-automation.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/business-automation.html",
+    "kind": "service"
+  },
+  {
+    "path": "ai-customer-support.html",
+    "pair": [
+      "agentes-ia.html",
+      "ai-customer-support.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/ai-customer-support.html",
+    "kind": "service"
+  },
+  {
+    "path": "business-apps.html",
+    "pair": [
+      "apps.html",
+      "business-apps.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/business-apps.html",
+    "kind": "service"
+  },
+  {
+    "path": "business-integrations.html",
+    "pair": [
+      "integraciones.html",
+      "business-integrations.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/business-integrations.html",
+    "kind": "service"
+  },
+  {
+    "path": "connected-commerce.html",
+    "pair": [
+      "ecommerce.html",
+      "connected-commerce.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/connected-commerce.html",
+    "kind": "service"
+  },
+  {
+    "path": "ai-lead-research.html",
+    "pair": [
+      "prospeccion-ia.html",
+      "ai-lead-research.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/ai-lead-research.html",
+    "kind": "service"
+  },
+  {
+    "path": "market-intelligence.html",
+    "pair": [
+      "inteligencia-mercado.html",
+      "market-intelligence.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/market-intelligence.html",
+    "kind": "service"
+  },
+  {
+    "path": "projects/qtx.html",
+    "pair": [
+      "proyectos/qtx.html",
+      "projects/qtx.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/projects/qtx.html",
+    "kind": "project"
+  },
+  {
+    "path": "projects/quamtex.html",
+    "pair": [
+      "proyectos/quamtex.html",
+      "projects/quamtex.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/projects/quamtex.html",
+    "kind": "project"
+  },
+  {
+    "path": "projects/barber.html",
+    "pair": [
+      "proyectos/barber.html",
+      "projects/barber.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/projects/barber.html",
+    "kind": "project"
+  },
+  {
+    "path": "projects/andys.html",
+    "pair": [
+      "proyectos/andys.html",
+      "projects/andys.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/projects/andys.html",
+    "kind": "project"
+  },
+  {
+    "path": "projects/amazon-desk.html",
+    "pair": [
+      "proyectos/amazon-desk.html",
+      "projects/amazon-desk.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/projects/amazon-desk.html",
+    "kind": "project"
+  },
+  {
+    "path": "projects/faro.html",
+    "pair": [
+      "proyectos/faro.html",
+      "projects/faro.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/projects/faro.html",
+    "kind": "project"
+  },
+  {
+    "path": "projects/lunea.html",
+    "pair": [
+      "proyectos/lunea.html",
+      "projects/lunea.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/projects/lunea.html",
+    "kind": "project"
+  },
+  {
+    "path": "projects/brasa.html",
+    "pair": [
+      "proyectos/brasa.html",
+      "projects/brasa.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/projects/brasa.html",
+    "kind": "project"
+  },
+  {
+    "path": "projects/machos.html",
+    "pair": [
+      "proyectos/machos.html",
+      "projects/machos.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/projects/machos.html",
+    "kind": "project"
+  },
+  {
+    "path": "projects/ruta77.html",
+    "pair": [
+      "proyectos/ruta77.html",
+      "projects/ruta77.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/projects/ruta77.html",
+    "kind": "project"
+  },
+  {
+    "path": "projects/siamara.html",
+    "pair": [
+      "proyectos/siamara.html",
+      "projects/siamara.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/projects/siamara.html",
+    "kind": "project"
+  },
+  {
+    "path": "projects/fit.html",
+    "pair": [
+      "proyectos/fit.html",
+      "projects/fit.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/projects/fit.html",
+    "kind": "project"
+  },
+  {
+    "path": "projects/lead-intake.html",
+    "pair": [
+      "proyectos/lead-intake.html",
+      "projects/lead-intake.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/projects/lead-intake.html",
+    "kind": "project"
+  },
+  {
+    "path": "projects/prospecting.html",
+    "pair": [
+      "proyectos/prospecting.html",
+      "projects/prospecting.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/projects/prospecting.html",
+    "kind": "project"
+  },
+  {
+    "path": "index.html",
+    "pair": [
+      "index.html",
+      "en.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/",
+    "kind": "core"
+  },
+  {
+    "path": "en.html",
+    "pair": [
+      "index.html",
+      "en.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/en.html",
+    "kind": "core"
+  },
+  {
+    "path": "servicios.html",
+    "pair": [
+      "servicios.html",
+      "services.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/servicios.html",
+    "kind": "core"
+  },
+  {
+    "path": "services.html",
+    "pair": [
+      "servicios.html",
+      "services.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/services.html",
+    "kind": "core"
+  },
+  {
+    "path": "proyectos.html",
+    "pair": [
+      "proyectos.html",
+      "projects.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/proyectos.html",
+    "kind": "core"
+  },
+  {
+    "path": "projects.html",
+    "pair": [
+      "proyectos.html",
+      "projects.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/projects.html",
+    "kind": "core"
+  },
+  {
+    "path": "nosotros.html",
+    "pair": [
+      "nosotros.html",
+      "about.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/nosotros.html",
+    "kind": "core"
+  },
+  {
+    "path": "about.html",
+    "pair": [
+      "nosotros.html",
+      "about.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/about.html",
+    "kind": "core"
+  },
+  {
+    "path": "guia.html",
+    "pair": [
+      "guia.html",
+      "guide.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/guia.html",
+    "kind": "core"
+  },
+  {
+    "path": "guide.html",
+    "pair": [
+      "guia.html",
+      "guide.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/guide.html",
+    "kind": "core"
+  },
+  {
+    "path": "contacto.html",
+    "pair": [
+      "contacto.html",
+      "contact.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/contacto.html",
+    "kind": "core"
+  },
+  {
+    "path": "contact.html",
+    "pair": [
+      "contacto.html",
+      "contact.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/contact.html",
+    "kind": "core"
+  }
+]

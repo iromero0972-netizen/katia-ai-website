@@ -16,7 +16,7 @@ const index=path.join(root,'index.html');
 if(fs.existsSync(index)){
   const html=fs.readFileSync(index,'utf8');
   for(const asset of ['assets/js/katia-consent.js','assets/js/katia-request-guard.js'])if(!html.includes(asset))errors.push('index.html: missing '+asset);
-  const scripts=[...html.matchAll(/<script[^>]*src=["']([^"']+)["'][^>]*>/gi)].map(m=>m[1]).filter(src=>!/^https?:/.test(src)).map(src=>path.join(root,src.startsWith('/')?src.slice(1):src)).filter(file=>fs.existsSync(file)).map(file=>fs.readFileSync(file,'utf8')).join('\n');
+  const scripts=[...html.matchAll(/<script[^>]*src=["']([^"']+)["'][^>]*>/gi)].map(m=>m[1]).filter(src=>!/^https?:/.test(src)).map(src=>src.split(/[?#]/)[0]).map(src=>path.join(root,src.startsWith('/')?src.slice(1):src)).filter(file=>fs.existsSync(file)).map(file=>fs.readFileSync(file,'utf8')).join('\n');
   const clientCode=html+'\n'+scripts;
   if(!clientCode.includes('window.KatiaRequestGuard.validateLead(payload)'))errors.push('index.html: lead form bypasses request guard');
   if(!/KatiaRequestGuard\.validateChat\((?:message|text)\)/.test(clientCode))errors.push('index.html: chat bypasses request guard');

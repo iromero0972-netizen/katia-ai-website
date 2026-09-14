@@ -1,0 +1,16 @@
+[
+  {"name":"Oracle","sub":"NetSuite","group":"finance","featured":true,"url":"https://www.netsuite.com/portal/products/erp.shtml","description":["ERP, inventario y operación.","ERP, inventory and operations."]},
+  {"name":"QuickBooks","sub":"","group":"finance","featured":true,"url":"https://quickbooks.intuit.com/","description":["Contabilidad y facturación.","Accounting and invoicing."]},
+  {"name":"Stripe","sub":"","group":"finance","featured":true,"url":"https://stripe.com/payments","description":["Pagos y cobros digitales.","Digital payments and collections."]},
+  {"name":"Apollo","sub":"","group":"growth","featured":true,"url":"https://www.apollo.io/","description":["Prospección e inteligencia comercial.","Prospecting and sales intelligence."]},
+  {"name":"Amazon","sub":"","group":"growth","featured":true,"url":"https://developer-docs.amazon/sp-api/","description":["Comercio y gestión de pedidos.","Commerce and order management."]},
+  {"name":"OpenAI","sub":"","group":"ai","featured":true,"url":"https://openai.com/business/","description":["IA para asistentes y automatización.","AI for assistants and automation."]},
+  {"name":"Anthropic","sub":"Claude","group":"ai","featured":true,"url":"https://www.anthropic.com/","description":["IA para agentes y análisis.","AI for agents and analysis."]},
+  {"name":"n8n","sub":"","group":"automation","featured":false,"url":"https://n8n.io/","description":["Flujos y procesos conectados.","Connected workflows and processes."]},
+  {"name":"Supabase","sub":"","group":"automation","featured":false,"url":"https://supabase.com/","description":["Datos y acceso a las aplicaciones.","Application data and access."]},
+  {"name":"WhatsApp","sub":"Business","group":"communication","featured":false,"url":"https://business.whatsapp.com/","description":["Conversaciones y atención al cliente.","Conversations and customer support."]},
+  {"name":"Google","sub":"Workspace","group":"communication","featured":false,"url":"https://workspace.google.com/","description":["Gmail, Calendar, Drive y Meet.","Gmail, Calendar, Drive and Meet."]},
+  {"name":"Calendly","sub":"","group":"communication","featured":false,"url":"https://calendly.com/","description":["Agenda y coordinación de reuniones.","Scheduling and meeting coordination."]},
+  {"name":"GitHub","sub":"","group":"development","featured":false,"url":"https://github.com/","description":["Desarrollo y control de versiones.","Development and version control."]},
+  {"name":"Hostinger","sub":"","group":"development","featured":false,"url":"https://www.hostinger.com/vps-hosting","description":["Alojamiento web y servidores VPS.","Web hosting and VPS servers."]}
+]
