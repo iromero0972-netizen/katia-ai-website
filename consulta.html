@@ -78,9 +78,11 @@ src="https://www.facebook.com/tr?id=2021221848741117&ev=PageView&noscript=1"
 .service-option input:checked+label .check-icon{background:var(--blue-500);border-color:var(--blue-500)}
 .service-option input:checked+label .check-icon::after{content:'';position:absolute;left:5px;top:1px;width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
 .urgency-options{display:flex;gap:10px;flex-wrap:wrap}
-.urgency-option input{position:absolute;opacity:0}
+.urgency-option{position:relative}
+.urgency-option input{position:absolute;top:0;left:0;width:1px;height:1px;margin:0;padding:0;border:0;opacity:0;overflow:hidden;clip-path:inset(50%)}
 .urgency-option label{display:inline-block;padding:11px 18px;border:1px solid var(--line);border-radius:99px;cursor:pointer;font-size:13.5px;color:var(--ink-mute);transition:all .2s}
 .urgency-option input:checked+label{border-color:var(--blue-400);color:#fff;background:rgba(58,120,255,.14)}
+.urgency-option input:focus-visible+label{box-shadow:0 0 0 3px rgba(58,120,255,.25)}
 .submit-btn{width:100%;margin-top:26px;padding:17px;background:linear-gradient(135deg,#3a78ff,#1f5bff);color:#fff;border:0;border-radius:12px;font-family:'Sora',sans-serif;font-weight:700;font-size:15.5px;cursor:pointer;box-shadow:0 14px 30px -10px rgba(31,91,255,.6);transition:transform .2s,box-shadow .2s}
 .submit-btn:hover{transform:translateY(-2px);box-shadow:0 22px 50px -10px rgba(31,91,255,.85)}
 .submit-btn:disabled{opacity:.7;cursor:default;transform:none}
@@ -92,6 +94,8 @@ src="https://www.facebook.com/tr?id=2021221848741117&ev=PageView&noscript=1"
 .cf-check{display:flex;gap:10px;align-items:flex-start;margin:18px 0 0;color:var(--ink-mute);font-size:13px;line-height:1.5}
 .cf-check input{width:18px;height:18px;accent-color:#3a78ff;flex:0 0 auto;margin-top:2px}
 .cf-check a{color:#6aa0ff;text-decoration:underline}
+.cf-check--calls{margin-top:12px}
+.cf-check--calls strong{color:var(--ink,inherit);font-weight:600}
 .lang-bridge{margin-top:16px;font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.02em}
 .lang-bridge a{color:var(--blue-300);text-decoration:none}
 .lang-bridge a:hover{text-decoration:underline}
@@ -205,6 +209,11 @@ src="https://www.facebook.com/tr?id=2021221848741117&ev=PageView&noscript=1"
         <span>Acepto la <a href="privacidad.html">Política de Privacidad</a> y el tratamiento de mis datos para ser contactado sobre la consulta.</span>
       </label>
 
+      <label class="cf-check cf-check--calls">
+        <input type="checkbox" id="call_consent" name="call_consent" value="si">
+        <span id="call_consent_text"><strong>Opcional.</strong> Acepto que KATIA.AI me llame y me envíe mensajes de texto o WhatsApp al teléfono que indiqué, incluso mediante un asistente virtual con inteligencia artificial o mensajes automatizados, para coordinar mi diagnóstico y ofrecerme sus servicios. No es condición para contratar ningún servicio. Puedo retirar mi consentimiento en cualquier momento respondiendo STOP o BAJA, o pidiéndolo durante la llamada. Pueden aplicar tarifas de mensajes y datos. Más detalles en la <a href="privacidad.html#llamadas">Política de Privacidad</a>.</span>
+      </label>
+
       <button class="submit-btn" id="submitBtn" type="submit">Solicitar mi consulta gratuita →</button>
       <p class="cf-foot">Tus datos no se comparten con terceros. Respondemos en menos de 24 horas.</p>
 
@@ -257,6 +266,13 @@ function submitForm(e){
     contacto_preferido:document.getElementById('contacto_pref').value,
     source:'web_form_es', fuente:'web_form_es'
   };
+  var cc=document.getElementById('call_consent'), ccTxt=document.getElementById('call_consent_text');
+  var ccOk=!!(cc && cc.checked);
+  payload.call_consent=ccOk;
+  payload.call_consent_text=ccOk && ccTxt ? ccTxt.textContent.replace(/\s+/g,' ').trim() : '';
+  payload.call_consent_version=ccOk ? 'llamadas-ia-v1-2026-09-21-es' : '';
+  payload.call_consent_at=ccOk ? new Date().toISOString() : '';
+  payload.call_consent_page=ccOk ? location.href.split('#')[0] : '';
   btn.textContent='Enviando…'; btn.disabled=true;
   fetch(WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
     .then(function(res){
