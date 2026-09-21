@@ -79,6 +79,8 @@
 .cf-check input{width:18px;height:18px;accent-color:#3a78ff;flex:0 0 auto;margin-top:2px}
 .cf-check input:focus-visible{outline:2px solid var(--blue-300);outline-offset:3px}
 .cf-check a{color:#6aa0ff;text-decoration:underline}
+.cf-check--calls{margin-top:12px}
+.cf-check--calls strong{color:var(--ink,inherit);font-weight:600}
 .lang-bridge{margin-top:16px;font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.02em}
 .lang-bridge a{color:var(--blue-300);text-decoration:none}
 .lang-bridge a:hover{text-decoration:underline}
@@ -203,6 +205,11 @@
         <span>Acepto la <a href="privacidad.html">Política de Privacidad</a> y el tratamiento de mis datos para ser contactado sobre la consulta.</span>
       </label>
 
+      <label class="cf-check cf-check--calls">
+        <input type="checkbox" id="call_consent" name="call_consent" value="si">
+        <span id="call_consent_text"><strong>Opcional.</strong> Acepto que KATIA.AI me llame y me envíe mensajes de texto o WhatsApp al teléfono que indiqué, incluso mediante un asistente virtual con inteligencia artificial o mensajes automatizados, para coordinar mi diagnóstico y ofrecerme sus servicios. No es condición para contratar ningún servicio. Puedo retirar mi consentimiento en cualquier momento respondiendo STOP o BAJA, o pidiéndolo durante la llamada. Pueden aplicar tarifas de mensajes y datos. Más detalles en la <a href="privacidad.html#llamadas">Política de Privacidad</a>.</span>
+      </label>
+
       <button class="submit-btn" id="submitBtn" type="submit">Solicitar mi consulta gratuita →</button>
       <p class="cf-foot">Tratamos tus datos según nuestra Política de Privacidad. Normalmente respondemos en un día hábil.</p>
 
@@ -225,6 +232,7 @@
 
 <script>
 const WEBHOOK_URL = 'https://srv1448901.hstgr.cloud/webhook/katia2-lead-capture';
+const CONSENT_URL = 'https://srv1448901.hstgr.cloud/webhook/katia-consent';
 function submitForm(e){
   if(e && e.preventDefault) e.preventDefault();
   var btn=document.getElementById('submitBtn');
@@ -284,12 +292,22 @@ function submitForm(e){
     source:'web_form_es', fuente:'web_form_es'
   };
   if(window.KatiaRequestGuard){var guardResult=window.KatiaRequestGuard.validateLead(payload);if(!guardResult.ok){alert(guardResult.message);return;}}
+  // Consentimiento opcional de llamadas y mensajes: viaja aparte a su propio registro (WF-39).
+  var cc=document.getElementById('call_consent'), ccTxt=document.getElementById('call_consent_text');
+  var ccOk=!!(cc && cc.checked);
+  payload.call_consent=ccOk;
+  payload.call_consent_text=ccOk && ccTxt ? ccTxt.textContent.replace(/\s+/g,' ').trim() : '';
+  payload.call_consent_version=ccOk ? 'llamadas-ia-v1-2026-09-21-es' : '';
+  payload.call_consent_at=ccOk ? new Date().toISOString() : '';
+  payload.call_consent_page=ccOk ? location.href.split('#')[0] : '';
+  var consentP=ccOk ? fetch(CONSENT_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).catch(function(){}) : Promise.resolve();
+  var waitConsent=function(){ return Promise.race([consentP,new Promise(function(r){ setTimeout(r,3000); })]); };
   btn.textContent='Enviando…'; btn.disabled=true;
   fetch(WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
     .then(function(res){
       if(!res.ok) throw new Error('HTTP '+res.status);
       if(window.gtag) gtag('event','lead_form_submit',{industria:payload.industria,source:'consulta_es'});
-      window.location.href='gracias.html';
+      waitConsent().then(function(){ window.location.href='gracias.html'; });
     })
     .catch(function(){
       btn.disabled=false; btn.textContent='Solicitar mi consulta gratuita →';
