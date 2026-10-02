@@ -63,7 +63,8 @@
 .service-option input:checked+label .check-icon::after{content:'';position:absolute;left:5px;top:1px;width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
 .service-option input:focus-visible+label{outline:2px solid var(--blue-300);outline-offset:2px;box-shadow:0 0 0 3px rgba(58,120,255,.2)}
 .urgency-options{display:flex;gap:10px;flex-wrap:wrap}
-.urgency-option input{position:absolute;opacity:0}
+.urgency-option{position:relative}
+.urgency-option input{position:absolute;top:0;left:0;width:1px;height:1px;margin:0;padding:0;border:0;opacity:0;overflow:hidden;clip-path:inset(50%)}
 .urgency-option label{display:inline-block;padding:11px 18px;border:1px solid var(--line);border-radius:99px;cursor:pointer;font-size:13.5px;color:var(--ink-mute);transition:all .2s}
 .urgency-option input:checked+label{border-color:var(--blue-400);color:#fff;background:rgba(58,120,255,.14)}
 .urgency-option input:focus-visible+label{outline:2px solid var(--blue-300);outline-offset:2px;box-shadow:0 0 0 3px rgba(58,120,255,.2)}
