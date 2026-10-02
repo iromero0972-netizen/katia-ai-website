@@ -194,7 +194,7 @@
     document.getElementById(id)?.addEventListener('click', function (event) {
       const message = fallbackMessage();
       if (message === null) {event.preventDefault();status(privacyWarning, 'error');return;}
-      this.href = channel === 'whatsapp' ? 'https://wa.me/13468920577?text=' + encodeURIComponent(message) : 'mailto:ventas@katia.solutions?subject=' + encodeURIComponent(say('Diagnóstico KATIA.AI', 'KATIA.AI consultation')) + '&body=' + encodeURIComponent(message);
+      this.href = channel === 'whatsapp' ? 'https://wa.me/13467776862?text=' + encodeURIComponent(message) : 'mailto:ventas@katia.solutions?subject=' + encodeURIComponent(say('Diagnóstico KATIA.AI', 'KATIA.AI consultation')) + '&body=' + encodeURIComponent(message);
     });
   });
 

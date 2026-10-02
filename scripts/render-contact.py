@@ -28,8 +28,8 @@ def render_dialog(en, contact):
                 f'<strong>{title}</strong><span>{note}</span></span>{icon("arrow")}</a>')
     leo = choice('tel:+13462204052', t('Llamar a Leo', 'Call Leo'),
                  t('Agente IA por teléfono', 'AI phone agent') + '<span class="contact-number">+1 346 220 4052</span>', 'phone', True)
-    andres = choice('https://wa.me/13468920577', t('WhatsApp con Andrés', 'WhatsApp with Andrés'),
-                    t('Agente IA por mensaje', 'AI messaging agent') + '<span class="contact-number">+1 346 892 0577</span>', 'chat', True,
+    andres = choice('https://wa.me/13467776862', t('WhatsApp con Andrés', 'WhatsApp with Andrés'),
+                    t('Agente IA por mensaje', 'AI messaging agent') + '<span class="contact-number">+1 346 777 6862</span>', 'chat', True,
                     ' target="_blank" rel="noopener"')
     chat = (f'<button class="contact-choice" type="button" data-contact-chat>'
             f'<span class="contact-choice-icon">{icon("chat")}</span><span class="contact-choice-copy">'
