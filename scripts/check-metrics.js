@@ -22,7 +22,7 @@ for (const [host, consent] of [['katia-evolution.iromero0972.chatgpt.site', 'acc
   assert.equal(s.events.length, 0, 'No measurement outside consented production');
 }
 const active = setup('katia.solutions', 'accepted');
-active.click('https://wa.me/13468920577?text=Synthetic%20Name%20test%40example.com', 'hero');
+active.click('https://wa.me/13467776862?text=Synthetic%20Name%20test%40example.com', 'hero');
 active.click('https://calendly.com/iromero0972/30min', 'next_step');
 active.click('tel:+13462204052');
 active.metrics.leadReceived('app_personalizada');
@@ -38,6 +38,6 @@ active.consent('rejected');
 active.click('mailto:ventas@katia.solutions');
 assert.equal(active.events.length, 5, 'Consent is checked again on every event');
 active.consent('accepted');
-active.click('https://wa.me/13468920577', 'test@example.com');
+active.click('https://wa.me/13467776862', 'test@example.com');
 assert.equal(active.events[5][2].placement, 'other', 'Untrusted placement values cannot enter analytics');
 console.log('Measurement checks passed: consent, host, revocation, event meaning and data minimization.');
