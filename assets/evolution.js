@@ -145,7 +145,7 @@
       industria_legacy: form.elements.namedItem('sector').selectedOptions[0]?.textContent || '',
       dolor: problem, dolor_codigo: problem, problem_code: problem, dolor_legacy: say('Ver contexto de la solicitud', 'See inquiry context'),
       notas: formValue('mensaje'), consent, consentimiento: consent,
-      consent_timestamp: new Date().toISOString(), privacy_version: '2026-07-13',
+      consent_timestamp: new Date().toISOString(), privacy_version: '2026-09-21',
       source: 'website_form_v3', fuente: 'website_form_v3'
     };
   }
