@@ -11,7 +11,7 @@ PROJECTS = json.loads((ROOT / 'content/portfolio.json').read_text())
 ARROW = '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
 CLOSE = '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>'
 CATEGORIES = {'all': ['Todos', 'All'], 'apps': ['Apps y reservas', 'Apps & booking'], 'comercio': ['Comercio', 'Commerce'], 'gestion': ['Gestión y finanzas', 'Management & finance'], 'ia': ['Agentes e IA', 'Agents & AI']}
-STATUS = {'development': ['En desarrollo', 'In development'], 'demo': ['Demo de aplicación', 'Application demo'], 'prototype': ['Prototipo', 'Prototype'], 'inuse': ['En uso', 'In use'], 'service': ['Servicio en curso', 'Ongoing service']}
+STATUS = {'project': ['Proyecto', 'Project'], 'development': ['En desarrollo', 'In development'], 'demo': ['Demo de aplicación', 'Application demo'], 'prototype': ['Prototipo', 'Prototype'], 'inuse': ['En uso', 'In use'], 'service': ['Servicio en curso', 'Ongoing service']}
 DIMENSIONS = {'projects/qtx': (1122, 1402), 'projects/quamtex': (1122, 1402), 'projects/barber': (1122, 1402)}
 
 def img(project, lang, dialog=False):

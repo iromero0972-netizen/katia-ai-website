@@ -36,41 +36,6 @@
   },
   {
     "id": "quamtex",
-    "name": "Quamtex Commerce",
-    "categories": [
-      "comercio",
-      "gestion"
-    ],
-    "status": "development",
-    "image": "project-covers/quamtex",
-    "sector": [
-      "Comercio industrial",
-      "Industrial commerce"
-    ],
-    "summary": [
-      "Catálogo, pedidos y una operación comercial conectada.",
-      "Product catalog, orders and connected business operations."
-    ],
-    "scope": [
-      [
-        "Experiencia de compra de pintura y recubrimientos",
-        "Catálogo y gestión de pedidos",
-        "Integración con Oracle NetSuite en desarrollo"
-      ],
-      [
-        "Shopping experience for paints and coatings",
-        "Catalog and order management",
-        "Oracle NetSuite integration in development"
-      ]
-    ],
-    "tags": [
-      "E-commerce",
-      "Oracle NetSuite",
-      "Color Hub USA"
-    ]
-  },
-  {
-    "id": "quamtex-pedidos",
     "name": "Quamtex · Tomador de Pedidos",
     "nameEn": "Quamtex · Order Intake",
     "categories": [
@@ -470,7 +435,7 @@
   },
   {
     "id": "lead-intake",
-    "name": "Quamtex Lead Intake",
+    "name": "Recepción de prospectos",
     "categories": [
       "ia",
       "gestion"
@@ -507,12 +472,13 @@
       "Revisión y organización de información para el equipo comercial.",
       "Review and organization of information for the sales team."
     ],
-    "imageKind": "illustrative"
+    "imageKind": "illustrative",
+    "nameEn": "Lead Intake"
   },
   {
     "id": "prospecting",
-    "name": "Quamtex · Prospección B2B",
-    "nameEn": "Quamtex · B2B Prospecting",
+    "name": "Quamtex · Buscador de Leads",
+    "nameEn": "Quamtex · Lead Finder",
     "categories": [
       "ia"
     ],
@@ -549,5 +515,78 @@
       "A team reviews business information to prepare B2B outreach."
     ],
     "imageKind": "illustrative"
+  },
+  {
+    "id": "quamtex-cobranza",
+    "name": "Quamtex · Gestor de Cobranza",
+    "nameEn": "Quamtex · Collections Manager",
+    "categories": [
+      "gestion"
+    ],
+    "status": "project",
+    "image": "editorial/advisory",
+    "imageKind": "illustrative",
+    "imageAlt": [
+      "Revisión de documentos e información administrativa.",
+      "Review of documents and administrative information."
+    ],
+    "sector": [
+      "Gestión de cobranza",
+      "Collections management"
+    ],
+    "summary": [
+      "Proyecto de gestión de cobranza para Quamtex.",
+      "Collections management project for Quamtex."
+    ],
+    "scope": [
+      [
+        "Gestión de cobranza"
+      ],
+      [
+        "Collections management"
+      ]
+    ],
+    "tags": [
+      "Cobranza",
+      "Collections"
+    ]
+  },
+  {
+    "id": "quamtex-voz",
+    "name": "Quamtex · Agente de Voz",
+    "nameEn": "Quamtex · Voice Agent",
+    "categories": [
+      "ia"
+    ],
+    "status": "project",
+    "image": "editorial/devices",
+    "imageKind": "illustrative",
+    "imageAlt": [
+      "Dispositivos para comunicación y gestión digital.",
+      "Devices for communication and digital management."
+    ],
+    "sector": [
+      "Calificación de prospectos",
+      "Lead qualification"
+    ],
+    "summary": [
+      "Agente de voz para llamar y calificar leads.",
+      "Voice agent for calling and qualifying leads."
+    ],
+    "scope": [
+      [
+        "Llamadas a leads",
+        "Calificación de leads"
+      ],
+      [
+        "Calls to leads",
+        "Lead qualification"
+      ]
+    ],
+    "tags": [
+      "Voz",
+      "Voice",
+      "Leads"
+    ]
   }
 ]

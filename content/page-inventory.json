@@ -540,23 +540,43 @@
     "kind": "core"
   },
   {
-    "path": "proyectos/quamtex-pedidos.html",
+    "path": "proyectos/quamtex-cobranza.html",
     "pair": [
-      "proyectos/quamtex-pedidos.html",
-      "projects/quamtex-pedidos.html"
+      "proyectos/quamtex-cobranza.html",
+      "projects/quamtex-cobranza.html"
     ],
     "lang": "es",
-    "canonical": "https://katia.solutions/proyectos/quamtex-pedidos.html",
+    "canonical": "https://katia.solutions/proyectos/quamtex-cobranza.html",
     "kind": "project"
   },
   {
-    "path": "projects/quamtex-pedidos.html",
+    "path": "proyectos/quamtex-voz.html",
     "pair": [
-      "proyectos/quamtex-pedidos.html",
-      "projects/quamtex-pedidos.html"
+      "proyectos/quamtex-voz.html",
+      "projects/quamtex-voz.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/proyectos/quamtex-voz.html",
+    "kind": "project"
+  },
+  {
+    "path": "projects/quamtex-cobranza.html",
+    "pair": [
+      "proyectos/quamtex-cobranza.html",
+      "projects/quamtex-cobranza.html"
     ],
     "lang": "en",
-    "canonical": "https://katia.solutions/projects/quamtex-pedidos.html",
+    "canonical": "https://katia.solutions/projects/quamtex-cobranza.html",
+    "kind": "project"
+  },
+  {
+    "path": "projects/quamtex-voz.html",
+    "pair": [
+      "proyectos/quamtex-voz.html",
+      "projects/quamtex-voz.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/projects/quamtex-voz.html",
     "kind": "project"
   }
 ]
