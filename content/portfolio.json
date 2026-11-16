@@ -298,7 +298,7 @@
       "gestion"
     ],
     "status": "demo",
-    "image": "project-covers/machos",
+    "image": "project-covers/machos-current",
     "sector": [
       "Belleza y cuidado personal",
       "Beauty and personal care"
@@ -325,7 +325,11 @@
       "Bookings",
       "Loyalty"
     ],
-    "imageKind": "presentation"
+    "imageKind": "presentation",
+    "imageCaption": [
+      "Portada conceptual de la propuesta visual actual de Machos, creada con IA. No es una fotografía del local real.",
+      "Conceptual cover from the current Machos visual proposal, created with AI. Not a photograph of the actual premises."
+    ]
   },
   {
     "id": "ruta77",

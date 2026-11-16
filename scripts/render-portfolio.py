@@ -28,6 +28,7 @@ def img(project, lang, dialog=False):
         caption = ['Portada original de presentación', 'Original presentation cover'][lang]
     if project.get('imageKind') == 'illustrative':
         caption = project['imageAlt'][lang] + [' Imagen alusiva, no captura del sistema', ' Context image, not a system screenshot'][lang]
+    if project.get('imageCaption'): caption = project['imageCaption'][lang]
     name = project.get('nameEn', project['name']) if lang else project['name']
     srcset = ''
     if (DIST / f'assets/{key}-720.webp').exists():
@@ -57,6 +58,7 @@ def catalog(lang):
             note = choose('Portada original de presentación del proyecto.', 'Original project presentation cover.')
         if p.get('imageKind') == 'illustrative':
             note = choose('Imagen alusiva al proceso; no representa al equipo ni las instalaciones del cliente ni una captura del sistema.', 'Context image of the process; not the client’s staff or premises, nor a system screenshot.')
+        if p.get('imageCaption'): note = p['imageCaption'][lang]
         original = f'<a class="text-link cover-original" href="/assets/{p["image"]}.webp" target="_blank" rel="noopener">{choose("Abrir portada a tamaño completo", "Open full-size cover")}{ARROW}</a>' if p['image'] else ''
         dialogs.append(f'''<dialog class="project-dialog catalog-dialog" id="project-{pid}" aria-labelledby="project-title-{pid}"><div class="project-viewer-bar"><span>{escape(name)}</span><button class="dialog-close" type="button" data-close-project aria-label="{choose('Cerrar proyecto', 'Close project')}">{CLOSE}</button></div><div class="dialog-layout">{img(p, lang, True)}<div class="dialog-info"><p class="eyebrow">{status}</p><h2 id="project-title-{pid}">{escape(name)}</h2><p>{escape(p['summary'][lang])}</p><ol class="project-flow">{steps}</ol><p class="project-disclaimer">{note}</p><div class="project-viewer-actions">{original}<a class="text-link" href="/{choose('contacto', 'contact')}.html?servicio=app_personalizada" data-service="app_personalizada">{choose('Conversemos sobre una solución así', 'Let’s discuss a solution like this')}{ARROW}</a></div></div></div></dialog>''')
     count = len(PROJECTS)
