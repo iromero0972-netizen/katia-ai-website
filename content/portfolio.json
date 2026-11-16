@@ -70,6 +70,43 @@
     ]
   },
   {
+    "id": "quamtex-pedidos",
+    "name": "Quamtex · Tomador de Pedidos",
+    "nameEn": "Quamtex · Order Intake",
+    "categories": [
+      "comercio",
+      "gestion"
+    ],
+    "status": "inuse",
+    "image": null,
+    "sector": [
+      "Comercio industrial",
+      "Industrial commerce"
+    ],
+    "summary": [
+      "Recepción digital de pedidos y revisión por el equipo de Quamtex.",
+      "Digital order intake and review by the Quamtex team."
+    ],
+    "scope": [
+      [
+        "Consulta del catálogo y selección de productos",
+        "Captura del pedido del cliente",
+        "Revisión y autorización por el equipo de Quamtex"
+      ],
+      [
+        "Catalog browsing and product selection",
+        "Customer order capture",
+        "Review and authorization by the Quamtex team"
+      ]
+    ],
+    "tags": [
+      "Pedidos",
+      "Orders",
+      "Catálogo",
+      "Catalog"
+    ]
+  },
+  {
     "id": "barber",
     "name": "ZOHO Mobile Barber",
     "categories": [

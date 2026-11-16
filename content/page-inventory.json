@@ -538,5 +538,25 @@
     "lang": "en",
     "canonical": "https://katia.solutions/contact.html",
     "kind": "core"
+  },
+  {
+    "path": "proyectos/quamtex-pedidos.html",
+    "pair": [
+      "proyectos/quamtex-pedidos.html",
+      "projects/quamtex-pedidos.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/proyectos/quamtex-pedidos.html",
+    "kind": "project"
+  },
+  {
+    "path": "projects/quamtex-pedidos.html",
+    "pair": [
+      "proyectos/quamtex-pedidos.html",
+      "projects/quamtex-pedidos.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/projects/quamtex-pedidos.html",
+    "kind": "project"
   }
 ]
