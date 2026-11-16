@@ -78,7 +78,7 @@
       "gestion"
     ],
     "status": "inuse",
-    "image": null,
+    "image": "project-covers/quamtex-pedidos",
     "sector": [
       "Comercio industrial",
       "Industrial commerce"
@@ -104,7 +104,12 @@
       "Orders",
       "Catálogo",
       "Catalog"
-    ]
+    ],
+    "imageAlt": [
+      "Portada actual del Tomador de Pedidos de Quamtex, capturada el 16 de noviembre de 2026.",
+      "Current Quamtex Order Intake homepage, captured November 16, 2026."
+    ],
+    "imageKind": "screenshot"
   },
   {
     "id": "barber",
@@ -471,7 +476,7 @@
       "gestion"
     ],
     "status": "inuse",
-    "image": null,
+    "image": "editorial/documents",
     "sector": [
       "Desarrollo comercial",
       "Business development"
@@ -497,7 +502,12 @@
       "AI",
       "Leads",
       "CRM"
-    ]
+    ],
+    "imageAlt": [
+      "Revisión y organización de información para el equipo comercial.",
+      "Review and organization of information for the sales team."
+    ],
+    "imageKind": "illustrative"
   },
   {
     "id": "prospecting",
@@ -507,7 +517,7 @@
       "ia"
     ],
     "status": "service",
-    "image": null,
+    "image": "editorial/meeting",
     "sector": [
       "Inteligencia comercial",
       "Sales intelligence"
@@ -533,6 +543,11 @@
       "Leads",
       "Inteligencia de mercado",
       "Market intelligence"
-    ]
+    ],
+    "imageAlt": [
+      "Un equipo revisa información comercial para preparar su acercamiento B2B.",
+      "A team reviews business information to prepare B2B outreach."
+    ],
+    "imageKind": "illustrative"
   }
 ]
