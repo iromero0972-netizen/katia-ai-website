@@ -592,5 +592,46 @@
       "Voice",
       "Leads"
     ]
+  },
+  {
+    "id": "lusso",
+    "name": "LUSSO Barber Supply",
+    "categories": [
+      "comercio",
+      "gestion"
+    ],
+    "status": "demo",
+    "image": "project-covers/lusso",
+    "imageKind": "screenshot",
+    "imageCaption": [
+      "Captura de la tienda de demostración. Productos e imágenes conceptuales; no representa una tienda con pagos o envíos reales.",
+      "Screenshot of the demonstration storefront. Conceptual products and imagery; not a store with real payments or shipments."
+    ],
+    "sector": [
+      "Tienda online de barbería",
+      "Online barber supply store"
+    ],
+    "summary": [
+      "Demo de tienda online con catálogo, compra simulada y panel de operaciones.",
+      "Online store demo with a catalog, simulated shopping and an operations dashboard."
+    ],
+    "scope": [
+      [
+        "Catálogo, búsqueda y bolsa de compra de demostración",
+        "Pedidos, puntos y pago simulado con datos ficticios",
+        "Panel demo de inventario, caja y preparación de pedidos"
+      ],
+      [
+        "Demonstration catalog, search and shopping bag",
+        "Orders, points and simulated payment using fictitious data",
+        "Demo dashboard for inventory, point of sale and order preparation"
+      ]
+    ],
+    "tags": [
+      "Tienda online",
+      "E-commerce",
+      "Demo",
+      "Barber Supply"
+    ]
   }
 ]

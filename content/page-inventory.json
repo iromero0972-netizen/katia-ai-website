@@ -578,5 +578,25 @@
     "lang": "en",
     "canonical": "https://katia.solutions/projects/quamtex-voz.html",
     "kind": "project"
+  },
+  {
+    "path": "proyectos/lusso.html",
+    "pair": [
+      "proyectos/lusso.html",
+      "projects/lusso.html"
+    ],
+    "lang": "es",
+    "canonical": "https://katia.solutions/proyectos/lusso.html",
+    "kind": "project"
+  },
+  {
+    "path": "projects/lusso.html",
+    "pair": [
+      "proyectos/lusso.html",
+      "projects/lusso.html"
+    ],
+    "lang": "en",
+    "canonical": "https://katia.solutions/projects/lusso.html",
+    "kind": "project"
   }
 ]

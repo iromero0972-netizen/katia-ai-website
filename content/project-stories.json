@@ -158,5 +158,15 @@
       "Esta ficha presenta el agente de voz para llamar y calificar leads. El alcance técnico y el estado operativo no se detallan en esta presentación.",
       "This entry presents the voice agent for calling and qualifying leads. Technical scope and operational status are not detailed in this presentation."
     ]
+  },
+  "lusso": {
+    "context": [
+      "Una tienda de suministros de barbería necesita relacionar la experiencia de compra con inventario, atención y preparación de pedidos.",
+      "A barber supply store needs to connect the shopping experience with inventory, customer service and order preparation."
+    ],
+    "approach": [
+      "La demo de LUSSO permite recorrer el catálogo y una compra simulada, además de revisar un panel de operaciones. Productos, clientes y transacciones son ficticios. No procesa cobros ni realiza envíos o correos reales; no acredita una tienda en producción.",
+      "The LUSSO demo provides a catalog and simulated shopping journey alongside an operations dashboard. Products, customers and transactions are fictitious. It does not process real payments, shipments or emails and does not establish a production store."
+    ]
   }
 }
