@@ -131,12 +131,12 @@
   },
   "quamtex": {
     "context": [
-      "Organizar la recepción de pedidos y dar al equipo una solicitud clara para revisar antes de procesarla.",
-      "Organize incoming orders and provide the team with a clear request to review before processing."
+      "Quamtex necesitaba conectar cuatro frentes comerciales que antes se atendían como tareas separadas: recibir pedidos, encontrar prospectos, dar seguimiento a cobranza y calificar leads por teléfono.",
+      "Quamtex needed to connect four commercial workflows previously handled as separate tasks: order intake, prospect research, collections follow-up and lead qualification by phone."
     ],
     "approach": [
-      "El Tomador de Pedidos de Quamtex permite seleccionar productos y enviar una solicitud para revisión del equipo. El alcance de esta ficha se limita al módulo de recepción y revisión de pedidos en uso.",
-      "Quamtex Order Intake lets customers select products and submit a request for team review. The scope of this entry is limited to the order intake and review module in use."
+      "KATIA organizó el caso en cuatro soluciones con responsables y revisión humana. El Tomador de Pedidos está en uso; el Buscador de Leads opera como servicio en curso; y las fichas de Cobranza y Voz documentan su alcance dentro de la operación comercial.",
+      "KATIA organized the case into four solutions with clear ownership and human review. Order Intake is in use, Lead Finder operates as an ongoing service, and the Collections and Voice entries document their scope within commercial operations."
     ]
   },
   "quamtex-cobranza": {

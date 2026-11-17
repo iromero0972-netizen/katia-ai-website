@@ -19,6 +19,15 @@
 - [Reportes de inteligencia de mercado](https://katia.solutions/inteligencia-mercado.html)
 - [Market intelligence reports](https://katia.solutions/market-intelligence.html)
 
+## Caso verificable / Verifiable case
+
+- [Quamtex: operación comercial conectada](https://katia.solutions/proyectos/quamtex.html)
+- [Quamtex: connected commercial operations](https://katia.solutions/projects/quamtex.html)
+
+Quamtex documenta cuatro soluciones desarrolladas por KATIA: Tomador de Pedidos, Buscador de Leads, Gestor de Cobranza y Agente de Voz para llamar y calificar prospectos. La ficha distingue funciones entregadas, estado operativo y límites de la evidencia; no atribuye ventas o ahorros sin medición aprobada por el cliente.
+
+Quamtex documents four solutions developed by KATIA: Order Intake, Lead Finder, Collections Manager and a Voice Agent for calling and qualifying prospects. The case distinguishes delivered functions, operating status and evidence limits; it does not claim sales or savings without client-approved measurement.
+
 ## Empresa y proyectos
 
 - [Nuestra firma](https://katia.solutions/nosotros.html)
@@ -31,6 +40,7 @@
 - [Contact](https://katia.solutions/contact.html)
 
 Cada proyecto indica su estado. Las demos y portadas no constituyen una medición de resultados. Alcance, inversión y condiciones se confirman en la propuesta. KATIA no sustituye a los profesionales responsables de contabilidad, asesoría o presentación fiscal.
+
 
 ## Cuándo consultar a KATIA / When to contact KATIA
 

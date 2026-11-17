@@ -36,8 +36,8 @@
   },
   {
     "id": "quamtex",
-    "name": "Quamtex · Tomador de Pedidos",
-    "nameEn": "Quamtex · Order Intake",
+    "name": "Quamtex · Operación comercial conectada",
+    "nameEn": "Quamtex · Connected Commercial Operations",
     "categories": [
       "comercio",
       "gestion"
@@ -49,32 +49,90 @@
       "Industrial commerce"
     ],
     "summary": [
-      "Recepción digital de pedidos y revisión por el equipo de Quamtex.",
-      "Digital order intake and review by the Quamtex team."
+      "Caso verificable de cuatro soluciones: pedidos, prospección, cobranza y calificación de leads por voz.",
+      "Verifiable case covering four solutions: ordering, prospecting, collections and voice-based lead qualification."
     ],
     "scope": [
       [
-        "Consulta del catálogo y selección de productos",
-        "Captura del pedido del cliente",
-        "Revisión y autorización por el equipo de Quamtex"
+        "Tomador de Pedidos: catálogo, selección y solicitud para revisión",
+        "Buscador de Leads: investigación, depuración y contexto comercial",
+        "Gestor de Cobranza: organización del seguimiento de cuentas",
+        "Agente de Voz: llamadas y calificación inicial de prospectos"
       ],
       [
-        "Catalog browsing and product selection",
-        "Customer order capture",
-        "Review and authorization by the Quamtex team"
+        "Order Intake: catalog, selection and request for team review",
+        "Lead Finder: research, refinement and commercial context",
+        "Collections Manager: organized account follow-up",
+        "Voice Agent: calls and initial prospect qualification"
       ]
     ],
     "tags": [
       "Pedidos",
       "Orders",
-      "Catálogo",
-      "Catalog"
+      "Leads",
+      "Cobranza",
+      "Collections",
+      "Agente de Voz",
+      "Voice Agent",
+      "Quamtex"
     ],
     "imageAlt": [
       "Portada actual del Tomador de Pedidos de Quamtex, capturada el 16 de noviembre de 2026.",
       "Current Quamtex Order Intake homepage, captured November 16, 2026."
     ],
-    "imageKind": "screenshot"
+    "imageKind": "screenshot",
+    "results": [
+      [
+        [
+          "4 soluciones en un mismo caso",
+          "KATIA desarrolló el Tomador de Pedidos, el Buscador de Leads, el Gestor de Cobranza y el Agente de Voz para Quamtex."
+        ],
+        [
+          "Pedidos operativos",
+          "El Tomador de Pedidos está en uso para consultar el catálogo, capturar solicitudes y entregarlas al equipo para revisión."
+        ],
+        [
+          "Prospección estructurada",
+          "El Buscador de Leads funciona como servicio en curso para localizar empresas, depurar contactos y preparar contexto comercial."
+        ],
+        [
+          "Seguimiento y calificación",
+          "Cobranza y Voz cubren el seguimiento de cuentas y las llamadas para calificar prospectos dentro del alcance acordado."
+        ]
+      ],
+      [
+        [
+          "4 solutions in one case",
+          "KATIA developed Order Intake, Lead Finder, Collections Manager and the Voice Agent for Quamtex."
+        ],
+        [
+          "Operational order intake",
+          "Order Intake is in use for catalog review, request capture and team review."
+        ],
+        [
+          "Structured prospecting",
+          "Lead Finder operates as an ongoing service for company research, contact refinement and commercial context."
+        ],
+        [
+          "Follow-up and qualification",
+          "Collections and Voice cover account follow-up and prospect qualification calls within the agreed scope."
+        ]
+      ]
+    ],
+    "evidence": [
+      [
+        "Captura actual del Tomador de Pedidos fechada el 16 de noviembre de 2026.",
+        "Fichas públicas separadas de los cuatro módulos con su estado y alcance.",
+        "Flujo comprobable de catálogo, captura de solicitud y revisión humana.",
+        "Alcance documentado para investigación de leads, cobranza y calificación por voz."
+      ],
+      [
+        "Current Order Intake screenshot dated November 16, 2026.",
+        "Separate public entries for all four modules with status and scope.",
+        "Verifiable catalog, request capture and human review flow.",
+        "Documented scope for lead research, collections and voice qualification."
+      ]
+    ]
   },
   {
     "id": "barber",
